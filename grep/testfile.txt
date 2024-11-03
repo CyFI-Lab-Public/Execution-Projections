@@ -1,0 +1,7 @@
+John Doe - [ERROR] 2023-09-15 <john.doe@example.com>
+Jane Smith - [INFO] 2023-09-16 <jane_smith@domain.org>
+Alice - [WARN] 2023-09-17 <alice@website.net>
+Bob - [DEBUG] 2023-09-18 <bob@site.com>
+Charlie Brown - [ERROR] 2023-09-19 <charlie.brown@example.com>
+Diana - [INFO] 2023-09-20 <diana@domain>
+
