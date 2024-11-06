@@ -1,0 +1,91 @@
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./grep-3.11/src/grep...
+Breakpoint 1 at 0xa280: file grep.c, line 2341.
+void fgrep_to_grep_pattern(char **, idx_t *);
+Breakpoint 2 at 0xa1eb: file grep.c, line 2323.
+static _Bool fgrep_icase_available(const char *, idx_t);
+Breakpoint 3 at 0xa095: file grep.c, line 2286.
+static ptrdiff_t fgrep_icase_charlen(const char *, idx_t, mbstate_t *);
+Breakpoint 4 at 0x866b: file grep.c, line 1509.
+static intmax_t grep(int, const struct stat *, _Bool *);
+Breakpoint 5 at 0x980a: file grep.c, line 1951.
+static _Bool grep_command_line_arg(const char *);
+Breakpoint 6 at 0x84a6: file grep.c, line 1461.
+static intmax_t grepbuf(char *, const char *);
+Breakpoint 7 at 0x9317: file grep.c, line 1819.
+static _Bool grepdesc(int, _Bool);
+Breakpoint 8 at 0x8cb9: file grep.c, line 1657.
+static _Bool grepdirent(FTS *, FTSENT *, _Bool);
+Breakpoint 9 at 0x907b: file grep.c, line 1757.
+static _Bool grepfile(int, const char *, _Bool, _Bool);
+Breakpoint 10 at 0x9d28: file grep.c, line 2187.
+static void parse_grep_colors(void);
+Breakpoint 11 at 0xa427: file grep.c, line 2390.
+static int try_fgrep_pattern(int, char *, idx_t *);
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 5, grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1951
+1951	  if (STREQ (arg, "-"))
+Function: [unknown], Address: 0x55555555d80a
+#0  grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1951
+#1  0x0000555555560028 in main (argc=4, argv=0x7fffffffddc8) at grep.c:3029
+
+Breakpoint 9, grepfile (dirdesc=-100, name=0x7fffffffe17d "testfile.txt", follow=true, command_line=true) at grep.c:1757
+1757	               | (follow ? 0 : O_NOFOLLOW)
+Function: [unknown], Address: 0x55555555d07b
+#0  grepfile (dirdesc=-100, name=0x7fffffffe17d "testfile.txt", follow=true, command_line=true)
+    at grep.c:1757
+#1  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1961
+#2  0x0000555555560028 in main (argc=4, argv=0x7fffffffddc8) at grep.c:3029
+
+Breakpoint 7, grepdesc (desc=3, command_line=true) at grep.c:1819
+1819	{
+Function: [unknown], Address: 0x55555555d317
+#0  grepdesc (desc=3, command_line=true) at grep.c:1819
+#1  0x000055555555d10f in grepfile (dirdesc=-100, name=0x7fffffffe17d "testfile.txt", follow=true, 
+    command_line=true) at grep.c:1766
+#2  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1961
+#3  0x0000555555560028 in main (argc=4, argv=0x7fffffffddc8) at grep.c:3029
+
+Breakpoint 4, grep (fd=3, st=0x7fffffffd8f0, ineof=0x7fffffffd8b2) at grep.c:1509
+1509	  char eol = eolbyte;
+Function: [unknown], Address: 0x55555555c66b
+#0  grep (fd=3, st=0x7fffffffd8f0, ineof=0x7fffffffd8b2) at grep.c:1509
+#1  0x000055555555d6b4 in grepdesc (desc=3, command_line=true) at grep.c:1914
+#2  0x000055555555d10f in grepfile (dirdesc=-100, name=0x7fffffffe17d "testfile.txt", follow=true, 
+    command_line=true) at grep.c:1766
+#3  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1961
+#4  0x0000555555560028 in main (argc=4, argv=0x7fffffffddc8) at grep.c:3029
+
+Breakpoint 6, grepbuf (beg=0x5555555ac000 "John Doe - [ERROR] 2023-09-15 <john.doe@example.com>\nJane Smith - [INFO] 2023-09-16 <jane_smith@domain.org>\nAlice - [WARN] 2023-09-17 <alice@website.net>\nBob - [DEBUG] 2023-09-18 <bob@site.com>\nCharli"..., lim=0x5555555ac12b "") at grep.c:1461
+1461	{
+Function: [unknown], Address: 0x55555555c4a6
+#0  grepbuf (
+    beg=0x5555555ac000 "John Doe - [ERROR] 2023-09-15 <john.doe@example.com>\nJane Smith - [INFO] 2023-09-16 <jane_smith@domain.org>\nAlice - [WARN] 2023-09-17 <alice@website.net>\nBob - [DEBUG] 2023-09-18 <bob@site.com>\nCharli"..., lim=0x5555555ac12b "") at grep.c:1461
+#1  0x000055555555ca2d in grep (fd=3, st=0x7fffffffd8f0, ineof=0x7fffffffd8b2) at grep.c:1599
+#2  0x000055555555d6b4 in grepdesc (desc=3, command_line=true) at grep.c:1914
+#3  0x000055555555d10f in grepfile (dirdesc=-100, name=0x7fffffffe17d "testfile.txt", follow=true, 
+    command_line=true) at grep.c:1766
+#4  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe17d "testfile.txt") at grep.c:1961
+John Doe - [ERROR] 2023-09-15 <john.doe@example.com>
+Jane Smith - [INFO] 2023-09-16 <jane_smith@domain.org>
+Alice - [WARN] 2023-09-17 <alice@website.net>
+Charlie Brown - [ERROR] 2023-09-19 <charlie.brown@example.com>
+[Inferior 1 (process 14207) exited normally]
+[?2004h(gdb) exit
+[?2004l
