@@ -1,106 +1,59 @@
-grep   24119 [024] 77124.628217:              syscalls:sys_enter_arch_prctl: option: 0x00003001, arg2: 0x7ffcfd3d1780
-	          4260b0 __libc_start_main_impl+0x5d0 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-	               0 [unknown] ([unknown])
-
-grep   24119 [024] 77124.628306:                     syscalls:sys_enter_brk: brk: 0x00000000
-	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628309:                     syscalls:sys_enter_brk: brk: 0x01238e00
-	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628835:              syscalls:sys_enter_arch_prctl: option: 0x00001002, arg2: 0x01238400
-	          427232 __libc_setup_tls+0x182 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628839:         syscalls:sys_enter_set_tid_address: tidptr: 0x012386d0
-	          49750e __tls_init_tp+0x4e (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628842:         syscalls:sys_enter_set_robust_list: head: 0x012386e0, len: 0x00000018
-	          49756a __tls_init_tp+0xaa (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628845:                    syscalls:sys_enter_rseq: rseq: 0x01238da0, rseq_len: 0x00000020, flags: 0x00000000, sig: 0x53053053
-	          4975a1 __tls_init_tp+0xe1 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.628857:                syscalls:sys_enter_newuname: name: 0x7ffcfd3d1510
-	          4bee5b __uname+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-	               0 [unknown] ([unknown])
-
-grep   24119 [024] 77124.628870:               syscalls:sys_enter_prlimit64: pid: 0x00000000, resource: 0x00000003, new_rlim: 0x00000000, old_rlim: 0x7ffcfd3d1690
-	          4933f4 __GI___getrlimit+0x14 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-	               0 [unknown] ([unknown])
-
-grep   24119 [024] 77124.628882:                syscalls:sys_enter_readlink: path: 0x004f84b8, buf: 0x7ffcfd3d05d0, bufsiz: 0x00001000
-	          4c6013 _dl_get_origin+0x33 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-	               0 [unknown] ([unknown])
-
-grep   24119 [024] 77124.628940:               syscalls:sys_enter_getrandom: ubuf: 0x0052d090, len: 0x00000008, flags: 0x00000001
-	          4a75c7 __getrandom+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-	               0 [unknown] ([unknown])
-
-grep   24119 [024] 77124.628949:                     syscalls:sys_enter_brk: brk: 0x01259e00
-	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.629439:                     syscalls:sys_enter_brk: brk: 0x0125a000
-	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.629509:                syscalls:sys_enter_mprotect: start: 0x00510000, len: 0x00005000, prot: 0x00000001
-	          49361b __mprotect+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
-
-grep   24119 [024] 77124.630086:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004e0740, flags: 0x00080000, mode: 0x00000000
+grep   30245 [034] 66723.467686:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004e0740, flags: 0x00080000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          428000 _nl_find_locale+0x100 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42796e setlocale+0x36e (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.630110:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x00528900, flag: 0x00001000
+grep   30245 [034] 66723.467703:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x00528900, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          428000 _nl_find_locale+0x100 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42796e setlocale+0x36e (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.630116:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x00572950, prot: 0x00000001, flags: 0x00000002, fd: 0x00000003, off: 0x00000000
+grep   30245 [034] 66723.467708:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x00572950, prot: 0x00000001, flags: 0x00000002, fd: 0x00000003, off: 0x00000000
 	          493597 __mmap64+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          428000 _nl_find_locale+0x100 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42796e setlocale+0x36e (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.630636:                   syscalls:sys_enter_close: fd: 0x00000003
+grep   30245 [034] 66723.469642:                   syscalls:sys_enter_close: fd: 0x00000003
 	          49308b __close_nocancel+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          428000 _nl_find_locale+0x100 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42796e setlocale+0x36e (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.630725:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004e8340, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.469704:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004e8340, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	               0 [unknown] ([unknown])
 
-grep   24119 [024] 77124.630735:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7ffcfd3d0f00, flag: 0x00001000
+grep   30245 [034] 66723.469716:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7fffffffd4b0, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.630738:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x0000697a, prot: 0x00000001, flags: 0x00000001, fd: 0x00000003, off: 0x00000000
+grep   30245 [034] 66723.469720:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x0000697a, prot: 0x00000001, flags: 0x00000001, fd: 0x00000003, off: 0x00000000
 	          493597 __mmap64+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631215:                   syscalls:sys_enter_close: fd: 0x00000003
+grep   30245 [034] 66723.471298:                   syscalls:sys_enter_close: fd: 0x00000003
 	          49308b __close_nocancel+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631224:                   syscalls:sys_enter_futex: uaddr: 0x0052d594, op: 0x00000081, val: 0x7fffffff, utime: 0x00000000, uaddr2: 0x00000000, val3: 0x00000000
+grep   30245 [034] 66723.471308:                   syscalls:sys_enter_futex: uaddr: 0x0052d594, op: 0x00000081, val: 0x7fffffff, utime: 0x00000000, uaddr2: 0x00000000, val3: 0x00000000
 	          4b64d0 __pthread_once_slow+0x110 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	    697a00000000 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631307:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x7ffcfd3d0ed0, flags: 0x00080000, mode: 0x00000000
+grep   30245 [034] 66723.471350:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x7fffffffd480, flags: 0x00080000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631330:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7ffcfd3d0d10, flag: 0x00001000
+grep   30245 [034] 66723.471365:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7fffffffd2c0, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	               0 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631342:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x0123ada0, count: 0x00001000
+grep   30245 [034] 66723.471375:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x00530da0, count: 0x00001000
 	          4932a8 __read_nocancel+0x8 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	               0 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631359:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x0123ada0, count: 0x00001000
+grep   30245 [034] 66723.471393:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x00530da0, count: 0x00001000
 	          4932a8 __read_nocancel+0x8 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	               0 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631363:                   syscalls:sys_enter_close: fd: 0x00000003
+grep   30245 [034] 66723.471396:                   syscalls:sys_enter_close: fd: 0x00000003
 	          49308b __close_nocancel+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631400:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123ab80, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471431:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00530b80, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -229,7 +182,7 @@ grep   24119 [024] 77124.631400:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631407:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b270, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471440:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531270, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -358,7 +311,7 @@ grep   24119 [024] 77124.631407:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631412:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123af30, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471445:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00530f30, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -487,7 +440,7 @@ grep   24119 [024] 77124.631412:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631417:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b150, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471449:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531150, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -616,7 +569,7 @@ grep   24119 [024] 77124.631417:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631422:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b430, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471454:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531430, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -745,7 +698,7 @@ grep   24119 [024] 77124.631422:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631427:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123afc0, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471459:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00530fc0, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -874,7 +827,7 @@ grep   24119 [024] 77124.631427:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631432:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b2b0, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471464:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x005312b0, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1003,7 +956,7 @@ grep   24119 [024] 77124.631432:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631438:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b540, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471469:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531540, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1132,7 +1085,7 @@ grep   24119 [024] 77124.631438:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631443:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b0c0, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471474:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x005310c0, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1261,7 +1214,7 @@ grep   24119 [024] 77124.631443:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631450:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b1e0, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471480:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x005311e0, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1390,7 +1343,7 @@ grep   24119 [024] 77124.631450:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631455:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b470, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471485:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531470, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1519,7 +1472,7 @@ grep   24119 [024] 77124.631455:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631460:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x0123b040, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471490:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x00531040, flags: 0x00000000, mode: 0x00000000
 	          49323c __open64_nocancel+0x4c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
@@ -1648,11 +1601,11 @@ grep   24119 [024] 77124.631460:                  syscalls:sys_enter_openat: dfd
 	          528010 [unknown] ([unknown])
 	          528010 [unknown] ([unknown])
 
-grep   24119 [024] 77124.631482:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004df3c9, flags: 0x00000000, mode: 0x00000000
+grep   30245 [034] 66723.471499:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x004df3c9, flags: 0x00000000, mode: 0x00000000
 	          4923ab __libc_open64+0x5b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	  7370616d2f666c [unknown] ([unknown])
 
-grep   24119 [024] 77124.631510:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x00002000, prot: 0x00000003, flags: 0x00000022, fd: 0xffffffff, off: 0x00000000
+grep   30245 [034] 66723.471519:                    syscalls:sys_enter_mmap: addr: 0x00000000, len: 0x00002000, prot: 0x00000003, flags: 0x00000022, fd: 0xffffffff, off: 0x00000000
 	          493597 __mmap64+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42170d vma_iterate_proc+0x3b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1663,7 +1616,7 @@ grep   24119 [024] 77124.631510:                    syscalls:sys_enter_mmap: add
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631987:                   syscalls:sys_enter_lseek: fd: 0x00000003, offset: 0x00000000, whence: 0x00000000
+grep   30245 [034] 66723.472590:                   syscalls:sys_enter_lseek: fd: 0x00000003, offset: 0x00000000, whence: 0x00000000
 	          4926fb __libc_lseek64+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42170d vma_iterate_proc+0x3b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1674,7 +1627,7 @@ grep   24119 [024] 77124.631987:                   syscalls:sys_enter_lseek: fd:
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.631991:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x70c4bf5ed000, count: 0x00002000
+grep   30245 [034] 66723.472595:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x7ffff7ff0000, count: 0x00002000
 	          4925c2 __libc_read+0x12 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42170d vma_iterate_proc+0x3b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1685,7 +1638,7 @@ grep   24119 [024] 77124.631991:                    syscalls:sys_enter_read: fd:
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632015:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x70c4bf5ed527, count: 0x00001ad9
+grep   30245 [034] 66723.472624:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x7ffff7ff0527, count: 0x00001ad9
 	          4925c2 __libc_read+0x12 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42170d vma_iterate_proc+0x3b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1696,7 +1649,7 @@ grep   24119 [024] 77124.632015:                    syscalls:sys_enter_read: fd:
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632018:                   syscalls:sys_enter_close: fd: 0x00000003
+grep   30245 [034] 66723.472626:                   syscalls:sys_enter_close: fd: 0x00000003
 	          492837 __libc_close+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42170d vma_iterate_proc+0x3b (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1707,7 +1660,7 @@ grep   24119 [024] 77124.632018:                   syscalls:sys_enter_close: fd:
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632034:                  syscalls:sys_enter_munmap: addr: 0x70c4bf5ed000, len: 0x00002000
+grep   30245 [034] 66723.472645:                  syscalls:sys_enter_munmap: addr: 0x7ffff7ff0000, len: 0x00002000
 	          4935eb __munmap+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          421851 vma_iterate_proc+0x17f (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          42188f vma_iterate+0x1c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1718,52 +1671,52 @@ grep   24119 [024] 77124.632034:                  syscalls:sys_enter_munmap: add
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632047:             syscalls:sys_enter_sigaltstack: uss: 0x7ffcfd3d1330, uoss: 0x00000000
+grep   30245 [034] 66723.472664:             syscalls:sys_enter_sigaltstack: uss: 0x7fffffffd8e0, uoss: 0x00000000
 	          42ff8b __sigaltstack+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          40d110 c_stack_action+0x81 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632052:            syscalls:sys_enter_rt_sigaction: sig: 0x0000000b, act: 0x7ffcfd3d10f0, oact: 0x00000000, sigsetsize: 0x00000008
+grep   30245 [034] 66723.472668:            syscalls:sys_enter_rt_sigaction: sig: 0x0000000b, act: 0x7fffffffd6a0, oact: 0x00000000, sigsetsize: 0x00000008
 	          42fe63 __libc_sigaction+0xc3 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          4210fd stackoverflow_install_handler+0xb7 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          40d110 c_stack_action+0x81 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632055:            syscalls:sys_enter_rt_sigaction: sig: 0x0000000b, act: 0x7ffcfd3d1120, oact: 0x00000000, sigsetsize: 0x00000008
+grep   30245 [034] 66723.472671:            syscalls:sys_enter_rt_sigaction: sig: 0x0000000b, act: 0x7fffffffd6d0, oact: 0x00000000, sigsetsize: 0x00000008
 	          42fe63 __libc_sigaction+0xc3 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          420fc2 sigsegv_install_handler+0x2c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          40d135 c_stack_action+0xa6 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          407156 main+0x11c (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632095:              syscalls:sys_enter_newfstatat: dfd: 0x00000001, filename: 0x004f6325, statbuf: 0x7ffcfd3d14d0, flag: 0x00001000
+grep   30245 [034] 66723.472681:              syscalls:sys_enter_newfstatat: dfd: 0x00000001, filename: 0x004f6325, statbuf: 0x7fffffffda80, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632099:              syscalls:sys_enter_newfstatat: dfd: 0xffffff9c, filename: 0x004de64b, statbuf: 0x7ffcfd3d1560, flag: 0x00000000
+grep   30245 [034] 66723.472685:              syscalls:sys_enter_newfstatat: dfd: 0xffffff9c, filename: 0x004de64b, statbuf: 0x7fffffffdb10, flag: 0x00000000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632480:                     syscalls:sys_enter_brk: brk: 0x01287000
+grep   30245 [034] 66723.472998:                     syscalls:sys_enter_brk: brk: 0x0057d000
 	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.632990:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x7ffcfd3d3769, flags: 0x00000100, mode: 0x00000000
+grep   30245 [034] 66723.473861:                  syscalls:sys_enter_openat: dfd: 0xffffff9c, filename: 0x7fffffffe171, flags: 0x00000100, mode: 0x00000000
 	          4924c6 __libc_openat64+0x46 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          4059f2 grepfile+0x67 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          4061af grep_command_line_arg+0x89 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          408954 main+0x191a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.633005:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7ffcfd3d1250, flag: 0x00001000
+grep   30245 [034] 66723.473873:              syscalls:sys_enter_newfstatat: dfd: 0x00000003, filename: 0x004f6325, statbuf: 0x7fffffffd800, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          405a3b grepfile+0xb0 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          4061af grep_command_line_arg+0x89 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          408954 main+0x191a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.633015:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x0124e000, count: 0x00018000
+grep   30245 [034] 66723.473878:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x00544000, count: 0x00018000
 	          4925c2 __libc_read+0x12 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          404036 fillbuf+0x2b1 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          405080 grep+0x107 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1773,30 +1726,30 @@ grep   24119 [024] 77124.633015:                    syscalls:sys_enter_read: fd:
 	          408954 main+0x191a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.633356:                     syscalls:sys_enter_brk: brk: 0x012a8000
+grep   30245 [034] 66723.474227:                     syscalls:sys_enter_brk: brk: 0x0059e000
 	          49342b __brk+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.633935:              syscalls:sys_enter_newfstatat: dfd: 0x00000001, filename: 0x004f6325, statbuf: 0x7ffcfd3d0e70, flag: 0x00001000
+grep   30245 [034] 66723.475032:              syscalls:sys_enter_newfstatat: dfd: 0x00000001, filename: 0x004f6325, statbuf: 0x7fffffffd420, flag: 0x00001000
 	          4922ee __GI___fstatat+0xe (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	               0 [unknown] ([unknown])
 
-grep   24119 [024] 77124.633941:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x0128f690, count: 0x00000035
+grep   30245 [034] 66723.475039:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x00585690, count: 0x00000035
 	          492667 __libc_write+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	4f5252455b202d20 [unknown] ([unknown])
 
-grep   24119 [024] 77124.634037:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x0128f690, count: 0x00000037
+grep   30245 [034] 66723.475133:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x00585690, count: 0x00000037
 	          492667 __libc_write+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	4e495b202d206874 [unknown] ([unknown])
 
-grep   24119 [024] 77124.634089:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x0128f690, count: 0x0000002e
+grep   30245 [034] 66723.475203:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x00585690, count: 0x0000002e
 	          492667 __libc_write+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	32205d4e5241575b [unknown] ([unknown])
 
-grep   24119 [024] 77124.634118:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x0128f690, count: 0x0000003f
+grep   30245 [034] 66723.475234:                   syscalls:sys_enter_write: fd: 0x00000001, buf: 0x00585690, count: 0x0000003f
 	          492667 __libc_write+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	202d206e776f7242 [unknown] ([unknown])
 
-grep   24119 [024] 77124.634128:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x0124e12b, count: 0x00018000
+grep   30245 [034] 66723.475258:                    syscalls:sys_enter_read: fd: 0x00000003, buf: 0x0054412b, count: 0x00018000
 	          4925c2 __libc_read+0x12 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          404036 fillbuf+0x2b1 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          40549a grep+0x521 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
@@ -1806,19 +1759,19 @@ grep   24119 [024] 77124.634128:                    syscalls:sys_enter_read: fd:
 	          408954 main+0x191a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.634132:                   syscalls:sys_enter_close: fd: 0x00000003
+grep   30245 [034] 66723.475263:                   syscalls:sys_enter_close: fd: 0x00000003
 	          492837 __libc_close+0x17 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          405a3b grepfile+0xb0 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          4061af grep_command_line_arg+0x89 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          408954 main+0x191a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 	          424c6a __libc_start_call_main+0x6a (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.634139:                   syscalls:sys_enter_close: fd: 0x00000001
+grep   30245 [034] 66723.475270:                   syscalls:sys_enter_close: fd: 0x00000001
 	          49308b __close_nocancel+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.634141:                   syscalls:sys_enter_close: fd: 0x00000002
+grep   30245 [034] 66723.475273:                   syscalls:sys_enter_close: fd: 0x00000002
 	          49308b __close_nocancel+0xb (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 
-grep   24119 [024] 77124.634150:              syscalls:sys_enter_exit_group: error_code: 0x00000000
+grep   30245 [034] 66723.475278:              syscalls:sys_enter_exit_group: error_code: 0x00000000
 	          47a161 _exit+0x31 (/home/dinko/exec-proj/grep/grep-3.11/src/grep)
 

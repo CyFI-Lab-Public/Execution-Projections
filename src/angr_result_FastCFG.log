@@ -1,0 +1,1069 @@
+Syscall: openat, Callsite: 0x49323a
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: mmap, Callsite: 0x493595
+Syscall: close, Callsite: 0x493089
+Syscall: openat, Callsite: 0x49323a
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: mmap, Callsite: 0x493595
+Syscall: close, Callsite: 0x493089
+Syscall: futex, Callsite: 0x4b64ce
+Syscall: openat, Callsite: 0x49323a
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: read, Callsite: 0x4932a6
+Syscall: read, Callsite: 0x4932a6
+Syscall: close, Callsite: 0x493089
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x49323a
+Syscall: openat, Callsite: 0x4923a9
+Syscall: mmap, Callsite: 0x493595
+Syscall: lseek, Callsite: 0x4926f9
+Syscall: read, Callsite: 0x4925c0
+Syscall: read, Callsite: 0x4925c0
+Syscall: close, Callsite: 0x492835
+Syscall: munmap, Callsite: 0x4935e9
+Syscall: sigaltstack, Callsite: 0x42ff89
+Syscall: rt_sigaction, Callsite: 0x42fe61
+Syscall: rt_sigaction, Callsite: 0x42fe61
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: brk, Callsite: 0x493429
+Syscall: openat, Callsite: 0x4924c4
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: read, Callsite: 0x4925c0
+Syscall: brk, Callsite: 0x493429
+Syscall: newfstatat, Callsite: 0x4922ec
+Syscall: write, Callsite: 0x492665
+Syscall: write, Callsite: 0x492665
+Syscall: write, Callsite: 0x492665
+Syscall: write, Callsite: 0x492665
+Syscall: read, Callsite: 0x4925c0
+Syscall: close, Callsite: 0x492835
+Syscall: close, Callsite: 0x493089
+Syscall: close, Callsite: 0x493089
+Syscall: exit_group, Callsite: 0x47a15f
+╔══════════════════════════════════╗
+║ ===== 53 syscall callsites ===== ║
+╚══════════════════════════════════╝
+WARNING  | 2024-11-06 12:26:49,637 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_InterleaveLO64x2.
+ERROR    | 2024-11-06 12:26:49,783 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,786 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,786 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,790 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,791 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,792 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,792 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,799 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,802 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,809 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,811 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,812 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,814 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,816 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,818 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,820 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,822 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,824 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,826 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,827 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,829 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,831 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,833 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,835 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,837 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,847 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,851 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,854 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,857 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:26:49,861 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_Min8Ux16.
+ERROR    | 2024-11-06 12:26:49,862 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,876 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,880 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,882 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,886 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,894 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,903 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,919 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,923 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,925 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,928 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,933 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,940 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,944 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,946 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,949 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,951 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,954 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,959 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,975 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,980 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,984 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,984 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,989 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:49,989 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:26:51,288 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_64HLto128.
+ERROR    | 2024-11-06 12:26:52,730 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+WARNING  | 2024-11-06 12:26:52,824 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_Add64x2.
+ERROR    | 2024-11-06 12:26:53,960 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+WARNING  | 2024-11-06 12:26:53,960 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_CasCmpNE32.
+ERROR    | 2024-11-06 12:26:54,386 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:26:54,458 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,462 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,463 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,467 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,468 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,469 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:54,470 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,096 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,101 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,105 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,111 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,114 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,115 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,118 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,123 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,131 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,133 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,136 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,138 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,141 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,145 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,151 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,602 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,607 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,611 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,611 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,616 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:26:56,616 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:27:02,159 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_InterleaveLO32x4.
+ERROR    | 2024-11-06 12:27:02,531 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,535 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,539 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,545 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,548 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,550 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,553 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,558 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,565 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,568 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,570 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,573 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,578 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,580 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,586 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,600 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,605 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,609 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,609 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,614 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:02,614 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:27:02,809 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_64HLtoV128.
+WARNING  | 2024-11-06 12:27:02,810 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_Add32x4.
+ERROR    | 2024-11-06 12:27:04,892 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:04,895 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:04,897 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:05,312 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:05,316 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:05,319 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:05,705 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,549 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,561 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,565 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,572 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,583 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,587 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,591 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,609 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,613 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,618 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,631 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,636 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,640 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:07,664 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:10,266 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,273 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,275 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,284 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,286 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,295 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,297 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,306 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,308 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,317 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,319 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,328 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,330 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,341 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,343 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,371 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,374 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,376 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:10,908 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:10,972 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:13,026 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:16,854 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,860 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,860 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,861 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,862 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,867 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:16,868 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,090 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,096 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,096 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,097 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,098 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,103 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,104 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:27:17,685 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Binop Iop_Sub8x16.
+ERROR    | 2024-11-06 12:27:17,685 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,701 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,715 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,725 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,733 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,739 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,746 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,752 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,758 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:17,810 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,529 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,544 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,559 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,570 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,578 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,585 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,591 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,599 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,605 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,679 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:18,789 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,831 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,846 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:18,862 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+WARNING  | 2024-11-06 12:27:19,116 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_InterleaveHI64x2.
+ERROR    | 2024-11-06 12:27:19,296 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,414 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,420 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,420 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,421 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,422 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,427 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,428 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,503 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,518 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,535 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:19,725 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,616 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,617 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,622 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,622 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,622 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,623 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,624 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:20,624 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,445 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,455 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,466 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,474 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,479 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,483 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,487 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,490 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,494 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,529 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,529 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,534 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,534 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,535 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,536 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,536 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,536 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,605 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:21,613 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:21,713 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:21,722 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:21,872 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,872 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,878 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,878 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,878 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,879 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,880 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,880 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,891 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,894 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,895 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,903 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,903 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,904 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,905 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,906 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,906 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,907 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,907 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,908 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,909 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,909 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,910 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,910 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,911 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,922 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,928 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,929 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,936 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,937 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,939 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,941 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,943 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,945 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,946 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,947 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,948 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,949 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,950 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,952 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,953 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:21,954 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,651 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,905 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,905 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,908 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,908 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,911 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,911 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,912 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,912 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,988 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:22,997 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,008 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,015 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,021 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,026 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,029 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,033 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,036 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,099 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,108 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,110 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,112 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,113 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:23,113 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,523 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,534 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,549 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,553 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,558 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,563 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,568 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:25,572 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,449 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,451 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,452 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,455 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,455 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,500 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,512 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,523 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,527 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,532 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,536 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,541 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,545 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,630 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:29,641 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,089 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:32,211 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,214 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,214 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,217 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,217 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,470 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,473 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,474 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,477 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,478 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,596 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,599 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,600 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,604 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,605 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,732 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,732 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,735 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,735 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,738 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,738 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,739 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,739 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:32,749 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:32,793 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:33,012 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,014 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,017 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,017 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,018 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,291 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:33,360 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:33,581 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,581 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,584 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,584 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,587 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,587 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,588 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,588 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,840 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,843 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,846 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,846 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:33,846 | angr.analyses.cfg.indirect_jump_resolvers.jumptable.JumpTableProcessor | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:27:35,315 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:35,328 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:35,340 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:40,296 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:43,016 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:43,403 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:45,965 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:50,209 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:52,972 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:56,200 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:27:58,866 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:28:13,092 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+ERROR    | 2024-11-06 12:28:33,933 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,944 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,949 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,952 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,955 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,959 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,962 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,965 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:33,969 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:34,084 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported statement type CAS.
+WARNING  | 2024-11-06 12:28:34,085 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Binop Iop_CasCmpNE8.
+ERROR    | 2024-11-06 12:28:34,095 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+ERROR    | 2024-11-06 12:28:34,097 | angr.analyses.propagator.engine_vex.SimEnginePropagatorVEX | Unsupported Unop Iop_GetMSBs8x16.
+CFGFast: DiGraph with 58508 nodes and 125044 edges, 138.49s
+CFGEmul: DiGraph with 58508 nodes and 125044 edges, 138.56
+╔════════════════════════╗
+║ MAIN address: 0x40703a ║
+╚════════════════════════╝
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | The program is accessing register with an unspecified value. This could indicate unwanted behavior.
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | angr will cope with this by generating an unconstrained symbolic variable and continuing. You can resolve this by:
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | 1) setting a value to the initial state
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | 2) adding the state option ZERO_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to make unknown regions hold null
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | 3) adding the state option SYMBOL_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to suppress these messages.
+WARNING  | 2024-11-06 12:28:49,806 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x40703e (main+0x4 in grep (0x40703e))
+WARNING  | 2024-11-06 12:28:49,808 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x407042 (main+0x8 in grep (0x407042))
+WARNING  | 2024-11-06 12:28:49,809 | angr.storage.memory_mixins.default_filler_mixin | Filling register rdi with 8 unconstrained bytes referenced from 0x40704a (main+0x10 in grep (0x40704a))
+WARNING  | 2024-11-06 12:28:49,840 | angr.storage.memory_mixins.default_filler_mixin | Filling register rsi with 8 unconstrained bytes referenced from 0x407050 (main+0x16 in grep (0x407050))
+WARNING  | 2024-11-06 12:28:49,856 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x427604 (setlocale+0x4 in grep (0x427604))
+WARNING  | 2024-11-06 12:28:49,857 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x42760b (setlocale+0xb in grep (0x42760b))
+WARNING  | 2024-11-06 12:28:49,858 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x427611 (setlocale+0x11 in grep (0x427611))
+WARNING  | 2024-11-06 12:28:49,859 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x427613 (setlocale+0x13 in grep (0x427613))
+WARNING  | 2024-11-06 12:28:49,872 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49323c (__open64_nocancel+0x4c in grep (0x49323c))
+WARNING  | 2024-11-06 12:28:50,363 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:50,510 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:28:50,587 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:28:50,853 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6807_64>
+WARNING  | 2024-11-06 12:28:50,859 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:28:50,932 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:28:51,194 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6809_64>
+WARNING  | 2024-11-06 12:28:51,201 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:28:51,203 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:28:51,215 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:28:51,217 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:28:51,218 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:28:51,219 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:28:51,222 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:28:51,223 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:28:51,231 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:28:51,232 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:28:51,241 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:28:51,243 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:28:51,244 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:28:51,245 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:28:51,248 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:28:51,249 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:28:51,745 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:28:51,760 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:28:52,720 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:28:52,950 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:53,037 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:28:53,284 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6832_64>
+WARNING  | 2024-11-06 12:28:53,290 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:28:53,545 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6833_64>
+WARNING  | 2024-11-06 12:28:53,553 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x493597 (mmap64+0x17 in grep (0x493597))
+WARNING  | 2024-11-06 12:28:53,801 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:53,898 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49359f (mmap64+0x1f in grep (0x49359f))
+WARNING  | 2024-11-06 12:28:54,155 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6836_64>
+WARNING  | 2024-11-06 12:28:54,162 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4935d3 (mmap64+0x53 in grep (0x4935d3))
+WARNING  | 2024-11-06 12:28:54,419 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6837_64>
+WARNING  | 2024-11-06 12:28:54,426 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49308b (__close_nocancel+0xb in grep (0x49308b))
+WARNING  | 2024-11-06 12:28:54,671 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:54,770 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493093 (__close_nocancel+0x13 in grep (0x493093))
+WARNING  | 2024-11-06 12:28:55,027 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6840_64>
+WARNING  | 2024-11-06 12:28:55,035 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4930a9 (__close_nocancel+0x29 in grep (0x4930a9))
+WARNING  | 2024-11-06 12:28:55,290 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6841_64>
+WARNING  | 2024-11-06 12:28:55,297 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49323c (__open64_nocancel+0x4c in grep (0x49323c))
+WARNING  | 2024-11-06 12:28:55,532 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:55,627 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:28:55,701 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:28:55,952 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6845_64>
+WARNING  | 2024-11-06 12:28:55,958 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:28:56,030 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:28:56,281 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6847_64>
+WARNING  | 2024-11-06 12:28:56,287 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:28:56,289 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:28:56,299 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:28:56,301 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:28:56,302 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:28:56,303 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:28:56,306 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:28:56,307 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:28:56,315 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:28:56,316 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:28:56,325 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:28:56,326 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:28:56,327 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:28:56,328 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:28:56,331 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:28:56,332 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:28:56,812 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:28:56,825 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:28:57,722 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:28:57,947 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:58,037 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:28:58,281 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6870_64>
+WARNING  | 2024-11-06 12:28:58,287 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:28:58,536 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6871_64>
+WARNING  | 2024-11-06 12:28:58,543 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x493597 (mmap64+0x17 in grep (0x493597))
+WARNING  | 2024-11-06 12:28:58,783 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:58,880 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49359f (mmap64+0x1f in grep (0x49359f))
+WARNING  | 2024-11-06 12:28:59,134 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6874_64>
+WARNING  | 2024-11-06 12:28:59,142 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4935d3 (mmap64+0x53 in grep (0x4935d3))
+WARNING  | 2024-11-06 12:28:59,393 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6875_64>
+WARNING  | 2024-11-06 12:28:59,400 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49308b (__close_nocancel+0xb in grep (0x49308b))
+WARNING  | 2024-11-06 12:28:59,640 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:28:59,736 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493093 (__close_nocancel+0x13 in grep (0x493093))
+WARNING  | 2024-11-06 12:28:59,983 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6878_64>
+WARNING  | 2024-11-06 12:28:59,989 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4930a9 (__close_nocancel+0x29 in grep (0x4930a9))
+WARNING  | 2024-11-06 12:29:00,241 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6879_64>
+WARNING  | 2024-11-06 12:29:00,249 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4b64d0 (__pthread_once_slow+0x110 in grep (0x4b64d0))
+WARNING  | 2024-11-06 12:29:00,492 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:00,597 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0038 with 8 unconstrained bytes referenced from 0x4b63f1 (__pthread_once_slow+0x31 in grep (0x4b63f1))
+WARNING  | 2024-11-06 12:29:00,712 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0040 with 8 unconstrained bytes referenced from 0x4b640b (__pthread_once_slow+0x4b in grep (0x4b640b))
+WARNING  | 2024-11-06 12:29:00,714 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0048 with 8 unconstrained bytes referenced from 0x4b640c (__pthread_once_slow+0x4c in grep (0x4b640c))
+WARNING  | 2024-11-06 12:29:00,716 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0050 with 8 unconstrained bytes referenced from 0x4b640d (__pthread_once_slow+0x4d in grep (0x4b640d))
+WARNING  | 2024-11-06 12:29:00,717 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x4b640f (__pthread_once_slow+0x4f in grep (0x4b640f))
+WARNING  | 2024-11-06 12:29:00,987 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6886_64>
+WARNING  | 2024-11-06 12:29:01,004 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0038 with 8 unconstrained bytes referenced from 0x4b63f1 (__pthread_once_slow+0x31 in grep (0x4b63f1))
+WARNING  | 2024-11-06 12:29:01,073 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:01,075 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:01,080 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0040 with 8 unconstrained bytes referenced from 0x4b640b (__pthread_once_slow+0x4b in grep (0x4b640b))
+WARNING  | 2024-11-06 12:29:01,081 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0048 with 8 unconstrained bytes referenced from 0x4b640c (__pthread_once_slow+0x4c in grep (0x4b640c))
+WARNING  | 2024-11-06 12:29:01,082 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0050 with 8 unconstrained bytes referenced from 0x4b640d (__pthread_once_slow+0x4d in grep (0x4b640d))
+WARNING  | 2024-11-06 12:29:01,083 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x4b640f (__pthread_once_slow+0x4f in grep (0x4b640f))
+WARNING  | 2024-11-06 12:29:01,338 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6893_64>
+WARNING  | 2024-11-06 12:29:01,344 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x43b620 (__libc_message.constprop.0+0x0 in grep (0x43b620))
+WARNING  | 2024-11-06 12:29:01,346 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b627 (__libc_message.constprop.0+0x7 in grep (0x43b627))
+WARNING  | 2024-11-06 12:29:01,347 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b629 (__libc_message.constprop.0+0x9 in grep (0x43b629))
+WARNING  | 2024-11-06 12:29:01,348 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x43b62e (__libc_message.constprop.0+0xe in grep (0x43b62e))
+WARNING  | 2024-11-06 12:29:01,349 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b633 (__libc_message.constprop.0+0x13 in grep (0x43b633))
+WARNING  | 2024-11-06 12:29:01,351 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b63f (__libc_message.constprop.0+0x1f in grep (0x43b63f))
+WARNING  | 2024-11-06 12:29:01,360 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:01,362 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:01,363 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:01,364 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:01,367 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:01,368 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:01,387 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:01,388 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:01,404 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:01,406 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:01,407 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:01,408 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:01,411 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:01,412 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:01,516 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffeff48 with 8 unconstrained bytes referenced from 0x43b6d8 (__libc_message.constprop.0+0xb8 in grep (0x43b6d8))
+WARNING  | 2024-11-06 12:29:02,433 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:02,473 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:02,477 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x441e94 (__pthread_kill+0x4 in grep (0x441e94))
+WARNING  | 2024-11-06 12:29:02,508 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x441e94 (__pthread_kill+0x4 in grep (0x441e94))
+WARNING  | 2024-11-06 12:29:03,426 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49323c (__open64_nocancel+0x4c in grep (0x49323c))
+WARNING  | 2024-11-06 12:29:03,659 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:03,743 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:29:03,820 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:29:04,080 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6925_64>
+WARNING  | 2024-11-06 12:29:04,086 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:29:04,162 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:29:04,415 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6927_64>
+WARNING  | 2024-11-06 12:29:04,422 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:04,424 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:04,435 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:04,436 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:04,438 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:04,439 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:04,442 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:04,443 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:04,451 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:04,452 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:04,461 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:04,462 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:04,463 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:04,464 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:04,467 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:04,468 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:04,942 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:04,956 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:05,869 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:29:06,101 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:06,194 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:29:06,448 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6950_64>
+WARNING  | 2024-11-06 12:29:06,455 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:29:06,711 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6951_64>
+WARNING  | 2024-11-06 12:29:06,723 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4932a8 (__read_nocancel+0x8 in grep (0x4932a8))
+WARNING  | 2024-11-06 12:29:06,971 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:07,078 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4932b0 (__read_nocancel+0x10 in grep (0x4932b0))
+WARNING  | 2024-11-06 12:29:07,332 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6954_64>
+WARNING  | 2024-11-06 12:29:07,339 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4932cb (__read_nocancel+0x2b in grep (0x4932cb))
+WARNING  | 2024-11-06 12:29:07,602 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6955_64>
+WARNING  | 2024-11-06 12:29:07,609 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49308b (__close_nocancel+0xb in grep (0x49308b))
+WARNING  | 2024-11-06 12:29:07,853 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:07,950 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493093 (__close_nocancel+0x13 in grep (0x493093))
+WARNING  | 2024-11-06 12:29:08,209 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6958_64>
+WARNING  | 2024-11-06 12:29:08,216 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4930a9 (__close_nocancel+0x29 in grep (0x4930a9))
+WARNING  | 2024-11-06 12:29:08,470 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_6959_64>
+WARNING  | 2024-11-06 12:29:08,515 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49323c (__open64_nocancel+0x4c in grep (0x49323c))
+WARNING  | 2024-11-06 12:29:08,757 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:08,857 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:29:08,937 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:29:09,183 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6963_64>
+WARNING  | 2024-11-06 12:29:09,189 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0018 with 8 unconstrained bytes referenced from 0x493244 (__open64_nocancel+0x54 in grep (0x493244))
+WARNING  | 2024-11-06 12:29:09,261 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0058 with 8 unconstrained bytes referenced from 0x493258 (__open64_nocancel+0x68 in grep (0x493258))
+WARNING  | 2024-11-06 12:29:09,516 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0058_6965_64>
+WARNING  | 2024-11-06 12:29:09,523 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:09,524 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:09,536 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:09,538 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:09,539 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:09,540 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:09,543 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:09,544 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:09,553 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:09,554 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:09,564 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:09,565 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:09,566 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:09,567 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:09,571 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:09,571 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:10,067 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:10,080 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:10,974 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4923ab (__open64+0x5b in grep (0x4923ab))
+WARNING  | 2024-11-06 12:29:11,204 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:11,299 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0028 with 8 unconstrained bytes referenced from 0x4923b7 (__open64+0x67 in grep (0x4923b7))
+WARNING  | 2024-11-06 12:29:11,375 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0068 with 8 unconstrained bytes referenced from 0x4923cf (__open64+0x7f in grep (0x4923cf))
+WARNING  | 2024-11-06 12:29:11,377 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0070 with 8 unconstrained bytes referenced from 0x4923d0 (__open64+0x80 in grep (0x4923d0))
+WARNING  | 2024-11-06 12:29:11,378 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0078 with 8 unconstrained bytes referenced from 0x4923d2 (__open64+0x82 in grep (0x4923d2))
+WARNING  | 2024-11-06 12:29:11,634 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0078_6991_64>
+WARNING  | 2024-11-06 12:29:11,640 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0028 with 8 unconstrained bytes referenced from 0x4923b7 (__open64+0x67 in grep (0x4923b7))
+WARNING  | 2024-11-06 12:29:11,711 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0068 with 8 unconstrained bytes referenced from 0x4923cf (__open64+0x7f in grep (0x4923cf))
+WARNING  | 2024-11-06 12:29:11,712 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0070 with 8 unconstrained bytes referenced from 0x4923d0 (__open64+0x80 in grep (0x4923d0))
+WARNING  | 2024-11-06 12:29:11,713 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0078 with 8 unconstrained bytes referenced from 0x4923d2 (__open64+0x82 in grep (0x4923d2))
+WARNING  | 2024-11-06 12:29:11,970 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0078_6995_64>
+WARNING  | 2024-11-06 12:29:11,977 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:11,978 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:11,989 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:11,991 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:11,992 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:11,993 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:11,996 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:11,997 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:12,005 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:12,006 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:12,015 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:12,016 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:12,017 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:12,018 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:12,021 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:12,022 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:12,496 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:12,509 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:12,601 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x493597 (mmap64+0x17 in grep (0x493597))
+WARNING  | 2024-11-06 12:29:12,839 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:12,932 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49359f (mmap64+0x1f in grep (0x49359f))
+WARNING  | 2024-11-06 12:29:17,164 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7016_64>
+WARNING  | 2024-11-06 12:29:17,178 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4935d3 (mmap64+0x53 in grep (0x4935d3))
+WARNING  | 2024-11-06 12:29:17,481 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7017_64>
+WARNING  | 2024-11-06 12:29:17,488 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4926fb (lseek64+0xb in grep (0x4926fb))
+WARNING  | 2024-11-06 12:29:17,763 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:17,864 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492703 (lseek64+0x13 in grep (0x492703))
+WARNING  | 2024-11-06 12:29:18,155 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7020_64>
+WARNING  | 2024-11-06 12:29:18,163 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49271b (lseek64+0x2b in grep (0x49271b))
+WARNING  | 2024-11-06 12:29:18,452 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7021_64>
+WARNING  | 2024-11-06 12:29:18,470 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4925c2 (read+0x12 in grep (0x4925c2))
+WARNING  | 2024-11-06 12:29:18,726 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:18,822 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4925ca (read+0x1a in grep (0x4925ca))
+WARNING  | 2024-11-06 12:29:19,104 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7024_64>
+WARNING  | 2024-11-06 12:29:19,111 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492633 (read+0x83 in grep (0x492633))
+WARNING  | 2024-11-06 12:29:19,389 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7025_64>
+WARNING  | 2024-11-06 12:29:19,396 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x492837 (close+0x17 in grep (0x492837))
+WARNING  | 2024-11-06 12:29:19,647 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:19,735 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49283f (close+0x1f in grep (0x49283f))
+WARNING  | 2024-11-06 12:29:20,004 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7028_64>
+WARNING  | 2024-11-06 12:29:20,011 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492891 (close+0x71 in grep (0x492891))
+WARNING  | 2024-11-06 12:29:20,280 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7029_64>
+WARNING  | 2024-11-06 12:29:20,287 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4935eb (__munmap+0xb in grep (0x4935eb))
+WARNING  | 2024-11-06 12:29:20,535 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:20,625 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4935f3 (__munmap+0x13 in grep (0x4935f3))
+WARNING  | 2024-11-06 12:29:20,884 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7032_64>
+WARNING  | 2024-11-06 12:29:20,891 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493604 (__munmap+0x24 in grep (0x493604))
+WARNING  | 2024-11-06 12:29:21,146 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7033_64>
+WARNING  | 2024-11-06 12:29:21,152 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x42ff8b (__sigaltstack+0xb in grep (0x42ff8b))
+WARNING  | 2024-11-06 12:29:21,396 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:21,482 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x42ff93 (__sigaltstack+0x13 in grep (0x42ff93))
+WARNING  | 2024-11-06 12:29:21,737 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7036_64>
+WARNING  | 2024-11-06 12:29:21,743 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x42ffa4 (__sigaltstack+0x24 in grep (0x42ffa4))
+WARNING  | 2024-11-06 12:29:21,994 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7037_64>
+WARNING  | 2024-11-06 12:29:22,003 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x42fe63 (__libc_sigaction+0xc3 in grep (0x42fe63))
+WARNING  | 2024-11-06 12:29:22,428 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:22,513 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x42fe6f (__libc_sigaction+0xcf in grep (0x42fe6f))
+WARNING  | 2024-11-06 12:29:22,570 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0138 with 8 unconstrained bytes referenced from 0x42ff1c (__libc_sigaction+0x17c in grep (0x42ff1c))
+WARNING  | 2024-11-06 12:29:22,642 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0138 with 8 unconstrained bytes referenced from 0x42ff1c (__libc_sigaction+0x17c in grep (0x42ff1c))
+WARNING  | 2024-11-06 12:29:22,699 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0148 with 8 unconstrained bytes referenced from 0x42ff39 (__libc_sigaction+0x199 in grep (0x42ff39))
+WARNING  | 2024-11-06 12:29:22,961 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0148_7043_64>
+WARNING  | 2024-11-06 12:29:22,968 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0138 with 8 unconstrained bytes referenced from 0x42ff1c (__libc_sigaction+0x17c in grep (0x42ff1c))
+WARNING  | 2024-11-06 12:29:23,022 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00a0 with 8 unconstrained bytes referenced from 0x42fe83 (__libc_sigaction+0xe3 in grep (0x42fe83))
+WARNING  | 2024-11-06 12:29:23,023 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00b8 with 16 unconstrained bytes referenced from 0x42fe8b (__libc_sigaction+0xeb in grep (0x42fe8b))
+WARNING  | 2024-11-06 12:29:23,024 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00c8 with 16 unconstrained bytes referenced from 0x42fe94 (__libc_sigaction+0xf4 in grep (0x42fe94))
+WARNING  | 2024-11-06 12:29:23,025 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00d8 with 16 unconstrained bytes referenced from 0x42fe9d (__libc_sigaction+0xfd in grep (0x42fe9d))
+WARNING  | 2024-11-06 12:29:23,026 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00e8 with 16 unconstrained bytes referenced from 0x42fea6 (__libc_sigaction+0x106 in grep (0x42fea6))
+WARNING  | 2024-11-06 12:29:23,101 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00a8 with 8 unconstrained bytes referenced from 0x42feb2 (__libc_sigaction+0x112 in grep (0x42feb2))
+WARNING  | 2024-11-06 12:29:23,128 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00f8 with 16 unconstrained bytes referenced from 0x42febf (__libc_sigaction+0x11f in grep (0x42febf))
+WARNING  | 2024-11-06 12:29:23,129 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0108 with 16 unconstrained bytes referenced from 0x42fec8 (__libc_sigaction+0x128 in grep (0x42fec8))
+WARNING  | 2024-11-06 12:29:23,158 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0118 with 16 unconstrained bytes referenced from 0x42fed6 (__libc_sigaction+0x136 in grep (0x42fed6))
+WARNING  | 2024-11-06 12:29:23,159 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0128 with 16 unconstrained bytes referenced from 0x42fedf (__libc_sigaction+0x13f in grep (0x42fedf))
+WARNING  | 2024-11-06 12:29:23,188 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff00b0 with 8 unconstrained bytes referenced from 0x42feef (__libc_sigaction+0x14f in grep (0x42feef))
+WARNING  | 2024-11-06 12:29:23,375 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0138 with 8 unconstrained bytes referenced from 0x42ff1c (__libc_sigaction+0x17c in grep (0x42ff1c))
+WARNING  | 2024-11-06 12:29:23,435 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0148 with 8 unconstrained bytes referenced from 0x42ff39 (__libc_sigaction+0x199 in grep (0x42ff39))
+WARNING  | 2024-11-06 12:29:23,684 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0148_7057_64>
+WARNING  | 2024-11-06 12:29:23,696 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0148 with 8 unconstrained bytes referenced from 0x42ff39 (__libc_sigaction+0x199 in grep (0x42ff39))
+WARNING  | 2024-11-06 12:29:23,950 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0148_7058_64>
+WARNING  | 2024-11-06 12:29:23,957 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0148 with 8 unconstrained bytes referenced from 0x42ff39 (__libc_sigaction+0x199 in grep (0x42ff39))
+WARNING  | 2024-11-06 12:29:24,210 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0148_7059_64>
+WARNING  | 2024-11-06 12:29:24,222 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:24,223 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:24,238 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:24,239 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:24,246 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:24,248 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:24,249 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:24,250 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:24,261 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:24,263 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:24,267 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:24,269 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:24,275 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:24,276 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:24,277 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:24,278 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:24,281 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:24,293 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:24,294 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:24,295 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:24,296 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:24,309 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:24,310 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:24,312 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:24,313 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:25,299 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:25,311 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:25,320 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:25,324 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:27,076 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:29:27,306 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:27,390 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:29:27,636 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7095_64>
+WARNING  | 2024-11-06 12:29:27,643 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:29:27,887 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7096_64>
+WARNING  | 2024-11-06 12:29:27,894 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49342b (brk+0xb in grep (0x49342b))
+WARNING  | 2024-11-06 12:29:28,118 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:28,152 | angr.storage.memory_mixins.default_filler_mixin | Filling register rdi with 8 unconstrained bytes referenced from 0x49342b (brk+0xb in grep (0x49342b))
+WARNING  | 2024-11-06 12:29:28,206 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493453 (brk+0x33 in grep (0x493453))
+WARNING  | 2024-11-06 12:29:28,448 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7100_64>
+WARNING  | 2024-11-06 12:29:28,452 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493439 (brk+0x19 in grep (0x493439))
+WARNING  | 2024-11-06 12:29:28,696 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7101_64>
+WARNING  | 2024-11-06 12:29:28,703 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4924c6 (openat+0x46 in grep (0x4924c6))
+WARNING  | 2024-11-06 12:29:28,931 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:29,015 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0038 with 8 unconstrained bytes referenced from 0x4924d2 (openat+0x52 in grep (0x4924d2))
+WARNING  | 2024-11-06 12:29:29,075 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0078 with 8 unconstrained bytes referenced from 0x4924ea (openat+0x6a in grep (0x4924ea))
+WARNING  | 2024-11-06 12:29:29,322 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0078_7105_64>
+WARNING  | 2024-11-06 12:29:29,329 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0038 with 8 unconstrained bytes referenced from 0x4924d2 (openat+0x52 in grep (0x4924d2))
+WARNING  | 2024-11-06 12:29:29,386 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0078 with 8 unconstrained bytes referenced from 0x4924ea (openat+0x6a in grep (0x4924ea))
+WARNING  | 2024-11-06 12:29:29,630 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0078_7107_64>
+WARNING  | 2024-11-06 12:29:29,637 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:29,638 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:29,649 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:29,651 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:29,652 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:29,653 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:29,658 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:29,659 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:29,667 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbp with 8 unconstrained bytes referenced from 0x4966e4 (__fortify_fail+0x4 in grep (0x4966e4))
+WARNING  | 2024-11-06 12:29:29,669 | angr.storage.memory_mixins.default_filler_mixin | Filling register rbx with 8 unconstrained bytes referenced from 0x4966ec (__fortify_fail+0xc in grep (0x4966ec))
+WARNING  | 2024-11-06 12:29:29,677 | angr.storage.memory_mixins.default_filler_mixin | Filling register r15 with 8 unconstrained bytes referenced from 0x43b78b (__libc_message+0xb in grep (0x43b78b))
+WARNING  | 2024-11-06 12:29:29,678 | angr.storage.memory_mixins.default_filler_mixin | Filling register r14 with 8 unconstrained bytes referenced from 0x43b790 (__libc_message+0x10 in grep (0x43b790))
+WARNING  | 2024-11-06 12:29:29,680 | angr.storage.memory_mixins.default_filler_mixin | Filling register r13 with 8 unconstrained bytes referenced from 0x43b795 (__libc_message+0x15 in grep (0x43b795))
+WARNING  | 2024-11-06 12:29:29,681 | angr.storage.memory_mixins.default_filler_mixin | Filling register r12 with 8 unconstrained bytes referenced from 0x43b797 (__libc_message+0x17 in grep (0x43b797))
+WARNING  | 2024-11-06 12:29:29,684 | angr.storage.memory_mixins.default_filler_mixin | Filling register r8 with 8 unconstrained bytes referenced from 0x43b7ac (__libc_message+0x2c in grep (0x43b7ac))
+WARNING  | 2024-11-06 12:29:29,685 | angr.storage.memory_mixins.default_filler_mixin | Filling register r9 with 8 unconstrained bytes referenced from 0x43b7b0 (__libc_message+0x30 in grep (0x43b7b0))
+WARNING  | 2024-11-06 12:29:30,185 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:30,199 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7fffffffffefec8 with 8 unconstrained bytes referenced from 0x43ba53 (__libc_message+0x2d3 in grep (0x43ba53))
+WARNING  | 2024-11-06 12:29:31,037 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:29:31,271 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:31,358 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:29:31,612 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7130_64>
+WARNING  | 2024-11-06 12:29:31,618 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:29:31,861 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7131_64>
+WARNING  | 2024-11-06 12:29:31,867 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4925c2 (read+0x12 in grep (0x4925c2))
+WARNING  | 2024-11-06 12:29:32,097 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:32,178 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4925ca (read+0x1a in grep (0x4925ca))
+WARNING  | 2024-11-06 12:29:32,428 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7134_64>
+WARNING  | 2024-11-06 12:29:32,435 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492633 (read+0x83 in grep (0x492633))
+WARNING  | 2024-11-06 12:29:32,680 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7135_64>
+WARNING  | 2024-11-06 12:29:32,687 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49342b (brk+0xb in grep (0x49342b))
+WARNING  | 2024-11-06 12:29:32,917 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:32,949 | angr.storage.memory_mixins.default_filler_mixin | Filling register rdi with 8 unconstrained bytes referenced from 0x49342b (brk+0xb in grep (0x49342b))
+WARNING  | 2024-11-06 12:29:33,001 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493453 (brk+0x33 in grep (0x493453))
+WARNING  | 2024-11-06 12:29:33,245 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7139_64>
+WARNING  | 2024-11-06 12:29:33,249 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493439 (brk+0x19 in grep (0x493439))
+WARNING  | 2024-11-06 12:29:33,494 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7140_64>
+WARNING  | 2024-11-06 12:29:33,500 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4922ee (__GI___fstatat+0xe in grep (0x4922ee))
+WARNING  | 2024-11-06 12:29:33,728 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:33,814 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4922f7 (__GI___fstatat+0x17 in grep (0x4922f7))
+WARNING  | 2024-11-06 12:29:34,053 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7143_64>
+WARNING  | 2024-11-06 12:29:34,060 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492311 (__GI___fstatat+0x31 in grep (0x492311))
+WARNING  | 2024-11-06 12:29:34,306 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7144_64>
+WARNING  | 2024-11-06 12:29:34,321 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x492667 (__libc_write+0x17 in grep (0x492667))
+WARNING  | 2024-11-06 12:29:34,549 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:34,633 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49266f (__libc_write+0x1f in grep (0x49266f))
+WARNING  | 2024-11-06 12:29:34,878 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7147_64>
+WARNING  | 2024-11-06 12:29:34,885 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4926d3 (__libc_write+0x83 in grep (0x4926d3))
+WARNING  | 2024-11-06 12:29:35,130 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7148_64>
+WARNING  | 2024-11-06 12:29:35,136 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x4925c2 (read+0x12 in grep (0x4925c2))
+WARNING  | 2024-11-06 12:29:35,360 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:35,440 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4925ca (read+0x1a in grep (0x4925ca))
+WARNING  | 2024-11-06 12:29:35,686 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7151_64>
+WARNING  | 2024-11-06 12:29:35,693 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492633 (read+0x83 in grep (0x492633))
+WARNING  | 2024-11-06 12:29:35,936 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7152_64>
+WARNING  | 2024-11-06 12:29:35,943 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x492837 (close+0x17 in grep (0x492837))
+WARNING  | 2024-11-06 12:29:36,172 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:36,254 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x49283f (close+0x1f in grep (0x49283f))
+WARNING  | 2024-11-06 12:29:36,498 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7155_64>
+WARNING  | 2024-11-06 12:29:36,505 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x492891 (close+0x71 in grep (0x492891))
+WARNING  | 2024-11-06 12:29:36,754 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7156_64>
+WARNING  | 2024-11-06 12:29:36,765 | angr.storage.memory_mixins.default_filler_mixin | Filling register rax with 8 unconstrained bytes referenced from 0x49308b (__close_nocancel+0xb in grep (0x49308b))
+WARNING  | 2024-11-06 12:29:37,013 | angr.engines.successors | Too many possible syscalls. Concretizing to 1.
+WARNING  | 2024-11-06 12:29:37,093 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x493093 (__close_nocancel+0x13 in grep (0x493093))
+WARNING  | 2024-11-06 12:29:37,335 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7159_64>
+WARNING  | 2024-11-06 12:29:37,342 | angr.storage.memory_mixins.default_filler_mixin | Filling memory at 0x7ffffffffff0000 with 8 unconstrained bytes referenced from 0x4930a9 (__close_nocancel+0x29 in grep (0x4930a9))
+WARNING  | 2024-11-06 12:29:37,587 | angr.engines.successors | Exit state has over 256 possible solutions. Likely unconstrained; skipping. <BV64 mem_7ffffffffff0000_7160_64>
+Finding path from 0x40703a (main)  to 0x49323a (openat)
+	--> No path found from 0x40703a to 0x49323a
+Finding path from 0x49323a (openat)  to 0x4922ec (newfstatat)
+	--> No path found from 0x49323a to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x493595 (mmap)
+	--> No path found from 0x4922ec to 0x493595
+Finding path from 0x493595 (mmap)  to 0x493089 (close)
+	--> No path found from 0x493595 to 0x493089
+Finding path from 0x493089 (close)  to 0x49323a (openat)
+	--> No path found from 0x493089 to 0x49323a
+Finding path from 0x49323a (openat)  to 0x4922ec (newfstatat)
+	--> No path found from 0x49323a to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x493595 (mmap)
+	--> No path found from 0x4922ec to 0x493595
+Finding path from 0x493595 (mmap)  to 0x493089 (close)
+	--> No path found from 0x493595 to 0x493089
+Finding path from 0x493089 (close)  to 0x4b64ce (futex)
+	--> No path found from 0x493089 to 0x4b64ce
+Finding path from 0x4b64ce (futex)  to 0x49323a (openat)
+	--> No path found from 0x4b64ce to 0x49323a
+Finding path from 0x49323a (openat)  to 0x4922ec (newfstatat)
+	--> No path found from 0x49323a to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x4932a6 (read)
+	--> No path found from 0x4922ec to 0x4932a6
+Finding path from 0x4932a6 (read)  to 0x4932a6 (read)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x4932a6 (read)  to 0x493089 (close)
+	--> No path found from 0x4932a6 to 0x493089
+Finding path from 0x493089 (close)  to 0x49323a (openat)
+	--> No path found from 0x493089 to 0x49323a
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x49323a (openat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x49323a (openat)  to 0x4923a9 (openat)
+	--> No path found from 0x49323a to 0x4923a9
+Finding path from 0x4923a9 (openat)  to 0x493595 (mmap)
+	--> 1 paths found
+	--> Trace ['0x4923a9', '0x8002ce', '0x4923ab', '0x4923b7', '0x492473', '0x4966c0', '0x4966e0', '0x43b780', '0x43b7e7', '0x43b815', '0x43b800', '0x4010e0', '0x467c10', '0x467c37', '0x467c57', '0x43b80e', '0x43b815', '0x43b81a', '0x43b820', '0x43b826', '0x43b84f', '0x43b87a', '0x43b7f0', '0x43b815', '0x43b81a', '0x43b820', '0x43b888', '0x43b88e', '0x43b89a', '0x4011e0', '0x468780', '0x4687aa', '0x4687be', '0x468802', '0x43b8bc', '0x43b832', '0x43b84f', '0x43b87a', '0x43b7f0', '0x43b815', '0x43b800', '0x4010e0', '0x467c10', '0x467c37', '0x467c60', '0x467d70', '0x43b80e', '0x43b820', '0x43b826', '0x43b84f', '0x43b8cb', '0x43b903', '0x43ba53', '0x43b914', '0x43b92e', '0x43b940', '0x43b961', '0x800195', '0x43b97d', '0x43b983', '0x43b98c', '0x493580', '0x493590']
+Finding path from 0x493595 (mmap)  to 0x4926f9 (lseek)
+	--> No path found from 0x493595 to 0x4926f9
+Finding path from 0x4926f9 (lseek)  to 0x4925c0 (read)
+	--> No path found from 0x4926f9 to 0x4925c0
+Finding path from 0x4925c0 (read)  to 0x4925c0 (read)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x4925c0 (read)  to 0x492835 (close)
+	--> No path found from 0x4925c0 to 0x492835
+Finding path from 0x492835 (close)  to 0x4935e9 (munmap)
+	--> No path found from 0x492835 to 0x4935e9
+Finding path from 0x4935e9 (munmap)  to 0x42ff89 (sigaltstack)
+	--> No path found from 0x4935e9 to 0x42ff89
+Finding path from 0x42ff89 (sigaltstack)  to 0x42fe61 (rt_sigaction)
+	--> No path found from 0x42ff89 to 0x42fe61
+Finding path from 0x42fe61 (rt_sigaction)  to 0x42fe61 (rt_sigaction)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x42fe61 (rt_sigaction)  to 0x4922ec (newfstatat)
+	--> No path found from 0x42fe61 to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x4922ec (newfstatat)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x4922ec (newfstatat)  to 0x493429 (brk)
+	--> No path found from 0x4922ec to 0x493429
+Finding path from 0x493429 (brk)  to 0x4924c4 (openat)
+	--> No path found from 0x493429 to 0x4924c4
+Finding path from 0x4924c4 (openat)  to 0x4922ec (newfstatat)
+	--> No path found from 0x4924c4 to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x4925c0 (read)
+	--> No path found from 0x4922ec to 0x4925c0
+Finding path from 0x4925c0 (read)  to 0x493429 (brk)
+	--> No path found from 0x4925c0 to 0x493429
+Finding path from 0x493429 (brk)  to 0x4922ec (newfstatat)
+	--> No path found from 0x493429 to 0x4922ec
+Finding path from 0x4922ec (newfstatat)  to 0x492665 (write)
+	--> No path found from 0x4922ec to 0x492665
+Finding path from 0x492665 (write)  to 0x492665 (write)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x492665 (write)  to 0x492665 (write)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x492665 (write)  to 0x492665 (write)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x492665 (write)  to 0x4925c0 (read)
+	--> No path found from 0x492665 to 0x4925c0
+Finding path from 0x4925c0 (read)  to 0x492835 (close)
+	--> No path found from 0x4925c0 to 0x492835
+Finding path from 0x492835 (close)  to 0x493089 (close)
+	--> No path found from 0x492835 to 0x493089
+Finding path from 0x493089 (close)  to 0x493089 (close)
+	--> 1 paths found
+	--> Trace []
+Finding path from 0x493089 (close)  to 0x47a15f (exit_group)
+	--> No path found from 0x493089 to 0x47a15f
+Reconstructed Execution Path:
+0x4923a9
+0x8002ce
+0x4923ab
+0x4923b7
+0x492473
+0x4966c0
+0x4966e0
+0x43b780
+0x43b7e7
+0x43b815
+0x43b800
+0x4010e0
+0x467c10
+0x467c37
+0x467c57
+0x43b80e
+0x43b815
+0x43b81a
+0x43b820
+0x43b826
+0x43b84f
+0x43b87a
+0x43b7f0
+0x43b815
+0x43b81a
+0x43b820
+0x43b888
+0x43b88e
+0x43b89a
+0x4011e0
+0x468780
+0x4687aa
+0x4687be
+0x468802
+0x43b8bc
+0x43b832
+0x43b84f
+0x43b87a
+0x43b7f0
+0x43b815
+0x43b800
+0x4010e0
+0x467c10
+0x467c37
+0x467c60
+0x467d70
+0x43b80e
+0x43b820
+0x43b826
+0x43b84f
+0x43b8cb
+0x43b903
+0x43ba53
+0x43b914
+0x43b92e
+0x43b940
+0x43b961
+0x800195
+0x43b97d
+0x43b983
+0x43b98c
+0x493580
+0x493590
