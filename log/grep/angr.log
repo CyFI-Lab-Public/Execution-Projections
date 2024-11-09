@@ -1,0 +1,208 @@
+0x40b5eb, get_nondigit_option
+0x40a9c0, setmatcher
+0x40b5eb, get_nondigit_option
+0x40b7dd, update_patterns
+0x41f757, hash_pattern
+0x40bc20, initialize_unibyte_mask
+0x40bdea, GEAcompile
+0x405646, possible_backrefs_in_pattern
+0x40579a, regex_compile
+0x405a47, kwsmusts
+0x404fc6, kwsinit
+0x40f8ab, kwsalloc
+0x40510d, kwsincr
+0x40511c, kwsprep
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40dd1e, kwsalloc
+0x40dd65, kwsincr
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40deb0, treedelta
+0x40dee0, treefails
+0x40df51, hasevery
+0x40e154, treenext
+0x40d9d7, treenext
+0x40d9ee, treenext
+0x40e75e, tr
+0x405ae9, regex_compile
+0x40be34, EGexecute
+0x405ca7, kwsexec
+0x40f632, bmexec
+0x40f126, bmexec_trans
+0x40c023, grep_command_line_arg
+0x40987e, grepfile
+0x409093, skip_devices
+0x4090f3, suppressible_error
+0x406d19, input_filename
+0x2aaaa2af1490, clean_up_stdout
+╔══════════════════════════╗
+║ ===== 94 callsites ===== ║
+╚══════════════════════════╝
+CFGFast: DiGraph with 8064 nodes and 14529 edges, 9.53s
+╔════════════════════════╗
+║ MAIN address: 0x40a70e ║
+╚════════════════════════╝
+Callsite 0x40b5eb exists in CFG.
+Callsite 0x40a9c0 exists in CFG.
+Callsite 0x40b5eb exists in CFG.
+Callsite 0x40b7dd exists in CFG.
+Callsite 0x41f757 exists in CFG.
+Callsite 0x40bc20 exists in CFG.
+Callsite 0x40bdea exists in CFG.
+Callsite 0x405646 exists in CFG.
+Callsite 0x40579a exists in CFG.
+Callsite 0x405a47 exists in CFG.
+Callsite 0x404fc6 exists in CFG.
+Callsite 0x40f8ab exists in CFG.
+Callsite 0x40510d exists in CFG.
+Callsite 0x40511c exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40dd1e exists in CFG.
+Callsite 0x40dd65 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40e154 exists in CFG.
+Callsite 0x40d9d7 exists in CFG.
+Callsite 0x40d9ee exists in CFG.
+Callsite 0x40e75e exists in CFG.
+Callsite 0x405ae9 exists in CFG.
+Callsite 0x40be34 exists in CFG.
+Callsite 0x405ca7 exists in CFG.
+Callsite 0x40f632 exists in CFG.
+Callsite 0x40f126 exists in CFG.
+Callsite 0x40c023 exists in CFG.
+Callsite 0x40987e exists in CFG.
+Callsite 0x409093 exists in CFG.
+Callsite 0x4090f3 exists in CFG.
+Callsite 0x406d19 exists in CFG.
+Callsite 0x2aaaa2af1490 not found in CFG.
+> [0;32m/home/dinko/exec-proj/src/angr_script.py[0m(98)[0;36m<module>[0;34m()[0m
+[0;32m     97 [0;31m[0;34m[0m[0m
+[0m[0;32m---> 98 [0;31m[0;32mfor[0m [0mentry[0m [0;32min[0m [0mgdb_logs[0m[0;34m[[0m[0;36m1[0m[0;34m:[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m     99 [0;31m    [0mtarget_addr[0m [0;34m=[0m [0mint[0m[0;34m([0m[0mentry[0m[0;34m[[0m[0;34m'Addr'[0m[0;34m][0m[0;34m,[0m [0;36m16[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+ipdb> Finding path from 0x40a70e (main)  to 0x2aaaa2af1490 (get_nondigit_option)
+
+Program interrupted. (Use 'cont' to resume).
+> [0;32m/home/dinko/exec-proj/venv-execproj/lib/python3.10/site-packages/z3/z3core.py[0m(3290)[0;36mZ3_simplify[0;34m()[0m
+[0;32m   3289 [0;31m  [0mr[0m [0;34m=[0m [0m_elems[0m[0;34m.[0m[0mf[0m[0;34m([0m[0ma0[0m[0;34m,[0m [0ma1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m-> 3290 [0;31m  [0m_elems[0m[0;34m.[0m[0mCheck[0m[0;34m([0m[0ma0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m   3291 [0;31m  [0;32mreturn[0m [0mr[0m[0;34m[0m[0;34m[0m[0m
+[0m
+ipdb> Error finding path to 0x2aaaa2af1490: 
+Finding path from 0x40b5eb (get_nondigit_option)  to 0x2aaaa2af1490 (setmatcher)
