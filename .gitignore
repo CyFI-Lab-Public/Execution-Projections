@@ -1,5 +1,19 @@
+# General
+.env
+*tar.gz
+*.bin
+__pycache__/
+*.pyc
+temp/*
+*.out
+
+# Virtual Environment
+venv-execproj/
+
+# Source Programs
 libzip/
 grep-3.11/
-venv-execproj/
+
+# Misc
 perf.data
 perf.data.old

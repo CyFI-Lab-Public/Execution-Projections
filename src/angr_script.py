@@ -6,7 +6,8 @@ import ipdb
 import logging
 # logging.getLogger('angr').setLevel(logging.DEBUG)
 
-from parser_perf_script import parse_perf_script_output
+from log_parsing.parser_perf import parse_perf_script_output
+from log_parsing.parser_gdb import parse_gdb_log
 from pretty_print import print_msg_box
 
 

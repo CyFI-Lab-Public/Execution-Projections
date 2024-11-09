@@ -1,0 +1,1027 @@
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ../grep/grep-3.11/src/grep...
+Breakpoint 1 at 0xa72b: file grep.c, line 2463.
+Breakpoint 2 at 0xa280: file grep.c, line 2341.
+void fgrep_to_grep_pattern(char **, idx_t *);
+Breakpoint 3 at 0x6cd1: file grep.c, line 655.
+const char *input_filename(void);
+Breakpoint 4 at 0xa72b: file grep.c, line 2463.
+int main(int, char **);
+Breakpoint 5 at 0x685b: file grep.c, line 219.
+const char *pattern_file_name(idx_t, idx_t *);
+Breakpoint 6 at 0x9895: file grep.c, line 1969.
+void usage(int);
+Breakpoint 7 at 0x7246: file grep.c, line 899.
+static intmax_t add_count(intmax_t, idx_t);
+Breakpoint 8 at 0x72de: file grep.c, line 910.
+static _Bool all_zeros(const char *, idx_t);
+Breakpoint 9 at 0x6938: file grep.c, line 249.
+static void asan_poison(const volatile void *, idx_t);
+Breakpoint 10 at 0x6eda: file grep.c, line 760.
+static _Bool buf_has_encoding_errors(char *, idx_t);
+Breakpoint 11 at 0x6fae: file grep.c, line 785.
+static _Bool buf_has_nulls(char *, idx_t);
+Breakpoint 12 at 0x6d62: file grep.c, line 674.
+static void clean_up_stdout(void);
+Breakpoint 13 at 0x6925: file grep.c, line 248.
+static void clear_asan_poison(void);
+Breakpoint 14 at 0x69f6: file grep.c, line 407.
+static void color_cap_mt_fct(void);
+Breakpoint 15 at 0x6a24: file grep.c, line 420.
+static void color_cap_ne_fct(void);
+Breakpoint 16 at 0x6a0f: file grep.c, line 414.
+static void color_cap_rv_fct(void);
+Breakpoint 17 at 0x6625: file grep.c, line 147.
+static _Bool compare_patterns(const void *, const void *);
+Breakpoint 18 at 0x9ecc: file grep.c, line 2237.
+static _Bool contains_encoding_error(const char *, idx_t);
+Breakpoint 19 at 0x70d1: file grep.c, line 828.
+static void context_length_arg(const char *, intmax_t *);
+Breakpoint 20 at 0x9128: file grep.c, line 1775.
+static _Bool drain_input(int, const struct stat *);
+Breakpoint 21 at 0x7160: file grep.c, line 846.
+static int exclude_options(_Bool);
+Breakpoint 22 at 0x6be5: file grep.c, line 478.
+static void fflush_errno(void);
+Breakpoint 23 at 0xa1eb: file grep.c, line 2323.
+static _Bool fgrep_icase_available(const char *, idx_t);
+Breakpoint 24 at 0xa095: file grep.c, line 2286.
+static ptrdiff_t fgrep_icase_charlen(const char *, idx_t, mbstate_t *);
+Breakpoint 25 at 0x6feb: file grep.c, line 796.
+static _Bool file_must_have_nulls(idx_t, int, const struct stat *);
+Breakpoint 26 at 0x746d: file grep.c, line 948.
+static _Bool fillbuf(idx_t, const struct stat *);
+Breakpoint 27 at 0x921c: file grep.c, line 1804.
+static void finalize_input(int, const struct stat *, _Bool);
+Breakpoint 28 at 0x6a80: file grep.c, line 454.
+static void fputs_errno(const char *);
+Breakpoint 29 at 0x6ba9: file grep.c, line 471.
+static void fwrite_errno(const void *, idx_t, idx_t);
+Breakpoint 30 at 0x9c03: file grep.c, line 2122.
+static int get_nondigit_option(int, char * const *, intmax_t *);
+Breakpoint 31 at 0x866b: file grep.c, line 1509.
+static intmax_t grep(int, const struct stat *, _Bool *);
+Breakpoint 32 at 0x980a: file grep.c, line 1951.
+static _Bool grep_command_line_arg(const char *);
+Breakpoint 33 at 0x84a6: file grep.c, line 1461.
+static intmax_t grepbuf(char *, const char *);
+Breakpoint 34 at 0x9317: file grep.c, line 1819.
+static _Bool grepdesc(int, _Bool);
+Breakpoint 35 at 0x8cb9: file grep.c, line 1657.
+static _Bool grepdirent(FTS *, FTSENT *, _Bool);
+Breakpoint 36 at 0x907b: file grep.c, line 1757.
+static _Bool grepfile(int, const char *, _Bool, _Bool);
+Breakpoint 37 at 0x658d: file grep.c, line 136.
+static size_t hash_pattern(const void *, size_t);
+Breakpoint 38 at 0x6d7c: file grep.c, line 717.
+static void initialize_unibyte_mask(void);
+Breakpoint 39 at 0x6c13: file grep.c, line 614.
+static _Bool is_device_mode(mode_t);
+Breakpoint 40 at 0x78ee: file grep.c, line 1110.
+static void nlscan(const char *);
+Breakpoint 41 at 0x9045: file grep.c, line 1742.
+static _Bool open_symlink_nofollow_error(int);
+Breakpoint 42 at 0x9d28: file grep.c, line 2187.
+static void parse_grep_colors(void);
+Breakpoint 43 at 0x697f: file grep.c, line 380.
+static void pr_sgr_end(const char *);
+Breakpoint 44 at 0x69d5: file grep.c, line 392.
+static void pr_sgr_end_if(const char *);
+Breakpoint 45 at 0x694b: file grep.c, line 374.
+static void pr_sgr_start(const char *);
+Breakpoint 46 at 0x69ac: file grep.c, line 386.
+static void pr_sgr_start_if(const char *);
+Breakpoint 47 at 0x797b: file grep.c, line 1126.
+static void print_filename(void);
+Breakpoint 48 at 0x7a52: file grep.c, line 1161.
+static _Bool print_line_head(char *, idx_t, const char *, char);
+Breakpoint 49 at 0x7bfe: file grep.c, line 1210.
+static char *print_line_middle(char *, char *, const char *, const char *);
+Breakpoint 50 at 0x7df0: file grep.c, line 1281.
+static char *print_line_tail(char *, const char *, const char *);
+Breakpoint 51 at 0x79fa: file grep.c, line 1144.
+static void print_offset(intmax_t, const char *);
+Breakpoint 52 at 0x79ba: file grep.c, line 1135.
+static void print_sep(char);
+Breakpoint 53 at 0x6b07: file grep.c, line 460.
+static void printf_errno(const char *, ...);
+Breakpoint 54 at 0x7ed7: file grep.c, line 1303.
+static void prline(char *, char *, char);
+Breakpoint 55 at 0x8102: file grep.c, line 1355.
+static void prpending(const char *);
+Breakpoint 56 at 0x819e: file grep.c, line 1369.
+static void prtext(char *, char *);
+Breakpoint 57 at 0x6a52: file grep.c, line 447.
+static void putchar_errno(int);
+Breakpoint 58 at 0x732a: file grep.c, line 921.
+static _Bool reset(int, const struct stat *);
+Breakpoint 59 at 0x9ac8: file grep.c, line 2100.
+static int setmatcher(const char *, int);
+Breakpoint 60 at 0x9f5d: file grep.c, line 2256.
+static void setup_ok_fold(void);
+Breakpoint 61 at 0x6c6d: file grep.c, line 620.
+static _Bool skip_devices(_Bool);
+Breakpoint 62 at 0x6e1b: file grep.c, line 745.
+static const char *skip_easy_bytes(const char *);
+Breakpoint 63 at 0x7190: file grep.c, line 856.
+static _Bool skipped_file(const char *, _Bool, _Bool);
+Breakpoint 64 at 0x6d0b: file grep.c, line 664.
+static void suppressible_error(int);
+Breakpoint 65 at 0xa427: file grep.c, line 2390.
+static int try_fgrep_pattern(int, char *, idx_t *);
+Breakpoint 66 at 0x66b4: file grep.c, line 167.
+static idx_t update_patterns(char *, idx_t, idx_t, const char *);
+Breakpoint 67 at 0x6cb3: file grep.c, line 629.
+static _Bool usable_st_size(const struct stat *);
+Breakpoint 68 at 0x843e: file grep.c, line 1442.
+static void zap_nuls(char *, char *, char);
+Breakpoint 69 at 0x5b72: file dfasearch.c, line 356.
+ptrdiff_t EGexecute(void *, const char *, idx_t, idx_t *, const char *);
+Breakpoint 70 at 0x54b2: file dfasearch.c, line 199.
+void *GEAcompile(char *, idx_t, reg_syntax_t, _Bool);
+Breakpoint 71 at 0x4f28: file dfasearch.c, line 53.
+void dfaerror(const char *);
+Breakpoint 72 at 0x4f53: file dfasearch.c, line 59.
+void dfawarn(const char *);
+Breakpoint 73 at 0x4fa2: file dfasearch.c, line 69.
+static void kwsmusts(struct dfa_comp *);
+Breakpoint 74 at 0x514b: file dfasearch.c, line 113.
+static _Bool possible_backrefs_in_pattern(const char *, idx_t, _Bool);
+Breakpoint 75 at 0x5249: file dfasearch.c, line 146.
+static _Bool regex_compile(struct dfa_comp *, const char *, idx_t, idx_t, idx_t, reg_syntax_t, _Bool);
+Breakpoint 76 at 0xc0c4: file kwsearch.c, line 51.
+void *Fcompile(char *, idx_t, reg_syntax_t, _Bool);
+Breakpoint 77 at 0xc2d6: file kwsearch.c, line 110.
+ptrdiff_t Fexecute(void *, const char *, idx_t, idx_t *, const char *);
+Breakpoint 78 at 0xc913: file kwset.c, line 133.
+kwset_t kwsalloc(const char *);
+Breakpoint 79 at 0xf60f: file kwset.c, line 903.
+ptrdiff_t kwsexec(kwset_t, const char *, idx_t, struct kwsmatch *, _Bool);
+Breakpoint 80 at 0xf649: file kwset.c, line 910.
+void kwsfree(kwset_t);
+Breakpoint 81 at 0xcb57: file kwset.c, line 160.
+void kwsincr(kwset_t, const char *, idx_t);
+Breakpoint 82 at 0xda33: file kwset.c, line 405.
+void kwsprep(kwset_t);
+Breakpoint 83 at 0xd6a7: file kwset.c, line 306.
+idx_t kwswords(kwset_t);
+Breakpoint 84 at 0xc8be: file kwset.c, line 46.
+static unsigned char U(char);
+Breakpoint 85 at 0xf596: file kwset.c, line 884.
+static ptrdiff_t acexec(kwset_t, const char *, idx_t, struct kwsmatch *, _Bool);
+Breakpoint 86 at 0xf17a: file kwset.c, line 764.
+static ptrdiff_t acexec_trans(kwset_t, const char *, idx_t, struct kwsmatch *, _Bool);
+Breakpoint 87 at 0xe81c: file kwset.c, line 580.
+static _Bool bm_delta2_search(const char **, const char *, const char *, idx_t, const char *, char, char, const unsigned char *, kwset_t);
+Breakpoint 88 at 0xf0eb: file kwset.c, line 742.
+static ptrdiff_t bmexec(kwset_t, const char *, idx_t, struct kwsmatch *, _Bool);
+Breakpoint 89 at 0xeb5d: file kwset.c, line 652.
+static ptrdiff_t bmexec_trans(kwset_t, const char *, idx_t);
+Breakpoint 90 at 0xd6c5: file kwset.c, line 314.
+static void enqueue(struct tree *, struct trie **);
+Breakpoint 91 at 0xd8ff: file kwset.c, line 376.
+static _Bool hasevery(const struct tree *, const struct tree *);
+Breakpoint 92 at 0xea42: file kwset.c, line 626.
+static const char *memchr_kwset(const char *, idx_t, kwset_t);
+Breakpoint 93 at 0xc8dc: file kwset.c, line 119.
+static char tr(const char *, char);
+Breakpoint 94 at 0xd874: file kwset.c, line 364.
+static void treedelta(const struct tree *, idx_t, unsigned char *);
+Breakpoint 95 at 0xd739: file kwset.c, line 330.
+static void treefails(const struct tree *, const struct trie *, struct trie *, _Bool);
+Breakpoint 96 at 0xd9bf: file kwset.c, line 395.
+static void treenext(const struct tree *, struct trie **);
+Breakpoint 97 at 0xf841: file searchutils.c, line 46.
+kwset_t kwsinit(_Bool);
+Breakpoint 98 at 0xf8ce: file searchutils.c, line 93.
+ptrdiff_t mb_goback(const char **, idx_t *, const char *, const char *);
+Breakpoint 99 at 0xfc5c: file searchutils.c, line 202.
+idx_t wordchar_next(const char *, const char *);
+Breakpoint 100 at 0xfc8e: file searchutils.c, line 210.
+idx_t wordchar_prev(const char *, const char *, const char *);
+Breakpoint 101 at 0xfc2e: file searchutils.c, line 194.
+idx_t wordchars_size(const char *, const char *);
+Breakpoint 102 at 0xf7e4: file searchutils.c, line 39.
+void wordinit(void);
+Breakpoint 103 at 0xf7b3: file searchutils.c, line 33.
+static _Bool wordchar(wint_t);
+Breakpoint 104 at 0xfb03: file searchutils.c, line 164.
+static idx_t wordchars_count(const char *, const char *, _Bool);
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=4, argv=0x7fffffffe118) at grep.c:2463
+2463	{
+Base address: 0x55555555e72b
+
+Breakpoint 30, get_nondigit_option (argc=4, argv=0x7fffffffe118, default_context=0x7fffffffde00) at grep.c:2122
+2122	{
+Function: [unknown], Address: 0x55555555dc03
+#0  get_nondigit_option (argc=4, argv=0x7fffffffe118, default_context=0x7fffffffde00) at grep.c:2122
+#1  0x000055555555f5f0 in main (argc=4, argv=0x7fffffffe118) at grep.c:2511
+
+Breakpoint 59, setmatcher (m=0x55555557d520 "egrep", matcher=-1) at grep.c:2100
+2100	  for (int i = 0; i < sizeof matchers / sizeof *matchers; i++)
+Function: [unknown], Address: 0x55555555dac8
+#0  setmatcher (m=0x55555557d520 "egrep", matcher=-1) at grep.c:2100
+#1  0x000055555555e9c5 in main (argc=4, argv=0x7fffffffe118) at grep.c:2538
+
+Breakpoint 30, get_nondigit_option (argc=4, argv=0x7fffffffe118, default_context=0x7fffffffde00) at grep.c:2122
+2122	{
+Function: [unknown], Address: 0x55555555dc03
+#0  get_nondigit_option (argc=4, argv=0x7fffffffe118, default_context=0x7fffffffde00) at grep.c:2122
+#1  0x000055555555f5f0 in main (argc=4, argv=0x7fffffffe118) at grep.c:2511
+
+Breakpoint 66, update_patterns (keys=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", dupfree_size=0, size=131, filename=0x55555557c0d2 "") at grep.c:167
+167	  char *dst = keys + dupfree_size;
+Function: [unknown], Address: 0x55555555a6b4
+#0  update_patterns (keys=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", dupfree_size=0, size=131, filename=0x55555557c0d2 "") at grep.c:167
+#1  0x000055555555f7e2 in main (argc=4, argv=0x7fffffffe118) at grep.c:2866
+
+Breakpoint 37, hash_pattern (pat=0x1, n_buckets=11) at grep.c:136
+136	  uint_fast64_t h15 = 5381, h32 = 3657500101, h64 = 4123221751654370051;
+Function: [unknown], Address: 0x55555555a58d
+#0  hash_pattern (pat=0x1, n_buckets=11) at grep.c:136
+#1  0x000055555557375c in safe_hasher (table=0x5555555993a0, key=0x1) at hash.c:234
+#2  0x00005555555742a4 in hash_find_entry (table=0x5555555993a0, entry=0x1, bucket_head=0x7fffffffdca8, delete=false) at hash.c:702
+#3  0x0000555555574858 in hash_insert_if_absent (table=0x5555555993a0, entry=0x1, matched_ent=0x0) at hash.c:936
+#4  0x000055555555a75c in update_patterns (keys=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", dupfree_size=0, size=131, filename=0x55555557c0d2 "") at grep.c:180
+
+Breakpoint 38, initialize_unibyte_mask () at grep.c:717
+717	  unsigned char mask = 0;
+Function: [unknown], Address: 0x55555555ad7c
+#0  initialize_unibyte_mask () at grep.c:717
+#1  0x000055555555fc25 in main (argc=4, argv=0x7fffffffe118) at grep.c:2942
+
+Breakpoint 70, GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:199
+199	{
+Function: [unknown], Address: 0x5555555594b2
+#0  GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:199
+#1  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 74, possible_backrefs_in_pattern (keys=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, bs_safe=true) at dfasearch.c:113
+113	  int second_backslash = bs_safe ? '\\' : CHAR_MAX + 1;
+Function: [unknown], Address: 0x55555555914b
+#0  possible_backrefs_in_pattern (keys=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, bs_safe=true) at dfasearch.c:113
+#1  0x000055555555964b in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:241
+#2  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 75, regex_compile (dc=0x5555555995d0, p=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, pcount=0, lineno=0, syntax_bits=2341468, syntax_only=true) at dfasearch.c:146
+146	{
+Function: [unknown], Address: 0x555555559249
+#0  regex_compile (dc=0x5555555995d0, p=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, pcount=0, lineno=0, syntax_bits=2341468, syntax_only=true) at dfasearch.c:146
+#1  0x000055555555979f in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:264
+#2  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 73, kwsmusts (dc=0x5555555995d0) at dfasearch.c:69
+69	  struct dfamust *dm = dfamust (dc->dfa);
+Function: [unknown], Address: 0x555555558fa2
+#0  kwsmusts (dc=0x5555555995d0) at dfasearch.c:69
+#1  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#2  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 97, kwsinit (mb_trans=false) at searchutils.c:46
+46	  char *trans = NULL;
+Function: [unknown], Address: 0x555555563841
+#0  kwsinit (mb_trans=false) at searchutils.c:46
+#1  0x0000555555558fcb in kwsmusts (dc=0x5555555995d0) at dfasearch.c:72
+#2  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#3  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 78, kwsalloc (trans=0x0) at kwset.c:133
+133	  struct kwset *kwset = xmalloc (sizeof *kwset);
+Function: [unknown], Address: 0x555555560913
+#0  kwsalloc (trans=0x0) at kwset.c:133
+#1  0x00005555555638b0 in kwsinit (mb_trans=false) at searchutils.c:58
+#2  0x0000555555558fcb in kwsmusts (dc=0x5555555995d0) at dfasearch.c:72
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 81, kwsincr (kwset=0x55555559fdc0, text=0x5555555a20a3 " - [", len=4) at kwset.c:160
+160	{
+Function: [unknown], Address: 0x555555560b57
+#0  kwsincr (kwset=0x55555559fdc0, text=0x5555555a20a3 " - [", len=4) at kwset.c:160
+#1  0x0000555555559112 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:96
+#2  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#3  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 82, kwsprep (kwset=0x55555559fdc0) at kwset.c:405
+405	{
+Function: [unknown], Address: 0x555555561a33
+#0  kwsprep (kwset=0x55555559fdc0) at kwset.c:405
+#1  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#2  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#3  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x55555559b060, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x55555559b060, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x55555559b060, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x55555559b060, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x55555559b0c0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x55555559b0c0, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x55555559b0c0, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x55555559b0c0, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x55555559b120, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x55555559b120, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x55555559b120, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x55555559b120, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x55555559b180, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x55555559b180, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x55555559b180, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x55555559b180, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561ae0 in kwsprep (kwset=0x55555559fdc0) at kwset.c:420
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 78, kwsalloc (trans=0x0) at kwset.c:133
+133	  struct kwset *kwset = xmalloc (sizeof *kwset);
+Function: [unknown], Address: 0x555555560913
+#0  kwsalloc (trans=0x0) at kwset.c:133
+#1  0x0000555555561d23 in kwsprep (kwset=0x55555559fdc0) at kwset.c:431
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 81, kwsincr (kwset=0x5555555a2100, text=0x55555559b1e0 " - [\377\177", len=4) at kwset.c:160
+160	{
+Function: [unknown], Address: 0x555555560b57
+#0  kwsincr (kwset=0x5555555a2100, text=0x55555559b1e0 " - [\377\177", len=4) at kwset.c:160
+#1  0x0000555555561d6a in kwsprep (kwset=0x55555559fdc0) at kwset.c:433
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x5555555a2b00, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x5555555a2b00, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x5555555a2b00, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x5555555a2b00, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x5555555a2b00, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x5555555a2b00, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+#1  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 94, treedelta (tree=0x0, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+#1  0x0000555555561895 in treedelta (tree=0x5555555a2b00, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:366
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x0, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:364
+#1  0x00005555555618b0 in treedelta (tree=0x5555555a2b00, depth=0, delta=0x55555559fe30 '\004' <repeats 200 times>...) at kwset.c:367
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x5555555a2b00, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x5555555a2b00, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 95, treefails (tree=0x0, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556175f in treefails (tree=0x5555555a2b00, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:333
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x0, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556177b in treefails (tree=0x5555555a2b00, fail=0x0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:334
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x5555555a2b60, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x5555555a2b60, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x5555555a2b60, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x5555555a2b60, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x5555555a2b60, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x5555555a2b60, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+#1  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 94, treedelta (tree=0x0, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+#1  0x0000555555561895 in treedelta (tree=0x5555555a2b60, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:366
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x0, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:364
+#1  0x00005555555618b0 in treedelta (tree=0x5555555a2b60, depth=1, delta=0x55555559fe30 '\004' <repeats 91 times>) at kwset.c:367
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x5555555a2b60, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x5555555a2b60, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556175f in treefails (tree=0x5555555a2b60, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:333
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556177b in treefails (tree=0x5555555a2b60, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:334
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x5555555a2b60) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x5555555a2b60) at kwset.c:376
+#1  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x0000555555561926 in hasevery (a=0x5555555a2b00, b=0x5555555a2b60) at kwset.c:378
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x000055555556194b in hasevery (a=0x5555555a2b00, b=0x5555555a2b60) at kwset.c:380
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x5555555a2bc0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x5555555a2bc0, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x5555555a2bc0, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x5555555a2bc0, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x5555555a2bc0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x5555555a2bc0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+#1  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 94, treedelta (tree=0x0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+#1  0x0000555555561895 in treedelta (tree=0x5555555a2bc0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:366
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:364
+#1  0x00005555555618b0 in treedelta (tree=0x5555555a2bc0, depth=2, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 58 times>) at kwset.c:367
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x5555555a2bc0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x5555555a2bc0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556175f in treefails (tree=0x5555555a2bc0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:333
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556177b in treefails (tree=0x5555555a2bc0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:334
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x5555555a2bc0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x5555555a2bc0) at kwset.c:376
+#1  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x0000555555561926 in hasevery (a=0x5555555a2b00, b=0x5555555a2bc0) at kwset.c:378
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x000055555556194b in hasevery (a=0x5555555a2b00, b=0x5555555a2bc0) at kwset.c:380
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x5555555a2c20, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x5555555a2c20, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616e2 in enqueue (tree=0x5555555a2c20, last=0x7fffffffd230) at kwset.c:316
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x00005555555616f9 in enqueue (tree=0x5555555a2c20, last=0x7fffffffd230) at kwset.c:317
+#2  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x5555555a2c20, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x5555555a2c20, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+#1  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 94, treedelta (tree=0x0, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+#1  0x0000555555561895 in treedelta (tree=0x5555555a2c20, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:366
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 94, treedelta (tree=0x0, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+#1  0x00005555555618b0 in treedelta (tree=0x5555555a2c20, depth=3, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:367
+#2  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x5555555a2c20, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x5555555a2c20, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556175f in treefails (tree=0x5555555a2c20, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:333
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x000055555556177b in treefails (tree=0x5555555a2c20, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:334
+#2  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x5555555a2c20) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x5555555a2c20) at kwset.c:376
+#1  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x0000555555561926 in hasevery (a=0x5555555a2b00, b=0x5555555a2c20) at kwset.c:378
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x000055555556194b in hasevery (a=0x5555555a2b00, b=0x5555555a2c20) at kwset.c:380
+#2  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 90, enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+314	  if (!tree)
+Function: [unknown], Address: 0x5555555616c5
+#0  enqueue (tree=0x0, last=0x7fffffffd230) at kwset.c:314
+#1  0x0000555555561e8d in kwsprep (kwset=0x55555559fdc0) at kwset.c:449
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 94, treedelta (tree=0x0, depth=4, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+364	  if (!tree)
+Function: [unknown], Address: 0x555555561874
+#0  treedelta (tree=0x0, depth=4, delta=0x55555559fe30 '\004' <repeats 32 times>, "\001", '\004' <repeats 12 times>, "\002", '\004' <repeats 45 times>) at kwset.c:364
+#1  0x0000555555561eb5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:452
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 95, treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+330	  if (!tree)
+Function: [unknown], Address: 0x555555561739
+#0  treefails (tree=0x0, fail=0x5555555a2ac0, recourse=0x5555555a2ac0, reverse=true) at kwset.c:330
+#1  0x0000555555561ee5 in kwsprep (kwset=0x55555559fdc0) at kwset.c:455
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 91, hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+376	  if (!b)
+Function: [unknown], Address: 0x5555555618ff
+#0  hasevery (a=0x5555555a2b00, b=0x0) at kwset.c:376
+#1  0x0000555555561f56 in kwsprep (kwset=0x55555559fdc0) at kwset.c:470
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 96, treenext (tree=0x5555555a2b00, next=0x55555559ff30) at kwset.c:395
+395	  if (!tree)
+Function: [unknown], Address: 0x5555555619bf
+#0  treenext (tree=0x5555555a2b00, next=0x55555559ff30) at kwset.c:395
+#1  0x0000555555562159 in kwsprep (kwset=0x55555559fdc0) at kwset.c:501
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 96, treenext (tree=0x0, next=0x55555559ff30) at kwset.c:395
+395	  if (!tree)
+Function: [unknown], Address: 0x5555555619bf
+#0  treenext (tree=0x0, next=0x55555559ff30) at kwset.c:395
+#1  0x00005555555619dc in treenext (tree=0x5555555a2b00, next=0x55555559ff30) at kwset.c:397
+#2  0x0000555555562159 in kwsprep (kwset=0x55555559fdc0) at kwset.c:501
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 96, treenext (tree=0x0, next=0x55555559ff30) at kwset.c:395
+395	  if (!tree)
+Function: [unknown], Address: 0x5555555619bf
+#0  treenext (tree=0x0, next=0x55555559ff30) at kwset.c:395
+#1  0x00005555555619f3 in treenext (tree=0x5555555a2b00, next=0x55555559ff30) at kwset.c:398
+#2  0x0000555555562159 in kwsprep (kwset=0x55555559fdc0) at kwset.c:501
+#3  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#4  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+
+Breakpoint 93, tr (trans=0x0, c=32 ' ') at kwset.c:119
+119	  return trans ? trans[U(c)] : c;
+Function: [unknown], Address: 0x5555555608dc
+#0  tr (trans=0x0, c=32 ' ') at kwset.c:119
+#1  0x0000555555562763 in kwsprep (kwset=0x55555559fdc0) at kwset.c:556
+#2  0x0000555555559121 in kwsmusts (dc=0x5555555995d0) at dfasearch.c:98
+#3  0x0000555555559a4c in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:330
+#4  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 75, regex_compile (dc=0x5555555995d0, p=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, pcount=0, lineno=-1, syntax_bits=2341468, syntax_only=false) at dfasearch.c:146
+146	{
+Function: [unknown], Address: 0x555555559249
+#0  regex_compile (dc=0x5555555995d0, p=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", len=130, pcount=0, lineno=-1, syntax_bits=2341468, syntax_only=false) at dfasearch.c:146
+#1  0x0000555555559aee in GEAcompile (pattern=0x5555555994c0 "^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\n", size=130, syntax_bits=2341468, exact=false) at dfasearch.c:340
+#2  0x000055555555fdef in main (argc=4, argv=0x7fffffffe118) at grep.c:2978
+
+Breakpoint 69, EGexecute (vdc=0x5555555995d0, buf=0x7fffffffdfe6 "\n", size=1, match_size=0x7fffffffde08, start_ptr=0x0) at dfasearch.c:356
+356	{
+Function: [unknown], Address: 0x555555559b72
+#0  EGexecute (vdc=0x5555555995d0, buf=0x7fffffffdfe6 "\n", size=1, match_size=0x7fffffffde08, start_ptr=0x0) at dfasearch.c:356
+#1  0x000055555555fe39 in main (argc=4, argv=0x7fffffffe118) at grep.c:2983
+
+Breakpoint 79, kwsexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:903
+903	  return kwset->kwsexec (kwset, text, size, kwsmatch, longest);
+Function: [unknown], Address: 0x55555556360f
+#0  kwsexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:903
+#1  0x0000555555559cac in EGexecute (vdc=0x5555555995d0, buf=0x7fffffffdfe6 "\n", size=1, match_size=0x7fffffffde08, start_ptr=0x0) at dfasearch.c:387
+#2  0x000055555555fe39 in main (argc=4, argv=0x7fffffffe118) at grep.c:2983
+
+Breakpoint 88, bmexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:742
+742	  ptrdiff_t ret = (IGNORE_DUPLICATE_BRANCH_WARNING
+Function: [unknown], Address: 0x5555555630eb
+#0  bmexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:742
+#1  0x0000555555563637 in kwsexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:903
+#2  0x0000555555559cac in EGexecute (vdc=0x5555555995d0, buf=0x7fffffffdfe6 "\n", size=1, match_size=0x7fffffffde08, start_ptr=0x0) at dfasearch.c:387
+#3  0x000055555555fe39 in main (argc=4, argv=0x7fffffffe118) at grep.c:2983
+
+Breakpoint 89, bmexec_trans (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1) at kwset.c:652
+652	{
+Function: [unknown], Address: 0x555555562b5d
+#0  bmexec_trans (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1) at kwset.c:652
+#1  0x000055555556312b in bmexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:742
+#2  0x0000555555563637 in kwsexec (kwset=0x55555559fdc0, text=0x7fffffffdfe6 "\n", size=1, kwsmatch=0x7fffffffdd40, longest=true) at kwset.c:903
+#3  0x0000555555559cac in EGexecute (vdc=0x5555555995d0, buf=0x7fffffffdfe6 "\n", size=1, match_size=0x7fffffffde08, start_ptr=0x0) at dfasearch.c:387
+#4  0x000055555555fe39 in main (argc=4, argv=0x7fffffffe118) at grep.c:2983
+
+Breakpoint 32, grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1951
+1951	  if (STREQ (arg, "-"))
+Function: [unknown], Address: 0x55555555d80a
+#0  grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1951
+#1  0x0000555555560028 in main (argc=4, argv=0x7fffffffe118) at grep.c:3029
+
+Breakpoint 36, grepfile (dirdesc=-100, name=0x7fffffffe4a2 "testfile.txt", follow=true, command_line=true) at grep.c:1757
+1757	               | (follow ? 0 : O_NOFOLLOW)
+Function: [unknown], Address: 0x55555555d07b
+#0  grepfile (dirdesc=-100, name=0x7fffffffe4a2 "testfile.txt", follow=true, command_line=true) at grep.c:1757
+#1  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1961
+#2  0x0000555555560028 in main (argc=4, argv=0x7fffffffe118) at grep.c:3029
+
+Breakpoint 61, skip_devices (command_line=true) at grep.c:620
+620	  return (devices == SKIP_DEVICES
+Function: [unknown], Address: 0x55555555ac6d
+#0  skip_devices (command_line=true) at grep.c:620
+#1  0x000055555555d098 in grepfile (dirdesc=-100, name=0x7fffffffe4a2 "testfile.txt", follow=true, command_line=true) at grep.c:1758
+#2  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1961
+#3  0x0000555555560028 in main (argc=4, argv=0x7fffffffe118) at grep.c:3029
+
+Breakpoint 64, suppressible_error (errnum=2) at grep.c:664
+664	  if (! suppress_errors)
+Function: [unknown], Address: 0x55555555ad0b
+#0  suppressible_error (errnum=2) at grep.c:664
+#1  0x000055555555d0f8 in grepfile (dirdesc=-100, name=0x7fffffffe4a2 "testfile.txt", follow=true, command_line=true) at grep.c:1763
+#2  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1961
+#3  0x0000555555560028 in main (argc=4, argv=0x7fffffffe118) at grep.c:3029
+
+Breakpoint 3, input_filename () at grep.c:655
+655	  if (!filename)
+Function: [unknown], Address: 0x55555555acd1
+#0  input_filename () at grep.c:655
+#1  0x000055555555ad1e in suppressible_error (errnum=2) at grep.c:665
+#2  0x000055555555d0f8 in grepfile (dirdesc=-100, name=0x7fffffffe4a2 "testfile.txt", follow=true, command_line=true) at grep.c:1763
+#3  0x000055555555d883 in grep_command_line_arg (arg=0x7fffffffe4a2 "testfile.txt") at grep.c:1961
+#4  0x0000555555560028 in main (argc=4, argv=0x7fffffffe118) at grep.c:3029
+
+Breakpoint 12, clean_up_stdout () at grep.c:674
+674	  if (! stdout_errno)
+Function: [unknown], Address: 0x55555555ad62
+#0  clean_up_stdout () at grep.c:674
+#1  0x00007ffff7c45495 in __run_exit_handlers (status=2, listp=0x7ffff7e1a838 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at ./stdlib/exit.c:113
+#2  0x00007ffff7c45610 in __GI_exit (status=<optimized out>) at ./stdlib/exit.c:143
+#3  0x00007ffff7c29d97 in __libc_start_call_main (main=main@entry=0x55555555e70e <main>, argc=argc@entry=4, argv=argv@entry=0x7fffffffe118) at ../sysdeps/nptl/libc_start_call_main.h:74
+#4  0x00007ffff7c29e40 in __libc_start_main_impl (main=0x55555555e70e <main>, argc=4, argv=0x7fffffffe118, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffe108) at ../csu/libc-start.c:392
+[Inferior 1 (process 48277) exited with code 02]
+[?2004h(gdb) exit
+[?2004l
