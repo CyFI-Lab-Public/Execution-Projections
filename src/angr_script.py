@@ -94,23 +94,45 @@ for entry in gdb_logs[1:]:
         print(f"Callsite {addr_str} not found in CFG.")
 
 
-ipdb.set_trace()
+
+def timeout(seconds):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            p = multiprocessing.Process(target=func, args=args, kwargs=kwargs)
+            p.start()
+            p.join(seconds)
+            if p.is_alive():
+                p.terminate()
+                raise TimeoutError("Function execution timed out")
+            return p.exitcode
+        return wrapper
+    return decorator
 
 
-for entry in gdb_logs[1:]:
-    target_addr = int(entry['Addr'], 16)
-    target_addr_str = hex(addr)
-    func_name = entry['Func']
-    print(f"Finding path from {hex(prev_addr)} ({prev_call})  to {target_addr_str} ({func_name})")
-    
-    # Find a path from prev_addr to syscall_addr
+@timeout(60)
+def angr_explore(prev_addr, target_addr):
     try:
         start_state = proj.factory.blank_state(addr=prev_addr)
         simgr = proj.factory.simgr(start_state)
         simgr.explore(find=target_addr)
+    except TimeoutError:
+        print("\t--> Function took too long to execute")
+    finally:
+        print(f"SIMGR: {simgr}")
+        print(f"found: {simgr.found}")
+        return simgr
 
+
+for entry in gdb_logs[1:]:
+    # ipdb.set_trace()
+    target_addr = int(entry['Addr'], 16)
+    target_addr_str = hex(target_addr)
+    func_name = entry['Func']
+    print(f"Finding path from {hex(prev_addr)} ({prev_call})  to {target_addr_str} ({func_name})")
+    # Find a path from prev_addr to syscall_addr
+    try:
+        simgr = angr_explore(prev_addr, target_addr)
         ipdb.set_trace()
-        
         if simgr.found:
             print(f"\t--> {len(simgr.found)} paths found")
             found_path = simgr.found[0]
@@ -122,7 +144,7 @@ for entry in gdb_logs[1:]:
         else:
             print(f"\t--> No path found from {hex(prev_addr)} to {target_addr_str}")
     except Exception as e:
-        print(f"Error finding path to {target_addr_str}: {e}")
+        print(f"\t--> Error finding path to {target_addr_str}: {e}")
     finally:
         prev_addr = target_addr  # Update for next syscall
         prev_call = func_name 

@@ -94,7 +94,7 @@
 ╔══════════════════════════╗
 ║ ===== 94 callsites ===== ║
 ╚══════════════════════════╝
-CFGFast: DiGraph with 8064 nodes and 14529 edges, 9.53s
+CFGFast: DiGraph with 8064 nodes and 14529 edges, 8.73s
 ╔════════════════════════╗
 ║ MAIN address: 0x40a70e ║
 ╚════════════════════════╝
@@ -191,18 +191,12 @@ Callsite 0x409093 exists in CFG.
 Callsite 0x4090f3 exists in CFG.
 Callsite 0x406d19 exists in CFG.
 Callsite 0x2aaaa2af1490 not found in CFG.
-> [0;32m/home/dinko/exec-proj/src/angr_script.py[0m(98)[0;36m<module>[0;34m()[0m
-[0;32m     97 [0;31m[0;34m[0m[0m
-[0m[0;32m---> 98 [0;31m[0;32mfor[0m [0mentry[0m [0;32min[0m [0mgdb_logs[0m[0;34m[[0m[0;36m1[0m[0;34m:[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[0;32m     99 [0;31m    [0mtarget_addr[0m [0;34m=[0m [0mint[0m[0;34m([0m[0mentry[0m[0;34m[[0m[0;34m'Addr'[0m[0;34m][0m[0;34m,[0m [0;36m16[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-ipdb> Finding path from 0x40a70e (main)  to 0x2aaaa2af1490 (get_nondigit_option)
-
-Program interrupted. (Use 'cont' to resume).
-> [0;32m/home/dinko/exec-proj/venv-execproj/lib/python3.10/site-packages/z3/z3core.py[0m(3290)[0;36mZ3_simplify[0;34m()[0m
-[0;32m   3289 [0;31m  [0mr[0m [0;34m=[0m [0m_elems[0m[0;34m.[0m[0mf[0m[0;34m([0m[0ma0[0m[0;34m,[0m [0ma1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[0;32m-> 3290 [0;31m  [0m_elems[0m[0;34m.[0m[0mCheck[0m[0;34m([0m[0ma0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[0;32m   3291 [0;31m  [0;32mreturn[0m [0mr[0m[0;34m[0m[0;34m[0m[0m
-[0m
-ipdb> Error finding path to 0x2aaaa2af1490: 
-Finding path from 0x40b5eb (get_nondigit_option)  to 0x2aaaa2af1490 (setmatcher)
+Finding path from 0x40a70e (main)  to 0x40b5eb (get_nondigit_option)
+	--> Error finding path to 0x40b5eb: Function execution timed out
+Finding path from 0x40b5eb (get_nondigit_option)  to 0x40a9c0 (setmatcher)
+	--> Error finding path to 0x40a9c0: 'int' object has no attribute 'found'
+Finding path from 0x40a9c0 (setmatcher)  to 0x40b5eb (get_nondigit_option)
+	--> Error finding path to 0x40b5eb: 'int' object has no attribute 'found'
+Finding path from 0x40b5eb (get_nondigit_option)  to 0x40b7dd (update_patterns)
+	--> Error finding path to 0x40b7dd: 'int' object has no attribute 'found'
+Finding path from 0x40b7dd (update_patterns)  to 0x41f757 (hash_pattern)
