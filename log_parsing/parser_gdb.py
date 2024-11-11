@@ -1,7 +1,7 @@
 import re
 import ipdb
 
-def parse_gdb_log(filename):
+def parse_gdb_log_triggered(filename):
     with open(filename, 'r') as file:
         log_data = file.read()
 
@@ -28,3 +28,22 @@ def parse_gdb_log(filename):
     results = [parse_breakpoint_section(section) for section in breakpoint_sections]
 
     return results
+
+
+def parse_gdb_log_all(filename):
+    # List to store extracted addresses
+    addresses = []
+    
+    # Regular expression pattern to match breakpoint lines with addresses
+    breakpoint_pattern = re.compile(r'Breakpoint \d+ at (0x[0-9a-fA-F]+):')
+
+    # Open the file and parse line by line
+    with open(filename, 'r') as file:
+        for line in file:
+            # Search for the breakpoint pattern
+            match = breakpoint_pattern.search(line)
+            if match:
+                # Extract and store the address
+                addresses.append(match.group(1))
+    
+    return addresses

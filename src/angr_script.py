@@ -48,15 +48,29 @@ print_msg_box(f"===== {len(syscall_data)} syscall callsites =====")"""
 
 
 # LOG: gdb func trace
-gdb_all = parse_gdb_log_all(grep_gdb_log)
-gdb_logs = parse_gdb_log_triggered(grep_gdb_log)
 base_address = 0x555555554005
 base_angr = 0x400000
 
+# parse all breakpoints
+"""gdb_all = parse_gdb_log_all(grep_gdb_log)
+for i in range(len(gdb_all)):
+    gdb_all[i] = int(gdb_all[i], 16) + base_angr
+gdb_all = set(gdb_all)"""
+
+# parse sequence of triggered callsites to use as 'find' in angr explore
+gdb_logs = parse_gdb_log_triggered(grep_gdb_log)
+
+all_addrs = [] # get all callsites to use for 'avoid' in angr_explore
+
 for entry in gdb_logs[1:]:
-    entry['Addr'] = hex(int(entry['Addr'], 16) - base_address + base_angr)
+    addr = int(entry['Addr'], 16) - base_address + base_angr
+    all_addrs.append(addr)
+    entry['Addr'] = hex(addr)
     print(f"{entry['Addr']}, {entry['Func']}")
 print_msg_box(f"===== {len(gdb_logs)} callsites =====")
+
+all_addrs = set(all_addrs)      # remove dups
+
 
 
 
@@ -139,12 +153,12 @@ def timeout(seconds):
     return decorator
 
 
-@timeout(90)
-def angr_explore(prev_addr, target_addr, queue=None):
+@timeout(60)
+def angr_explore(prev_addr, target_addr, avoid_addrs, queue=None):
     try:
         start_state = proj.factory.blank_state(addr=prev_addr)
         simgr = proj.factory.simgr(start_state)
-        simgr.explore(find=target_addr, avoid=[])
+        simgr.explore(find=target_addr, avoid=avoid_addrs)
     except TimeoutError:
         print("\t--> Function took too long to execute")
         # simgr = None
@@ -168,7 +182,18 @@ for entry in gdb_logs[1:]:
     # Find a path from prev_addr to syscall_addr
     try:
         queue = Queue()
-        simgr = angr_explore(prev_addr, target_addr, queue=queue)
+        avoid = [element for element in all_addrs - {prev_addr, target_addr}]
+        # print_msg_box("AVOID")
+        # print(f"len(gdb_all): {len(all_addrs)}")
+        # print(f"len(avoid): {len(avoid)}")
+        # print(f"prev in gdb: {prev_addr in all_addrs}")
+        # print(f"prev in avoid: {prev_addr in avoid}")
+        # print(f"target in gdb: {target_addr in all_addrs}")
+        # print(f"target in avoid: {target_addr in avoid}")
+        # for i in avoid:
+        #     print(hex(i))
+            
+        simgr = angr_explore(prev_addr, target_addr, avoid, queue=queue)
         # ipdb.set_trace()
 
         if simgr.found:
