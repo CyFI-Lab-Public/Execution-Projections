@@ -4,16 +4,29 @@ import sys
 import os
 import ipdb
 import time
+import atexit
+import signal
+import logging
 
 from multiprocessing import Process, Queue
 
-import logging
-# logging.getLogger('angr').setLevel(logging.DEBUG)
 
+# Local Imports
 sys.path.append('../')
 from log_parsing.parser_perf import parse_perf_script_output
-from log_parsing.parser_gdb import parse_gdb_log
+from log_parsing.parser_gdb import parse_gdb_log_triggered, parse_gdb_log_all
 from pretty_print import print_msg_box
+
+
+# Logging Levels
+# logging.getLogger('angr').setLevel(logging.DEBUG)
+
+
+# Process Cleanup
+def cleanup():
+    os.kill(os.getpid(), signal.SIGTERM)
+atexit.register(cleanup)
+
 
 
 grep_path = '/home/dinko/exec-proj/grep/grep-3.11/src/grep'
@@ -35,7 +48,8 @@ print_msg_box(f"===== {len(syscall_data)} syscall callsites =====")"""
 
 
 # LOG: gdb func trace
-gdb_logs = parse_gdb_log(grep_gdb_log)
+gdb_all = parse_gdb_log_all(grep_gdb_log)
+gdb_logs = parse_gdb_log_triggered(grep_gdb_log)
 base_address = 0x555555554005
 base_angr = 0x400000
 
@@ -130,7 +144,7 @@ def angr_explore(prev_addr, target_addr, queue=None):
     try:
         start_state = proj.factory.blank_state(addr=prev_addr)
         simgr = proj.factory.simgr(start_state)
-        simgr.explore(find=target_addr)
+        simgr.explore(find=target_addr, avoid=[])
     except TimeoutError:
         print("\t--> Function took too long to execute")
         # simgr = None
@@ -156,7 +170,7 @@ for entry in gdb_logs[1:]:
         queue = Queue()
         simgr = angr_explore(prev_addr, target_addr, queue=queue)
         # ipdb.set_trace()
-        
+
         if simgr.found:
             print(f"\t--> {len(simgr.found)} paths found")
             for i, f in enumerate(simgr.found):
