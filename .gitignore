@@ -4,19 +4,35 @@
 *.bin
 __pycache__
 *.pyc
+*.pyo
+*.pyd
 temp/*
 *.out
 
 # Virtual Environment
 venv-execproj/
+venv/
+.env/
 
 # Source Programs
 libzip/
 grep-3.11/
 
-# Angr
-angr-dev
+# Core angr-dev dependencies if you don’t modify them
+deps/angr-dev
+deps/angr-dev/claripy/
+deps/angr-dev/cle/
+deps/angr-dev/pyvex/
+deps/angr-dev/archinfo/
+deps/angr-dev/ailment/
+deps/angr-dev/angr-management/
 
 # Misc
 perf.data
 perf.data.old
+
+# build and binary files
+build/
+dist/
+*.egg-info/
+*.so

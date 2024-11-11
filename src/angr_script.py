@@ -125,7 +125,7 @@ def timeout(seconds):
     return decorator
 
 
-@timeout(50)
+@timeout(90)
 def angr_explore(prev_addr, target_addr, queue=None):
     try:
         start_state = proj.factory.blank_state(addr=prev_addr)
@@ -156,21 +156,25 @@ for entry in gdb_logs[1:]:
         queue = Queue()
         simgr = angr_explore(prev_addr, target_addr, queue=queue)
         # ipdb.set_trace()
+        
         if simgr.found:
             print(f"\t--> {len(simgr.found)} paths found")
-            found_path = simgr.found[0]
-            # Extract the list of basic block addresses traversed
-            trace = found_path.history.bbl_addrs.hardcopy
-            trace = [hex(i) for i in trace]
-            print(f"\t--> Trace {trace}\n")
+            for i, f in enumerate(simgr.found):
+                found_path = simgr.found[0]
+                # Extract the list of basic block addresses traversed
+                trace = found_path.history.bbl_addrs.hardcopy
+                trace = [hex(i) for i in trace]
+                print(f"\t--> Trace {i} {trace}")
+
             execution_path.extend(trace)
         else:
-            print(f"\t--> No path found from {hex(prev_addr)} to {target_addr_str}\n")
+            print(f"\t--> No path found from {hex(prev_addr)} to {target_addr_str}")
     except Exception as e:
-        print(f"\t--> Error finding path to {target_addr_str}: {e}\n")
+        print(f"\t--> Error finding path to {target_addr_str}: {e}")
     finally:
+        print(f"---------------------------------------------------------------\n")
         prev_addr = target_addr  # Update for next syscall
-        prev_call = func_name 
+        prev_call = func_name
 
 ipdb.set_trace()
 
@@ -248,6 +252,6 @@ for entry in ltrace:
 
 
 # Display the execution path
-print("Reconstructed Execution Path:")
+print_msg_box("Reconstructed Execution Path:")
 for addr in execution_path:
     print(addr)
