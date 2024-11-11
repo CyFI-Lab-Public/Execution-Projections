@@ -94,7 +94,7 @@
 ╔══════════════════════════╗
 ║ ===== 94 callsites ===== ║
 ╚══════════════════════════╝
-CFGFast: DiGraph with 8064 nodes and 14529 edges, 8.73s
+CFGFast: DiGraph with 8064 nodes and 14529 edges, 9.11s
 ╔════════════════════════╗
 ║ MAIN address: 0x40a70e ║
 ╚════════════════════════╝
@@ -192,11 +192,29 @@ Callsite 0x4090f3 exists in CFG.
 Callsite 0x406d19 exists in CFG.
 Callsite 0x2aaaa2af1490 not found in CFG.
 Finding path from 0x40a70e (main)  to 0x40b5eb (get_nondigit_option)
-	--> Error finding path to 0x40b5eb: Function execution timed out
+Process is still alive after timeout. Terminating now.
+	--> Error finding path to 0x40b5eb: 'NoneType' object has no attribute 'found'
+
 Finding path from 0x40b5eb (get_nondigit_option)  to 0x40a9c0 (setmatcher)
-	--> Error finding path to 0x40a9c0: 'int' object has no attribute 'found'
+SIMGR: <SimulationManager with 52 active, 1 found>
+found: [<SimState @ 0x40a9c0>]
+queue size: 1
+Finished angr_explore(), exiting...
+Result found in queue, terminating angr_explore process.
+	--> 1 paths found
+	--> Trace ['0x40b5eb', '0x409bec', '0x404920', '0x5001a8', '0x409c4c', '0x410333', '0x410350', '0x409c59', '0x409cde', '0x409d03', '0x409d1a', '0x40b5f0', '0x40a879', '0x40a889', '0x40a9ae']
+
 Finding path from 0x40a9c0 (setmatcher)  to 0x40b5eb (get_nondigit_option)
-	--> Error finding path to 0x40b5eb: 'int' object has no attribute 'found'
+SIMGR: <SimulationManager with 5 active, 1 found>
+found: [<SimState @ 0x40b5eb>]
+queue size: 1
+Finished angr_explore(), exiting...
+Result found in queue, terminating angr_explore process.
+	--> 1 paths found
+	--> Trace ['0x40a9c0', '0x409ab5', '0x409b4e', '0x409ad1', '0x404a70', '0x500250', '0x409af6', '0x409afa', '0x409b42', '0x409bea', '0x40a9c5', '0x40b5c6']
+
 Finding path from 0x40b5eb (get_nondigit_option)  to 0x40b7dd (update_patterns)
-	--> Error finding path to 0x40b7dd: 'int' object has no attribute 'found'
-Finding path from 0x40b7dd (update_patterns)  to 0x41f757 (hash_pattern)
+[fprintf]
+SIMGR: <SimulationManager with 59 active (3 errored)>
+found: []
+queue size: 1

@@ -14,6 +14,9 @@ venv-execproj/
 libzip/
 grep-3.11/
 
+# Angr
+angr-dev
+
 # Misc
 perf.data
 perf.data.old

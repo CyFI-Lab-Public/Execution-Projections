@@ -3,8 +3,9 @@ import time
 import sys
 import os
 import ipdb
-import multiprocessing
 import time
+
+from multiprocessing import Process, Queue
 
 import logging
 # logging.getLogger('angr').setLevel(logging.DEBUG)
@@ -98,29 +99,50 @@ for entry in gdb_logs[1:]:
 def timeout(seconds):
     def decorator(func):
         def wrapper(*args, **kwargs):
-            p = multiprocessing.Process(target=func, args=args, kwargs=kwargs)
+            queue = kwargs.pop("queue", None)
+            p = Process(target=func, args=args, kwargs={**kwargs, "queue": queue})
             p.start()
-            p.join(seconds)
+
+            start_time = time.time()
+            result = None
+
+            # Poll the queue for a result within the timeout
+            while time.time() - start_time < seconds:
+                if queue and not queue.empty():
+                    result = queue.get()  # Get simgr from queue if available
+                    print("Result found in queue, terminating angr_explore process.")
+                    p.terminate()  # Kill process immediately after getting result
+                    break
+                time.sleep(0.1)  # Small sleep to avoid busy waiting
+            
+            # Check if process is still alive after the loop, if no result was found
             if p.is_alive():
+                print("Process is still alive after timeout. Terminating now.")
                 p.terminate()
-                raise TimeoutError("Function execution timed out")
-            return p.exitcode
+
+            return result   # Return simgr if available, otherwise None
         return wrapper
     return decorator
 
 
-@timeout(60)
-def angr_explore(prev_addr, target_addr):
+@timeout(50)
+def angr_explore(prev_addr, target_addr, queue=None):
     try:
         start_state = proj.factory.blank_state(addr=prev_addr)
         simgr = proj.factory.simgr(start_state)
         simgr.explore(find=target_addr)
     except TimeoutError:
         print("\t--> Function took too long to execute")
+        # simgr = None
     finally:
         print(f"SIMGR: {simgr}")
-        print(f"found: {simgr.found}")
-        return simgr
+        print(f"found: {simgr.found if simgr else 'No found path'}")
+        # print(f"q size before: {queue.qsize()}")
+        if queue:
+            queue.put(simgr)  # Place the simgr in the queue
+
+        print(f"queue size: {queue.qsize()}")
+    print("Finished angr_explore(), exiting...")
 
 
 for entry in gdb_logs[1:]:
@@ -131,20 +153,21 @@ for entry in gdb_logs[1:]:
     print(f"Finding path from {hex(prev_addr)} ({prev_call})  to {target_addr_str} ({func_name})")
     # Find a path from prev_addr to syscall_addr
     try:
-        simgr = angr_explore(prev_addr, target_addr)
-        ipdb.set_trace()
+        queue = Queue()
+        simgr = angr_explore(prev_addr, target_addr, queue=queue)
+        # ipdb.set_trace()
         if simgr.found:
             print(f"\t--> {len(simgr.found)} paths found")
             found_path = simgr.found[0]
             # Extract the list of basic block addresses traversed
             trace = found_path.history.bbl_addrs.hardcopy
             trace = [hex(i) for i in trace]
-            print(f"\t--> Trace {trace}")
+            print(f"\t--> Trace {trace}\n")
             execution_path.extend(trace)
         else:
-            print(f"\t--> No path found from {hex(prev_addr)} to {target_addr_str}")
+            print(f"\t--> No path found from {hex(prev_addr)} to {target_addr_str}\n")
     except Exception as e:
-        print(f"\t--> Error finding path to {target_addr_str}: {e}")
+        print(f"\t--> Error finding path to {target_addr_str}: {e}\n")
     finally:
         prev_addr = target_addr  # Update for next syscall
         prev_call = func_name 
