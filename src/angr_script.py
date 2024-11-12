@@ -86,7 +86,7 @@ main_addr = main_symbol.rebased_addr
 
 # Generate CFG
 start = time.time()
-cfg = proj.analyses.CFGFast()
+cfg = proj.analyses.CFGFast(show_progressbar=True)
 end = time.time()
 print(f"CFGFast: {cfg.graph}, {round(end - start, 2)}s")
 # grep: CFGFast: DiGraph with 131172 nodes and 361298 edges, 275.39s
@@ -215,7 +215,7 @@ for entry in gdb_logs[1:]:
         prev_addr = target_addr  # Update for next syscall
         prev_call = func_name
 
-ipdb.set_trace()
+# ipdb.set_trace()
 
 
 
