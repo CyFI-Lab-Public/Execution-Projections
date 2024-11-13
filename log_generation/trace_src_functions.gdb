@@ -7,7 +7,7 @@ define set_rbreak_with_commands
         else
             printf "Function: [unknown], Address: %p\n", $pc
         end
-        backtrace 5
+        backtrace 3
         continue
     end
 end

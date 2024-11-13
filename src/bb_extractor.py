@@ -34,10 +34,8 @@ def get_funcs(proj):
 # Collect the entry points and write them to a file
 basic_block_addresses = get_basic_block_addresses(proj)
 funcs = get_funcs(proj)
-with open("basic_block_addresses.txt", "w") as f:
+with open("/home/dinko/exec-proj/out/bb_extractor_out.txt", "w") as f:
     for func_dict in basic_block_addresses:
         for func_name, addrs in func_dict.items():
-            f.write(f"{func_name} : {addrs}\n")
-    f.write(f"=======================================\n")
-    for func in funcs:
-        f.write(f"{func}\n")
+            for addr in addrs:
+                f.write(f"break *{addr}\n")
