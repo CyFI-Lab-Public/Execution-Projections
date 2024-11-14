@@ -19,7 +19,12 @@ from pretty_print import print_msg_box
 
 
 # Logging Levels
-# logging.getLogger('angr').setLevel(logging.DEBUG)
+logger_simgr = logging.getLogger('angr.simgr')
+logger_simgr.setLevel(logging.DEBUG)
+# logger = logging.getLogger('angr')
+# logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler('angr.log')
+# logger.addHandler(fh)
 
 
 # Process Cleanup
@@ -121,6 +126,8 @@ for entry in gdb_logs[1:]:
         print(f"Callsite {addr_str} exists in CFG.")
     else:
         print(f"Callsite {addr_str} not found in CFG.")
+
+# ipdb.set_trace()
 
 
 

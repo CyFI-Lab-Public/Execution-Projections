@@ -1,6 +1,5 @@
 # General
 .env
-*tar.gz
 *.bin
 __pycache__
 *.pyc
@@ -17,6 +16,7 @@ venv/
 # Source Programs
 libzip/
 grep-3.11/
+nginx-1.24.0/
 
 # Core angr-dev dependencies if you don’t modify them
 deps/angr-dev
