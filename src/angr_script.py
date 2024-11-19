@@ -43,8 +43,8 @@ nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
 
 """ CONFIGURABLE OPTIONS """
 
-bin_path = grep_path
-gdb_log_path = grep_gdb_log
+bin_path = nginx_path
+gdb_log_path = nginx_gdb_log
 explore_max_secs = 60
 
 print_msg_box(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}")
