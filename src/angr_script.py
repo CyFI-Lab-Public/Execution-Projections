@@ -45,7 +45,7 @@ nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
 
 bin_path = grep_path
 gdb_log_path = grep_gdb_log
-explore_max_secs = 100
+explore_max_secs = 60
 
 print_msg_box(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}")
 global_start = time.time()
@@ -418,6 +418,7 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
 
 # Add custom step callback to log state information
 def log_state_info(simgr):
+    # Log active states
     if hasattr(simgr, "active"):
         logger = logging.getLogger('angr.sim_manager')
         # fh = logging.FileHandler('simgr_DEBUG.log', mode='a')
@@ -431,6 +432,32 @@ def log_state_info(simgr):
                 logger.debug(f"WARNING ^^^: Hit init_localeinfo() hook!")
             elif ip_val == c_stack_addr:
                 logger.debug(f"WARNING ^^^: Hit c_stack_action() hook!")
+
+    # Log errored states
+    if hasattr(simgr, "errored"):
+        for i, errored_state in enumerate(simgr.errored):
+            logger.debug(f"Errored State {i}:")
+            logger.debug(f"  Error type: {type(errored_state.error)}")
+            logger.debug(f"  Error message: {errored_state.error}")
+            logger.debug(f"  Errored at addr: {hex(errored_state.state.addr)}")
+            logger.debug(f"  Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
+            logger.debug(f"  Stack trace:\n{errored_state.traceback}")
+
+    # Log unconstrained states
+    if hasattr(simgr, "unconstrained"):
+        for i, state in enumerate(simgr.unconstrained):
+            ip_val = state.solver.eval(state.regs.ip)
+            logger.debug(f"Unconstrained State {i}:")
+            logger.debug(f"  IP: 0x{ip_val:x} (symbolic: {state.regs.ip.symbolic})")
+            logger.debug(f"  Recent blocks: {[hex(x) for x in state.history.recent_bbl_addrs]}")
+            # Log why it became unconstrained
+            if hasattr(state, "unconstrained_reason"):
+                logger.debug(f"  Reason: {state.unconstrained_reason}")
+            # Log possible IP values
+            if state.regs.ip.symbolic:
+                possible_ips = state.solver.eval_upto(state.regs.ip, 10)
+                logger.debug(f"  Possible IP values: {[hex(x) for x in possible_ips]}")
+                
     return simgr
 
 # Log when new paths are found
@@ -452,10 +479,10 @@ def step_function(simgr):
     # Log all current states
     log_state_info(simgr)
     
-    # # Log if we found target
-    # log_path_found(simgr)
+    # Log if we found targets
+    log_path_found(simgr)
     
-    # # Log pruned paths
+    # Log pruned paths
     # log_path_pruned(simgr)
     
     # Tell explorer to continue
