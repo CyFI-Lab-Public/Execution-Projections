@@ -195,16 +195,49 @@ def hook_c_stack_action(state):
 
 class InitLocaleInfoHook(angr.SimProcedure):
     def run(self):
-        print(f"[HOOK] init_localeinfo ENTRY at {hex(self.state.addr)}")
-        print(f"[HOOK] Callsite: {hex(self.state.history.jump_source)}")
+        # ip_val = self.state.solver.eval(self.state.regs.ip)
+        print(f"[HOOK] init_localeinfo ENTRY: {hex(self.state.addr)}", flush=True)
+
+        # in hooks, the recent_bbl_addrs[0] is the current bb, same as state.addr
+        # print(f"[HOOK] Callsite: {hex(self.state.history.recent_bbl_addrs[0])}", flush=True)
+
+        try:
+            # Use jump_source - address of the call instruction
+            print(f"[HOOK] Callsite (jump_source): {hex(self.state.history.jump_source)}", flush=True)
+        except Exception as e:
+            # print(f"[InitLocaleInfoHook] {e}")
+            pass
+
+        try:
+            # Or get caller address from call stack
+            if len(self.state.callstack) > 1:
+                print(f"[HOOK] Callsite (callstack): {hex(self.state.callstack.current_return_target)}", flush=True)
+        except Exception as e:
+            print(f"[InitLocaleInfoHook] {e}")
         # No return value needed for void function
 
 class CStackActionHook(angr.SimProcedure):
     def run(self):
-        print(f"[HOOK] c_stack_action ENTRY at {hex(self.state.addr)}")
-        print(f"[HOOK] Callsite: {hex(self.state.history.jump_source)}")
-        return self.state.solver.BVV(0, self.state.arch.bits)
+        # ip_val = self.state.solver.eval(self.state.regs.ip)
+        print(f"[HOOK] c_stack_action ENTRY: {hex(self.state.addr)}", flush=True)
 
+        # print(f"[HOOK] Callsite: {hex(self.state.history.recent_bbl_addrs[0])}", flush=True)
+
+        try:
+            # Use jump_source - address of the call instruction
+            print(f"[HOOK] Callsite (jump_source): {hex(self.state.history.jump_source)}", flush=True)
+        except Exception as e:
+            # print(f"[CStackActionHook] {e}")
+            pass
+            
+        try:
+            # Or get caller address from call stack
+            if len(self.state.callstack) > 1:
+                print(f"[HOOK] Callsite (callstack): {hex(self.state.callstack.current_return_target)}", flush=True)
+        except Exception as e:
+            print(f"[CStackActionHook] {e}")
+
+        return claripy.BVV(0, self.state.arch.bits)         # 0 x 64bits BVV
 
 
 
@@ -348,33 +381,38 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
     Passing simgr to subprocess does not yield same results, instead pass simstates.
     """
     print(f"[angr_explore] simstates arg: {simstates}", flush=True)
-    try:
-        if len(simstates) < 1:
-            simstates = proj.factory.blank_state(addr=prev_addr)
-        
-        simgr = proj.factory.simgr(simstates)
-        simgr.explore(find=target_addr, avoid=avoid_addrs, step_func=step_function)
+    if len(simstates) < 1:
+        simstates = proj.factory.blank_state(addr=prev_addr)
 
-        # steps = 0
-        # while not simgr.found:
-        #     simgr.step()
-        #     steps += 1
-        #     if steps % 10 == 0:         # update queue every 10 steps
-        #         if not queue.empty():
-        #             queue.get()         # remove old state
-        #         queue.put(simgr)        # latest state
-    except TimeoutError:
-        print("\t--> Function took too long to execute", flush=True)
-        # simgr = None
-    finally:
-        print(f"SIMGR: {simgr}", flush=True)
-        print(f"found: {simgr.found if simgr and hasattr(simgr, 'found') else 'No found path'}", flush=True)
-        print(f"active: {simgr.active if simgr and hasattr(simgr, 'active') else 'No active path'}", flush=True)
-        if not queue.empty():
-            queue.get()         # remove old state
-        queue.put(simgr)        # latest state
+    simgr = proj.factory.simgr(simstates)
+    explore_count = 0
+    while hasattr(simgr, "active") and simgr.active and (not hasattr(simgr, "found") or not simgr.found):
+        try:
+            print(f"simgr explore_count [{explore_count}]", flush=True)
+            simgr.explore(find=target_addr, avoid=avoid_addrs, step_func=step_function)
 
-        print(f"queue size: {queue.qsize()}", flush=True)
+
+            # steps = 0
+            # while not simgr.found:
+            #     simgr.step()
+            #     steps += 1
+            #     if steps % 10 == 0:         # update queue every 10 steps
+            #         if not queue.empty():
+            #             queue.get()         # remove old state
+            #         queue.put(simgr)        # latest state
+        except TimeoutError:
+            print("\t--> Function took too long to execute", flush=True)
+            # simgr = None
+        finally:
+            print(f"SIMGR: {simgr}", flush=True)
+            print(f"found: " + (f"{simgr.found}" if simgr and hasattr(simgr, 'found') and len(simgr.found) > 1 else "No found path"), flush=True)
+            print(f"active: " + (f"{len(simgr.active)}" if simgr and hasattr(simgr, 'active') else "No active path"), flush=True)
+            explore_count += 1
+    if not queue.empty():
+        queue.get()         # remove old state
+    queue.put(simgr)        # latest state
+
+    print(f"queue size: {queue.qsize()}", flush=True)
     print("Finished angr_explore(), exiting...", flush=True)
 
 
@@ -390,9 +428,9 @@ def log_state_info(simgr):
             ip_val = state.solver.eval(state.regs.ip)
             logger.debug(f"State {i}  |  IP: 0x{ip_val:x}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
             if ip_val == init_locale_addr:
-                logger.debug(f"WARNING ^^^: Hitting init_localeinfo despite hook!")
+                logger.debug(f"WARNING ^^^: Hit init_localeinfo() hook!")
             elif ip_val == c_stack_addr:
-                logger.debug(f"WARNING ^^^: Hitting c_stack_addr despite hook!")
+                logger.debug(f"WARNING ^^^: Hit c_stack_action() hook!")
     return simgr
 
 # Log when new paths are found
