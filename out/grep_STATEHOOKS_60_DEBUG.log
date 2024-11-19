@@ -1,0 +1,403 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║ bin_path: /home/dinko/exec-proj/grep/grep-3.11/src/grep               ║
+║ gdb_log_path: /home/dinko/exec-proj/log/grep/function_trace_BRsrc.log ║
+║ explore_max_secs: 100                                                 ║
+╚═══════════════════════════════════════════════════════════════════════╝
+0x40b5eb, get_nondigit_option
+0x40a9c0, setmatcher
+0x40b5eb, get_nondigit_option
+0x40b7dd, update_patterns
+0x41f757, hash_pattern
+0x40bc20, initialize_unibyte_mask
+0x40bdea, GEAcompile
+0x405646, possible_backrefs_in_pattern
+0x40579a, regex_compile
+0x405a47, kwsmusts
+0x404fc6, kwsinit
+0x40f8ab, kwsalloc
+0x40510d, kwsincr
+0x40511c, kwsprep
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40dadb, enqueue
+0x40dd1e, kwsalloc
+0x40dd65, kwsincr
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40d6dd, enqueue
+0x40d6f4, enqueue
+0x40deb0, treedelta
+0x40d890, treedelta
+0x40d8ab, treedelta
+0x40dee0, treefails
+0x40d75a, treefails
+0x40d776, treefails
+0x40df51, hasevery
+0x40d921, hasevery
+0x40d946, hasevery
+0x40de88, enqueue
+0x40deb0, treedelta
+0x40dee0, treefails
+0x40df51, hasevery
+0x40e154, treenext
+0x40d9d7, treenext
+0x40d9ee, treenext
+0x40e75e, tr
+0x405ae9, regex_compile
+0x40be34, EGexecute
+0x405ca7, kwsexec
+0x40f632, bmexec
+0x40f126, bmexec_trans
+0x40c023, grep_command_line_arg
+0x40987e, grepfile
+0x409093, skip_devices
+0x4090f3, suppressible_error
+0x406d19, input_filename
+0x2aaaa2af1490, clean_up_stdout
+╔══════════════════════════╗
+║ ===== 94 callsites ===== ║
+╚══════════════════════════╝
+╔═════════════════════╗
+║ Hooking Procedures: ║
+╚═════════════════════╝
+init_localeinfo address: 0x41b3c8
+c_stack_action address: 0x410763
+╔════════════════════╗
+║ Verifying hooks... ║
+╚════════════════════╝
+Hook at 0x500000: <SimProcedure isalpha (stub)>
+Hook at 0x500008: <SimProcedure isupper (stub)>
+Hook at 0x500010: <SimProcedure islower (stub)>
+Hook at 0x500018: <SimProcedure isdigit (stub)>
+Hook at 0x500020: <SimProcedure isxdigit (stub)>
+Hook at 0x500028: <SimProcedure isspace (stub)>
+Hook at 0x500030: <SimProcedure ispunct (stub)>
+Hook at 0x500038: <SimProcedure isalnum (stub)>
+Hook at 0x500040: <SimProcedure isprint (stub)>
+Hook at 0x500048: <SimProcedure isgraph (stub)>
+Hook at 0x500050: <SimProcedure iscntrl (stub)>
+Hook at 0x500058: <SimProcedure isblank (stub)>
+Hook at 0x500060: <SimProcedure free>
+Hook at 0x500068: <SimProcedure __libc_start_main>
+Hook at 0x500070: <SimProcedure fnmatch (stub)>
+Hook at 0x5000a8: <SimProcedure getenv>
+Hook at 0x5000b0: <SimProcedure raise (stub)>
+Hook at 0x5000b8: <SimProcedure strtoimax (stub)>
+Hook at 0x5000c0: <SimProcedure abort>
+Hook at 0x5000c8: <SimProcedure re_match (stub)>
+Hook at 0x5000d0: <SimProcedure __errno_location>
+Hook at 0x5000d8: <SimProcedure strncmp>
+Hook at 0x5000e0: <SimProcedure splice (stub)>
+Hook at 0x5000e8: <SimProcedure _exit>
+Hook at 0x5000f0: <SimProcedure strcpy>
+Hook at 0x5000f8: <SimProcedure __fpending (stub)>
+Hook at 0x500100: <SimProcedure toupper>
+Hook at 0x500108: <SimProcedure puts>
+Hook at 0x500110: <SimProcedure ferror (stub)>
+Hook at 0x500118: <SimProcedure qsort (stub)>
+Hook at 0x500120: <SimProcedure isatty (stub)>
+Hook at 0x500128: <SimProcedure sigaction>
+Hook at 0x500130: <SimProcedure iswcntrl (stub)>
+Hook at 0x500138: <SimProcedure reallocarray (stub)>
+Hook at 0x500140: <SimProcedure fcntl>
+Hook at 0x500148: <SimProcedure clearerr_unlocked (stub)>
+Hook at 0x500150: <SimProcedure write>
+Hook at 0x500158: <SimProcedure fread_unlocked>
+Hook at 0x500160: <SimProcedure textdomain (stub)>
+Hook at 0x500168: <SimProcedure fclose>
+Hook at 0x500170: <SimProcedure bindtextdomain (stub)>
+Hook at 0x500178: <SimProcedure regfree (stub)>
+Hook at 0x500180: <SimProcedure __ctype_get_mb_cur_max (stub)>
+Hook at 0x500188: <SimProcedure strlen>
+Hook at 0x500190: <SimProcedure openat (stub)>
+Hook at 0x500198: <SimProcedure __stack_chk_fail>
+Hook at 0x5001a0: <SimProcedure mmap>
+Hook at 0x5001a8: <SimProcedure getopt_long (stub)>
+Hook at 0x5001b0: <SimProcedure mbrtowc (stub)>
+Hook at 0x5001b8: <SimProcedure gettext (stub)>
+Hook at 0x5001c0: <SimProcedure strchr>
+Hook at 0x5001c8: <SimProcedure printf>
+Hook at 0x5001d0: <SimProcedure snprintf>
+Hook at 0x5001d8: <SimProcedure strrchr (stub)>
+Hook at 0x5001e0: <SimProcedure lseek (stub)>
+Hook at 0x5001e8: <SimProcedure __assert_fail>
+Hook at 0x5001f0: <SimProcedure fputs>
+Hook at 0x5001f8: <SimProcedure memset>
+Hook at 0x500200: <SimProcedure close>
+Hook at 0x500208: <SimProcedure closedir>
+Hook at 0x500210: <SimProcedure regcomp (stub)>
+Hook at 0x500218: <SimProcedure memchr (stub)>
+Hook at 0x500220: <SimProcedure read>
+Hook at 0x500228: <SimProcedure memcmp>
+Hook at 0x500230: <SimProcedure fputs_unlocked>
+Hook at 0x500238: <SimProcedure rawmemchr (stub)>
+Hook at 0x500240: <SimProcedure ferror_unlocked (stub)>
+Hook at 0x500248: <SimProcedure calloc>
+Hook at 0x500250: <SimProcedure strcmp>
+Hook at 0x500258: <SimProcedure signal (stub)>
+Hook at 0x500260: <SimProcedure fputc_unlocked>
+Hook at 0x500268: <SimProcedure fprintf>
+Hook at 0x500270: <SimProcedure sigemptyset (stub)>
+Hook at 0x500278: <SimProcedure stat (stub)>
+Hook at 0x500280: <SimProcedure memcpy>
+Hook at 0x500288: <SimProcedure putchar_unlocked (stub)>
+Hook at 0x500290: <SimProcedure readdir>
+Hook at 0x500298: <SimProcedure mincore (stub)>
+Hook at 0x5002a0: <SimProcedure wcwidth (stub)>
+Hook at 0x5002a8: <SimProcedure tolower>
+Hook at 0x5002b0: <SimProcedure putc_unlocked>
+Hook at 0x5002b8: <SimProcedure re_set_syntax (stub)>
+Hook at 0x5002c0: <SimProcedure iswalnum (stub)>
+Hook at 0x5002c8: <SimProcedure malloc>
+Hook at 0x5002d0: <SimProcedure wcrtomb (stub)>
+Hook at 0x5002d8: <SimProcedure nl_langinfo (stub)>
+Hook at 0x5002e0: <SimProcedure regexec (stub)>
+Hook at 0x5002e8: <SimProcedure strcoll (stub)>
+Hook at 0x5002f0: <SimProcedure re_search (stub)>
+Hook at 0x5002f8: <SimProcedure fchdir (stub)>
+Hook at 0x500300: <SimProcedure fwrite_unlocked>
+Hook at 0x500308: <SimProcedure realloc>
+Hook at 0x500310: <SimProcedure fdopen>
+Hook at 0x500318: <SimProcedure munmap (stub)>
+Hook at 0x500320: <SimProcedure setlocale (stub)>
+Hook at 0x500328: <SimProcedure iswspace (stub)>
+Hook at 0x500330: <SimProcedure mempcpy (stub)>
+Hook at 0x500338: <SimProcedure memmove>
+Hook at 0x500340: <SimProcedure error>
+Hook at 0x500348: <SimProcedure memrchr (stub)>
+Hook at 0x500350: <SimProcedure open>
+Hook at 0x500358: <SimProcedure fopen>
+Hook at 0x500360: <SimProcedure perror>
+Hook at 0x500368: <SimProcedure sysconf (stub)>
+Hook at 0x500370: <SimProcedure towlower (stub)>
+Hook at 0x500378: <SimProcedure wctob (stub)>
+Hook at 0x500380: <SimProcedure fdopendir (stub)>
+Hook at 0x500388: <SimProcedure vfprintf (stub)>
+Hook at 0x500390: <SimProcedure towupper (stub)>
+Hook at 0x500398: <SimProcedure fstatfs (stub)>
+Hook at 0x5003a0: <SimProcedure __cxa_atexit (stub)>
+Hook at 0x5003a8: <SimProcedure getpagesize (stub)>
+Hook at 0x5003b0: <SimProcedure exit>
+Hook at 0x5003b8: <SimProcedure re_compile_pattern (stub)>
+Hook at 0x5003c0: <SimProcedure fflush_unlocked>
+Hook at 0x5003c8: <SimProcedure mbsinit (stub)>
+Hook at 0x5003d0: <SimProcedure sigaltstack (stub)>
+Hook at 0x5003d8: <SimProcedure iswprint (stub)>
+Hook at 0x5003e0: <SimProcedure fstat (stub)>
+Hook at 0x5003e8: <SimProcedure getc>
+Hook at 0x5003f0: <SimProcedure sigaddset (stub)>
+Hook at 0x5003f8: <SimProcedure strstr>
+Hook at 0x500400: <SimProcedure fstatat (stub)>
+Hook at 0x500408: <SimProcedure __ctype_b_loc>
+Hook at 0xb01000: <SimProcedure LinuxLoader>
+Hook at 0xb01008: <SimProcedure _dl_rtld_lock_recursive>
+Hook at 0xb01010: <SimProcedure _dl_rtld_unlock_recursive>
+Hook at 0xb01018: <SimProcedure ReturnUnconstrained>
+Hook at 0xb01020: <SimProcedure _dl_initial_error_catch_tsd>
+Hook at 0xb01028: <SimProcedure _vsyscall>
+Hook at 0xb01038: <SimProcedure CallReturn>
+Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
+Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
+Hook at 0x41b3c8: <SimProcedure InitLocaleInfoHook>
+Hook at 0x410763: <SimProcedure CStackActionHook>
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:09 Time: 0:00:00  
+CFGFast: DiGraph with 8068 nodes and 14528 edges, 9.45s
+╔════════════════════════╗
+║ MAIN address: 0x40a70e ║
+╚════════════════════════╝
+Callsite 0x40b5eb exists in CFG.
+Callsite 0x40a9c0 exists in CFG.
+Callsite 0x40b5eb exists in CFG.
+Callsite 0x40b7dd exists in CFG.
+Callsite 0x41f757 exists in CFG.
+Callsite 0x40bc20 exists in CFG.
+Callsite 0x40bdea exists in CFG.
+Callsite 0x405646 exists in CFG.
+Callsite 0x40579a exists in CFG.
+Callsite 0x405a47 exists in CFG.
+Callsite 0x404fc6 exists in CFG.
+Callsite 0x40f8ab exists in CFG.
+Callsite 0x40510d exists in CFG.
+Callsite 0x40511c exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40dadb exists in CFG.
+Callsite 0x40dd1e exists in CFG.
+Callsite 0x40dd65 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40d6dd exists in CFG.
+Callsite 0x40d6f4 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40d890 exists in CFG.
+Callsite 0x40d8ab exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40d75a exists in CFG.
+Callsite 0x40d776 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40d921 exists in CFG.
+Callsite 0x40d946 exists in CFG.
+Callsite 0x40de88 exists in CFG.
+Callsite 0x40deb0 exists in CFG.
+Callsite 0x40dee0 exists in CFG.
+Callsite 0x40df51 exists in CFG.
+Callsite 0x40e154 exists in CFG.
+Callsite 0x40d9d7 exists in CFG.
+Callsite 0x40d9ee exists in CFG.
+Callsite 0x40e75e exists in CFG.
+Callsite 0x405ae9 exists in CFG.
+Callsite 0x40be34 exists in CFG.
+Callsite 0x405ca7 exists in CFG.
+Callsite 0x40f632 exists in CFG.
+Callsite 0x40f126 exists in CFG.
+Callsite 0x40c023 exists in CFG.
+Callsite 0x40987e exists in CFG.
+Callsite 0x409093 exists in CFG.
+Callsite 0x4090f3 exists in CFG.
+Callsite 0x406d19 exists in CFG.
+Callsite 0x2aaaa2af1490 not found in CFG.
+╔═══════════╗
+║ Explore 0 ║
+╚═══════════╝
+Finding path from 0x40a70e (main)  to 0x40b5eb (get_nondigit_option)
+[angr_explore] simstates arg: [<SimState @ 0x40a70e>]
+[HOOK] init_localeinfo ENTRY at 0x41b3c8
+SIMGR: <SimulationManager with 1 active>
+found: []
+active: [<SimState @ 0x41b3c8>]
+queue size: 1
+Result found in queue: <SimulationManager with 1 active>
+--> Final Result: <SimulationManager with 1 active>
+	[NO simgr.found]
+	--> <--- No path found from 0x40a70e to 0x40b5eb --->
+[...recording SIMGR found path, and starting anew]
+[SIMGR has no attribute <found>]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x40a70e', '<--- No path found from 0x40a70e to 0x40b5eb --->']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 1 ║
+╚═══════════╝
+Finding path from 0x40b5eb (get_nondigit_option)  to 0x40a9c0 (setmatcher)
+[angr_explore] simstates arg: []
+SIMGR: <SimulationManager with 52 active, 1 found>
+found: [<SimState @ 0x40a9c0>]
+active: [<SimState @ 0x409c4c>, <SimState @ 0x40b7eb>, <SimState @ 0x40b6f5>, <SimState @ 0x40b690>, <SimState @ 0x40b7f5>, <SimState @ 0x409b4e>, <SimState @ 0x409bec>, <SimState @ 0x500250>, <SimState @ 0x409bec>, <SimState @ 0x409b4e>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x427034>, <SimState @ 0x40f823>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x40b312>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x404920>, <SimState @ 0x426812>, <SimState @ 0x4267d7>, <SimState @ 0x41013e>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x40b5c6>, <SimState @ 0x409bec>, <SimState @ 0x500250>, <SimState @ 0x409bec>, <SimState @ 0x4267d7>, <SimState @ 0x40b3da>, <SimState @ 0x409b4e>, <SimState @ 0x409bec>, <SimState @ 0x409bec>, <SimState @ 0x40989b>, <SimState @ 0x5001b8>, <SimState @ 0x500250>, <SimState @ 0x409b4e>, <SimState @ 0x500188>, <SimState @ 0x409bec>, <SimState @ 0x4267d7>, <SimState @ 0x409bec>, <SimState @ 0x41f472>]
+queue size: 1
+Finished angr_explore(), exiting...
+Result found in queue: <SimulationManager with 52 active, 1 found>
+--> Final Result: <SimulationManager with 52 active, 1 found>
+	[simgr.found = TRUE]
+	--> 1 paths found
+	--> Trace 0 ['0x40b5eb', '0x409bec', '0x404920', '0x5001a8', '0x409c4c', '0x410333', '0x410350', '0x409c59', '0x409cde', '0x409d03', '0x409d1a', '0x40b5f0', '0x40a879', '0x40a889', '0x40a9ae']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 2 ║
+╚═══════════╝
+Finding path from 0x40a9c0 (setmatcher)  to 0x40b5eb (get_nondigit_option)
+[angr_explore] simstates arg: [<SimState @ 0x40a9c0>]
+SIMGR: <SimulationManager with 2 active, 1 found>
+found: [<SimState @ 0x40b5eb>]
+active: [<SimState @ 0x40b5eb>, <SimState @ 0x404c50>]
+queue size: 1
+Finished angr_explore(), exiting...
+Result found in queue: <SimulationManager with 2 active, 1 found>
+--> Final Result: <SimulationManager with 2 active, 1 found>
+	[simgr.found = TRUE]
+	--> 1 paths found
+	--> Trace 0 ['0x40b5eb', '0x409bec', '0x404920', '0x5001a8', '0x409c4c', '0x410333', '0x410350', '0x409c59', '0x409cde', '0x409d03', '0x409d1a', '0x40b5f0', '0x40a879', '0x40a889', '0x40a9ae', '0x40a9c0', '0x409ab5', '0x409b4e', '0x409ad1', '0x404a70', '0x500250', '0x409af6', '0x409b4a', '0x409ad1', '0x404a70', '0x500250', '0x409af6', '0x409afa', '0x409b42', '0x409bea', '0x40a9c5', '0x40b5c6']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 3 ║
+╚═══════════╝
+Finding path from 0x40b5eb (get_nondigit_option)  to 0x40b7dd (update_patterns)
+[angr_explore] simstates arg: [<SimState @ 0x40b5eb>]

@@ -1,0 +1,979 @@
+INFO - angr.project - Loading binary /home/dinko/exec-proj/grep/grep-3.11/src/grep - 2024-11-18 21:54:32.463 - __init__() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:146
+INFO - angr.project - Using builtin SimProcedure for unresolved isalpha from libc.so.0 - 2024-11-18 21:54:32.632 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500000 with <SimProcedure isalpha (stub)> - 2024-11-18 21:54:32.632 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isupper from libc.so.0 - 2024-11-18 21:54:32.633 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500008 with <SimProcedure isupper (stub)> - 2024-11-18 21:54:32.633 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved islower from libc.so.0 - 2024-11-18 21:54:32.633 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500010 with <SimProcedure islower (stub)> - 2024-11-18 21:54:32.633 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isdigit from libc.so.0 - 2024-11-18 21:54:32.633 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500018 with <SimProcedure isdigit (stub)> - 2024-11-18 21:54:32.633 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isxdigit from libc.so.0 - 2024-11-18 21:54:32.633 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500020 with <SimProcedure isxdigit (stub)> - 2024-11-18 21:54:32.633 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isspace from libc.so.0 - 2024-11-18 21:54:32.633 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500028 with <SimProcedure isspace (stub)> - 2024-11-18 21:54:32.634 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved ispunct from libc.so.0 - 2024-11-18 21:54:32.634 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500030 with <SimProcedure ispunct (stub)> - 2024-11-18 21:54:32.634 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isalnum from libc.so.0 - 2024-11-18 21:54:32.634 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500038 with <SimProcedure isalnum (stub)> - 2024-11-18 21:54:32.634 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isprint from libc.so.0 - 2024-11-18 21:54:32.634 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500040 with <SimProcedure isprint (stub)> - 2024-11-18 21:54:32.634 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isgraph from libc.so.0 - 2024-11-18 21:54:32.634 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500048 with <SimProcedure isgraph (stub)> - 2024-11-18 21:54:32.634 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved iscntrl from libc.so.0 - 2024-11-18 21:54:32.635 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500050 with <SimProcedure iscntrl (stub)> - 2024-11-18 21:54:32.635 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isblank from libc.so.0 - 2024-11-18 21:54:32.635 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500058 with <SimProcedure isblank (stub)> - 2024-11-18 21:54:32.635 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved free from libc.so.0 - 2024-11-18 21:54:32.635 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500060 with <SimProcedure free> - 2024-11-18 21:54:32.635 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __libc_start_main from libc.so.0 - 2024-11-18 21:54:32.635 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500068 with <SimProcedure __libc_start_main> - 2024-11-18 21:54:32.635 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fnmatch from libc.so.0 - 2024-11-18 21:54:32.636 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500070 with <SimProcedure fnmatch (stub)> - 2024-11-18 21:54:32.636 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getenv from libc.so.0 - 2024-11-18 21:54:32.636 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000a8 with <SimProcedure getenv> - 2024-11-18 21:54:32.636 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved raise from libc.so.0 - 2024-11-18 21:54:32.636 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000b0 with <SimProcedure raise (stub)> - 2024-11-18 21:54:32.636 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strtoimax from libc.so.0 - 2024-11-18 21:54:32.636 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000b8 with <SimProcedure strtoimax (stub)> - 2024-11-18 21:54:32.637 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved abort from libc.so.0 - 2024-11-18 21:54:32.637 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000c0 with <SimProcedure abort> - 2024-11-18 21:54:32.637 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved re_match - 2024-11-18 21:54:32.637 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5000c8 with <SimProcedure re_match (stub)> - 2024-11-18 21:54:32.637 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __errno_location from libc.so.0 - 2024-11-18 21:54:32.637 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000d0 with <SimProcedure __errno_location> - 2024-11-18 21:54:32.637 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strncmp from libc.so.0 - 2024-11-18 21:54:32.637 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000d8 with <SimProcedure strncmp> - 2024-11-18 21:54:32.638 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved splice - 2024-11-18 21:54:32.638 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5000e0 with <SimProcedure splice (stub)> - 2024-11-18 21:54:32.638 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved _exit from libc.so.0 - 2024-11-18 21:54:32.638 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000e8 with <SimProcedure _exit> - 2024-11-18 21:54:32.638 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strcpy from libc.so.0 - 2024-11-18 21:54:32.638 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000f0 with <SimProcedure strcpy> - 2024-11-18 21:54:32.638 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __fpending from libc.so.0 - 2024-11-18 21:54:32.638 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000f8 with <SimProcedure __fpending (stub)> - 2024-11-18 21:54:32.639 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved toupper from libc.so.0 - 2024-11-18 21:54:32.639 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500100 with <SimProcedure toupper> - 2024-11-18 21:54:32.639 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved puts from libc.so.0 - 2024-11-18 21:54:32.639 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500108 with <SimProcedure puts> - 2024-11-18 21:54:32.639 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved ferror from libc.so.0 - 2024-11-18 21:54:32.639 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500110 with <SimProcedure ferror (stub)> - 2024-11-18 21:54:32.640 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved qsort - 2024-11-18 21:54:32.640 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500118 with <SimProcedure qsort (stub)> - 2024-11-18 21:54:32.640 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved isatty from libc.so.0 - 2024-11-18 21:54:32.640 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500120 with <SimProcedure isatty (stub)> - 2024-11-18 21:54:32.640 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigaction from libc.so.0 - 2024-11-18 21:54:32.640 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500128 with <SimProcedure sigaction> - 2024-11-18 21:54:32.640 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved iswcntrl from libc.so.0 - 2024-11-18 21:54:32.640 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500130 with <SimProcedure iswcntrl (stub)> - 2024-11-18 21:54:32.640 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved reallocarray from libc.so.0 - 2024-11-18 21:54:32.641 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500138 with <SimProcedure reallocarray (stub)> - 2024-11-18 21:54:32.641 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fcntl from libc.so.0 - 2024-11-18 21:54:32.641 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500140 with <SimProcedure fcntl> - 2024-11-18 21:54:32.641 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved clearerr_unlocked from libc.so.0 - 2024-11-18 21:54:32.641 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500148 with <SimProcedure clearerr_unlocked (stub)> - 2024-11-18 21:54:32.641 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved write from libc.so.0 - 2024-11-18 21:54:32.641 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500150 with <SimProcedure write> - 2024-11-18 21:54:32.642 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fread_unlocked from libc.so.0 - 2024-11-18 21:54:32.642 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500158 with <SimProcedure fread_unlocked> - 2024-11-18 21:54:32.642 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved textdomain from libc.so.0 - 2024-11-18 21:54:32.642 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500160 with <SimProcedure textdomain (stub)> - 2024-11-18 21:54:32.642 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fclose from libc.so.0 - 2024-11-18 21:54:32.642 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500168 with <SimProcedure fclose> - 2024-11-18 21:54:32.642 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved bindtextdomain from libc.so.0 - 2024-11-18 21:54:32.642 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500170 with <SimProcedure bindtextdomain (stub)> - 2024-11-18 21:54:32.642 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved regfree - 2024-11-18 21:54:32.643 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500178 with <SimProcedure regfree (stub)> - 2024-11-18 21:54:32.643 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved __ctype_get_mb_cur_max - 2024-11-18 21:54:32.643 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500180 with <SimProcedure __ctype_get_mb_cur_max (stub)> - 2024-11-18 21:54:32.643 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strlen from libc.so.0 - 2024-11-18 21:54:32.643 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500188 with <SimProcedure strlen> - 2024-11-18 21:54:32.643 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved openat - 2024-11-18 21:54:32.643 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500190 with <SimProcedure openat (stub)> - 2024-11-18 21:54:32.643 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __stack_chk_fail from libc.so.0 - 2024-11-18 21:54:32.643 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500198 with <SimProcedure __stack_chk_fail> - 2024-11-18 21:54:32.644 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved mmap from libc.so.0 - 2024-11-18 21:54:32.644 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001a0 with <SimProcedure mmap> - 2024-11-18 21:54:32.645 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getopt_long from libc.so.0 - 2024-11-18 21:54:32.645 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001a8 with <SimProcedure getopt_long (stub)> - 2024-11-18 21:54:32.645 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved mbrtowc - 2024-11-18 21:54:32.645 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5001b0 with <SimProcedure mbrtowc (stub)> - 2024-11-18 21:54:32.645 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved gettext from libc.so.0 - 2024-11-18 21:54:32.645 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001b8 with <SimProcedure gettext (stub)> - 2024-11-18 21:54:32.645 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strchr from libc.so.0 - 2024-11-18 21:54:32.645 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001c0 with <SimProcedure strchr> - 2024-11-18 21:54:32.646 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved printf from libc.so.0 - 2024-11-18 21:54:32.646 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001c8 with <SimProcedure printf> - 2024-11-18 21:54:32.646 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved snprintf from libc.so.0 - 2024-11-18 21:54:32.646 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001d0 with <SimProcedure snprintf> - 2024-11-18 21:54:32.646 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strrchr from libc.so.0 - 2024-11-18 21:54:32.646 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001d8 with <SimProcedure strrchr (stub)> - 2024-11-18 21:54:32.646 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved lseek from libc.so.0 - 2024-11-18 21:54:32.646 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001e0 with <SimProcedure lseek (stub)> - 2024-11-18 21:54:32.647 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __assert_fail from libc.so.0 - 2024-11-18 21:54:32.647 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001e8 with <SimProcedure __assert_fail> - 2024-11-18 21:54:32.647 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fputs from libc.so.0 - 2024-11-18 21:54:32.647 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001f0 with <SimProcedure fputs> - 2024-11-18 21:54:32.647 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memset from libc.so.0 - 2024-11-18 21:54:32.647 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001f8 with <SimProcedure memset> - 2024-11-18 21:54:32.647 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved close from libc.so.0 - 2024-11-18 21:54:32.647 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500200 with <SimProcedure close> - 2024-11-18 21:54:32.648 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved closedir from libc.so.0 - 2024-11-18 21:54:32.648 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500208 with <SimProcedure closedir> - 2024-11-18 21:54:32.648 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved regcomp - 2024-11-18 21:54:32.648 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500210 with <SimProcedure regcomp (stub)> - 2024-11-18 21:54:32.648 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memchr from libc.so.0 - 2024-11-18 21:54:32.648 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500218 with <SimProcedure memchr (stub)> - 2024-11-18 21:54:32.648 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved read from libc.so.0 - 2024-11-18 21:54:32.648 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500220 with <SimProcedure read> - 2024-11-18 21:54:32.649 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memcmp from libc.so.0 - 2024-11-18 21:54:32.649 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500228 with <SimProcedure memcmp> - 2024-11-18 21:54:32.649 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fputs_unlocked from libc.so.0 - 2024-11-18 21:54:32.649 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500230 with <SimProcedure fputs_unlocked> - 2024-11-18 21:54:32.649 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved rawmemchr from libc.so.0 - 2024-11-18 21:54:32.649 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500238 with <SimProcedure rawmemchr (stub)> - 2024-11-18 21:54:32.649 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved ferror_unlocked from libc.so.0 - 2024-11-18 21:54:32.649 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500240 with <SimProcedure ferror_unlocked (stub)> - 2024-11-18 21:54:32.650 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved calloc from libc.so.0 - 2024-11-18 21:54:32.650 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500248 with <SimProcedure calloc> - 2024-11-18 21:54:32.650 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strcmp from libc.so.0 - 2024-11-18 21:54:32.650 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500250 with <SimProcedure strcmp> - 2024-11-18 21:54:32.650 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved signal - 2024-11-18 21:54:32.650 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500258 with <SimProcedure signal (stub)> - 2024-11-18 21:54:32.650 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fputc_unlocked from libc.so.0 - 2024-11-18 21:54:32.650 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500260 with <SimProcedure fputc_unlocked> - 2024-11-18 21:54:32.650 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fprintf from libc.so.0 - 2024-11-18 21:54:32.651 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500268 with <SimProcedure fprintf> - 2024-11-18 21:54:32.651 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigemptyset from libc.so.0 - 2024-11-18 21:54:32.651 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500270 with <SimProcedure sigemptyset (stub)> - 2024-11-18 21:54:32.651 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved stat from libc.so.0 - 2024-11-18 21:54:32.651 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500278 with <SimProcedure stat (stub)> - 2024-11-18 21:54:32.651 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memcpy from libc.so.0 - 2024-11-18 21:54:32.651 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500280 with <SimProcedure memcpy> - 2024-11-18 21:54:32.652 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved putchar_unlocked from libc.so.0 - 2024-11-18 21:54:32.652 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500288 with <SimProcedure putchar_unlocked (stub)> - 2024-11-18 21:54:32.652 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved readdir from libc.so.0 - 2024-11-18 21:54:32.652 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500290 with <SimProcedure readdir> - 2024-11-18 21:54:32.652 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved mincore - 2024-11-18 21:54:32.652 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500298 with <SimProcedure mincore (stub)> - 2024-11-18 21:54:32.652 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved wcwidth - 2024-11-18 21:54:32.652 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002a0 with <SimProcedure wcwidth (stub)> - 2024-11-18 21:54:32.652 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved tolower from libc.so.0 - 2024-11-18 21:54:32.652 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002a8 with <SimProcedure tolower> - 2024-11-18 21:54:32.653 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved putc_unlocked from libc.so.0 - 2024-11-18 21:54:32.653 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002b0 with <SimProcedure putc_unlocked> - 2024-11-18 21:54:32.653 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved re_set_syntax - 2024-11-18 21:54:32.653 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002b8 with <SimProcedure re_set_syntax (stub)> - 2024-11-18 21:54:32.653 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved iswalnum from libc.so.0 - 2024-11-18 21:54:32.653 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002c0 with <SimProcedure iswalnum (stub)> - 2024-11-18 21:54:32.653 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved malloc from libc.so.0 - 2024-11-18 21:54:32.653 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002c8 with <SimProcedure malloc> - 2024-11-18 21:54:32.654 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved wcrtomb - 2024-11-18 21:54:32.654 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002d0 with <SimProcedure wcrtomb (stub)> - 2024-11-18 21:54:32.654 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved nl_langinfo - 2024-11-18 21:54:32.654 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002d8 with <SimProcedure nl_langinfo (stub)> - 2024-11-18 21:54:32.654 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved regexec - 2024-11-18 21:54:32.654 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002e0 with <SimProcedure regexec (stub)> - 2024-11-18 21:54:32.654 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strcoll from libc.so.0 - 2024-11-18 21:54:32.654 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002e8 with <SimProcedure strcoll (stub)> - 2024-11-18 21:54:32.654 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved re_search - 2024-11-18 21:54:32.655 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002f0 with <SimProcedure re_search (stub)> - 2024-11-18 21:54:32.655 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fchdir from libc.so.0 - 2024-11-18 21:54:32.655 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002f8 with <SimProcedure fchdir (stub)> - 2024-11-18 21:54:32.655 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fwrite_unlocked from libc.so.0 - 2024-11-18 21:54:32.655 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500300 with <SimProcedure fwrite_unlocked> - 2024-11-18 21:54:32.655 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved realloc from libc.so.0 - 2024-11-18 21:54:32.655 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500308 with <SimProcedure realloc> - 2024-11-18 21:54:32.655 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fdopen from libc.so.0 - 2024-11-18 21:54:32.655 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500310 with <SimProcedure fdopen> - 2024-11-18 21:54:32.656 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved munmap from libc.so.0 - 2024-11-18 21:54:32.656 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500318 with <SimProcedure munmap (stub)> - 2024-11-18 21:54:32.656 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setlocale from libc.so.0 - 2024-11-18 21:54:32.656 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500320 with <SimProcedure setlocale (stub)> - 2024-11-18 21:54:32.656 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved iswspace from libc.so.0 - 2024-11-18 21:54:32.656 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500328 with <SimProcedure iswspace (stub)> - 2024-11-18 21:54:32.656 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved mempcpy from libc.so.0 - 2024-11-18 21:54:32.656 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500330 with <SimProcedure mempcpy (stub)> - 2024-11-18 21:54:32.657 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memmove from libc.so.0 - 2024-11-18 21:54:32.657 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500338 with <SimProcedure memmove> - 2024-11-18 21:54:32.657 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved error from libc.so.0 - 2024-11-18 21:54:32.657 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500340 with <SimProcedure error> - 2024-11-18 21:54:32.657 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memrchr from libc.so.0 - 2024-11-18 21:54:32.657 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500348 with <SimProcedure memrchr (stub)> - 2024-11-18 21:54:32.657 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved open from libc.so.0 - 2024-11-18 21:54:32.657 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500350 with <SimProcedure open> - 2024-11-18 21:54:32.658 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fopen from libc.so.0 - 2024-11-18 21:54:32.658 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500358 with <SimProcedure fopen> - 2024-11-18 21:54:32.658 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved perror from libc.so.0 - 2024-11-18 21:54:32.658 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500360 with <SimProcedure perror> - 2024-11-18 21:54:32.658 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sysconf from libc.so.0 - 2024-11-18 21:54:32.658 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500368 with <SimProcedure sysconf (stub)> - 2024-11-18 21:54:32.658 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved towlower from libc.so.0 - 2024-11-18 21:54:32.658 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500370 with <SimProcedure towlower (stub)> - 2024-11-18 21:54:32.659 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved wctob from libc.so.0 - 2024-11-18 21:54:32.659 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500378 with <SimProcedure wctob (stub)> - 2024-11-18 21:54:32.659 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved fdopendir - 2024-11-18 21:54:32.659 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500380 with <SimProcedure fdopendir (stub)> - 2024-11-18 21:54:32.659 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved vfprintf from libc.so.0 - 2024-11-18 21:54:32.659 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500388 with <SimProcedure vfprintf (stub)> - 2024-11-18 21:54:32.659 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved towupper from libc.so.0 - 2024-11-18 21:54:32.659 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500390 with <SimProcedure towupper (stub)> - 2024-11-18 21:54:32.659 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved fstatfs - 2024-11-18 21:54:32.660 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500398 with <SimProcedure fstatfs (stub)> - 2024-11-18 21:54:32.660 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved __cxa_atexit - 2024-11-18 21:54:32.660 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003a0 with <SimProcedure __cxa_atexit (stub)> - 2024-11-18 21:54:32.660 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getpagesize from libc.so.0 - 2024-11-18 21:54:32.660 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003a8 with <SimProcedure getpagesize (stub)> - 2024-11-18 21:54:32.660 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved exit from libc.so.0 - 2024-11-18 21:54:32.660 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003b0 with <SimProcedure exit> - 2024-11-18 21:54:32.660 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved re_compile_pattern - 2024-11-18 21:54:32.660 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003b8 with <SimProcedure re_compile_pattern (stub)> - 2024-11-18 21:54:32.661 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fflush_unlocked from libc.so.0 - 2024-11-18 21:54:32.661 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003c0 with <SimProcedure fflush_unlocked> - 2024-11-18 21:54:32.661 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved mbsinit - 2024-11-18 21:54:32.661 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003c8 with <SimProcedure mbsinit (stub)> - 2024-11-18 21:54:32.661 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved sigaltstack - 2024-11-18 21:54:32.661 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003d0 with <SimProcedure sigaltstack (stub)> - 2024-11-18 21:54:32.661 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved iswprint from libc.so.0 - 2024-11-18 21:54:32.661 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003d8 with <SimProcedure iswprint (stub)> - 2024-11-18 21:54:32.661 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fstat from libc.so.0 - 2024-11-18 21:54:32.661 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003e0 with <SimProcedure fstat (stub)> - 2024-11-18 21:54:32.662 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getc from libc.so.0 - 2024-11-18 21:54:32.662 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003e8 with <SimProcedure getc> - 2024-11-18 21:54:32.662 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigaddset from libc.so.0 - 2024-11-18 21:54:32.662 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003f0 with <SimProcedure sigaddset (stub)> - 2024-11-18 21:54:32.662 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strstr from libc.so.0 - 2024-11-18 21:54:32.662 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003f8 with <SimProcedure strstr> - 2024-11-18 21:54:32.662 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved fstatat - 2024-11-18 21:54:32.662 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500400 with <SimProcedure fstatat (stub)> - 2024-11-18 21:54:32.663 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __ctype_b_loc from libc.so.0 - 2024-11-18 21:54:32.663 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500408 with <SimProcedure __ctype_b_loc> - 2024-11-18 21:54:32.663 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01000 with <SimProcedure LinuxLoader> - 2024-11-18 21:54:32.663 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01008 with <SimProcedure _dl_rtld_lock_recursive> - 2024-11-18 21:54:32.663 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01010 with <SimProcedure _dl_rtld_unlock_recursive> - 2024-11-18 21:54:32.664 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01018 with <SimProcedure ReturnUnconstrained> - 2024-11-18 21:54:32.664 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01020 with <SimProcedure _dl_initial_error_catch_tsd> - 2024-11-18 21:54:32.664 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01028 with <SimProcedure _vsyscall> - 2024-11-18 21:54:32.664 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01038 with <SimProcedure CallReturn> - 2024-11-18 21:54:32.665 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01040 with <SimProcedure UnresolvableJumpTarget> - 2024-11-18 21:54:32.665 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01048 with <SimProcedure UnresolvableCallTarget> - 2024-11-18 21:54:32.665 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x41b3c8 with <SimProcedure InitLocaleInfoHook> - 2024-11-18 21:54:32.666 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x410763 with <SimProcedure CStackActionHook> - 2024-11-18 21:54:32.666 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x601050 with <SimProcedure UnresolvableJumpTarget> - 2024-11-18 21:54:32.680 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x601058 with <SimProcedure UnresolvableCallTarget> - 2024-11-18 21:54:32.680 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:35.919 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.015 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.022 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.028 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:36.045 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.060 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.471 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.477 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.485 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:36.499 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.517 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.529 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.536 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.542 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:36.552 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.565 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.645 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.651 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.657 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:36.673 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:36.693 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.085 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.091 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.097 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.114 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.129 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.169 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.175 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.180 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.196 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.211 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.313 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.320 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.326 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.345 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.376 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.412 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.418 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.423 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.438 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.463 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.522 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.528 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.534 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.553 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.566 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.919 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.926 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.933 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:37.943 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.959 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.979 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.987 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:37.994 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:38.004 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:38.056 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:38.102 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:38.108 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:38.115 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:38.126 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:38.640 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:40.477 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:40.483 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:40.490 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-18 21:54:40.502 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.173 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.208 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404c10  |  Recent BB: 0x40a70e  |  Active constraints: 2 - 2024-11-18 21:54:42.208 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.208 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.218 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x500320  |  Recent BB: 0x404c10  |  Active constraints: 2 - 2024-11-18 21:54:42.218 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.218 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.230 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40a7da  |  Recent BB: 0x500320  |  Active constraints: 2 - 2024-11-18 21:54:42.231 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.231 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.235 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x4048b0  |  Recent BB: 0x40a7da  |  Active constraints: 2 - 2024-11-18 21:54:42.235 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.235 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.238 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x500170  |  Recent BB: 0x4048b0  |  Active constraints: 2 - 2024-11-18 21:54:42.238 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.238 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.244 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40a7f3  |  Recent BB: 0x500170  |  Active constraints: 2 - 2024-11-18 21:54:42.245 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.245 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.248 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404890  |  Recent BB: 0x40a7f3  |  Active constraints: 2 - 2024-11-18 21:54:42.249 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.249 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.251 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x500160  |  Recent BB: 0x404890  |  Active constraints: 2 - 2024-11-18 21:54:42.252 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.252 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.258 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40a802  |  Recent BB: 0x500160  |  Active constraints: 2 - 2024-11-18 21:54:42.258 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.258 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:42.262 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x41b3c8  |  Recent BB: 0x40a802  |  Active constraints: 2 - 2024-11-18 21:54:42.262 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - WARNING ^^^: Hitting init_localeinfo despite hook! - 2024-11-18 21:54:42.262 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:393
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:42.262 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.540 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:43.565 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409bec  |  Recent BB: 0x40b5eb  |  Active constraints: 0 - 2024-11-18 21:54:43.565 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.565 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:43.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 0 - 2024-11-18 21:54:43.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.587 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:43.596 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 0 - 2024-11-18 21:54:43.596 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.597 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:43.608 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c4c  |  Recent BB: 0x5001a8  |  Active constraints: 0 - 2024-11-18 21:54:43.609 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.609 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:43.614 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410333  |  Recent BB: 0x409c4c  |  Active constraints: 0 - 2024-11-18 21:54:43.615 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:43.615 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.719 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410349  |  Recent BB: 0x410333  |  Active constraints: 1 - 2024-11-18 21:54:43.719 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x410350  |  Recent BB: 0x410333  |  Active constraints: 1 - 2024-11-18 21:54:43.720 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.720 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.727 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410355  |  Recent BB: 0x410349  |  Active constraints: 1 - 2024-11-18 21:54:43.728 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409c59  |  Recent BB: 0x410350  |  Active constraints: 1 - 2024-11-18 21:54:43.728 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.728 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.737 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c59  |  Recent BB: 0x410355  |  Active constraints: 1 - 2024-11-18 21:54:43.737 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409cde  |  Recent BB: 0x409c59  |  Active constraints: 1 - 2024-11-18 21:54:43.738 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.738 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.748 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c60  |  Recent BB: 0x409c59  |  Active constraints: 1 - 2024-11-18 21:54:43.748 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409d03  |  Recent BB: 0x409cde  |  Active constraints: 1 - 2024-11-18 21:54:43.748 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.748 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.760 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c76  |  Recent BB: 0x409c60  |  Active constraints: 1 - 2024-11-18 21:54:43.760 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409d1a  |  Recent BB: 0x409d03  |  Active constraints: 1 - 2024-11-18 21:54:43.761 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.761 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:43.768 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c93  |  Recent BB: 0x409c76  |  Active constraints: 1 - 2024-11-18 21:54:43.768 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b5f0  |  Recent BB: 0x409d1a  |  Active constraints: 1 - 2024-11-18 21:54:43.768 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:43.768 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:43.997 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409cb2  |  Recent BB: 0x409c93  |  Active constraints: 1 - 2024-11-18 21:54:43.998 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b603  |  Recent BB: 0x40b5f0  |  Active constraints: 3 - 2024-11-18 21:54:43.998 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a879  |  Recent BB: 0x40b5f0  |  Active constraints: 3 - 2024-11-18 21:54:43.998 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:43.998 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 4 active> - 2024-11-18 21:54:44.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c27  |  Recent BB: 0x409cb2  |  Active constraints: 1 - 2024-11-18 21:54:44.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b662  |  Recent BB: 0x40b603  |  Active constraints: 3 - 2024-11-18 21:54:44.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a889  |  Recent BB: 0x40a879  |  Active constraints: 4 - 2024-11-18 21:54:44.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b5bc  |  Recent BB: 0x40a879  |  Active constraints: 4 - 2024-11-18 21:54:44.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 4 active> - 2024-11-18 21:54:44.086 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 50 active> - 2024-11-18 21:54:45.375 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404920  |  Recent BB: 0x409c27  |  Active constraints: 1 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b676  |  Recent BB: 0x40b662  |  Active constraints: 3 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a9f2  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b5ac  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40a90a  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x40b089  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x40a9d0  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.376 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x40af70  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x40b095  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x40b064  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x40b4d9  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x40b0a1  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x40b593  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.377 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x40af7f  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x40b303  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40aad3  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b036  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x40af8b  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x40a9ae  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.378 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x40aadf  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x40b042  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x40af97  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x40b04e  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x40aaee  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x40afa6  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.379 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x40aafa  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x40b5c6  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x40afb5  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x40a8b0  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x40ab06  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x40aa58  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x40b0b2  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.380 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x40b1a9  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.381 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x40b0be  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.381 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x40ac86  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.381 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x40aa67  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.381 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x40a8ce  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.381 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x40b3cb  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x40aa36  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x40aa76  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x40b0cd  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x40b5bc  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x40aa82  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.382 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x40b0d9  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x40aa14  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x40ab82  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x40b06e  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x40a8ec  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x40b5a3  |  Recent BB: 0x40a889  |  Active constraints: 8 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x409885  |  Recent BB: 0x40b5bc  |  Active constraints: 4 - 2024-11-18 21:54:45.383 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 50 active> - 2024-11-18 21:54:45.384 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 51 active> - 2024-11-18 21:54:47.082 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 1 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b6e3  |  Recent BB: 0x40b676  |  Active constraints: 4 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40b680  |  Recent BB: 0x40b676  |  Active constraints: 4 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x409ab5  |  Recent BB: 0x40a9f2  |  Active constraints: 3 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40b5c6  |  Recent BB: 0x40b5ac  |  Active constraints: 8 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x404a70  |  Recent BB: 0x40a90a  |  Active constraints: 8 - 2024-11-18 21:54:47.083 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x40b5c6  |  Recent BB: 0x40b089  |  Active constraints: 8 - 2024-11-18 21:54:47.084 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x409ab5  |  Recent BB: 0x40a9d0  |  Active constraints: 3 - 2024-11-18 21:54:47.084 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x40b5c6  |  Recent BB: 0x40af70  |  Active constraints: 4 - 2024-11-18 21:54:47.084 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x40b5c6  |  Recent BB: 0x40b095  |  Active constraints: 8 - 2024-11-18 21:54:47.084 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x40b5c6  |  Recent BB: 0x40b064  |  Active constraints: 4 - 2024-11-18 21:54:47.084 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x41b5db  |  Recent BB: 0x40b4d9  |  Active constraints: 8 - 2024-11-18 21:54:47.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x40f7d8  |  Recent BB: 0x40b0a1  |  Active constraints: 8 - 2024-11-18 21:54:47.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x40b5c6  |  Recent BB: 0x40b593  |  Active constraints: 8 - 2024-11-18 21:54:47.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x40b5c6  |  Recent BB: 0x40af7f  |  Active constraints: 8 - 2024-11-18 21:54:47.085 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40b3b9  |  Recent BB: 0x40b303  |  Active constraints: 122 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b5c6  |  Recent BB: 0x40aad3  |  Active constraints: 8 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x40b5c6  |  Recent BB: 0x40b036  |  Active constraints: 8 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x40b5c6  |  Recent BB: 0x40af8b  |  Active constraints: 8 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x40a9c0  |  Recent BB: 0x40a9ae  |  Active constraints: 3 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x40b5c6  |  Recent BB: 0x40aadf  |  Active constraints: 8 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x40b5c6  |  Recent BB: 0x40b042  |  Active constraints: 8 - 2024-11-18 21:54:47.086 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x40b5c6  |  Recent BB: 0x40af97  |  Active constraints: 8 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x40b5c6  |  Recent BB: 0x40b04e  |  Active constraints: 8 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x40b5c6  |  Recent BB: 0x40aaee  |  Active constraints: 8 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x40b5c6  |  Recent BB: 0x40afa6  |  Active constraints: 8 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x40b5c6  |  Recent BB: 0x40aafa  |  Active constraints: 8 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 29 - 2024-11-18 21:54:47.087 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x4267d7  |  Recent BB: 0x40afb5  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x4070bd  |  Recent BB: 0x40a8b0  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x41010e  |  Recent BB: 0x40ab06  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x40b5c6  |  Recent BB: 0x40aa58  |  Active constraints: 4 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x40b5c6  |  Recent BB: 0x40b0b2  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x40b2f4  |  Recent BB: 0x40b1a9  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x40b5c6  |  Recent BB: 0x40b0be  |  Active constraints: 8 - 2024-11-18 21:54:47.088 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x404a70  |  Recent BB: 0x40ac86  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x40b5c6  |  Recent BB: 0x40aa67  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x4070bd  |  Recent BB: 0x40a8ce  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x40b4c7  |  Recent BB: 0x40b3cb  |  Active constraints: 4 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x409ab5  |  Recent BB: 0x40aa36  |  Active constraints: 3 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x40b5c6  |  Recent BB: 0x40aa76  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x40b5c6  |  Recent BB: 0x40b0cd  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x409885  |  Recent BB: 0x40b5bc  |  Active constraints: 8 - 2024-11-18 21:54:47.089 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x404940  |  Recent BB: 0x40aa82  |  Active constraints: 8 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x404a70  |  Recent BB: 0x40b0d9  |  Active constraints: 8 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x409ab5  |  Recent BB: 0x40aa14  |  Active constraints: 3 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x4048e0  |  Recent BB: 0x40ab82  |  Active constraints: 8 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x40b5c6  |  Recent BB: 0x40b06e  |  Active constraints: 4 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x4070bd  |  Recent BB: 0x40a8ec  |  Active constraints: 8 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x40b5c6  |  Recent BB: 0x40b5a3  |  Active constraints: 8 - 2024-11-18 21:54:47.090 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x40989b  |  Recent BB: 0x409885  |  Active constraints: 4 - 2024-11-18 21:54:47.091 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 51 active> - 2024-11-18 21:54:47.091 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 52 active, 1 found> - 2024-11-18 21:54:49.103 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c4c  |  Recent BB: 0x5001a8  |  Active constraints: 1 - 2024-11-18 21:54:49.103 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b7eb  |  Recent BB: 0x40b6e3  |  Active constraints: 5 - 2024-11-18 21:54:49.103 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40b6f5  |  Recent BB: 0x40b6e3  |  Active constraints: 5 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b690  |  Recent BB: 0x40b680  |  Active constraints: 5 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40b7f5  |  Recent BB: 0x40b680  |  Active constraints: 5 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 3 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 8 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.104 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 3 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x427034  |  Recent BB: 0x41b5db  |  Active constraints: 8 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x40f823  |  Recent BB: 0x40f7d8  |  Active constraints: 8 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.105 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 69 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x40b312  |  Recent BB: 0x40b3b9  |  Active constraints: 120 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 29 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x426812  |  Recent BB: 0x4267d7  |  Active constraints: 8 - 2024-11-18 21:54:49.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 8 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x41013e  |  Recent BB: 0x41010e  |  Active constraints: 8 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x40b5c6  |  Recent BB: 0x40b2f4  |  Active constraints: 8 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 8 - 2024-11-18 21:54:49.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 8 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x40b3da  |  Recent BB: 0x40b4c7  |  Active constraints: 2 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 3 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x40989b  |  Recent BB: 0x409885  |  Active constraints: 8 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x5001b8  |  Recent BB: 0x404940  |  Active constraints: 8 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 8 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 3 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x500188  |  Recent BB: 0x4048e0  |  Active constraints: 8 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 8 - 2024-11-18 21:54:49.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 3 - 2024-11-18 21:54:49.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 51  |  IP: 0x41f472  |  Recent BB: 0x40989b  |  Active constraints: 4 - 2024-11-18 21:54:49.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.234 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.261 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409ab5  |  Recent BB: 0x40a9c0  |  Active constraints: 3 - 2024-11-18 21:54:50.261 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.261 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.269 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 3 - 2024-11-18 21:54:50.269 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.270 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.277 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409ad1  |  Recent BB: 0x409b4e  |  Active constraints: 3 - 2024-11-18 21:54:50.277 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.277 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.285 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 3 - 2024-11-18 21:54:50.285 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.285 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.288 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 3 - 2024-11-18 21:54:50.288 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.288 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.procedures.libc.strncmp - everything is concrete: a_len 5, b_len 4, limit 5 - 2024-11-18 21:54:50.302 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:43
+DEBUG - angr.procedures.libc.strncmp - lengths < limit and unmatched - 2024-11-18 21:54:50.302 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:46
+DEBUG - angr.procedures.libc.strncmp - Processing byte 0 - 2024-11-18 21:54:50.303 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - ... found mismatching concrete bytes 0x65 and 0x67 - 2024-11-18 21:54:50.304 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:115
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.306 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409af6  |  Recent BB: 0x500250  |  Active constraints: 3 - 2024-11-18 21:54:50.306 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.306 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.312 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409b4a  |  Recent BB: 0x409af6  |  Active constraints: 3 - 2024-11-18 21:54:50.312 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.313 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.319 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409ad1  |  Recent BB: 0x409b4a  |  Active constraints: 3 - 2024-11-18 21:54:50.320 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.320 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.326 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 3 - 2024-11-18 21:54:50.326 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.326 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.329 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 3 - 2024-11-18 21:54:50.329 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.329 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.procedures.libc.strncmp - everything is concrete: a_len 5, b_len 5, limit 5 - 2024-11-18 21:54:50.335 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:43
+DEBUG - angr.procedures.libc.strncmp - Processing byte 0 - 2024-11-18 21:54:50.335 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 1 - 2024-11-18 21:54:50.336 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 2 - 2024-11-18 21:54:50.336 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 3 - 2024-11-18 21:54:50.336 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 4 - 2024-11-18 21:54:50.336 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - concrete run made it to the end! - 2024-11-18 21:54:50.337 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:153
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.338 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409af6  |  Recent BB: 0x500250  |  Active constraints: 3 - 2024-11-18 21:54:50.338 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.339 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:50.346 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409afa  |  Recent BB: 0x409af6  |  Active constraints: 3 - 2024-11-18 21:54:50.347 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:50.347 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:50.447 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409b42  |  Recent BB: 0x409afa  |  Active constraints: 4 - 2024-11-18 21:54:50.447 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409b00  |  Recent BB: 0x409afa  |  Active constraints: 4 - 2024-11-18 21:54:50.447 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:50.447 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:50.485 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409bea  |  Recent BB: 0x409b42  |  Active constraints: 4 - 2024-11-18 21:54:50.486 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409b42  |  Recent BB: 0x409b00  |  Active constraints: 5 - 2024-11-18 21:54:50.486 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x409b08  |  Recent BB: 0x409b00  |  Active constraints: 5 - 2024-11-18 21:54:50.487 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:50.487 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:50.504 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40a9c5  |  Recent BB: 0x409bea  |  Active constraints: 4 - 2024-11-18 21:54:50.504 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409bea  |  Recent BB: 0x409b42  |  Active constraints: 5 - 2024-11-18 21:54:50.504 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x404940  |  Recent BB: 0x409b08  |  Active constraints: 5 - 2024-11-18 21:54:50.504 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:50.504 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:50.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40b5c6  |  Recent BB: 0x40a9c5  |  Active constraints: 3 - 2024-11-18 21:54:50.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40a9c5  |  Recent BB: 0x409bea  |  Active constraints: 5 - 2024-11-18 21:54:50.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x5001b8  |  Recent BB: 0x404940  |  Active constraints: 5 - 2024-11-18 21:54:50.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:50.557 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:50.641 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40b5eb  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:50.642 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b5c6  |  Recent BB: 0x40a9c5  |  Active constraints: 3 - 2024-11-18 21:54:50.642 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x409b17  |  Recent BB: 0x5001b8  |  Active constraints: 5 - 2024-11-18 21:54:50.642 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:50.642 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active, 1 found> - 2024-11-18 21:54:50.711 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x40b5eb  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:50.711 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x404c50  |  Recent BB: 0x409b17  |  Active constraints: 5 - 2024-11-18 21:54:50.711 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.709 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:52.738 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409bec  |  Recent BB: 0x40b5eb  |  Active constraints: 4 - 2024-11-18 21:54:52.739 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.739 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:52.758 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:52.759 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.759 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:52.763 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:52.763 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.763 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:52.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c4c  |  Recent BB: 0x5001a8  |  Active constraints: 4 - 2024-11-18 21:54:52.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.773 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 1 active> - 2024-11-18 21:54:52.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410333  |  Recent BB: 0x409c4c  |  Active constraints: 4 - 2024-11-18 21:54:52.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-18 21:54:52.779 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.906 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410349  |  Recent BB: 0x410333  |  Active constraints: 5 - 2024-11-18 21:54:52.907 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x410350  |  Recent BB: 0x410333  |  Active constraints: 5 - 2024-11-18 21:54:52.907 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.907 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.915 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410355  |  Recent BB: 0x410349  |  Active constraints: 5 - 2024-11-18 21:54:52.916 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409c59  |  Recent BB: 0x410350  |  Active constraints: 5 - 2024-11-18 21:54:52.916 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.916 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.926 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c59  |  Recent BB: 0x410355  |  Active constraints: 5 - 2024-11-18 21:54:52.926 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409cde  |  Recent BB: 0x409c59  |  Active constraints: 5 - 2024-11-18 21:54:52.926 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.926 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.937 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c60  |  Recent BB: 0x409c59  |  Active constraints: 5 - 2024-11-18 21:54:52.938 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409d03  |  Recent BB: 0x409cde  |  Active constraints: 5 - 2024-11-18 21:54:52.938 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.938 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.951 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c76  |  Recent BB: 0x409c60  |  Active constraints: 5 - 2024-11-18 21:54:52.952 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409d1a  |  Recent BB: 0x409d03  |  Active constraints: 5 - 2024-11-18 21:54:52.952 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.952 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 2 active> - 2024-11-18 21:54:52.959 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c93  |  Recent BB: 0x409c76  |  Active constraints: 5 - 2024-11-18 21:54:52.960 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b5f0  |  Recent BB: 0x409d1a  |  Active constraints: 5 - 2024-11-18 21:54:52.960 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 2 active> - 2024-11-18 21:54:52.960 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 3 active> - 2024-11-18 21:54:53.072 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409cb2  |  Recent BB: 0x409c93  |  Active constraints: 5 - 2024-11-18 21:54:53.072 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b603  |  Recent BB: 0x40b5f0  |  Active constraints: 5 - 2024-11-18 21:54:53.072 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a879  |  Recent BB: 0x40b5f0  |  Active constraints: 5 - 2024-11-18 21:54:53.073 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 3 active> - 2024-11-18 21:54:53.073 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 4 active> - 2024-11-18 21:54:53.156 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c27  |  Recent BB: 0x409cb2  |  Active constraints: 5 - 2024-11-18 21:54:53.157 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b662  |  Recent BB: 0x40b603  |  Active constraints: 5 - 2024-11-18 21:54:53.157 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a889  |  Recent BB: 0x40a879  |  Active constraints: 6 - 2024-11-18 21:54:53.157 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b5bc  |  Recent BB: 0x40a879  |  Active constraints: 6 - 2024-11-18 21:54:53.157 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 4 active> - 2024-11-18 21:54:53.157 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 50 active> - 2024-11-18 21:54:55.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x404920  |  Recent BB: 0x409c27  |  Active constraints: 5 - 2024-11-18 21:54:55.106 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b676  |  Recent BB: 0x40b662  |  Active constraints: 5 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40a9f2  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b5ac  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40a90a  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x40b089  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x40a9d0  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x40af70  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.107 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x40b095  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x40b064  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x40b4d9  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x40b593  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x40b0a1  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x40b303  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x40af7f  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.108 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40aad3  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b036  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x40af8b  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x40a9ae  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x40aadf  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x40b042  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x40af97  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x40b04e  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.109 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x40aaee  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x40afa6  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x40aafa  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x40afb5  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x40b5c6  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x40a8b0  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x40ab06  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.110 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x40aa58  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x40b0b2  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x40b1a9  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x40ac86  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x40b0be  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x40aa67  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x40a8ce  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.111 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x40b3cb  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x40aa36  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x40aa76  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x40b0cd  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x40b5bc  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x40aa82  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x40b0d9  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x40aa14  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.112 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x40b06e  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.113 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x40ab82  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.113 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x40a8ec  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.113 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x40b5a3  |  Recent BB: 0x40a889  |  Active constraints: 10 - 2024-11-18 21:54:55.113 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x409885  |  Recent BB: 0x40b5bc  |  Active constraints: 6 - 2024-11-18 21:54:55.113 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 50 active> - 2024-11-18 21:54:55.113 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 51 active> - 2024-11-18 21:54:56.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 5 - 2024-11-18 21:54:56.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b6e3  |  Recent BB: 0x40b676  |  Active constraints: 6 - 2024-11-18 21:54:56.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40b680  |  Recent BB: 0x40b676  |  Active constraints: 6 - 2024-11-18 21:54:56.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x409ab5  |  Recent BB: 0x40a9f2  |  Active constraints: 4 - 2024-11-18 21:54:56.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40b5c6  |  Recent BB: 0x40b5ac  |  Active constraints: 10 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x404a70  |  Recent BB: 0x40a90a  |  Active constraints: 10 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x40b5c6  |  Recent BB: 0x40b089  |  Active constraints: 10 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x409ab5  |  Recent BB: 0x40a9d0  |  Active constraints: 4 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x40b5c6  |  Recent BB: 0x40af70  |  Active constraints: 6 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x40b5c6  |  Recent BB: 0x40b095  |  Active constraints: 10 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x40b5c6  |  Recent BB: 0x40b064  |  Active constraints: 6 - 2024-11-18 21:54:56.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x41b5db  |  Recent BB: 0x40b4d9  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x40b5c6  |  Recent BB: 0x40b593  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x40f7d8  |  Recent BB: 0x40b0a1  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x40b3b9  |  Recent BB: 0x40b303  |  Active constraints: 124 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40b5c6  |  Recent BB: 0x40af7f  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b5c6  |  Recent BB: 0x40aad3  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x40b5c6  |  Recent BB: 0x40b036  |  Active constraints: 10 - 2024-11-18 21:54:56.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x40b5c6  |  Recent BB: 0x40af8b  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x40a9c0  |  Recent BB: 0x40a9ae  |  Active constraints: 4 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x40b5c6  |  Recent BB: 0x40aadf  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x40b5c6  |  Recent BB: 0x40b042  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x40b5c6  |  Recent BB: 0x40af97  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x40b5c6  |  Recent BB: 0x40b04e  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x40b5c6  |  Recent BB: 0x40aaee  |  Active constraints: 10 - 2024-11-18 21:54:56.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x40b5c6  |  Recent BB: 0x40afa6  |  Active constraints: 10 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x40b5c6  |  Recent BB: 0x40aafa  |  Active constraints: 10 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x4267d7  |  Recent BB: 0x40afb5  |  Active constraints: 10 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 30 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x4070bd  |  Recent BB: 0x40a8b0  |  Active constraints: 10 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x41010e  |  Recent BB: 0x40ab06  |  Active constraints: 10 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x40b5c6  |  Recent BB: 0x40aa58  |  Active constraints: 6 - 2024-11-18 21:54:56.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x40b5c6  |  Recent BB: 0x40b0b2  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x40b2f4  |  Recent BB: 0x40b1a9  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x404a70  |  Recent BB: 0x40ac86  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x40b5c6  |  Recent BB: 0x40b0be  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x40b5c6  |  Recent BB: 0x40aa67  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x4070bd  |  Recent BB: 0x40a8ce  |  Active constraints: 10 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x40b4c7  |  Recent BB: 0x40b3cb  |  Active constraints: 6 - 2024-11-18 21:54:56.779 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x409ab5  |  Recent BB: 0x40aa36  |  Active constraints: 4 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x40b5c6  |  Recent BB: 0x40aa76  |  Active constraints: 10 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x40b5c6  |  Recent BB: 0x40b0cd  |  Active constraints: 10 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x409885  |  Recent BB: 0x40b5bc  |  Active constraints: 10 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x404940  |  Recent BB: 0x40aa82  |  Active constraints: 10 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x404a70  |  Recent BB: 0x40b0d9  |  Active constraints: 10 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x409ab5  |  Recent BB: 0x40aa14  |  Active constraints: 4 - 2024-11-18 21:54:56.780 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x40b5c6  |  Recent BB: 0x40b06e  |  Active constraints: 6 - 2024-11-18 21:54:56.781 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x4048e0  |  Recent BB: 0x40ab82  |  Active constraints: 10 - 2024-11-18 21:54:56.781 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x4070bd  |  Recent BB: 0x40a8ec  |  Active constraints: 10 - 2024-11-18 21:54:56.781 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x40b5c6  |  Recent BB: 0x40b5a3  |  Active constraints: 10 - 2024-11-18 21:54:56.781 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x40989b  |  Recent BB: 0x409885  |  Active constraints: 6 - 2024-11-18 21:54:56.781 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 51 active> - 2024-11-18 21:54:56.781 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 52 active, 1 avoid> - 2024-11-18 21:54:57.550 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x409c4c  |  Recent BB: 0x5001a8  |  Active constraints: 5 - 2024-11-18 21:54:57.550 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x40b7eb  |  Recent BB: 0x40b6e3  |  Active constraints: 6 - 2024-11-18 21:54:57.554 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40b6f5  |  Recent BB: 0x40b6e3  |  Active constraints: 6 - 2024-11-18 21:54:57.554 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b690  |  Recent BB: 0x40b680  |  Active constraints: 7 - 2024-11-18 21:54:57.554 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40b7f5  |  Recent BB: 0x40b680  |  Active constraints: 7 - 2024-11-18 21:54:57.554 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 10 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.555 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x427034  |  Recent BB: 0x41b5db  |  Active constraints: 10 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40f823  |  Recent BB: 0x40f7d8  |  Active constraints: 10 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b312  |  Recent BB: 0x40b3b9  |  Active constraints: 122 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 70 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.556 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.557 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x426812  |  Recent BB: 0x4267d7  |  Active constraints: 10 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 30 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 10 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x41013e  |  Recent BB: 0x41010e  |  Active constraints: 10 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.558 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x40b5c6  |  Recent BB: 0x40b2f4  |  Active constraints: 10 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 10 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 10 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x40b3da  |  Recent BB: 0x40b4c7  |  Active constraints: 4 - 2024-11-18 21:54:57.559 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 4 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x40989b  |  Recent BB: 0x409885  |  Active constraints: 10 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x5001b8  |  Recent BB: 0x404940  |  Active constraints: 10 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x500250  |  Recent BB: 0x404a70  |  Active constraints: 10 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x409b4e  |  Recent BB: 0x409ab5  |  Active constraints: 4 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.560 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x500188  |  Recent BB: 0x4048e0  |  Active constraints: 10 - 2024-11-18 21:54:57.561 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x4267d7  |  Recent BB: 0x4070bd  |  Active constraints: 10 - 2024-11-18 21:54:57.561 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:57.561 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 51  |  IP: 0x41f472  |  Recent BB: 0x40989b  |  Active constraints: 6 - 2024-11-18 21:54:57.561 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 52 active, 1 avoid> - 2024-11-18 21:54:57.561 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.procedures.libc.strncmp - Processing byte 0 - 2024-11-18 21:54:58.052 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 1 - 2024-11-18 21:54:58.053 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 2 - 2024-11-18 21:54:58.054 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 3 - 2024-11-18 21:54:58.054 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - returning symbolic - 2024-11-18 21:54:58.054 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:169
+DEBUG - angr.procedures.libc.strncmp - Processing byte 0 - 2024-11-18 21:54:58.351 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - returning symbolic - 2024-11-18 21:54:58.351 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:169
+DEBUG - angr.procedures.libc.strncmp - Processing byte 0 - 2024-11-18 21:54:58.477 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 1 - 2024-11-18 21:54:58.478 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 2 - 2024-11-18 21:54:58.478 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 3 - 2024-11-18 21:54:58.479 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 4 - 2024-11-18 21:54:58.479 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - Processing byte 5 - 2024-11-18 21:54:58.479 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:96
+DEBUG - angr.procedures.libc.strncmp - returning symbolic - 2024-11-18 21:54:58.480 - run() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/procedures/libc/strncmp.py:169
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 52 active, 1 avoid> - 2024-11-18 21:54:58.584 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410333  |  Recent BB: 0x409c4c  |  Active constraints: 5 - 2024-11-18 21:54:58.584 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x409885  |  Recent BB: 0x40b7eb  |  Active constraints: 6 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40b72b  |  Recent BB: 0x40b6f5  |  Active constraints: 7 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b7f5  |  Recent BB: 0x40b690  |  Active constraints: 8 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x4200bc  |  Recent BB: 0x40b7f5  |  Active constraints: 6 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x409ad1  |  Recent BB: 0x409b4e  |  Active constraints: 4 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x40a923  |  Recent BB: 0x500250  |  Active constraints: 13 - 2024-11-18 21:54:58.585 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x409ad1  |  Recent BB: 0x409b4e  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x427053  |  Recent BB: 0x427034  |  Active constraints: 10 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.586 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x40f7ed  |  Recent BB: 0x40f823  |  Active constraints: 10 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x40b332  |  Recent BB: 0x40b312  |  Active constraints: 122 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 70 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.587 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x426840  |  Recent BB: 0x426812  |  Active constraints: 10 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 30 - 2024-11-18 21:54:58.588 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x426812  |  Recent BB: 0x4267d7  |  Active constraints: 10 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x40fd66  |  Recent BB: 0x41013e  |  Active constraints: 10 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x409bec  |  Recent BB: 0x40b5c6  |  Active constraints: 4 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x40ac9f  |  Recent BB: 0x500250  |  Active constraints: 13 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.589 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x426812  |  Recent BB: 0x4267d7  |  Active constraints: 10 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x40b3fa  |  Recent BB: 0x40b3da  |  Active constraints: 4 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x409ad1  |  Recent BB: 0x409b4e  |  Active constraints: 4 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x41f472  |  Recent BB: 0x40989b  |  Active constraints: 10 - 2024-11-18 21:54:58.590 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x40aa91  |  Recent BB: 0x5001b8  |  Active constraints: 10 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x40b0f2  |  Recent BB: 0x500250  |  Active constraints: 13 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x409ad1  |  Recent BB: 0x409b4e  |  Active constraints: 4 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x40ab91  |  Recent BB: 0x500188  |  Active constraints: 12 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x426812  |  Recent BB: 0x4267d7  |  Active constraints: 10 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:58.591 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 51  |  IP: 0x4098a0  |  Recent BB: 0x41f472  |  Active constraints: 6 - 2024-11-18 21:54:58.592 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 52 active, 1 avoid> - 2024-11-18 21:54:58.592 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+DEBUG - angr.sim_manager - SIMGR: <SimulationManager with 56 active, 1 avoid> - 2024-11-18 21:54:59.769 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:387
+DEBUG - angr.sim_manager - State 0  |  IP: 0x410349  |  Recent BB: 0x410333  |  Active constraints: 6 - 2024-11-18 21:54:59.769 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 1  |  IP: 0x410350  |  Recent BB: 0x410333  |  Active constraints: 6 - 2024-11-18 21:54:59.769 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 2  |  IP: 0x40989b  |  Recent BB: 0x409885  |  Active constraints: 6 - 2024-11-18 21:54:59.770 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 3  |  IP: 0x40b739  |  Recent BB: 0x40b72b  |  Active constraints: 11 - 2024-11-18 21:54:59.770 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 4  |  IP: 0x40b752  |  Recent BB: 0x40b72b  |  Active constraints: 11 - 2024-11-18 21:54:59.770 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 5  |  IP: 0x4200bc  |  Recent BB: 0x40b7f5  |  Active constraints: 6 - 2024-11-18 21:54:59.770 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 6  |  IP: 0x420143  |  Recent BB: 0x4200bc  |  Active constraints: 7 - 2024-11-18 21:54:59.770 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 7  |  IP: 0x4200d9  |  Recent BB: 0x4200bc  |  Active constraints: 7 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 8  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 4 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 9  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 10  |  IP: 0x40a936  |  Recent BB: 0x40a923  |  Active constraints: 14 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 11  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 12  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 4 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 13  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.771 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 14  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 15  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 16  |  IP: 0x42705e  |  Recent BB: 0x427053  |  Active constraints: 11 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 17  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 18  |  IP: 0x40f7a4  |  Recent BB: 0x40f7ed  |  Active constraints: 10 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 19  |  IP: 0x41b834  |  Recent BB: 0x40b332  |  Active constraints: 122 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 20  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 70 - 2024-11-18 21:54:59.772 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 21  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 22  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 23  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 24  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 25  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 26  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.773 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 27  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 28  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 29  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 30  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 31  |  IP: 0x426847  |  Recent BB: 0x426840  |  Active constraints: 10 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 32  |  IP: 0x409c4c  |  Recent BB: 0x5001a8  |  Active constraints: 30 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 33  |  IP: 0x426840  |  Recent BB: 0x426812  |  Active constraints: 10 - 2024-11-18 21:54:59.774 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 34  |  IP: 0x4048e0  |  Recent BB: 0x40fd66  |  Active constraints: 10 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 35  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 36  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 37  |  IP: 0x404920  |  Recent BB: 0x409bec  |  Active constraints: 4 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 38  |  IP: 0x40acd0  |  Recent BB: 0x40ac9f  |  Active constraints: 14 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 39  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.775 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 40  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 41  |  IP: 0x426840  |  Recent BB: 0x426812  |  Active constraints: 10 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 42  |  IP: 0x41b834  |  Recent BB: 0x40b3fa  |  Active constraints: 4 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 43  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 4 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 44  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 45  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 46  |  IP: 0x4098a0  |  Recent BB: 0x41f472  |  Active constraints: 10 - 2024-11-18 21:54:59.776 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 47  |  IP: 0x404c50  |  Recent BB: 0x40aa91  |  Active constraints: 4 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 48  |  IP: 0x40b105  |  Recent BB: 0x40b0f2  |  Active constraints: 14 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 49  |  IP: 0x404a70  |  Recent BB: 0x409ad1  |  Active constraints: 4 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 50  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 51  |  IP: 0x40ac0a  |  Recent BB: 0x40ab91  |  Active constraints: 8 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 52  |  IP: 0x40abcb  |  Recent BB: 0x40ab91  |  Active constraints: 8 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 53  |  IP: 0x426840  |  Recent BB: 0x426812  |  Active constraints: 10 - 2024-11-18 21:54:59.777 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 54  |  IP: 0x5001a8  |  Recent BB: 0x404920  |  Active constraints: 4 - 2024-11-18 21:54:59.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+DEBUG - angr.sim_manager - State 55  |  IP: 0x404940  |  Recent BB: 0x4098a0  |  Active constraints: 6 - 2024-11-18 21:54:59.778 - log_state_info() - /home/dinko/exec-proj/src/angr_script.py:391
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 56 active, 1 avoid> - 2024-11-18 21:54:59.778 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434

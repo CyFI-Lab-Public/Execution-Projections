@@ -1,4 +1,5 @@
 import angr
+import claripy
 import time
 import sys
 import os
@@ -21,23 +22,6 @@ from log_parsing.parser_gdb import parse_gdb_log_triggered, parse_gdb_log_all
 from pretty_print import print_msg_box
 
 
-# Logging Levels
-logger = logging.getLogger('angr.sim_manager')      # angr.sim_manager
-logger.setLevel(logging.DEBUG)
-
-# Create handler with formatter
-fh = logging.FileHandler('angr_grep_60.log', mode='w')
-fh.setLevel(logging.DEBUG)
-formatter = logging.Formatter(
-    '%(levelname)s - %(name)s - %(message)s - %(asctime)s.%(msecs)03d - %(funcName)s() - %(pathname)s:%(lineno)d',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-fh.setFormatter(formatter)
-
-# Add handler to logger
-logger.addHandler(fh)
-
-
 # Process Cleanup
 def cleanup():
     os.kill(os.getpid(), signal.SIGTERM)
@@ -54,13 +38,62 @@ nginx_path = '/usr/local/nginx/sbin/nginx'
 nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
 
 
+
+
+
 """ CONFIGURABLE OPTIONS """
+
 bin_path = grep_path
 gdb_log_path = grep_gdb_log
+explore_max_secs = 100
 
-
+print_msg_box(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}")
+global_start = time.time()
 # SIMGR = None
 ITER = 0
+
+
+
+
+
+""" Logging """
+
+# Create log file handler with formatter
+fh = logging.FileHandler(f'log_grep_{explore_max_secs}.log', mode='w')
+fh.setLevel(logging.DEBUG)
+formatter = logging.Formatter(
+    '%(levelname)s - %(name)s - %(message)s - %(asctime)s.%(msecs)03d - %(funcName)s() - %(pathname)s:%(lineno)d',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+fh.setFormatter(formatter)
+
+# Add logging for SimulationManagers
+logger_simgr = logging.getLogger('angr.sim_manager')
+logger_simgr.setLevel(logging.DEBUG)
+logger_simgr.addHandler(fh)
+
+# Add logging for SimProcedures
+logger_simprocedures = logging.getLogger('angr.procedures')
+logger_simprocedures.setLevel(logging.DEBUG)
+logger_simprocedures.addHandler(fh)
+
+# Add procedure logging
+logger_procedures = logging.getLogger('angr.engines.procedure')
+logger_procedures.setLevel(logging.DEBUG)
+logger_procedures.addHandler(fh)
+
+# Add logging for symbol resolution/loading
+logger_loader = logging.getLogger('angr.loader')
+logger_loader.setLevel(logging.DEBUG)
+logger_loader.addHandler(fh)
+
+# Add hook logging
+logger_hooks = logging.getLogger('angr.project')
+logger_hooks.setLevel(logging.DEBUG)
+logger_hooks.addHandler(fh)
+
+
+
 
 
 """ Log Parsing """
@@ -101,10 +134,111 @@ all_addrs = set(all_addrs)      # remove dups
 
 
 
+""" angr SymEx Setup"""
 
-""" ANGR Analysis"""
+def setup_grep_symex_state(proj):    
+    # Get the address of main
+    main_addr = proj.loader.find_symbol('main').rebased_addr
+    
+    # Create symbolic file contents and size
+    symbolic_content = claripy.BVS('file_content', 8 * 1024)  # 1KB symbolic buffer to start
+    symbolic_size = claripy.BVS('file_size', 64)  # 64-bit size
+    
+    # Create concrete command line arguments
+    argv = [
+        claripy.BVV(b"grep\x00"), 
+        claripy.BVV(b"-E\x00"),
+        claripy.BVV(b'^([A-Za-z]+( [A-Za-z]+)*) - \\[(ERROR|WARN|INFO)\\] ([0-9]{4}-[0-9]{2}-[0-9]{2}) <([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,})>$\x00'),
+        claripy.BVV(b"testfile.txt\x00")
+    ]
+    
+    state = proj.factory.entry_state(
+        addr=main_addr,
+        args=argv,
+        add_options={
+            angr.options.SYMBOLIC_WRITE_ADDRESSES,
+            angr.options.SYMBOLIC,
+            angr.options.SYMBOLIC_INITIAL_VALUES,
+            angr.options.TRACK_MEMORY_ACTIONS,
+            angr.options.TRACK_JMP_ACTIONS,
+            angr.options.TRACK_CONSTRAINT_ACTIONS,
+            angr.options.LAZY_SOLVES,
+        }
+    )
+    
+    # Set up file system
+    simfile = angr.SimFile('testfile.txt', content=symbolic_content, size=symbolic_size)
+    state.fs.insert('testfile.txt', simfile)
+    
+    # Add constraints on the symbolic size
+    state.solver.add(symbolic_size >= 0)
+    state.solver.add(symbolic_size <= 1024)  # Limit size to 1KB for now
+    
+    return state
 
+
+def hook_init_localeinfo(state):
+    print(f"[HOOK] init_localeinfo called at {state.regs.rip}")
+    # Log callsite info if available
+    if state.history.jumpkind == 'Ijk_Call':
+        print(f"[HOOK] Called from {state.history.jump_source}")
+    return
+
+
+def hook_c_stack_action(state):
+    print(f"[HOOK] c_stack_action called at {state.regs.rip}")
+    if state.history.jumpkind == 'Ijk_Call':
+        print(f"[HOOK] Called from {state.history.jump_source}")
+    # Just return 0 to indicate success
+    return state.solver.BVV(0, state.arch.bits)
+
+
+class InitLocaleInfoHook(angr.SimProcedure):
+    def run(self):
+        print(f"[HOOK] init_localeinfo ENTRY at {hex(self.state.addr)}")
+        print(f"[HOOK] Callsite: {hex(self.state.history.jump_source)}")
+        # No return value needed for void function
+
+class CStackActionHook(angr.SimProcedure):
+    def run(self):
+        print(f"[HOOK] c_stack_action ENTRY at {hex(self.state.addr)}")
+        print(f"[HOOK] Callsite: {hex(self.state.history.jump_source)}")
+        return self.state.solver.BVV(0, self.state.arch.bits)
+
+
+
+
+""" angr Analysis"""
+
+# Load the binary
 proj = angr.Project(bin_path, load_options={'auto_load_libs': False})
+
+print_msg_box(f"Hooking Procedures:")
+
+init_locale_symbol = proj.loader.find_symbol('init_localeinfo')
+init_locale_addr = init_locale_symbol.rebased_addr
+print(f"init_localeinfo address: {hex(init_locale_addr)}", flush=True)
+
+c_stack_symbol = proj.loader.find_symbol('c_stack_action')
+c_stack_addr = c_stack_symbol.rebased_addr
+print(f"c_stack_action address: {hex(c_stack_addr)}", flush=True)
+
+if init_locale_symbol is None or c_stack_symbol is None:
+    print("WARNING: Could not find one or both symbols to hook!")
+
+
+# Hook functions that cause state explosion, return immediately
+proj.hook_symbol('init_localeinfo', InitLocaleInfoHook())
+proj.hook_symbol('c_stack_action', CStackActionHook())
+
+# Verify hooks are installed
+print_msg_box("Verifying hooks...")
+for addr, hook in proj._sim_procedures.items():
+    print(f"Hook at {hex(addr)}: {hook}", flush=True)
+
+
+# Set up the initial state
+initial_state = setup_grep_symex_state(proj)
 
 # Find the address of 'main'
 main_symbol = proj.loader.find_symbol('main')
@@ -234,7 +368,8 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
         # simgr = None
     finally:
         print(f"SIMGR: {simgr}", flush=True)
-        print(f"found: {simgr.found if simgr else 'No found path'}", flush=True)
+        print(f"found: {simgr.found if simgr and hasattr(simgr, 'found') else 'No found path'}", flush=True)
+        print(f"active: {simgr.active if simgr and hasattr(simgr, 'active') else 'No active path'}", flush=True)
         if not queue.empty():
             queue.get()         # remove old state
         queue.put(simgr)        # latest state
@@ -247,26 +382,30 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
 def log_state_info(simgr):
     if hasattr(simgr, "active"):
         logger = logging.getLogger('angr.sim_manager')
-        fh = logging.FileHandler('simgr_DEBUG.log', mode='a')
-        logger.addHandler(fh)
+        # fh = logging.FileHandler('simgr_DEBUG.log', mode='a')
+        # logger.addHandler(fh)
         logger.debug(f"SIMGR: {simgr}")
         for i, state in enumerate(simgr.active):
             # Convert bitvectors to integers before formatting
             ip_val = state.solver.eval(state.regs.ip)
             logger.debug(f"State {i}  |  IP: 0x{ip_val:x}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
+            if ip_val == init_locale_addr:
+                logger.debug(f"WARNING ^^^: Hitting init_localeinfo despite hook!")
+            elif ip_val == c_stack_addr:
+                logger.debug(f"WARNING ^^^: Hitting c_stack_addr despite hook!")
     return simgr
 
 # Log when new paths are found
 def log_path_found(simgr):
     if hasattr(simgr, "found"):
-        global logger
+        logger = logging.getLogger('angr.sim_manager')
         for state in simgr.found:
             logger.info(f"Found path to target: {[hex(addr) for addr in state.history.bbl_addrs]}")
 
 # Log when paths are pruned
 def log_path_pruned(simgr):
     if hasattr(simgr, 'pruned'):
-        global logger
+        logger = logging.getLogger('angr.sim_manager')
         for state in simgr.pruned:
             prune_addr = state.solver.eval(state.regs.ip)
             logger.debug(f"Pruned path at 0x{prune_addr:x}")
@@ -287,10 +426,11 @@ def step_function(simgr):
 
 start_state_entry = proj.factory.entry_state(addr=prev_addr)
 start_state = proj.factory.blank_state(addr=prev_addr)
-SIMGR = proj.factory.simgr(start_state)     # global simgr
-simgr = None                                # simgr updated at every explore()
+SIMGR = proj.factory.simgr(start_state)       # global simgr
+found_states = [initial_state]                    # begin at the initial state from setup_grep_symex()
+simgr = None                                    # simgr updated at every explore()
 execution_path = []
-for entry in gdb_logs[1:]:
+for idx, entry in enumerate(gdb_logs[1:]):
     # ipdb.set_trace()
     target_addr = int(entry['Addr'], 16)
     target_addr_str = hex(target_addr)
@@ -313,7 +453,8 @@ for entry in gdb_logs[1:]:
         
         # simgr = copy.deepcopy(SIMGR)
 
-        found_states = []
+        if idx > 0:
+            found_states = []
         if simgr and hasattr(simgr, "found"):
             found_states = simgr.found
 
@@ -355,10 +496,10 @@ for entry in gdb_logs[1:]:
                         print(f"MULTIPLE FOUND 2", flush=True)
                         # ipdb.set_trace()
                 execution_path.extend(trace)                    # TODO: fork when multiple paths found
-                print_msg_box("Current Execution Path")
             else:
                 print(f"[SIMGR has no attribute <found>]", flush=True)
             execution_path.extend([hex(prev_addr), msg])                                    # add "no path from X to Y" msg
+            print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
             new_state = proj.factory.blank_state(addr=prev_addr)
             SIMGR = proj.factory.simgr(new_state)
@@ -442,6 +583,11 @@ for entry in ltrace:
 #     if addr not in seen:
 #         seen.add(addr)
 #         ordered_execution_path.append(addr)
+
+
+# Time to complete
+global_end = time.time()
+print_msg_box(f"Runtime = {round(global_end - global_start, 2)} seconds")
 
 
 # Display the execution path
