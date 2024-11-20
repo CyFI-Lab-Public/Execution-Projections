@@ -48,42 +48,69 @@ class LogMapper:
     def extract_concrete_values(self, message: str, fmt_str: str) -> Dict[str, Dict[str, str]]:
         """Extract concrete values based on format string type"""
         concrete_values = {}
-        
-        # Special handling for bind() format
+
+        # Special case handling based on format string patterns
         if "bind()" in fmt_str:
             match = re.search(r'bind\(\) ([0-9.:]+) #(\d+)', message)
             if match:
-                concrete_values['param_1'] = {'format': '%V', 'value': match.group(1)}
-                concrete_values['param_2'] = {'format': '%d', 'value': match.group(2)}
-        
-        # Handle "using the" format
+                concrete_values['param_1'] = {'fmt': '%V', 'val': match.group(1)}
+                concrete_values['param_2'] = {'fmt': '%d', 'val': match.group(2)}
+
         elif "using the" in fmt_str:
             match = re.search(r'using the "([^"]+)" event method', message)
             if match:
-                concrete_values['param_1'] = {'format': '%s', 'value': match.group(1)}
-        
-        # Generic format string handling
+                concrete_values['param_1'] = {'fmt': '%s', 'val': match.group(1)}
+
+        elif "write:" in fmt_str:
+            match = re.search(r'write: (\d+), ([0-9A-F]+), (\d+), (\d+)', message)
+            if match:
+                concrete_values['param_1'] = {'fmt': '%d', 'val': match.group(1)}
+                concrete_values['param_2'] = {'fmt': '%p', 'val': match.group(2)}
+                concrete_values['param_3'] = {'fmt': '%uz', 'val': match.group(3)}
+                concrete_values['param_4'] = {'fmt': '%O', 'val': match.group(4)}
+
+        elif "add cleanup:" in fmt_str:
+            match = re.search(r'add cleanup: ([0-9A-F]+)', message)
+            if match:
+                concrete_values['param_1'] = {'fmt': '%p', 'val': match.group(1)}
+
+        elif "malloc:" in fmt_str:
+            match = re.search(r'malloc: ([0-9A-F]+):(\d+)', message)
+            if match:
+                concrete_values['param_1'] = {'fmt': '%p', 'val': match.group(1)}
+                concrete_values['param_2'] = {'fmt': '%uz', 'val': match.group(2)}
+
+        elif "notify eventfd:" in fmt_str:
+            match = re.search(r'notify eventfd: (\d+)', message)
+            if match:
+                concrete_values['param_1'] = {'fmt': '%d', 'val': match.group(1)}
+
         else:
+            # Generic format string handling for unrecognized patterns
             try:
                 regex_pattern = fmt_str
                 regex_pattern = re.escape(regex_pattern)
-                regex_pattern = regex_pattern.replace(r'\%V', '([0-9.:]+)')
-                regex_pattern = regex_pattern.replace(r'\%d', '([0-9]+)')
-                regex_pattern = regex_pattern.replace(r'\%s', '([^"]+)')
-                regex_pattern = regex_pattern.replace(r'\%u', '(\d+)')
-                
+                # Handle all nginx format specifiers
+                regex_pattern = regex_pattern.replace(r'\%V', '([0-9.:]+)')  # IP:port
+                regex_pattern = regex_pattern.replace(r'\%d', '(-?\d+)')     # Signed integers
+                regex_pattern = regex_pattern.replace(r'\%u', '(\d+)')       # Unsigned integers
+                regex_pattern = regex_pattern.replace(r'\%s', '([^"\s]+)')   # Strings
+                regex_pattern = regex_pattern.replace(r'\%p', '([0-9A-F]+)') # Pointers
+                regex_pattern = regex_pattern.replace(r'\%uz', '(\d+)')      # Size_t
+                regex_pattern = regex_pattern.replace(r'\%O', '(\d+)')       # Off_t
+
                 match = re.search(regex_pattern, message)
                 if match:
-                    format_specs = re.findall(r'%[svdVDuUxXpP]', fmt_str)
+                    format_specs = re.findall(r'%[svdVDuUxXpPz]', fmt_str)
                     for i, value in enumerate(match.groups()):
                         if i < len(format_specs):
                             concrete_values[f'param_{i+1}'] = {
-                                'format': format_specs[i],
-                                'value': value
+                                'fmt': format_specs[i],
+                                'val': value
                             }
             except re.error:
                 pass
-                
+
         return concrete_values
     
     def map_log_line(self, log_line: str) -> Optional[Tuple[int, str, str, Dict[str, str]]]:
@@ -123,22 +150,29 @@ def main():
     mapper.find_format_strings()
     mapper.build_log_patterns()
     
-    log_lines = [
-        '2024/11/19 13:23:54 [debug] 583465#0: bind() 0.0.0.0:8080 #6',
-        '2024/11/19 13:23:54 [notice] 583465#0: using the "epoll" event method'
-    ]
+    # Specify the path to your log file
+    # log_file_path = "/path/to/your/nginx/error.log"  # Change this to your log file path
+    log_file_path = "/nethome/ddermendzhiev3/exec-proj/error.log"
     
     print("Format String Mappings:\n")
-    for log_line in log_lines:
-        result = mapper.map_log_line(log_line)
-        if result:
-            lea_addr, func_name, fmt_str, concrete_values = result
-            print(f"Log: {log_line}")
-            print(f"LEA instruction address: {hex(lea_addr)}")
-            print(f"Function: {func_name}")
-            print(f"Format string: {fmt_str}")
-            print(f"Concrete values: {concrete_values}")
-            print()
+    try:
+        with open(log_file_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line:  # Skip empty lines
+                    result = mapper.map_log_line(line)
+                    if result:
+                        lea_addr, func_name, fmt_str, concrete_values = result
+                        print(f"Log: {line}")
+                        print(f"LEA instruction address: {hex(lea_addr)}")
+                        print(f"Function: {func_name}")
+                        print(f"Format string: {fmt_str}")
+                        print(f"Concrete values: {concrete_values}")
+                        print()
+    except FileNotFoundError:
+        print(f"Error: Could not find log file at {log_file_path}")
+    except Exception as e:
+        print(f"Error reading log file: {str(e)}")
 
 if __name__ == '__main__':
     main()

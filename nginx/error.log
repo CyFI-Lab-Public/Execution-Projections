@@ -1,0 +1,446 @@
+2024/11/19 13:23:54 [debug] 583465#0: bind() 0.0.0.0:8080 #6 
+2024/11/19 13:23:54 [notice] 583465#0: using the "epoll" event method
+2024/11/19 13:23:54 [notice] 583465#0: nginx/1.24.0
+2024/11/19 13:23:54 [notice] 583465#0: built by gcc 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+2024/11/19 13:23:54 [notice] 583465#0: OS: Linux 6.8.0-48-generic
+2024/11/19 13:23:54 [notice] 583465#0: getrlimit(RLIMIT_NOFILE): 1024:1048576
+2024/11/19 13:23:54 [debug] 583465#0: write: 7, 00007FFFFFFFE1B0, 7, 0
+2024/11/19 13:23:54 [debug] 583465#0: add cleanup: 00005555556722D8
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555661230:8
+2024/11/19 13:23:54 [debug] 583465#0: notify eventfd: 7
+2024/11/19 13:23:54 [debug] 583465#0: testing the EPOLLRDHUP flag: success
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555654DA0:6144
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 00005555556565B0:3584
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555650190:1536
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 00005555556573C0:1536
+2024/11/19 13:23:54 [debug] 583465#0: epoll add event: fd:6 op:1 ev:00002001
+2024/11/19 13:23:54 [debug] 583465#0: worker cycle
+2024/11/19 13:23:54 [debug] 583465#0: epoll timer: -1
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+2024/11/19 13:24:03 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+2024/11/19 13:24:03 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+2024/11/19 13:24:03 [debug] 583465#0: *1 accept: 127.0.0.1:38458 fd:8
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer add: 8: 60000:1041575135
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 1
+2024/11/19 13:24:03 [debug] 583465#0: *1 epoll add event: fd:8 op:1 ev:80002001
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 9043
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 60000
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656690
+2024/11/19 13:24:03 [debug] 583465#0: *1 http wait request handler
+2024/11/19 13:24:03 [debug] 583465#0: *1 malloc: 0000555555646570:1024
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: eof:0, avail:-1
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: fd:8 88 of 1024
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 posix_memalign: 000055555564BD70:4096 @16
+2024/11/19 13:24:03 [debug] 583465#0: *1 http process request line
+2024/11/19 13:24:03 [debug] 583465#0: *1 http request line: "GET /index.html HTTP/1.1"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http uri: "/index.html"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http args: ""
+2024/11/19 13:24:03 [debug] 583465#0: *1 http exten: "html"
+2024/11/19 13:24:03 [debug] 583465#0: *1 posix_memalign: 000055555564CD80:4096 @16
+2024/11/19 13:24:03 [debug] 583465#0: *1 http process request header line
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "Host: localhost:8080"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "User-Agent: curl/7.81.0"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "Accept: */*"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header done
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer del: 8: 1041575135
+2024/11/19 13:24:03 [debug] 583465#0: *1 test location: "/"
+2024/11/19 13:24:03 [debug] 583465#0: *1 using configuration "/"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http cl:-1 max:1048576
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 1
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 2
+2024/11/19 13:24:03 [debug] 583465#0: *1 access phase: 3
+2024/11/19 13:24:03 [debug] 583465#0: *1 access phase: 4
+2024/11/19 13:24:03 [debug] 583465#0: *1 post access phase: 5
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 6
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 7
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 8
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 9
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 10
+2024/11/19 13:24:03 [debug] 583465#0: *1 http filename: "/usr/local/nginx/html/index.html"
+2024/11/19 13:24:03 [debug] 583465#0: *1 add cleanup: 000055555564CAA8
+2024/11/19 13:24:03 [debug] 583465#0: *1 http static fd: 9
+2024/11/19 13:24:03 [debug] 583465#0: *1 http set discard body
+2024/11/19 13:24:03 [debug] 583465#0: *1 HTTP/1.1 200 OK
+Server: nginx/1.24.0
+Date: Tue, 19 Nov 2024 18:24:03 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Tue, 19 Nov 2024 18:23:22 GMT
+Connection: keep-alive
+ETag: "673cd79a-267"
+Accept-Ranges: bytes
+
+2024/11/19 13:24:03 [debug] 583465#0: *1 write new buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter: l:0 f:0 s:238
+2024/11/19 13:24:03 [debug] 583465#0: *1 http output filter "/index.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http copy filter: "/index.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *1 read: 9, 000055555564D2D8, 615, 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 http postpone filter "/index.html?" 000055555564D540
+2024/11/19 13:24:03 [debug] 583465#0: *1 write old buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 write new buf t:1 f:0 000055555564D2D8, pos 000055555564D2D8, size: 615 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter: l:1 f:0 s:853
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter limit 2097152
+2024/11/19 13:24:03 [debug] 583465#0: *1 writev: 853 of 853
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter 0000000000000000
+2024/11/19 13:24:03 [debug] 583465#0: *1 http copy filter: 0 "/index.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *1 http finalize request: 0, "/index.html?" a:1, c:1
+2024/11/19 13:24:03 [debug] 583465#0: *1 set http keepalive handler
+2024/11/19 13:24:03 [debug] 583465#0: *1 http close request
+2024/11/19 13:24:03 [debug] 583465#0: *1 http log handler
+2024/11/19 13:24:03 [debug] 583465#0: event timer add: 1432023124: 1000:1041516135
+2024/11/19 13:24:03 [debug] 583465#0: *1 run cleanup: 000055555564CAA8
+2024/11/19 13:24:03 [debug] 583465#0: *1 file cleanup: fd:9
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 000055555564BD70, unused: 1
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 000055555564CD80, unused: 1975
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 0000555555646570
+2024/11/19 13:24:03 [debug] 583465#0: *1 hc free: 0000000000000000
+2024/11/19 13:24:03 [debug] 583465#0: *1 hc busy: 0000000000000000 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 tcp_nodelay
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 1
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer add: 8: 75000:1041590135
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 1000
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656690
+2024/11/19 13:24:03 [debug] 583465#0: *1 http keepalive handler
+2024/11/19 13:24:03 [debug] 583465#0: *1 malloc: 0000555555646570:1024
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: eof:1, avail:-1
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: fd:8 0 of 1024
+2024/11/19 13:24:03 [info] 583465#0: *1 client 127.0.0.1 closed keepalive connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 close http connection: 8
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer del: 8: 1041590135
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 0
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 0000555555646570
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 00005555556507A0, unused: 152
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 1000
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+2024/11/19 13:24:03 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+2024/11/19 13:24:03 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+2024/11/19 13:24:03 [debug] 583465#0: *2 accept: 127.0.0.1:38468 fd:8
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer add: 8: 60000:1041575645
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 1
+2024/11/19 13:24:03 [debug] 583465#0: *2 epoll add event: fd:8 op:1 ev:80002001
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 510
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 490
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656691
+2024/11/19 13:24:03 [debug] 583465#0: *2 http wait request handler
+2024/11/19 13:24:03 [debug] 583465#0: *2 malloc: 0000555555646570:1024
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: eof:0, avail:-1
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: fd:8 91 of 1024
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 posix_memalign: 000055555564BD70:4096 @16
+2024/11/19 13:24:03 [debug] 583465#0: *2 http process request line
+2024/11/19 13:24:03 [debug] 583465#0: *2 http request line: "GET /notfound.html HTTP/1.1"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http uri: "/notfound.html"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http args: ""
+2024/11/19 13:24:03 [debug] 583465#0: *2 http exten: "html"
+2024/11/19 13:24:03 [debug] 583465#0: *2 posix_memalign: 000055555564CD80:4096 @16
+2024/11/19 13:24:03 [debug] 583465#0: *2 http process request header line
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "Host: localhost:8080"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "User-Agent: curl/7.81.0"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "Accept: */*"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header done
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer del: 8: 1041575645
+2024/11/19 13:24:03 [debug] 583465#0: *2 test location: "/"
+2024/11/19 13:24:03 [debug] 583465#0: *2 using configuration "/"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http cl:-1 max:1048576
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 1
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 2
+2024/11/19 13:24:03 [debug] 583465#0: *2 access phase: 3
+2024/11/19 13:24:03 [debug] 583465#0: *2 access phase: 4
+2024/11/19 13:24:03 [debug] 583465#0: *2 post access phase: 5
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 6
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 7
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 8
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 9
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 10
+2024/11/19 13:24:03 [debug] 583465#0: *2 http filename: "/usr/local/nginx/html/notfound.html"
+2024/11/19 13:24:03 [debug] 583465#0: *2 add cleanup: 000055555564CAA8
+2024/11/19 13:24:03 [error] 583465#0: *2 open() "/usr/local/nginx/html/notfound.html" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /notfound.html HTTP/1.1", host: "localhost:8080"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http finalize request: 404, "/notfound.html?" a:1, c:1
+2024/11/19 13:24:03 [debug] 583465#0: *2 http special response: 404, "/notfound.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http set discard body
+2024/11/19 13:24:03 [debug] 583465#0: *2 HTTP/1.1 404 Not Found
+Server: nginx/1.24.0
+Date: Tue, 19 Nov 2024 18:24:03 GMT
+Content-Type: text/html
+Content-Length: 153
+Connection: keep-alive
+
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:1 f:0 000055555564CB28, pos 000055555564CB28, size: 155 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter: l:0 f:0 s:155
+2024/11/19 13:24:03 [debug] 583465#0: *2 http output filter "/notfound.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http copy filter: "/notfound.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http postpone filter "/notfound.html?" 000055555564CCF0
+2024/11/19 13:24:03 [debug] 583465#0: *2 write old buf t:1 f:0 000055555564CB28, pos 000055555564CB28, size: 155 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:0 f:0 0000000000000000, pos 000055555561A060, size: 100 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:0 f:0 0000000000000000, pos 000055555561A7C0, size: 53 file: 0, size: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter: l:1 f:0 s:308
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter limit 2097152
+2024/11/19 13:24:03 [debug] 583465#0: *2 writev: 308 of 308
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter 0000000000000000
+2024/11/19 13:24:03 [debug] 583465#0: *2 http copy filter: 0 "/notfound.html?"
+2024/11/19 13:24:03 [debug] 583465#0: *2 http finalize request: 0, "/notfound.html?" a:1, c:1
+2024/11/19 13:24:03 [debug] 583465#0: *2 set http keepalive handler
+2024/11/19 13:24:03 [debug] 583465#0: *2 http close request
+2024/11/19 13:24:03 [debug] 583465#0: *2 http log handler
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 000055555564BD70, unused: 24
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 000055555564CD80, unused: 2876
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 0000555555646570
+2024/11/19 13:24:03 [debug] 583465#0: *2 hc free: 0000000000000000
+2024/11/19 13:24:03 [debug] 583465#0: *2 hc busy: 0000000000000000 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 tcp_nodelay
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 1
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer add: 8: 75000:1041590645
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 490
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656691
+2024/11/19 13:24:03 [debug] 583465#0: *2 http keepalive handler
+2024/11/19 13:24:03 [debug] 583465#0: *2 malloc: 0000555555646570:1024
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: eof:1, avail:-1
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: fd:8 0 of 1024
+2024/11/19 13:24:03 [info] 583465#0: *2 client 127.0.0.1 closed keepalive connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 close http connection: 8
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer del: 8: 1041590645
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 0
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 0000555555646570
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 00005555556507A0, unused: 152
+2024/11/19 13:24:03 [debug] 583465#0: timer delta: 1
+2024/11/19 13:24:03 [debug] 583465#0: worker cycle
+2024/11/19 13:24:03 [debug] 583465#0: epoll timer: 489
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 490
+2024/11/19 13:24:04 [debug] 583465#0: event timer del: 1432023124: 1041516135
+2024/11/19 13:24:04 [debug] 583465#0: http log buffer flush handler
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: -1
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+2024/11/19 13:24:04 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+2024/11/19 13:24:04 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+2024/11/19 13:24:04 [debug] 583465#0: *3 accept: 127.0.0.1:38470 fd:8
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer add: 8: 60000:1041576156
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 1
+2024/11/19 13:24:04 [debug] 583465#0: *3 epoll add event: fd:8 op:1 ev:80002001
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 20
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 60000
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656690
+2024/11/19 13:24:04 [debug] 583465#0: *3 http wait request handler
+2024/11/19 13:24:04 [debug] 583465#0: *3 malloc: 0000555555646570:1024
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: eof:0, avail:-1
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: fd:8 89 of 1024
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 0
+2024/11/19 13:24:04 [debug] 583465#0: *3 posix_memalign: 000055555564BD70:4096 @16
+2024/11/19 13:24:04 [debug] 583465#0: *3 http process request line
+2024/11/19 13:24:04 [debug] 583465#0: *3 http request line: "HEAD /index.html HTTP/1.1"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http uri: "/index.html"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http args: ""
+2024/11/19 13:24:04 [debug] 583465#0: *3 http exten: "html"
+2024/11/19 13:24:04 [debug] 583465#0: *3 posix_memalign: 000055555564CD80:4096 @16
+2024/11/19 13:24:04 [debug] 583465#0: *3 http process request header line
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "Host: localhost:8080"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "User-Agent: curl/7.81.0"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "Accept: */*"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header done
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer del: 8: 1041576156
+2024/11/19 13:24:04 [debug] 583465#0: *3 test location: "/"
+2024/11/19 13:24:04 [debug] 583465#0: *3 using configuration "/"
+2024/11/19 13:24:04 [debug] 583465#0: *3 http cl:-1 max:1048576
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 1
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 2
+2024/11/19 13:24:04 [debug] 583465#0: *3 access phase: 3
+2024/11/19 13:24:04 [debug] 583465#0: *3 access phase: 4
+2024/11/19 13:24:04 [debug] 583465#0: *3 post access phase: 5
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 6
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 7
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 8
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 9
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 10
+2024/11/19 13:24:04 [debug] 583465#0: *3 http filename: "/usr/local/nginx/html/index.html"
+2024/11/19 13:24:04 [debug] 583465#0: *3 add cleanup: 000055555564CAA8
+2024/11/19 13:24:04 [debug] 583465#0: *3 http static fd: 9
+2024/11/19 13:24:04 [debug] 583465#0: *3 http set discard body
+2024/11/19 13:24:04 [debug] 583465#0: *3 HTTP/1.1 200 OK
+Server: nginx/1.24.0
+Date: Tue, 19 Nov 2024 18:24:04 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Tue, 19 Nov 2024 18:23:22 GMT
+Connection: keep-alive
+ETag: "673cd79a-267"
+Accept-Ranges: bytes
+
+2024/11/19 13:24:04 [debug] 583465#0: *3 write new buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter: l:1 f:0 s:238
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter limit 2097152
+2024/11/19 13:24:04 [debug] 583465#0: *3 writev: 238 of 238
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter 0000000000000000
+2024/11/19 13:24:04 [debug] 583465#0: *3 http finalize request: 0, "/index.html?" a:1, c:1
+2024/11/19 13:24:04 [debug] 583465#0: *3 set http keepalive handler
+2024/11/19 13:24:04 [debug] 583465#0: *3 http close request
+2024/11/19 13:24:04 [debug] 583465#0: *3 http log handler
+2024/11/19 13:24:04 [debug] 583465#0: event timer add: 1432023124: 1000:1041517156
+2024/11/19 13:24:04 [debug] 583465#0: *3 run cleanup: 000055555564CAA8
+2024/11/19 13:24:04 [debug] 583465#0: *3 file cleanup: fd:9
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 000055555564BD70, unused: 1
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 000055555564CD80, unused: 2823
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 0000555555646570
+2024/11/19 13:24:04 [debug] 583465#0: *3 hc free: 0000000000000000
+2024/11/19 13:24:04 [debug] 583465#0: *3 hc busy: 0000000000000000 0
+2024/11/19 13:24:04 [debug] 583465#0: *3 tcp_nodelay
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 1
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer add: 8: 75000:1041591156
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 1000
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656690
+2024/11/19 13:24:04 [debug] 583465#0: *3 http keepalive handler
+2024/11/19 13:24:04 [debug] 583465#0: *3 malloc: 0000555555646570:1024
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: eof:1, avail:-1
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: fd:8 0 of 1024
+2024/11/19 13:24:04 [info] 583465#0: *3 client 127.0.0.1 closed keepalive connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 close http connection: 8
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer del: 8: 1041591156
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 0
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 0000555555646570
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 00005555556507A0, unused: 152
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 1000
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+2024/11/19 13:24:04 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+2024/11/19 13:24:04 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+2024/11/19 13:24:04 [debug] 583465#0: *4 accept: 127.0.0.1:38472 fd:8
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer add: 8: 60000:1041576666
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 1
+2024/11/19 13:24:04 [debug] 583465#0: *4 epoll add event: fd:8 op:1 ev:80002001
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 510
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 490
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656691
+2024/11/19 13:24:04 [debug] 583465#0: *4 http wait request handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 malloc: 0000555555646570:1024
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: eof:0, avail:-1
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: fd:8 166 of 1024
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 posix_memalign: 000055555564BD70:4096 @16
+2024/11/19 13:24:04 [debug] 583465#0: *4 http process request line
+2024/11/19 13:24:04 [debug] 583465#0: *4 http request line: "POST /index.html HTTP/1.1"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http uri: "/index.html"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http args: ""
+2024/11/19 13:24:04 [debug] 583465#0: *4 http exten: "html"
+2024/11/19 13:24:04 [debug] 583465#0: *4 posix_memalign: 000055555564CD80:4096 @16
+2024/11/19 13:24:04 [debug] 583465#0: *4 http process request header line
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Host: localhost:8080"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "User-Agent: curl/7.81.0"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Accept: */*"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Content-Length: 9"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Content-Type: application/x-www-form-urlencoded"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header done
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer del: 8: 1041576666
+2024/11/19 13:24:04 [debug] 583465#0: *4 test location: "/"
+2024/11/19 13:24:04 [debug] 583465#0: *4 using configuration "/"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http cl:9 max:1048576
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 1
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 2
+2024/11/19 13:24:04 [debug] 583465#0: *4 access phase: 3
+2024/11/19 13:24:04 [debug] 583465#0: *4 access phase: 4
+2024/11/19 13:24:04 [debug] 583465#0: *4 post access phase: 5
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 6
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 7
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 8
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 9
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 10
+2024/11/19 13:24:04 [debug] 583465#0: *4 http filename: "/usr/local/nginx/html/index.html"
+2024/11/19 13:24:04 [debug] 583465#0: *4 add cleanup: 000055555564CAC0
+2024/11/19 13:24:04 [debug] 583465#0: *4 http static fd: 9
+2024/11/19 13:24:04 [debug] 583465#0: *4 http finalize request: 405, "/index.html?" a:1, c:1
+2024/11/19 13:24:04 [debug] 583465#0: *4 http special response: 405, "/index.html?"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http set discard body
+2024/11/19 13:24:04 [debug] 583465#0: *4 HTTP/1.1 405 Not Allowed
+Server: nginx/1.24.0
+Date: Tue, 19 Nov 2024 18:24:04 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: keep-alive
+
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:1 f:0 000055555564CB40, pos 000055555564CB40, size: 157 file: 0, size: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter: l:0 f:0 s:157
+2024/11/19 13:24:04 [debug] 583465#0: *4 http output filter "/index.html?"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http copy filter: "/index.html?"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http postpone filter "/index.html?" 000055555564CD08
+2024/11/19 13:24:04 [debug] 583465#0: *4 write old buf t:1 f:0 000055555564CB40, pos 000055555564CB40, size: 157 file: 0, size: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:0 f:0 0000000000000000, pos 0000555555619FE0, size: 104 file: 0, size: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:0 f:0 0000000000000000, pos 000055555561A7C0, size: 53 file: 0, size: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter: l:1 f:0 s:314
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter limit 2097152
+2024/11/19 13:24:04 [debug] 583465#0: *4 writev: 314 of 314
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter 0000000000000000
+2024/11/19 13:24:04 [debug] 583465#0: *4 http copy filter: 0 "/index.html?"
+2024/11/19 13:24:04 [debug] 583465#0: *4 http finalize request: 0, "/index.html?" a:1, c:1
+2024/11/19 13:24:04 [debug] 583465#0: *4 set http keepalive handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 http close request
+2024/11/19 13:24:04 [debug] 583465#0: *4 http log handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 run cleanup: 000055555564CAC0
+2024/11/19 13:24:04 [debug] 583465#0: *4 file cleanup: fd:9
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 000055555564BD70, unused: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 000055555564CD80, unused: 2879
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 0000555555646570
+2024/11/19 13:24:04 [debug] 583465#0: *4 hc free: 0000000000000000
+2024/11/19 13:24:04 [debug] 583465#0: *4 hc busy: 0000000000000000 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 tcp_nodelay
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 1
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer add: 8: 75000:1041591666
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 490
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656691
+2024/11/19 13:24:04 [debug] 583465#0: *4 http keepalive handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 malloc: 0000555555646570:1024
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: eof:1, avail:-1
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: fd:8 0 of 1024
+2024/11/19 13:24:04 [info] 583465#0: *4 client 127.0.0.1 closed keepalive connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 close http connection: 8
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer del: 8: 1041591666
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 0
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 0000555555646570
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 00005555556507A0, unused: 152
+2024/11/19 13:24:04 [debug] 583465#0: timer delta: 0
+2024/11/19 13:24:04 [debug] 583465#0: worker cycle
+2024/11/19 13:24:04 [debug] 583465#0: epoll timer: 490
+2024/11/19 13:24:05 [debug] 583465#0: timer delta: 491
+2024/11/19 13:24:05 [debug] 583465#0: event timer del: 1432023124: 1041517156
+2024/11/19 13:24:05 [debug] 583465#0: http log buffer flush handler
+2024/11/19 13:24:05 [debug] 583465#0: worker cycle
+2024/11/19 13:24:05 [debug] 583465#0: epoll timer: -1
+2024/11/19 13:24:19 [notice] 583465#0: signal 2 (SIGINT) received, exiting
+2024/11/19 13:24:19 [info] 583465#0: epoll_wait() failed (4: Interrupted system call)
+2024/11/19 13:24:19 [debug] 583465#0: timer delta: 13698
+2024/11/19 13:24:19 [debug] 583465#0: flush files
+2024/11/19 13:24:19 [notice] 583465#0: exit
+2024/11/19 13:24:19 [debug] 583465#0: epoll del event: fd:6 op:2 ev:00000000
+2024/11/19 13:24:19 [debug] 583465#0: close listening 0.0.0.0:8080 #6 
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 00005555556722D8
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 000055555566E5E8
+2024/11/19 13:24:19 [debug] 583465#0: cleanup resolver
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 000055555566B828
+2024/11/19 13:24:19 [debug] 583465#0: open file cache cleanup
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555674910
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555566F770
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555663750
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555662740
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555661250
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565B220
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565A160
+2024/11/19 13:24:19 [debug] 583465#0: free: 00005555556590A0
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555657FE0
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555647D60, unused: 0
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555650D90, unused: 0
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565C230, unused: 0
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555566B760, unused: 0
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555670900, unused: 9744
