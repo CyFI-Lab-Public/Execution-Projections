@@ -133,7 +133,6 @@ all_addrs = [] # get all callsites to use for 'avoid' in angr_explore
 #     entry['Addr'] = hex(addr)
 #     print(f"{entry['Addr']}, {entry['Func']}", flush=True)
 # print_msg_box(f"===== {len(gdb_logs)} callsites =====")
-# all_addrs = set(all_addrs)      # remove dups
 
 
 # parse the mapped nginx application logs for lea_addr, func_name, and msg
@@ -146,6 +145,7 @@ for entry in nginx_logs:
     print(f"{entry['log_msg']}\n", flush=True)
 
 print_msg_box(f"===== {len(nginx_logs)} log sites =====")
+all_addrs = set(all_addrs)      # remove dups
 
 
 
@@ -363,7 +363,6 @@ for entry in nginx_logs:
         print(f"Log site {addr_str} not found in CFG.", flush=True)
 
 print_msg_box(f"{count} log sites exist")
-exit(0)
 
 
 def compare_simgrs(simgr1, simgr2):
@@ -424,7 +423,7 @@ def timeout(seconds):
     return decorator
 
 
-@timeout(60)
+@timeout(100)
 def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
     """
     Passing simgr to subprocess does not yield same results, instead pass simstates.
@@ -476,11 +475,18 @@ def log_state_info(simgr):
         for i, state in enumerate(simgr.active):
             # Convert bitvectors to integers before formatting
             ip_val = state.solver.eval(state.regs.ip)
-            logger.debug(f"State {i}  |  IP: 0x{ip_val:x}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
-            if ip_val == init_locale_addr:
-                logger.debug(f"WARNING ^^^: Hit init_localeinfo() hook!")
-            elif ip_val == c_stack_addr:
-                logger.debug(f"WARNING ^^^: Hit c_stack_action() hook!")
+            # Get containing function from project
+            func = None
+            try:
+                func = proj.kb.functions[ip_val]
+            except Exception:
+                pass
+            func_name = func.name if func else "Unknown"
+            logger.debug(f"State {i}  |  IP: 0x{ip_val:x} - {func_name}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
+            # if ip_val == init_locale_addr:
+            #     logger.debug(f"WARNING ^^^: Hit init_localeinfo() hook!")
+            # elif ip_val == c_stack_addr:
+            #     logger.debug(f"WARNING ^^^: Hit c_stack_action() hook!")
 
     # Log errored states
     if hasattr(simgr, "errored"):
@@ -507,6 +513,7 @@ def log_state_info(simgr):
                 possible_ips = state.solver.eval_upto(state.regs.ip, 10)
                 logger.debug(f"  Possible IP values: {[hex(x) for x in possible_ips]}")
                 
+
     return simgr
 
 # Log when new paths are found
@@ -533,6 +540,9 @@ def step_function(simgr):
     
     # Log pruned paths
     # log_path_pruned(simgr)
+
+    logger = logging.getLogger('angr.sim_manager')
+    logger.debug(f"\n-------------------------------------------------------------------------\n")
     
     # Tell explorer to continue
     return True
@@ -544,11 +554,18 @@ SIMGR = proj.factory.simgr(start_state)       # global simgr
 found_states = [initial_state]                    # begin at the initial state from setup_grep_symex()
 simgr = None                                    # simgr updated at every explore()
 execution_path = []
-for idx, entry in enumerate(gdb_logs[1:]):
+for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
     # ipdb.set_trace()
-    target_addr = int(entry['Addr'], 16)
+
+    """ GDB logs"""
+    # target_addr = int(entry['Addr'], 16)
+    # target_addr_str = hex(target_addr)
+    # func_name = entry['Func']
+    """ nginx logs"""
+    target_addr = int(entry['lea_addr'], 16)
     target_addr_str = hex(target_addr)
-    func_name = entry['Func']
+    func_name = entry['function']
+
     print_msg_box(f"Explore {ITER}")
     print(f"Finding path from {hex(prev_addr)} ({prev_call})  to {target_addr_str} ({func_name})", flush=True)
     # Find a path from prev_addr to syscall_addr

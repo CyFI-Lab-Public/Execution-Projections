@@ -7,17 +7,17 @@ sleep 1
 curl http://localhost:8080/index.html
 sleep 0.5
 
-# GET request for non-existent file (404)
-curl http://localhost:8080/notfound.html
-sleep 0.5
+# # GET request for non-existent file (404)
+# curl http://localhost:8080/notfound.html
+# sleep 0.5
 
-# HEAD request
-curl -I http://localhost:8080/index.html
-sleep 0.5
+# # HEAD request
+# curl -I http://localhost:8080/index.html
+# sleep 0.5
 
-# POST request
-curl -X POST -d "test data" http://localhost:8080/index.html
-sleep 0.5
+# # POST request
+# curl -X POST -d "test data" http://localhost:8080/index.html
+# sleep 0.5
 
 # # Request with custom headers
 # curl -H "X-Custom-Header: test" http://localhost:8080/index.html

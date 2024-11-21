@@ -1,0 +1,130 @@
+2024/11/21 13:46:06 [debug] 687715#0: bind() 0.0.0.0:8080 #6 
+2024/11/21 13:46:06 [notice] 687715#0: using the "epoll" event method
+2024/11/21 13:46:06 [notice] 687715#0: nginx/1.24.0
+2024/11/21 13:46:06 [notice] 687715#0: built by gcc 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+2024/11/21 13:46:06 [notice] 687715#0: OS: Linux 6.8.0-48-generic
+2024/11/21 13:46:06 [notice] 687715#0: getrlimit(RLIMIT_NOFILE): 1024:1048576
+2024/11/21 13:46:06 [debug] 687715#0: write: 7, 00007FFFFFFFE1B0, 7, 0
+2024/11/21 13:46:06 [debug] 687715#0: add cleanup: 000055555566F400
+2024/11/21 13:46:06 [debug] 687715#0: malloc: 0000555555647480:8
+2024/11/21 13:46:06 [debug] 687715#0: notify eventfd: 7
+2024/11/21 13:46:06 [debug] 687715#0: testing the EPOLLRDHUP flag: success
+2024/11/21 13:46:06 [debug] 687715#0: malloc: 0000555555652220:6144
+2024/11/21 13:46:06 [debug] 687715#0: malloc: 0000555555653A30:3584
+2024/11/21 13:46:06 [debug] 687715#0: malloc: 0000555555650190:1536
+2024/11/21 13:46:06 [debug] 687715#0: malloc: 0000555555654840:1536
+2024/11/21 13:46:06 [debug] 687715#0: epoll add event: fd:6 op:1 ev:00002001
+2024/11/21 13:46:06 [debug] 687715#0: worker cycle
+2024/11/21 13:46:06 [debug] 687715#0: epoll timer: -1
+2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:6 ev:0001 d:0000555555653A30
+2024/11/21 13:46:14 [debug] 687715#0: accept on 0.0.0.0:8080, ready: 0
+2024/11/21 13:46:14 [debug] 687715#0: posix_memalign: 00005555556507A0:512 @16
+2024/11/21 13:46:14 [debug] 687715#0: *1 accept: 127.0.0.1:48916 fd:8
+2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 60000:1215706384
+2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 1
+2024/11/21 13:46:14 [debug] 687715#0: *1 epoll add event: fd:8 op:1 ev:80002001
+2024/11/21 13:46:14 [debug] 687715#0: timer delta: 8567
+2024/11/21 13:46:14 [debug] 687715#0: worker cycle
+2024/11/21 13:46:14 [debug] 687715#0: epoll timer: 60000
+2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:8 ev:0001 d:0000555555653B10
+2024/11/21 13:46:14 [debug] 687715#0: *1 http wait request handler
+2024/11/21 13:46:14 [debug] 687715#0: *1 malloc: 0000555555646570:1024
+2024/11/21 13:46:14 [debug] 687715#0: *1 recv: eof:0, avail:-1
+2024/11/21 13:46:14 [debug] 687715#0: *1 recv: fd:8 88 of 1024
+2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 posix_memalign: 000055555564BD70:4096 @16
+2024/11/21 13:46:14 [debug] 687715#0: *1 http process request line
+2024/11/21 13:46:14 [debug] 687715#0: *1 http request line: "GET /index.html HTTP/1.1"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http uri: "/index.html"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http args: ""
+2024/11/21 13:46:14 [debug] 687715#0: *1 http exten: "html"
+2024/11/21 13:46:14 [debug] 687715#0: *1 posix_memalign: 000055555564CD80:4096 @16
+2024/11/21 13:46:14 [debug] 687715#0: *1 http process request header line
+2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "Host: localhost:8080"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "User-Agent: curl/7.81.0"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "Accept: */*"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http header done
+2024/11/21 13:46:14 [debug] 687715#0: *1 event timer del: 8: 1215706384
+2024/11/21 13:46:14 [debug] 687715#0: *1 test location: "/"
+2024/11/21 13:46:14 [debug] 687715#0: *1 using configuration "/"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http cl:-1 max:1048576
+2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 1
+2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 2
+2024/11/21 13:46:14 [debug] 687715#0: *1 access phase: 3
+2024/11/21 13:46:14 [debug] 687715#0: *1 access phase: 4
+2024/11/21 13:46:14 [debug] 687715#0: *1 post access phase: 5
+2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 6
+2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 7
+2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 8
+2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 9
+2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 10
+2024/11/21 13:46:14 [debug] 687715#0: *1 http filename: "/usr/local/nginx/html/index.html"
+2024/11/21 13:46:14 [debug] 687715#0: *1 add cleanup: 000055555564CC98
+2024/11/21 13:46:14 [debug] 687715#0: *1 http static fd: 9
+2024/11/21 13:46:14 [debug] 687715#0: *1 http set discard body
+2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "6423f7b42d700181004ab12b5c090b2a"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "1"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "1"
+2024/11/21 13:46:14 [debug] 687715#0: *1 HTTP/1.1 200 OK
+Server: nginx/1.24.0
+Date: Thu, 21 Nov 2024 18:46:14 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Tue, 19 Nov 2024 18:57:10 GMT
+Connection: keep-alive
+ETag: "673cdf86-267"
+X-Debug-Request-ID: 6423f7b42d700181004ab12b5c090b2a
+X-Debug-Connection: 1
+X-Debug-Connection-Requests: 1
+Accept-Ranges: bytes
+
+2024/11/21 13:46:14 [debug] 687715#0: *1 write new buf t:1 f:0 000055555564D360, pos 000055555564D360, size: 347 file: 0, size: 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter: l:0 f:0 s:347
+2024/11/21 13:46:14 [debug] 687715#0: *1 http output filter "/index.html?"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http copy filter: "/index.html?"
+2024/11/21 13:46:14 [debug] 687715#0: *1 read: 9, 000055555564D5A8, 615, 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 http postpone filter "/index.html?" 000055555564D810
+2024/11/21 13:46:14 [debug] 687715#0: *1 write old buf t:1 f:0 000055555564D360, pos 000055555564D360, size: 347 file: 0, size: 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 write new buf t:1 f:0 000055555564D5A8, pos 000055555564D5A8, size: 615 file: 0, size: 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter: l:1 f:0 s:962
+2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter limit 2097152
+2024/11/21 13:46:14 [debug] 687715#0: *1 writev: 962 of 962
+2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter 0000000000000000
+2024/11/21 13:46:14 [debug] 687715#0: *1 http copy filter: 0 "/index.html?"
+2024/11/21 13:46:14 [debug] 687715#0: *1 http finalize request: 0, "/index.html?" a:1, c:1
+2024/11/21 13:46:14 [debug] 687715#0: *1 set http keepalive handler
+2024/11/21 13:46:14 [debug] 687715#0: *1 http close request
+2024/11/21 13:46:14 [debug] 687715#0: *1 http log handler
+2024/11/21 13:46:14 [debug] 687715#0: event timer add: 1432023124: 1000:1215647384
+2024/11/21 13:46:14 [debug] 687715#0: *1 run cleanup: 000055555564CC98
+2024/11/21 13:46:14 [debug] 687715#0: *1 file cleanup: fd:9
+2024/11/21 13:46:14 [debug] 687715#0: *1 free: 000055555564BD70, unused: 1
+2024/11/21 13:46:14 [debug] 687715#0: *1 free: 000055555564CD80, unused: 1160
+2024/11/21 13:46:14 [debug] 687715#0: *1 free: 0000555555646570
+2024/11/21 13:46:14 [debug] 687715#0: *1 hc free: 0000000000000000
+2024/11/21 13:46:14 [debug] 687715#0: *1 hc busy: 0000000000000000 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 tcp_nodelay
+2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 1
+2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 75000:1215721384
+2024/11/21 13:46:14 [debug] 687715#0: timer delta: 0
+2024/11/21 13:46:14 [debug] 687715#0: worker cycle
+2024/11/21 13:46:14 [debug] 687715#0: epoll timer: 1000
+2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:8 ev:2001 d:0000555555653B10
+2024/11/21 13:46:14 [debug] 687715#0: *1 http keepalive handler
+2024/11/21 13:46:14 [debug] 687715#0: *1 malloc: 0000555555646570:1024
+2024/11/21 13:46:14 [debug] 687715#0: *1 recv: eof:1, avail:-1
+2024/11/21 13:46:14 [debug] 687715#0: *1 recv: fd:8 0 of 1024
+2024/11/21 13:46:14 [info] 687715#0: *1 client 127.0.0.1 closed keepalive connection
+2024/11/21 13:46:14 [debug] 687715#0: *1 close http connection: 8
+2024/11/21 13:46:14 [debug] 687715#0: *1 event timer del: 8: 1215721384
+2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 0
+2024/11/21 13:46:14 [debug] 687715#0: *1 free: 0000555555646570
+2024/11/21 13:46:14 [debug] 687715#0: *1 free: 00005555556507A0, unused: 136
+2024/11/21 13:46:14 [debug] 687715#0: timer delta: 1
+2024/11/21 13:46:14 [debug] 687715#0: worker cycle
+2024/11/21 13:46:14 [debug] 687715#0: epoll timer: 999
+2024/11/21 13:46:15 [debug] 687715#0: timer delta: 1000
+2024/11/21 13:46:15 [debug] 687715#0: event timer del: 1432023124: 1215647384
+2024/11/21 13:46:15 [debug] 687715#0: http log buffer flush handler
+2024/11/21 13:46:15 [debug] 687715#0: worker cycle
+2024/11/21 13:46:15 [debug] 687715#0: epoll timer: -1
