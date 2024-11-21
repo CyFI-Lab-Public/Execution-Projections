@@ -19,6 +19,7 @@ from multiprocessing import Process, Queue
 sys.path.append('../')
 from log_parsing.parser_perf import parse_perf_script_output
 from log_parsing.parser_gdb import parse_gdb_log_triggered, parse_gdb_log_all
+from log_parsing.parser_nginx_mapped import parse_nginx_mappings
 from pretty_print import print_msg_box
 
 
@@ -36,6 +37,7 @@ grep_gdb_log = '/home/dinko/exec-proj/log/grep/function_trace_BRsrc.log'
 
 nginx_path = '/usr/local/nginx/sbin/nginx'
 nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
+nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs.log'
 
 
 
@@ -44,10 +46,14 @@ nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
 """ CONFIGURABLE OPTIONS """
 
 bin_path = nginx_path
-gdb_log_path = nginx_gdb_log
+gdb_log_path = None
+mapped_applogs_path = nginx_mapped_logs
 explore_max_secs = 60
 
-print_msg_box(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}")
+bin_name = os.path.basename(bin_path)
+
+print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}\nmapped_applogs_path: {mapped_applogs_path}\n\n", flush=True)
+# print_msg_box("HELLO")
 global_start = time.time()
 # SIMGR = None
 ITER = 0
@@ -59,7 +65,7 @@ ITER = 0
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_grep_{explore_max_secs}.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{explore_max_secs}.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(asctime)s.%(msecs)03d - %(funcName)s() - %(pathname)s:%(lineno)d',
@@ -116,20 +122,30 @@ for i in range(len(gdb_all)):
     gdb_all[i] = int(gdb_all[i], 16) + base_angr
 gdb_all = set(gdb_all)"""
 
-# parse sequence of triggered callsites to use as 'find' in angr explore
-gdb_logs = parse_gdb_log_triggered(gdb_log_path)
+# # parse sequence of triggered callsites to use as 'find' in angr explore
+# gdb_logs = parse_gdb_log_triggered(gdb_log_path)
 
 all_addrs = [] # get all callsites to use for 'avoid' in angr_explore
 
-for entry in gdb_logs[1:]:
-    addr = int(entry['Addr'], 16) - base_address + base_angr
+# for entry in gdb_logs[1:]:
+#     addr = int(entry['Addr'], 16) - base_address + base_angr
+#     all_addrs.append(addr)
+#     entry['Addr'] = hex(addr)
+#     print(f"{entry['Addr']}, {entry['Func']}", flush=True)
+# print_msg_box(f"===== {len(gdb_logs)} callsites =====")
+# all_addrs = set(all_addrs)      # remove dups
+
+
+# parse the mapped nginx application logs for lea_addr, func_name, and msg
+nginx_logs = parse_nginx_mappings(nginx_mapped_logs)
+for entry in nginx_logs:
+    addr = int(entry['lea_addr'], 16) + base_angr
     all_addrs.append(addr)
-    entry['Addr'] = hex(addr)
-    print(f"{entry['Addr']}, {entry['Func']}", flush=True)
-print_msg_box(f"===== {len(gdb_logs)} callsites =====")
+    entry['lea_addr'] = hex(addr)
+    print(f"{entry['lea_addr']}, {entry['function']}", flush=True)
+    print(f"{entry['log_msg']}\n", flush=True)
 
-all_addrs = set(all_addrs)      # remove dups
-
+print_msg_box(f"===== {len(nginx_logs)} log sites =====")
 
 
 
@@ -177,18 +193,27 @@ def setup_grep_symex_state(proj):
     return state
 
 
+def setup_nginx_symex_state(proj):   
+    main_addr = proj.loader.find_symbol('main').rebased_addr
+    state = proj.factory.entry_state(
+        addr=main_addr,
+    )
+
+    return state
+
+
 def hook_init_localeinfo(state):
-    print(f"[HOOK] init_localeinfo called at {state.regs.rip}")
+    print(f"[HOOK] init_localeinfo called at {state.regs.rip}", flush=True)
     # Log callsite info if available
     if state.history.jumpkind == 'Ijk_Call':
-        print(f"[HOOK] Called from {state.history.jump_source}")
+        print(f"[HOOK] Called from {state.history.jump_source}", flush=True)
     return
 
 
 def hook_c_stack_action(state):
-    print(f"[HOOK] c_stack_action called at {state.regs.rip}")
+    print(f"[HOOK] c_stack_action called at {state.regs.rip}", flush=True)
     if state.history.jumpkind == 'Ijk_Call':
-        print(f"[HOOK] Called from {state.history.jump_source}")
+        print(f"[HOOK] Called from {state.history.jump_source}", flush=True)
     # Just return 0 to indicate success
     return state.solver.BVV(0, state.arch.bits)
 
@@ -213,7 +238,7 @@ class InitLocaleInfoHook(angr.SimProcedure):
             if len(self.state.callstack) > 1:
                 print(f"[HOOK] Callsite (callstack): {hex(self.state.callstack.current_return_target)}", flush=True)
         except Exception as e:
-            print(f"[InitLocaleInfoHook] {e}")
+            print(f"[InitLocaleInfoHook] {e}", flush=True)
         # No return value needed for void function
 
 class CStackActionHook(angr.SimProcedure):
@@ -235,7 +260,7 @@ class CStackActionHook(angr.SimProcedure):
             if len(self.state.callstack) > 1:
                 print(f"[HOOK] Callsite (callstack): {hex(self.state.callstack.current_return_target)}", flush=True)
         except Exception as e:
-            print(f"[CStackActionHook] {e}")
+            print(f"[CStackActionHook] {e}", flush=True)
 
         return claripy.BVV(0, self.state.arch.bits)         # 0 x 64bits BVV
 
@@ -248,21 +273,23 @@ proj = angr.Project(bin_path, load_options={'auto_load_libs': False})
 
 print_msg_box(f"Hooking Procedures:")
 
-init_locale_symbol = proj.loader.find_symbol('init_localeinfo')
-init_locale_addr = init_locale_symbol.rebased_addr
-print(f"init_localeinfo address: {hex(init_locale_addr)}", flush=True)
+if bin_name == 'grep':
+    init_locale_symbol = proj.loader.find_symbol('init_localeinfo')
+    init_locale_addr = init_locale_symbol.rebased_addr
+    print(f"init_localeinfo address: {hex(init_locale_addr)}", flush=True)
 
-c_stack_symbol = proj.loader.find_symbol('c_stack_action')
-c_stack_addr = c_stack_symbol.rebased_addr
-print(f"c_stack_action address: {hex(c_stack_addr)}", flush=True)
+    c_stack_symbol = proj.loader.find_symbol('c_stack_action')
+    c_stack_addr = c_stack_symbol.rebased_addr
+    print(f"c_stack_action address: {hex(c_stack_addr)}", flush=True)
 
-if init_locale_symbol is None or c_stack_symbol is None:
-    print("WARNING: Could not find one or both symbols to hook!")
+    if init_locale_symbol is None or c_stack_symbol is None:
+        print("WARNING: Could not find one or both symbols to hook!", flush=True)
+    # Hook functions that cause state explosion, return immediately
+    proj.hook_symbol('init_localeinfo', InitLocaleInfoHook())
+    proj.hook_symbol('c_stack_action', CStackActionHook())
 
-
-# Hook functions that cause state explosion, return immediately
-proj.hook_symbol('init_localeinfo', InitLocaleInfoHook())
-proj.hook_symbol('c_stack_action', CStackActionHook())
+elif bin_name == 'nginx':
+    pass
 
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
@@ -271,7 +298,11 @@ for addr, hook in proj._sim_procedures.items():
 
 
 # Set up the initial state
-initial_state = setup_grep_symex_state(proj)
+initial_state = None
+if bin_name == 'grep':
+    initial_state = setup_grep_symex_state(proj)
+elif bin_name == 'nginx':
+    initial_state = setup_nginx_symex_state(proj)
 
 # Find the address of 'main'
 main_symbol = proj.loader.find_symbol('main')
@@ -303,44 +334,62 @@ prev_addr = cfg.kb.functions.function(name='main').addr
 prev_call = "main"
 print_msg_box(f"MAIN address: {hex(prev_addr)}")
 
-# Check if the callsites exist in the CFG
-for entry in gdb_logs[1:]:
-    addr = int(entry['Addr'], 16)
-    addr_str = hex(addr)
-    func_name = entry['Func']
-    node = cfg.model.get_any_node(addr, anyaddr=True)
-    if node:
-        print(f"Callsite {addr_str} exists in CFG.", flush=True)
-    else:
-        print(f"Callsite {addr_str} not found in CFG.", flush=True)
+# # Check if the callsites exist in the CFG
+# for entry in gdb_logs[1:]:
+#     addr = int(entry['Addr'], 16)
+#     addr_str = hex(addr)
+#     func_name = entry['Func']
+#     node = cfg.model.get_any_node(addr, anyaddr=True)
+#     if node:
+#         print(f"Callsite {addr_str} exists in CFG.", flush=True)
+#     else:
+#         print(f"Callsite {addr_str} not found in CFG.", flush=True)
 
 # ipdb.set_trace()
+
+
+# Check if the LEA addrs (callsites) exist in the CFG
+count = 0
+for entry in nginx_logs:
+    addr = int(entry['lea_addr'], 16)
+    addr_str = entry['lea_addr']
+    func_name = entry['function']
+    
+    node = cfg.model.get_any_node(addr, anyaddr=True)
+    if node:
+        print(f"Log site {addr_str} exists in CFG.", flush=True)
+        count += 1
+    else:
+        print(f"Log site {addr_str} not found in CFG.", flush=True)
+
+print_msg_box(f"{count} log sites exist")
+exit(0)
 
 
 def compare_simgrs(simgr1, simgr2):
     # First check if they're the exact same object
     if simgr1 is simgr2:
-        print("Same object identity")
+        print("Same object identity", flush=True)
         return True
         
     # Compare basic attributes
-    print("\nComparing attributes:")
+    print("\nComparing attributes:", flush=True)
     for attr in ['active', 'deadended', 'found', 'avoided', 'errored']:
         if hasattr(simgr1, attr) and hasattr(simgr2, attr):
             states1 = getattr(simgr1, attr)
             states2 = getattr(simgr2, attr)
-            print(f"{attr}:")
-            print(f"  simgr1: {states1}")
-            print(f"  simgr2: {states2}")
-            print(f"  Length match: {len(states1) == len(states2)}")
+            print(f"{attr}:", flush=True)
+            print(f"  simgr1: {states1}", flush=True)
+            print(f"  simgr2: {states2}", flush=True)
+            print(f"  Length match: {len(states1) == len(states2)}", flush=True)
             
     # Compare state attributes if there are active states
     if simgr1.active and simgr2.active:
-        print("\nComparing first active state:")
+        print("\nComparing first active state:", flush=True)
         state1 = simgr1.active[0]
         state2 = simgr2.active[0]
-        print(f"IP: {state1.ip} vs {state2.ip}")
-        print(f"Regs: {state1.regs} vs {state2.regs}")
+        print(f"IP: {state1.ip} vs {state2.ip}", flush=True)
+        print(f"Regs: {state1.regs} vs {state2.regs}", flush=True)
         
     return False  # Return False by default since deep equality is complex
 

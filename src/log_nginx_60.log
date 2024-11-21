@@ -1,0 +1,529 @@
+INFO - angr.project - Loading binary /usr/local/nginx/sbin/nginx - 2024-11-21 09:22:43.002 - __init__() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:146
+INFO - angr.project - There are no simprocedures for missing library libcrypt.so.1 :( - 2024-11-21 09:22:43.414 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:305
+INFO - angr.project - Using builtin SimProcedure for unresolved __libc_start_main from libc.so.0 - 2024-11-21 09:22:43.414 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500000 with <SimProcedure __libc_start_main> - 2024-11-21 09:22:43.414 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getenv from libc.so.0 - 2024-11-21 09:22:43.414 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500010 with <SimProcedure getenv> - 2024-11-21 09:22:43.415 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigprocmask from libc.so.0 - 2024-11-21 09:22:43.415 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500018 with <SimProcedure sigprocmask (stub)> - 2024-11-21 09:22:43.415 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved dlerror - 2024-11-21 09:22:43.415 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500020 with <SimProcedure dlerror (stub)> - 2024-11-21 09:22:43.415 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved raise from libc.so.0 - 2024-11-21 09:22:43.415 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500028 with <SimProcedure raise (stub)> - 2024-11-21 09:22:43.416 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved free from libc.so.0 - 2024-11-21 09:22:43.416 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500030 with <SimProcedure free> - 2024-11-21 09:22:43.416 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved recv from libc.so.0 - 2024-11-21 09:22:43.416 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500038 with <SimProcedure recv> - 2024-11-21 09:22:43.416 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved localtime from libc.so.0 - 2024-11-21 09:22:43.416 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500040 with <SimProcedure localtime (stub)> - 2024-11-21 09:22:43.417 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved abort from libc.so.0 - 2024-11-21 09:22:43.417 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500048 with <SimProcedure abort> - 2024-11-21 09:22:43.417 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __errno_location from libc.so.0 - 2024-11-21 09:22:43.417 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500050 with <SimProcedure __errno_location> - 2024-11-21 09:22:43.417 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved srandom from libc.so.0 - 2024-11-21 09:22:43.417 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500058 with <SimProcedure srandom (stub)> - 2024-11-21 09:22:43.418 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved unlink from libc.so.0 - 2024-11-21 09:22:43.418 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500060 with <SimProcedure unlink> - 2024-11-21 09:22:43.418 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strncmp from libc.so.0 - 2024-11-21 09:22:43.418 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500068 with <SimProcedure strncmp> - 2024-11-21 09:22:43.418 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved localtime_r from libc.so.0 - 2024-11-21 09:22:43.418 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500070 with <SimProcedure localtime_r (stub)> - 2024-11-21 09:22:43.419 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sem_wait from libc.so.0 - 2024-11-21 09:22:43.419 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500078 with <SimProcedure sem_wait (stub)> - 2024-11-21 09:22:43.419 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved mkdir from libc.so.0 - 2024-11-21 09:22:43.419 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500080 with <SimProcedure mkdir (stub)> - 2024-11-21 09:22:43.419 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved sendmsg - 2024-11-21 09:22:43.419 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500088 with <SimProcedure sendmsg (stub)> - 2024-11-21 09:22:43.419 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved writev from libc.so.0 - 2024-11-21 09:22:43.420 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500090 with <SimProcedure writev (stub)> - 2024-11-21 09:22:43.420 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved qsort - 2024-11-21 09:22:43.420 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500098 with <SimProcedure qsort (stub)> - 2024-11-21 09:22:43.420 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigaction from libc.so.0 - 2024-11-21 09:22:43.420 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000a0 with <SimProcedure sigaction> - 2024-11-21 09:22:43.420 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setsockopt from libc.so.0 - 2024-11-21 09:22:43.421 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000a8 with <SimProcedure setsockopt> - 2024-11-21 09:22:43.421 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved clock_gettime from libc.so.0 - 2024-11-21 09:22:43.421 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000b0 with <SimProcedure clock_gettime> - 2024-11-21 09:22:43.421 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved write from libc.so.0 - 2024-11-21 09:22:43.421 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000b8 with <SimProcedure write> - 2024-11-21 09:22:43.421 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getpid from libc.so.0 - 2024-11-21 09:22:43.421 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000c0 with <SimProcedure getpid (stub)> - 2024-11-21 09:22:43.422 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved lstat64 from libc.so.0 - 2024-11-21 09:22:43.422 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000c8 with <SimProcedure lstat64 (stub)> - 2024-11-21 09:22:43.422 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved opendir from libc.so.0 - 2024-11-21 09:22:43.422 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000d0 with <SimProcedure opendir> - 2024-11-21 09:22:43.422 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved shutdown from libc.so.0 - 2024-11-21 09:22:43.422 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000d8 with <SimProcedure shutdown (stub)> - 2024-11-21 09:22:43.423 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved globfree64 - 2024-11-21 09:22:43.423 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5000e0 with <SimProcedure globfree64 (stub)> - 2024-11-21 09:22:43.423 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strlen from libc.so.0 - 2024-11-21 09:22:43.423 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000e8 with <SimProcedure strlen> - 2024-11-21 09:22:43.423 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved chdir from libc.so.0 - 2024-11-21 09:22:43.423 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000f0 with <SimProcedure chdir (stub)> - 2024-11-21 09:22:43.423 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved __stack_chk_fail from libc.so.0 - 2024-11-21 09:22:43.424 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5000f8 with <SimProcedure __stack_chk_fail> - 2024-11-21 09:22:43.424 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getuid from libc.so.0 - 2024-11-21 09:22:43.424 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500100 with <SimProcedure getuid> - 2024-11-21 09:22:43.424 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved accept4 - 2024-11-21 09:22:43.424 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500108 with <SimProcedure accept4 (stub)> - 2024-11-21 09:22:43.424 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved dup2 from libc.so.0 - 2024-11-21 09:22:43.424 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500110 with <SimProcedure dup2> - 2024-11-21 09:22:43.425 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved stat64 from libc.so.0 - 2024-11-21 09:22:43.425 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500118 with <SimProcedure stat64 (stub)> - 2024-11-21 09:22:43.425 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved send from libc.so.0 - 2024-11-21 09:22:43.425 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500120 with <SimProcedure send> - 2024-11-21 09:22:43.425 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strchr from libc.so.0 - 2024-11-21 09:22:43.425 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500128 with <SimProcedure strchr> - 2024-11-21 09:22:43.426 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved uname from libc.so.0 - 2024-11-21 09:22:43.426 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500130 with <SimProcedure uname (stub)> - 2024-11-21 09:22:43.426 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved gmtime_r from libc.so.0 - 2024-11-21 09:22:43.426 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500138 with <SimProcedure gmtime_r (stub)> - 2024-11-21 09:22:43.426 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setrlimit64 from libc.so.0 - 2024-11-21 09:22:43.426 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500140 with <SimProcedure setrlimit64 (stub)> - 2024-11-21 09:22:43.427 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved gettimeofday from libc.so.0 - 2024-11-21 09:22:43.427 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500148 with <SimProcedure gettimeofday> - 2024-11-21 09:22:43.427 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setpriority from libc.so.0 - 2024-11-21 09:22:43.427 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500150 with <SimProcedure setpriority (stub)> - 2024-11-21 09:22:43.427 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved statfs64 - 2024-11-21 09:22:43.427 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500158 with <SimProcedure statfs64 (stub)> - 2024-11-21 09:22:43.427 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memset from libc.so.0 - 2024-11-21 09:22:43.428 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500160 with <SimProcedure memset> - 2024-11-21 09:22:43.428 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved geteuid from libc.so.0 - 2024-11-21 09:22:43.428 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500168 with <SimProcedure geteuid> - 2024-11-21 09:22:43.428 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved ioctl from libc.so.0 - 2024-11-21 09:22:43.428 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500170 with <SimProcedure ioctl (stub)> - 2024-11-21 09:22:43.428 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sendto from libc.so.0 - 2024-11-21 09:22:43.429 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500178 with <SimProcedure sendto (stub)> - 2024-11-21 09:22:43.429 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved close from libc.so.0 - 2024-11-21 09:22:43.429 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500180 with <SimProcedure close> - 2024-11-21 09:22:43.429 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved __realpath_chk - 2024-11-21 09:22:43.429 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500188 with <SimProcedure __realpath_chk (stub)> - 2024-11-21 09:22:43.429 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setsid from libc.so.0 - 2024-11-21 09:22:43.429 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500190 with <SimProcedure setsid (stub)> - 2024-11-21 09:22:43.430 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sem_post from libc.so.0 - 2024-11-21 09:22:43.430 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500198 with <SimProcedure sem_post (stub)> - 2024-11-21 09:22:43.430 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved sched_setaffinity - 2024-11-21 09:22:43.430 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5001a0 with <SimProcedure sched_setaffinity (stub)> - 2024-11-21 09:22:43.430 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved closedir from libc.so.0 - 2024-11-21 09:22:43.430 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001a8 with <SimProcedure closedir> - 2024-11-21 09:22:43.430 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved epoll_ctl - 2024-11-21 09:22:43.431 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5001b0 with <SimProcedure epoll_ctl (stub)> - 2024-11-21 09:22:43.431 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sched_yield from libc.so.0 - 2024-11-21 09:22:43.431 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001b8 with <SimProcedure sched_yield (stub)> - 2024-11-21 09:22:43.431 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved read from libc.so.0 - 2024-11-21 09:22:43.431 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001c0 with <SimProcedure read> - 2024-11-21 09:22:43.431 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memcmp from libc.so.0 - 2024-11-21 09:22:43.432 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001c8 with <SimProcedure memcmp> - 2024-11-21 09:22:43.432 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getsockopt from libc.so.0 - 2024-11-21 09:22:43.432 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001d0 with <SimProcedure getsockopt> - 2024-11-21 09:22:43.432 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved execve from libc.so.0 - 2024-11-21 09:22:43.432 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001d8 with <SimProcedure execve (stub)> - 2024-11-21 09:22:43.432 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved fstatat64 - 2024-11-21 09:22:43.433 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5001e0 with <SimProcedure fstatat64 (stub)> - 2024-11-21 09:22:43.433 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved utimes from libc.so.0 - 2024-11-21 09:22:43.433 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001e8 with <SimProcedure utimes (stub)> - 2024-11-21 09:22:43.433 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strcmp from libc.so.0 - 2024-11-21 09:22:43.433 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5001f0 with <SimProcedure strcmp> - 2024-11-21 09:22:43.433 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved dlopen - 2024-11-21 09:22:43.433 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5001f8 with <SimProcedure dlopen (stub)> - 2024-11-21 09:22:43.434 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getpwnam from libc.so.0 - 2024-11-21 09:22:43.434 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500200 with <SimProcedure getpwnam (stub)> - 2024-11-21 09:22:43.434 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved __memmove_chk - 2024-11-21 09:22:43.434 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500208 with <SimProcedure __memmove_chk (stub)> - 2024-11-21 09:22:43.434 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved __memcpy_chk - 2024-11-21 09:22:43.434 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500210 with <SimProcedure __memcpy_chk (stub)> - 2024-11-21 09:22:43.434 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved syscall from libc.so.0 - 2024-11-21 09:22:43.435 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500218 with <SimProcedure syscall (stub)> - 2024-11-21 09:22:43.435 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigemptyset from libc.so.0 - 2024-11-21 09:22:43.435 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500220 with <SimProcedure sigemptyset (stub)> - 2024-11-21 09:22:43.435 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved umask from libc.so.0 - 2024-11-21 09:22:43.435 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500228 with <SimProcedure umask (stub)> - 2024-11-21 09:22:43.435 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved glob64 - 2024-11-21 09:22:43.435 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500230 with <SimProcedure glob64 (stub)> - 2024-11-21 09:22:43.436 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memcpy from libc.so.0 - 2024-11-21 09:22:43.436 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500238 with <SimProcedure memcpy> - 2024-11-21 09:22:43.436 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved socketpair from libc.so.0 - 2024-11-21 09:22:43.436 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500240 with <SimProcedure socketpair (stub)> - 2024-11-21 09:22:43.436 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getgrnam from libc.so.0 - 2024-11-21 09:22:43.436 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500248 with <SimProcedure getgrnam (stub)> - 2024-11-21 09:22:43.437 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved prctl - 2024-11-21 09:22:43.437 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500250 with <SimProcedure prctl (stub)> - 2024-11-21 09:22:43.437 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved kill from libc.so.0 - 2024-11-21 09:22:43.437 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500258 with <SimProcedure kill (stub)> - 2024-11-21 09:22:43.437 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved sendfile64 - 2024-11-21 09:22:43.437 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500260 with <SimProcedure sendfile64 (stub)> - 2024-11-21 09:22:43.437 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved time from libc.so.0 - 2024-11-21 09:22:43.438 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500268 with <SimProcedure time> - 2024-11-21 09:22:43.438 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved openat64 - 2024-11-21 09:22:43.438 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500270 with <SimProcedure openat64 (stub)> - 2024-11-21 09:22:43.438 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved pwrite64 from libc.so.0 - 2024-11-21 09:22:43.438 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500278 with <SimProcedure pwrite64> - 2024-11-21 09:22:43.438 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getrlimit64 from libc.so.0 - 2024-11-21 09:22:43.438 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500280 with <SimProcedure getrlimit64 (stub)> - 2024-11-21 09:22:43.439 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved random from libc.so.0 - 2024-11-21 09:22:43.439 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500288 with <SimProcedure random (stub)> - 2024-11-21 09:22:43.439 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved mmap64 - 2024-11-21 09:22:43.439 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500290 with <SimProcedure mmap64 (stub)> - 2024-11-21 09:22:43.439 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved malloc from libc.so.0 - 2024-11-21 09:22:43.439 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500298 with <SimProcedure malloc> - 2024-11-21 09:22:43.439 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved listen from libc.so.0 - 2024-11-21 09:22:43.440 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002a0 with <SimProcedure listen> - 2024-11-21 09:22:43.440 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved mktime from libc.so.0 - 2024-11-21 09:22:43.440 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002a8 with <SimProcedure mktime (stub)> - 2024-11-21 09:22:43.440 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strpbrk from libc.so.0 - 2024-11-21 09:22:43.440 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002b0 with <SimProcedure strpbrk (stub)> - 2024-11-21 09:22:43.440 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigsuspend from libc.so.0 - 2024-11-21 09:22:43.440 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002b8 with <SimProcedure sigsuspend (stub)> - 2024-11-21 09:22:43.441 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved pwritev64 - 2024-11-21 09:22:43.441 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002c0 with <SimProcedure pwritev64 (stub)> - 2024-11-21 09:22:43.441 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved crypt_r from libc.so.0 - 2024-11-21 09:22:43.441 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002c8 with <SimProcedure crypt_r (stub)> - 2024-11-21 09:22:43.441 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved chown from libc.so.0 - 2024-11-21 09:22:43.441 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002d0 with <SimProcedure chown (stub)> - 2024-11-21 09:22:43.442 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setitimer from libc.so.0 - 2024-11-21 09:22:43.442 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002d8 with <SimProcedure setitimer (stub)> - 2024-11-21 09:22:43.442 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved munmap from libc.so.0 - 2024-11-21 09:22:43.442 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5002e0 with <SimProcedure munmap (stub)> - 2024-11-21 09:22:43.442 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved recvmsg - 2024-11-21 09:22:43.442 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002e8 with <SimProcedure recvmsg (stub)> - 2024-11-21 09:22:43.442 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved ftruncate64 - 2024-11-21 09:22:43.443 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002f0 with <SimProcedure ftruncate64 (stub)> - 2024-11-21 09:22:43.443 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved strerrordesc_np - 2024-11-21 09:22:43.443 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5002f8 with <SimProcedure strerrordesc_np (stub)> - 2024-11-21 09:22:43.443 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sem_init from libc.so.0 - 2024-11-21 09:22:43.443 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500300 with <SimProcedure sem_init (stub)> - 2024-11-21 09:22:43.443 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved epoll_wait - 2024-11-21 09:22:43.443 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500308 with <SimProcedure epoll_wait (stub)> - 2024-11-21 09:22:43.444 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved chmod from libc.so.0 - 2024-11-21 09:22:43.444 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500310 with <SimProcedure chmod (stub)> - 2024-11-21 09:22:43.444 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved bind from libc.so.0 - 2024-11-21 09:22:43.444 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500318 with <SimProcedure bind> - 2024-11-21 09:22:43.444 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved readv from libc.so.0 - 2024-11-21 09:22:43.444 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500320 with <SimProcedure readv (stub)> - 2024-11-21 09:22:43.444 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved open64 from libc.so.0 - 2024-11-21 09:22:43.444 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500328 with <SimProcedure open64 (stub)> - 2024-11-21 09:22:43.445 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strftime from libc.so.0 - 2024-11-21 09:22:43.445 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500330 with <SimProcedure strftime (stub)> - 2024-11-21 09:22:43.445 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved fcntl64 - 2024-11-21 09:22:43.445 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500338 with <SimProcedure fcntl64 (stub)> - 2024-11-21 09:22:43.445 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved memmove from libc.so.0 - 2024-11-21 09:22:43.445 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500340 with <SimProcedure memmove> - 2024-11-21 09:22:43.445 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved readdir64 - 2024-11-21 09:22:43.446 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500348 with <SimProcedure readdir64 (stub)> - 2024-11-21 09:22:43.446 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved pread64 from libc.so.0 - 2024-11-21 09:22:43.446 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500350 with <SimProcedure pread64> - 2024-11-21 09:22:43.446 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setgid from libc.so.0 - 2024-11-21 09:22:43.446 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500358 with <SimProcedure setgid (stub)> - 2024-11-21 09:22:43.446 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved waitpid from libc.so.0 - 2024-11-21 09:22:43.446 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500360 with <SimProcedure waitpid (stub)> - 2024-11-21 09:22:43.447 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sysconf from libc.so.0 - 2024-11-21 09:22:43.447 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500368 with <SimProcedure sysconf (stub)> - 2024-11-21 09:22:43.447 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved rename from libc.so.0 - 2024-11-21 09:22:43.447 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500370 with <SimProcedure rename (stub)> - 2024-11-21 09:22:43.447 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved dlsym - 2024-11-21 09:22:43.447 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500378 with <SimProcedure dlsym (stub)> - 2024-11-21 09:22:43.447 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved accept from libc.so.0 - 2024-11-21 09:22:43.448 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500380 with <SimProcedure accept> - 2024-11-21 09:22:43.448 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getsockname from libc.so.0 - 2024-11-21 09:22:43.448 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500388 with <SimProcedure getsockname (stub)> - 2024-11-21 09:22:43.448 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved gethostname from libc.so.0 - 2024-11-21 09:22:43.448 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500390 with <SimProcedure gethostname (stub)> - 2024-11-21 09:22:43.448 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getpagesize from libc.so.0 - 2024-11-21 09:22:43.448 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500398 with <SimProcedure getpagesize (stub)> - 2024-11-21 09:22:43.449 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved epoll_create - 2024-11-21 09:22:43.449 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003a0 with <SimProcedure epoll_create (stub)> - 2024-11-21 09:22:43.449 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved getppid from libc.so.0 - 2024-11-21 09:22:43.449 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003a8 with <SimProcedure getppid (stub)> - 2024-11-21 09:22:43.449 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved exit from libc.so.0 - 2024-11-21 09:22:43.449 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003b0 with <SimProcedure exit> - 2024-11-21 09:22:43.450 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved connect from libc.so.0 - 2024-11-21 09:22:43.450 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003b8 with <SimProcedure connect (stub)> - 2024-11-21 09:22:43.450 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved eventfd - 2024-11-21 09:22:43.450 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003c0 with <SimProcedure eventfd (stub)> - 2024-11-21 09:22:43.450 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fstat64 from libc.so.0 - 2024-11-21 09:22:43.450 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003c8 with <SimProcedure fstat64 (stub)> - 2024-11-21 09:22:43.450 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved posix_fadvise64 - 2024-11-21 09:22:43.450 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003d0 with <SimProcedure posix_fadvise64 (stub)> - 2024-11-21 09:22:43.451 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved posix_memalign from libc.so.0 - 2024-11-21 09:22:43.451 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003d8 with <SimProcedure posix_memalign (stub)> - 2024-11-21 09:22:43.451 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved setuid from libc.so.0 - 2024-11-21 09:22:43.451 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003e0 with <SimProcedure setuid (stub)> - 2024-11-21 09:22:43.451 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved getaddrinfo - 2024-11-21 09:22:43.451 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003e8 with <SimProcedure getaddrinfo (stub)> - 2024-11-21 09:22:43.452 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved initgroups from libc.so.0 - 2024-11-21 09:22:43.452 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x5003f0 with <SimProcedure initgroups (stub)> - 2024-11-21 09:22:43.452 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved dlclose - 2024-11-21 09:22:43.452 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x5003f8 with <SimProcedure dlclose (stub)> - 2024-11-21 09:22:43.452 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sem_destroy from libc.so.0 - 2024-11-21 09:22:43.452 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500400 with <SimProcedure sem_destroy (stub)> - 2024-11-21 09:22:43.452 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved sigaddset from libc.so.0 - 2024-11-21 09:22:43.452 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500408 with <SimProcedure sigaddset (stub)> - 2024-11-21 09:22:43.453 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved fork from libc.so.0 - 2024-11-21 09:22:43.453 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500410 with <SimProcedure fork> - 2024-11-21 09:22:43.453 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved strstr from libc.so.0 - 2024-11-21 09:22:43.453 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500418 with <SimProcedure strstr> - 2024-11-21 09:22:43.453 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved usleep from libc.so.0 - 2024-11-21 09:22:43.453 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500420 with <SimProcedure usleep> - 2024-11-21 09:22:43.454 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using stub SimProcedure for unresolved freeaddrinfo - 2024-11-21 09:22:43.454 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:405
+DEBUG - angr.project - hooking 0x500428 with <SimProcedure freeaddrinfo (stub)> - 2024-11-21 09:22:43.454 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - Using builtin SimProcedure for unresolved socket from libc.so.0 - 2024-11-21 09:22:43.454 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:400
+DEBUG - angr.project - hooking 0x500430 with <SimProcedure socket> - 2024-11-21 09:22:43.454 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.project - There are no simprocedures for missing library libcrypt.so.1 :( - 2024-11-21 09:22:43.454 - _register_object() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:305
+DEBUG - angr.project - hooking 0xb01000 with <SimProcedure LinuxLoader> - 2024-11-21 09:22:43.455 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01008 with <SimProcedure _dl_rtld_lock_recursive> - 2024-11-21 09:22:43.455 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01010 with <SimProcedure _dl_rtld_unlock_recursive> - 2024-11-21 09:22:43.455 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01018 with <SimProcedure ReturnUnconstrained> - 2024-11-21 09:22:43.455 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01020 with <SimProcedure _dl_initial_error_catch_tsd> - 2024-11-21 09:22:43.455 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01028 with <SimProcedure _vsyscall> - 2024-11-21 09:22:43.456 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01038 with <SimProcedure CallReturn> - 2024-11-21 09:22:43.457 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01040 with <SimProcedure UnresolvableJumpTarget> - 2024-11-21 09:22:43.457 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0xb01048 with <SimProcedure UnresolvableCallTarget> - 2024-11-21 09:22:43.457 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x601050 with <SimProcedure UnresolvableJumpTarget> - 2024-11-21 09:22:43.474 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+DEBUG - angr.project - hooking 0x601058 with <SimProcedure UnresolvableCallTarget> - 2024-11-21 09:22:43.474 - hook() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/project.py:511
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:22:56.500 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:22:56.981 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:22:56.987 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:22:57.000 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:01.284 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:01.327 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:01.333 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:01.346 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:03.510 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.059 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.068 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:04.096 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.633 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.641 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.647 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:04.658 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.673 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.803 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.811 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:04.832 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.857 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.915 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.920 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.926 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.934 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.940 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.946 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:04.957 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:04.962 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.968 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.971 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.976 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.987 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:04.993 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:05.001 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:05.004 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.015 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.020 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:05.025 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.032 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:05.043 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:05.048 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:05.054 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.060 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.066 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:05.071 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:05.174 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.106 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.112 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.123 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.129 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.134 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.139 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.151 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.157 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.162 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:06.167 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:06.177 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:06.195 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:09.761 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:09.874 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:09.883 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:09.911 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:09.917 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:09.963 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.936 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.945 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.956 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.964 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.972 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.983 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.991 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:10.998 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:11.004 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:11.011 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:11.016 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:13.175 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.568 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.575 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.580 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.586 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.591 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.601 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.607 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.613 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.619 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.624 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.629 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.634 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.639 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.645 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.650 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.655 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.666 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.672 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.682 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.685 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.690 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.695 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.705 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.710 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.715 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.720 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.729 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.734 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.739 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.745 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.754 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.759 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:14.764 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.818 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.987 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:14.993 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:15.005 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.015 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.021 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.026 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:15.036 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:15.051 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.060 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.066 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.072 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:15.082 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:15.091 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 3 cut> - 2024-11-21 09:23:15.106 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.112 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:15.115 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:15.124 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:15.139 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.248 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.309 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.318 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:16.343 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.614 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.877 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.883 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.893 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.900 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.905 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:16.916 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.926 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.931 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:16.937 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:16.951 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:16.966 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.784 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.797 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.804 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:17.829 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.843 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.853 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.858 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.868 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.874 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.879 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:17.890 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.900 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.905 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.911 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:17.917 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:17.928 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.967 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.989 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:17.996 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.007 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.031 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.052 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.058 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.069 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.081 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.099 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.105 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.117 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.134 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.203 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.210 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.220 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.280 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.310 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.317 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.329 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.578 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.638 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.645 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.655 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.757 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.863 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:18.871 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:18.894 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:19.578 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:19.959 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:19.968 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:19.991 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:21.383 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.665 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.671 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:22.694 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.705 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.712 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.719 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:22.739 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:22.764 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.775 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.781 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.789 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:22.794 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:22.812 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:22.836 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:23.430 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.055 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.063 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:26.086 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.099 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.621 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.630 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:26.653 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.667 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.681 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.687 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:26.703 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.712 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.718 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.724 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:26.731 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:26.753 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.763 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.768 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.774 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:26.780 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:26.788 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 2 cut> - 2024-11-21 09:23:26.803 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.068 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.087 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.094 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:27.117 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.137 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.154 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.162 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:27.184 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.202 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.218 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.226 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:27.248 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.265 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.282 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active> - 2024-11-21 09:23:27.291 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434
+INFO - angr.sim_manager - Stepping active of <SimulationManager with 1 active, 1 cut> - 2024-11-21 09:23:27.313 - step() - /home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py:434

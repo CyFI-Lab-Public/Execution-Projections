@@ -1,0 +1,1350 @@
+bin_path: /usr/local/nginx/sbin/nginx
+gdb_log_path: None
+explore_max_secs: 60
+mapped_applogs_path: /home/dinko/exec-proj/log_parsing/mapped_nginx_logs.log
+
+
+0x429f80, ngx_open_listening_sockets
+2024/11/19 13:23:54 [debug] 583465#0: bind() 0.0.0.0:8080 #6
+
+0x43acaa, ngx_event_module_init
+2024/11/19 13:23:54 [notice] 583465#0: using the "epoll" event method
+
+0x4403f4, ngx_write_file
+2024/11/19 13:23:54 [debug] 583465#0: write: 7, 00007FFFFFFFE1B0, 7, 0
+
+0x41b848, ngx_pool_cleanup_add
+2024/11/19 13:23:54 [debug] 583465#0: add cleanup: 00005555556722D8
+
+0x4401ee, ngx_alloc
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555661230:8
+
+0x44708a, ngx_epoll_init
+2024/11/19 13:23:54 [debug] 583465#0: notify eventfd: 7
+
+0x446fed, ngx_epoll_init
+2024/11/19 13:23:54 [debug] 583465#0: testing the EPOLLRDHUP flag: success
+
+0x4401ee, ngx_alloc
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555654DA0:6144
+
+0x4401ee, ngx_alloc
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 00005555556565B0:3584
+
+0x4401ee, ngx_alloc
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 0000555555650190:1536
+
+0x4401ee, ngx_alloc
+2024/11/19 13:23:54 [debug] 583465#0: malloc: 00005555556573C0:1536
+
+0x446bc2, ngx_epoll_add_event
+2024/11/19 13:23:54 [debug] 583465#0: epoll add event: fd:6 op:1 ev:00002001
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+
+0x43c5d5, ngx_event_accept
+2024/11/19 13:24:03 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer add: 8: 60000:1041575135
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 1
+
+0x446bc2, ngx_epoll_add_event
+2024/11/19 13:24:03 [debug] 583465#0: *1 epoll add event: fd:8 op:1 ev:80002001
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656690
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:03 [debug] 583465#0: *1 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: eof:0, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: fd:8 88 of 1024
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: *1 posix_memalign: 000055555564BD70:4096 @16
+
+0x455c40, ngx_http_process_request_line
+2024/11/19 13:24:03 [debug] 583465#0: *1 http request line: "GET /index.html HTTP/1.1"
+
+0x455169, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *1 http uri: "/index.html"
+
+0x45519c, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *1 http args: ""
+
+0x4551cf, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *1 http exten: "html"
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: *1 posix_memalign: 000055555564CD80:4096 @16
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "Host: localhost:8080"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "User-Agent: curl/7.81.0"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *1 http header: "Accept: */*"
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer del: 8: 1041575135
+
+0x45078d, ngx_http_named_location
+2024/11/19 13:24:03 [debug] 583465#0: *1 test location: "/"
+
+0x44f014, ngx_http_core_find_config_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 using configuration "/"
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 1
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 2
+
+0x44ecd1, ngx_http_core_post_access_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 post access phase: 5
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 6
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 generic phase: 7
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 8
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 9
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *1 content phase: 10
+
+0x47ce38, ngx_http_static_handler
+2024/11/19 13:24:03 [debug] 583465#0: *1 http filename: "/usr/local/nginx/html/index.html"
+
+0x41b848, ngx_pool_cleanup_add
+2024/11/19 13:24:03 [debug] 583465#0: *1 add cleanup: 000055555564CAA8
+
+0x47d09d, ngx_http_static_handler
+2024/11/19 13:24:03 [debug] 583465#0: *1 http static fd: 9
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 write new buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter: l:0 f:0 s:238
+
+0x44f73b, ngx_http_output_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http output filter "/index.html?"
+
+0x47c5c6, ngx_http_copy_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http copy filter: "/index.html?"
+
+0x440365, ngx_read_file
+2024/11/19 13:24:03 [debug] 583465#0: *1 read: 9, 000055555564D2D8, 615, 0
+
+0x4743a0, ngx_http_postpone_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http postpone filter "/index.html?" 000055555564D540
+
+0x43e3d6, ngx_event_pipe_write_chain_to_temp_file
+2024/11/19 13:24:03 [debug] 583465#0: *1 write old buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 write new buf t:1 f:0 000055555564D2D8, pos 000055555564D2D8, size: 615 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter: l:1 f:0 s:853
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter limit 2097152
+
+0x4405e0, ngx_write_chain_to_file
+2024/11/19 13:24:03 [debug] 583465#0: *1 writev: 853 of 853
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *1 http write filter 0000000000000000
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:03 [debug] 583465#0: *1 http finalize request: 0, "/index.html?" a:1, c:1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:03 [debug] 583465#0: event timer add: 1432023124: 1000:1041516135
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 run cleanup: 000055555564CAA8
+
+0x41b30e, ngx_pool_cleanup_file
+2024/11/19 13:24:03 [debug] 583465#0: *1 file cleanup: fd:9
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 000055555564BD70, unused: 1
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 000055555564CD80, unused: 1975
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 0000555555646570
+
+0x4541c2, ngx_http_finalize_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 hc free: 0000000000000000
+
+0x4541f7, ngx_http_finalize_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 hc busy: 0000000000000000 0
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer add: 8: 75000:1041590135
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656690
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:03 [debug] 583465#0: *1 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: eof:1, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *1 recv: fd:8 0 of 1024
+
+0x4569db, ngx_http_keepalive_handler
+2024/11/19 13:24:03 [info] 583465#0: *1 client 127.0.0.1 closed keepalive connection
+
+0x452c8e, ngx_http_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 close http connection: 8
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 event timer del: 8: 1041590135
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *1 reusable connection: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 0000555555646570
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *1 free: 00005555556507A0, unused: 152
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+
+0x43c5d5, ngx_event_accept
+2024/11/19 13:24:03 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer add: 8: 60000:1041575645
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 1
+
+0x446bc2, ngx_epoll_add_event
+2024/11/19 13:24:03 [debug] 583465#0: *2 epoll add event: fd:8 op:1 ev:80002001
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656691
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:03 [debug] 583465#0: *2 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: eof:0, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: fd:8 91 of 1024
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: *2 posix_memalign: 000055555564BD70:4096 @16
+
+0x455c40, ngx_http_process_request_line
+2024/11/19 13:24:03 [debug] 583465#0: *2 http request line: "GET /notfound.html HTTP/1.1"
+
+0x455169, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *2 http uri: "/notfound.html"
+
+0x45519c, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *2 http args: ""
+
+0x4551cf, ngx_http_process_request_uri
+2024/11/19 13:24:03 [debug] 583465#0: *2 http exten: "html"
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:03 [debug] 583465#0: *2 posix_memalign: 000055555564CD80:4096 @16
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "Host: localhost:8080"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "User-Agent: curl/7.81.0"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:03 [debug] 583465#0: *2 http header: "Accept: */*"
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer del: 8: 1041575645
+
+0x45078d, ngx_http_named_location
+2024/11/19 13:24:03 [debug] 583465#0: *2 test location: "/"
+
+0x44f014, ngx_http_core_find_config_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 using configuration "/"
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 1
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 2
+
+0x44ecd1, ngx_http_core_post_access_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 post access phase: 5
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 6
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 generic phase: 7
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 8
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 9
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:03 [debug] 583465#0: *2 content phase: 10
+
+0x47ce38, ngx_http_static_handler
+2024/11/19 13:24:03 [debug] 583465#0: *2 http filename: "/usr/local/nginx/html/notfound.html"
+
+0x41b848, ngx_pool_cleanup_add
+2024/11/19 13:24:03 [debug] 583465#0: *2 add cleanup: 000055555564CAA8
+
+0x452337, ngx_http_log_error_handler
+2024/11/19 13:24:03 [error] 583465#0: *2 open() "/usr/local/nginx/html/notfound.html" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /notfound.html HTTP/1.1", host: "localhost:8080"
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:03 [debug] 583465#0: *2 http finalize request: 404, "/notfound.html?" a:1, c:1
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:1 f:0 000055555564CB28, pos 000055555564CB28, size: 155 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter: l:0 f:0 s:155
+
+0x44f73b, ngx_http_output_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http output filter "/notfound.html?"
+
+0x47c5c6, ngx_http_copy_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http copy filter: "/notfound.html?"
+
+0x4743a0, ngx_http_postpone_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http postpone filter "/notfound.html?" 000055555564CCF0
+
+0x43e3d6, ngx_event_pipe_write_chain_to_temp_file
+2024/11/19 13:24:03 [debug] 583465#0: *2 write old buf t:1 f:0 000055555564CB28, pos 000055555564CB28, size: 155 file: 0, size: 0
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:0 f:0 0000000000000000, pos 000055555561A060, size: 100 file: 0, size: 0
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 write new buf t:0 f:0 0000000000000000, pos 000055555561A7C0, size: 53 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter: l:1 f:0 s:308
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter limit 2097152
+
+0x4405e0, ngx_write_chain_to_file
+2024/11/19 13:24:03 [debug] 583465#0: *2 writev: 308 of 308
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:03 [debug] 583465#0: *2 http write filter 0000000000000000
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:03 [debug] 583465#0: *2 http finalize request: 0, "/notfound.html?" a:1, c:1
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 000055555564BD70, unused: 24
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 000055555564CD80, unused: 2876
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 0000555555646570
+
+0x4541c2, ngx_http_finalize_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 hc free: 0000000000000000
+
+0x4541f7, ngx_http_finalize_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 hc busy: 0000000000000000 0
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer add: 8: 75000:1041590645
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:03 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656691
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:03 [debug] 583465#0: *2 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: eof:1, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:03 [debug] 583465#0: *2 recv: fd:8 0 of 1024
+
+0x4569db, ngx_http_keepalive_handler
+2024/11/19 13:24:03 [info] 583465#0: *2 client 127.0.0.1 closed keepalive connection
+
+0x452c8e, ngx_http_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 close http connection: 8
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 event timer del: 8: 1041590645
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:03 [debug] 583465#0: *2 reusable connection: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 0000555555646570
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:03 [debug] 583465#0: *2 free: 00005555556507A0, unused: 152
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: event timer del: 1432023124: 1041516135
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+
+0x43c5d5, ngx_event_accept
+2024/11/19 13:24:04 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer add: 8: 60000:1041576156
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 1
+
+0x446bc2, ngx_epoll_add_event
+2024/11/19 13:24:04 [debug] 583465#0: *3 epoll add event: fd:8 op:1 ev:80002001
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656690
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:04 [debug] 583465#0: *3 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: eof:0, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: fd:8 89 of 1024
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: *3 posix_memalign: 000055555564BD70:4096 @16
+
+0x455c40, ngx_http_process_request_line
+2024/11/19 13:24:04 [debug] 583465#0: *3 http request line: "HEAD /index.html HTTP/1.1"
+
+0x455169, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *3 http uri: "/index.html"
+
+0x45519c, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *3 http args: ""
+
+0x4551cf, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *3 http exten: "html"
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: *3 posix_memalign: 000055555564CD80:4096 @16
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "Host: localhost:8080"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "User-Agent: curl/7.81.0"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *3 http header: "Accept: */*"
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer del: 8: 1041576156
+
+0x45078d, ngx_http_named_location
+2024/11/19 13:24:04 [debug] 583465#0: *3 test location: "/"
+
+0x44f014, ngx_http_core_find_config_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 using configuration "/"
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 1
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 2
+
+0x44ecd1, ngx_http_core_post_access_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 post access phase: 5
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 6
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 generic phase: 7
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 8
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 9
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *3 content phase: 10
+
+0x47ce38, ngx_http_static_handler
+2024/11/19 13:24:04 [debug] 583465#0: *3 http filename: "/usr/local/nginx/html/index.html"
+
+0x41b848, ngx_pool_cleanup_add
+2024/11/19 13:24:04 [debug] 583465#0: *3 add cleanup: 000055555564CAA8
+
+0x47d09d, ngx_http_static_handler
+2024/11/19 13:24:04 [debug] 583465#0: *3 http static fd: 9
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *3 write new buf t:1 f:0 000055555564CC70, pos 000055555564CC70, size: 238 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter: l:1 f:0 s:238
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter limit 2097152
+
+0x4405e0, ngx_write_chain_to_file
+2024/11/19 13:24:04 [debug] 583465#0: *3 writev: 238 of 238
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *3 http write filter 0000000000000000
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:04 [debug] 583465#0: *3 http finalize request: 0, "/index.html?" a:1, c:1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:04 [debug] 583465#0: event timer add: 1432023124: 1000:1041517156
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 run cleanup: 000055555564CAA8
+
+0x41b30e, ngx_pool_cleanup_file
+2024/11/19 13:24:04 [debug] 583465#0: *3 file cleanup: fd:9
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 000055555564BD70, unused: 1
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 000055555564CD80, unused: 2823
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 0000555555646570
+
+0x4541c2, ngx_http_finalize_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 hc free: 0000000000000000
+
+0x4541f7, ngx_http_finalize_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 hc busy: 0000000000000000 0
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer add: 8: 75000:1041591156
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656690
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:04 [debug] 583465#0: *3 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: eof:1, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *3 recv: fd:8 0 of 1024
+
+0x4569db, ngx_http_keepalive_handler
+2024/11/19 13:24:04 [info] 583465#0: *3 client 127.0.0.1 closed keepalive connection
+
+0x452c8e, ngx_http_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 close http connection: 8
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 event timer del: 8: 1041591156
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *3 reusable connection: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 0000555555646570
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *3 free: 00005555556507A0, unused: 152
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:6 ev:0001 d:00005555556565B0
+
+0x43c5d5, ngx_event_accept
+2024/11/19 13:24:04 [debug] 583465#0: accept on 0.0.0.0:8080, ready: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: posix_memalign: 00005555556507A0:512 @16
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer add: 8: 60000:1041576666
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 1
+
+0x446bc2, ngx_epoll_add_event
+2024/11/19 13:24:04 [debug] 583465#0: *4 epoll add event: fd:8 op:1 ev:80002001
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:0001 d:0000555555656691
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:04 [debug] 583465#0: *4 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: eof:0, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: fd:8 166 of 1024
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 0
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: *4 posix_memalign: 000055555564BD70:4096 @16
+
+0x455c40, ngx_http_process_request_line
+2024/11/19 13:24:04 [debug] 583465#0: *4 http request line: "POST /index.html HTTP/1.1"
+
+0x455169, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *4 http uri: "/index.html"
+
+0x45519c, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *4 http args: ""
+
+0x4551cf, ngx_http_process_request_uri
+2024/11/19 13:24:04 [debug] 583465#0: *4 http exten: "html"
+
+0x4402e0, ngx_memalign
+2024/11/19 13:24:04 [debug] 583465#0: *4 posix_memalign: 000055555564CD80:4096 @16
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Host: localhost:8080"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "User-Agent: curl/7.81.0"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Accept: */*"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Content-Length: 9"
+
+0x4556f2, ngx_http_process_request_headers
+2024/11/19 13:24:04 [debug] 583465#0: *4 http header: "Content-Type: application/x-www-form-urlencoded"
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer del: 8: 1041576666
+
+0x45078d, ngx_http_named_location
+2024/11/19 13:24:04 [debug] 583465#0: *4 test location: "/"
+
+0x44f014, ngx_http_core_find_config_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 using configuration "/"
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 1
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 2
+
+0x44ecd1, ngx_http_core_post_access_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 post access phase: 5
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 6
+
+0x44e8dc, ngx_http_core_generic_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 generic phase: 7
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 8
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 9
+
+0x44fc38, ngx_http_core_content_phase
+2024/11/19 13:24:04 [debug] 583465#0: *4 content phase: 10
+
+0x47ce38, ngx_http_static_handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 http filename: "/usr/local/nginx/html/index.html"
+
+0x41b848, ngx_pool_cleanup_add
+2024/11/19 13:24:04 [debug] 583465#0: *4 add cleanup: 000055555564CAC0
+
+0x47d09d, ngx_http_static_handler
+2024/11/19 13:24:04 [debug] 583465#0: *4 http static fd: 9
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:04 [debug] 583465#0: *4 http finalize request: 405, "/index.html?" a:1, c:1
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:1 f:0 000055555564CB40, pos 000055555564CB40, size: 157 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter: l:0 f:0 s:157
+
+0x44f73b, ngx_http_output_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http output filter "/index.html?"
+
+0x47c5c6, ngx_http_copy_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http copy filter: "/index.html?"
+
+0x4743a0, ngx_http_postpone_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http postpone filter "/index.html?" 000055555564CD08
+
+0x43e3d6, ngx_event_pipe_write_chain_to_temp_file
+2024/11/19 13:24:04 [debug] 583465#0: *4 write old buf t:1 f:0 000055555564CB40, pos 000055555564CB40, size: 157 file: 0, size: 0
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:0 f:0 0000000000000000, pos 0000555555619FE0, size: 104 file: 0, size: 0
+
+0x471502, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 write new buf t:0 f:0 0000000000000000, pos 000055555561A7C0, size: 53 file: 0, size: 0
+
+0x471817, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter: l:1 f:0 s:314
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter limit 2097152
+
+0x4405e0, ngx_write_chain_to_file
+2024/11/19 13:24:04 [debug] 583465#0: *4 writev: 314 of 314
+
+0x471c0d, ngx_http_write_filter
+2024/11/19 13:24:04 [debug] 583465#0: *4 http write filter 0000000000000000
+
+0x43703d, ngx_close_cached_file
+2024/11/19 13:24:04 [debug] 583465#0: *4 http finalize request: 0, "/index.html?" a:1, c:1
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 run cleanup: 000055555564CAC0
+
+0x41b30e, ngx_pool_cleanup_file
+2024/11/19 13:24:04 [debug] 583465#0: *4 file cleanup: fd:9
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 000055555564BD70, unused: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 000055555564CD80, unused: 2879
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 0000555555646570
+
+0x4541c2, ngx_http_finalize_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 hc free: 0000000000000000
+
+0x4541f7, ngx_http_finalize_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 hc busy: 0000000000000000 0
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 1
+
+0x42b8db, ngx_clean_old_cycles
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer add: 8: 75000:1041591666
+
+0x447561, ngx_epoll_process_events
+2024/11/19 13:24:04 [debug] 583465#0: epoll: fd:8 ev:2001 d:0000555555656691
+
+0x4401ee, ngx_alloc
+2024/11/19 13:24:04 [debug] 583465#0: *4 malloc: 0000555555646570:1024
+
+0x440f9e, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: eof:1, avail:-1
+
+0x440f50, ngx_unix_recv
+2024/11/19 13:24:04 [debug] 583465#0: *4 recv: fd:8 0 of 1024
+
+0x4569db, ngx_http_keepalive_handler
+2024/11/19 13:24:04 [info] 583465#0: *4 client 127.0.0.1 closed keepalive connection
+
+0x452c8e, ngx_http_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 close http connection: 8
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 event timer del: 8: 1041591666
+
+0x42af23, ngx_reusable_connection
+2024/11/19 13:24:04 [debug] 583465#0: *4 reusable connection: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 0000555555646570
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:04 [debug] 583465#0: *4 free: 00005555556507A0, unused: 152
+
+0x42b06c, ngx_close_connection
+2024/11/19 13:24:05 [debug] 583465#0: event timer del: 1432023124: 1041517156
+
+0x442c74, ngx_signal_handler
+2024/11/19 13:24:19 [notice] 583465#0: signal 2 (SIGINT) received, exiting
+
+0x42391f, ngx_create_paths
+2024/11/19 13:24:19 [info] 583465#0: epoll_wait() failed (4: Interrupted system call)
+
+0x446a77, ngx_epoll_del_event
+2024/11/19 13:24:19 [debug] 583465#0: epoll del event: fd:6 op:2 ev:00000000
+
+0x42ad48, ngx_close_listening_sockets
+2024/11/19 13:24:19 [debug] 583465#0: close listening 0.0.0.0:8080 #6
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 00005555556722D8
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 000055555566E5E8
+
+0x41b4a9, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: run cleanup: 000055555566B828
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555674910
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555566F770
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555663750
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555662740
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555661250
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565B220
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565A160
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 00005555556590A0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555657FE0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555647D60, unused: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555650D90, unused: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555565C230, unused: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 000055555566B760, unused: 0
+
+0x41b536, ngx_destroy_pool
+2024/11/19 13:24:19 [debug] 583465#0: free: 0000555555670900, unused: 9744
+
+╔═══════════════════════════╗
+║ ===== 296 log sites ===== ║
+╚═══════════════════════════╝
+╔═════════════════════╗
+║ Hooking Procedures: ║
+╚═════════════════════╝
+╔════════════════════╗
+║ Verifying hooks... ║
+╚════════════════════╝
+Hook at 0x500000: <SimProcedure __libc_start_main>
+Hook at 0x500010: <SimProcedure getenv>
+Hook at 0x500018: <SimProcedure sigprocmask (stub)>
+Hook at 0x500020: <SimProcedure dlerror (stub)>
+Hook at 0x500028: <SimProcedure raise (stub)>
+Hook at 0x500030: <SimProcedure free>
+Hook at 0x500038: <SimProcedure recv>
+Hook at 0x500040: <SimProcedure localtime (stub)>
+Hook at 0x500048: <SimProcedure abort>
+Hook at 0x500050: <SimProcedure __errno_location>
+Hook at 0x500058: <SimProcedure srandom (stub)>
+Hook at 0x500060: <SimProcedure unlink>
+Hook at 0x500068: <SimProcedure strncmp>
+Hook at 0x500070: <SimProcedure localtime_r (stub)>
+Hook at 0x500078: <SimProcedure sem_wait (stub)>
+Hook at 0x500080: <SimProcedure mkdir (stub)>
+Hook at 0x500088: <SimProcedure sendmsg (stub)>
+Hook at 0x500090: <SimProcedure writev (stub)>
+Hook at 0x500098: <SimProcedure qsort (stub)>
+Hook at 0x5000a0: <SimProcedure sigaction>
+Hook at 0x5000a8: <SimProcedure setsockopt>
+Hook at 0x5000b0: <SimProcedure clock_gettime>
+Hook at 0x5000b8: <SimProcedure write>
+Hook at 0x5000c0: <SimProcedure getpid (stub)>
+Hook at 0x5000c8: <SimProcedure lstat64 (stub)>
+Hook at 0x5000d0: <SimProcedure opendir>
+Hook at 0x5000d8: <SimProcedure shutdown (stub)>
+Hook at 0x5000e0: <SimProcedure globfree64 (stub)>
+Hook at 0x5000e8: <SimProcedure strlen>
+Hook at 0x5000f0: <SimProcedure chdir (stub)>
+Hook at 0x5000f8: <SimProcedure __stack_chk_fail>
+Hook at 0x500100: <SimProcedure getuid>
+Hook at 0x500108: <SimProcedure accept4 (stub)>
+Hook at 0x500110: <SimProcedure dup2>
+Hook at 0x500118: <SimProcedure stat64 (stub)>
+Hook at 0x500120: <SimProcedure send>
+Hook at 0x500128: <SimProcedure strchr>
+Hook at 0x500130: <SimProcedure uname (stub)>
+Hook at 0x500138: <SimProcedure gmtime_r (stub)>
+Hook at 0x500140: <SimProcedure setrlimit64 (stub)>
+Hook at 0x500148: <SimProcedure gettimeofday>
+Hook at 0x500150: <SimProcedure setpriority (stub)>
+Hook at 0x500158: <SimProcedure statfs64 (stub)>
+Hook at 0x500160: <SimProcedure memset>
+Hook at 0x500168: <SimProcedure geteuid>
+Hook at 0x500170: <SimProcedure ioctl (stub)>
+Hook at 0x500178: <SimProcedure sendto (stub)>
+Hook at 0x500180: <SimProcedure close>
+Hook at 0x500188: <SimProcedure __realpath_chk (stub)>
+Hook at 0x500190: <SimProcedure setsid (stub)>
+Hook at 0x500198: <SimProcedure sem_post (stub)>
+Hook at 0x5001a0: <SimProcedure sched_setaffinity (stub)>
+Hook at 0x5001a8: <SimProcedure closedir>
+Hook at 0x5001b0: <SimProcedure epoll_ctl (stub)>
+Hook at 0x5001b8: <SimProcedure sched_yield (stub)>
+Hook at 0x5001c0: <SimProcedure read>
+Hook at 0x5001c8: <SimProcedure memcmp>
+Hook at 0x5001d0: <SimProcedure getsockopt>
+Hook at 0x5001d8: <SimProcedure execve (stub)>
+Hook at 0x5001e0: <SimProcedure fstatat64 (stub)>
+Hook at 0x5001e8: <SimProcedure utimes (stub)>
+Hook at 0x5001f0: <SimProcedure strcmp>
+Hook at 0x5001f8: <SimProcedure dlopen (stub)>
+Hook at 0x500200: <SimProcedure getpwnam (stub)>
+Hook at 0x500208: <SimProcedure __memmove_chk (stub)>
+Hook at 0x500210: <SimProcedure __memcpy_chk (stub)>
+Hook at 0x500218: <SimProcedure syscall (stub)>
+Hook at 0x500220: <SimProcedure sigemptyset (stub)>
+Hook at 0x500228: <SimProcedure umask (stub)>
+Hook at 0x500230: <SimProcedure glob64 (stub)>
+Hook at 0x500238: <SimProcedure memcpy>
+Hook at 0x500240: <SimProcedure socketpair (stub)>
+Hook at 0x500248: <SimProcedure getgrnam (stub)>
+Hook at 0x500250: <SimProcedure prctl (stub)>
+Hook at 0x500258: <SimProcedure kill (stub)>
+Hook at 0x500260: <SimProcedure sendfile64 (stub)>
+Hook at 0x500268: <SimProcedure time>
+Hook at 0x500270: <SimProcedure openat64 (stub)>
+Hook at 0x500278: <SimProcedure pwrite64>
+Hook at 0x500280: <SimProcedure getrlimit64 (stub)>
+Hook at 0x500288: <SimProcedure random (stub)>
+Hook at 0x500290: <SimProcedure mmap64 (stub)>
+Hook at 0x500298: <SimProcedure malloc>
+Hook at 0x5002a0: <SimProcedure listen>
+Hook at 0x5002a8: <SimProcedure mktime (stub)>
+Hook at 0x5002b0: <SimProcedure strpbrk (stub)>
+Hook at 0x5002b8: <SimProcedure sigsuspend (stub)>
+Hook at 0x5002c0: <SimProcedure pwritev64 (stub)>
+Hook at 0x5002c8: <SimProcedure crypt_r (stub)>
+Hook at 0x5002d0: <SimProcedure chown (stub)>
+Hook at 0x5002d8: <SimProcedure setitimer (stub)>
+Hook at 0x5002e0: <SimProcedure munmap (stub)>
+Hook at 0x5002e8: <SimProcedure recvmsg (stub)>
+Hook at 0x5002f0: <SimProcedure ftruncate64 (stub)>
+Hook at 0x5002f8: <SimProcedure strerrordesc_np (stub)>
+Hook at 0x500300: <SimProcedure sem_init (stub)>
+Hook at 0x500308: <SimProcedure epoll_wait (stub)>
+Hook at 0x500310: <SimProcedure chmod (stub)>
+Hook at 0x500318: <SimProcedure bind>
+Hook at 0x500320: <SimProcedure readv (stub)>
+Hook at 0x500328: <SimProcedure open64 (stub)>
+Hook at 0x500330: <SimProcedure strftime (stub)>
+Hook at 0x500338: <SimProcedure fcntl64 (stub)>
+Hook at 0x500340: <SimProcedure memmove>
+Hook at 0x500348: <SimProcedure readdir64 (stub)>
+Hook at 0x500350: <SimProcedure pread64>
+Hook at 0x500358: <SimProcedure setgid (stub)>
+Hook at 0x500360: <SimProcedure waitpid (stub)>
+Hook at 0x500368: <SimProcedure sysconf (stub)>
+Hook at 0x500370: <SimProcedure rename (stub)>
+Hook at 0x500378: <SimProcedure dlsym (stub)>
+Hook at 0x500380: <SimProcedure accept>
+Hook at 0x500388: <SimProcedure getsockname (stub)>
+Hook at 0x500390: <SimProcedure gethostname (stub)>
+Hook at 0x500398: <SimProcedure getpagesize (stub)>
+Hook at 0x5003a0: <SimProcedure epoll_create (stub)>
+Hook at 0x5003a8: <SimProcedure getppid (stub)>
+Hook at 0x5003b0: <SimProcedure exit>
+Hook at 0x5003b8: <SimProcedure connect (stub)>
+Hook at 0x5003c0: <SimProcedure eventfd (stub)>
+Hook at 0x5003c8: <SimProcedure fstat64 (stub)>
+Hook at 0x5003d0: <SimProcedure posix_fadvise64 (stub)>
+Hook at 0x5003d8: <SimProcedure posix_memalign (stub)>
+Hook at 0x5003e0: <SimProcedure setuid (stub)>
+Hook at 0x5003e8: <SimProcedure getaddrinfo (stub)>
+Hook at 0x5003f0: <SimProcedure initgroups (stub)>
+Hook at 0x5003f8: <SimProcedure dlclose (stub)>
+Hook at 0x500400: <SimProcedure sem_destroy (stub)>
+Hook at 0x500408: <SimProcedure sigaddset (stub)>
+Hook at 0x500410: <SimProcedure fork>
+Hook at 0x500418: <SimProcedure strstr>
+Hook at 0x500420: <SimProcedure usleep>
+Hook at 0x500428: <SimProcedure freeaddrinfo (stub)>
+Hook at 0x500430: <SimProcedure socket>
+Hook at 0xb01000: <SimProcedure LinuxLoader>
+Hook at 0xb01008: <SimProcedure _dl_rtld_lock_recursive>
+Hook at 0xb01010: <SimProcedure _dl_rtld_unlock_recursive>
+Hook at 0xb01018: <SimProcedure ReturnUnconstrained>
+Hook at 0xb01020: <SimProcedure _dl_initial_error_catch_tsd>
+Hook at 0xb01028: <SimProcedure _vsyscall>
+Hook at 0xb01038: <SimProcedure CallReturn>
+Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
+Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:48 Time: 0:00:00  
+CFGFast: DiGraph with 32423 nodes and 61821 edges, 48.73s
+╔════════════════════════╗
+║ MAIN address: 0x418ecf ║
+╚════════════════════════╝
+Log site 0x429f80 exists in CFG.
+Log site 0x43acaa exists in CFG.
+Log site 0x4403f4 exists in CFG.
+Log site 0x41b848 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x44708a exists in CFG.
+Log site 0x446fed exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x446bc2 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x43c5d5 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x446bc2 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x455c40 exists in CFG.
+Log site 0x455169 exists in CFG.
+Log site 0x45519c exists in CFG.
+Log site 0x4551cf exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x45078d exists in CFG.
+Log site 0x44f014 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44ecd1 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x47ce38 exists in CFG.
+Log site 0x41b848 exists in CFG.
+Log site 0x47d09d exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x44f73b exists in CFG.
+Log site 0x47c5c6 exists in CFG.
+Log site 0x440365 exists in CFG.
+Log site 0x4743a0 exists in CFG.
+Log site 0x43e3d6 exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x4405e0 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b30e exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x4541c2 exists in CFG.
+Log site 0x4541f7 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x4569db exists in CFG.
+Log site 0x452c8e exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x43c5d5 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x446bc2 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x455c40 exists in CFG.
+Log site 0x455169 exists in CFG.
+Log site 0x45519c exists in CFG.
+Log site 0x4551cf exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x45078d exists in CFG.
+Log site 0x44f014 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44ecd1 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x47ce38 exists in CFG.
+Log site 0x41b848 exists in CFG.
+Log site 0x452337 exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x44f73b exists in CFG.
+Log site 0x47c5c6 exists in CFG.
+Log site 0x4743a0 exists in CFG.
+Log site 0x43e3d6 exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x4405e0 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x4541c2 exists in CFG.
+Log site 0x4541f7 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x4569db exists in CFG.
+Log site 0x452c8e exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x43c5d5 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x446bc2 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x455c40 exists in CFG.
+Log site 0x455169 exists in CFG.
+Log site 0x45519c exists in CFG.
+Log site 0x4551cf exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x45078d exists in CFG.
+Log site 0x44f014 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44ecd1 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x47ce38 exists in CFG.
+Log site 0x41b848 exists in CFG.
+Log site 0x47d09d exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x4405e0 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b30e exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x4541c2 exists in CFG.
+Log site 0x4541f7 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x4569db exists in CFG.
+Log site 0x452c8e exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x43c5d5 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x446bc2 exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x455c40 exists in CFG.
+Log site 0x455169 exists in CFG.
+Log site 0x45519c exists in CFG.
+Log site 0x4551cf exists in CFG.
+Log site 0x4402e0 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x4556f2 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x45078d exists in CFG.
+Log site 0x44f014 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44ecd1 exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44e8dc exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x44fc38 exists in CFG.
+Log site 0x47ce38 exists in CFG.
+Log site 0x41b848 exists in CFG.
+Log site 0x47d09d exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x44f73b exists in CFG.
+Log site 0x47c5c6 exists in CFG.
+Log site 0x4743a0 exists in CFG.
+Log site 0x43e3d6 exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471502 exists in CFG.
+Log site 0x471817 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x4405e0 exists in CFG.
+Log site 0x471c0d exists in CFG.
+Log site 0x43703d exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b30e exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x4541c2 exists in CFG.
+Log site 0x4541f7 exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x42b8db exists in CFG.
+Log site 0x447561 exists in CFG.
+Log site 0x4401ee exists in CFG.
+Log site 0x440f9e exists in CFG.
+Log site 0x440f50 exists in CFG.
+Log site 0x4569db exists in CFG.
+Log site 0x452c8e exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x42af23 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x42b06c exists in CFG.
+Log site 0x442c74 exists in CFG.
+Log site 0x42391f exists in CFG.
+Log site 0x446a77 exists in CFG.
+Log site 0x42ad48 exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b4a9 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+Log site 0x41b536 exists in CFG.
+╔═════════════════════╗
+║ 296 log sites exist ║
+╚═════════════════════╝
