@@ -16,6 +16,7 @@
 2024/11/21 13:46:06 [debug] 687715#0: epoll add event: fd:6 op:1 ev:00002001
 2024/11/21 13:46:06 [debug] 687715#0: worker cycle
 2024/11/21 13:46:06 [debug] 687715#0: epoll timer: -1
+---> above is initialization
 2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:6 ev:0001 d:0000555555653A30
 2024/11/21 13:46:14 [debug] 687715#0: accept on 0.0.0.0:8080, ready: 0
 2024/11/21 13:46:14 [debug] 687715#0: posix_memalign: 00005555556507A0:512 @16
