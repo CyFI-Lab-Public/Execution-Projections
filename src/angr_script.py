@@ -198,9 +198,9 @@ def setup_grep_symex_state(proj):
 
 
 def setup_nginx_symex_state(proj):   
-    main_addr = proj.loader.find_symbol('main').rebased_addr
-    state = proj.factory.entry_state(
-        addr=main_addr,
+    start_addr = proj.loader.find_symbol('ngx_epoll_process_events').rebased_addr
+    state = proj.factory.blank_state(
+        addr=start_addr,
     )
 
     return state
@@ -293,7 +293,24 @@ if bin_name == 'grep':
     proj.hook_symbol('c_stack_action', CStackActionHook())
 
 elif bin_name == 'nginx':
-    pass
+    gettimeofday_symbol = proj.loader.find_symbol('gettimeofday')
+    gettimeofday_addr = gettimeofday_symbol.rebased_addr
+    print(f"gettimeofday address: {hex(gettimeofday_addr)}", flush=True)
+
+    clock_gettime_symbol = proj.loader.find_symbol('clock_gettime')
+    clock_gettime_addr = clock_gettime_symbol.rebased_addr
+    print(f"clock_gettime address: {hex(clock_gettime_addr)}", flush=True)
+
+    ngx_time_update_symbol = proj.loader.find_symbol('ngx_time_update')
+    ngx_time_update_addr = ngx_time_update_symbol.rebased_addr
+    print(f"ngx_time_update address: {hex(ngx_time_update_addr)}", flush=True)
+
+    proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+    proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+    proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+
+    if gettimeofday_symbol is None or clock_gettime_symbol is None or ngx_time_update_symbol is None:
+        print("WARNING: Could not find one or both symbols to hook!", flush=True)
 
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
@@ -434,7 +451,7 @@ def timeout(seconds):
     return decorator
 
 
-@timeout(100)
+@timeout(150)
 def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
     """
     Passing simgr to subprocess does not yield same results, instead pass simstates.
@@ -477,9 +494,10 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
 
 # Add custom step callback to log state information
 def log_state_info(simgr):
+    logger = logging.getLogger('angr.sim_manager')
     # Log active states
     if hasattr(simgr, "active"):
-        logger = logging.getLogger('angr.sim_manager')
+        logger.debug(f"======= Active States [{len(simgr.active)}] =======")
         # fh = logging.FileHandler('simgr_DEBUG.log', mode='a')
         # logger.addHandler(fh)
         logger.debug(f"SIMGR: {simgr}")
@@ -489,9 +507,12 @@ def log_state_info(simgr):
             # Get containing function from project
             func = None
             try:
-                func = proj.kb.functions[ip_val]
-            except Exception:
-                pass
+                node = cfg.model.get_any_node(ip_val, anyaddr=True)
+                if node:
+                    func = proj.kb.functions.function(node.function_address)
+                # func = proj.kb.functions.get_by_addr(ip_val)
+            except Exception as e:
+                logger.debug(f"Exception [log_state_info] {e}")
             func_name = func.name if func else "Unknown"
             logger.debug(f"State {i}  |  IP: 0x{ip_val:x} - {func_name}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
             # if ip_val == init_locale_addr:
@@ -501,6 +522,7 @@ def log_state_info(simgr):
 
     # Log errored states
     if hasattr(simgr, "errored"):
+        logger.debug(f"======= Errored States [{len(simgr.errored)}] =======")
         for i, errored_state in enumerate(simgr.errored):
             logger.debug(f"Errored State {i}:")
             logger.debug(f"  Error type: {type(errored_state.error)}")
@@ -509,8 +531,12 @@ def log_state_info(simgr):
             logger.debug(f"  Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
             logger.debug(f"  Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
 
+        # move errored, for later analysis if needed
+        simgr.drop(stash='errored')     # TODO: why not working?!?!
+
     # Log unconstrained states
     if hasattr(simgr, "unconstrained"):
+        logger.debug(f"======= Unconstrained States [{len(simgr.unconstrained)}] =======")
         for i, state in enumerate(simgr.unconstrained):
             ip_val = state.solver.eval(state.regs.ip)
             logger.debug(f"Unconstrained State {i}:")
@@ -524,6 +550,8 @@ def log_state_info(simgr):
                 possible_ips = state.solver.eval_upto(state.regs.ip, 10)
                 logger.debug(f"  Possible IP values: {[hex(x) for x in possible_ips]}")
                 
+        # move unconstrained, for later analysis if needed
+        simgr.stash(from_stash='unconstrained', to_stash='old_unc')
 
     return simgr
 
@@ -531,6 +559,7 @@ def log_state_info(simgr):
 def log_path_found(simgr):
     if hasattr(simgr, "found"):
         logger = logging.getLogger('angr.sim_manager')
+        logger.debug(f"======= Found States [{len(simgr.found)}] =======")
         for state in simgr.found:
             logger.info(f"Found path to target: {[hex(addr) for addr in state.history.bbl_addrs]}")
 
@@ -538,6 +567,7 @@ def log_path_found(simgr):
 def log_path_pruned(simgr):
     if hasattr(simgr, 'pruned'):
         logger = logging.getLogger('angr.sim_manager')
+        logger.debug(f"======= Pruned States [{len(simgr.pruned)}] =======")
         for state in simgr.pruned:
             prune_addr = state.solver.eval(state.regs.ip)
             logger.debug(f"Pruned path at 0x{prune_addr:x}")
@@ -553,7 +583,7 @@ def step_function(simgr):
     # log_path_pruned(simgr)
 
     logger = logging.getLogger('angr.sim_manager')
-    logger.debug(f"\n-------------------------------------------------------------------------\n")
+    logger.debug(f"\n-------------------------------------------------------------------------------------------")
     
     # Tell explorer to continue
     return True
@@ -584,6 +614,7 @@ def get_single_addr(addr):
     # print(f"Final result: {addr}, type: {type(addr)}")  # Debug print
     return addr
 
+logger = logging.getLogger('angr.sim_manager')
 
 # start_state_entry = proj.factory.entry_state(addr=prev_addr)
 start_state = proj.factory.blank_state(addr=prev_addr)
@@ -627,6 +658,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         if simgr and hasattr(simgr, "found"):
             found_states = simgr.found
 
+        logger.info(f"\n================================ Explore {ITER} ================================")
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid, queue=queue)
         ITER = ITER + 1
 

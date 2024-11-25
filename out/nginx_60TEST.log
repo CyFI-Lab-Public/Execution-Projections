@@ -436,6 +436,9 @@ Concrete: {'par_1': {'fmt': '%d', 'val': '1432023124'}, 'par_2': {'fmt': '%M', '
 ╔═════════════════════╗
 ║ Hooking Procedures: ║
 ╚═════════════════════╝
+gettimeofday address: 0x500148
+clock_gettime address: 0x5000b0
+ngx_time_update address: 0x4285e7
 ╔════════════════════╗
 ║ Verifying hooks... ║
 ╚════════════════════╝
@@ -460,7 +463,7 @@ Hook at 0x500090: <SimProcedure writev (stub)>
 Hook at 0x500098: <SimProcedure qsort (stub)>
 Hook at 0x5000a0: <SimProcedure sigaction>
 Hook at 0x5000a8: <SimProcedure setsockopt>
-Hook at 0x5000b0: <SimProcedure clock_gettime>
+Hook at 0x5000b0: <SimProcedure ReturnUnconstrained>
 Hook at 0x5000b8: <SimProcedure write>
 Hook at 0x5000c0: <SimProcedure getpid (stub)>
 Hook at 0x5000c8: <SimProcedure lstat64 (stub)>
@@ -479,7 +482,7 @@ Hook at 0x500128: <SimProcedure strchr>
 Hook at 0x500130: <SimProcedure uname (stub)>
 Hook at 0x500138: <SimProcedure gmtime_r (stub)>
 Hook at 0x500140: <SimProcedure setrlimit64 (stub)>
-Hook at 0x500148: <SimProcedure gettimeofday>
+Hook at 0x500148: <SimProcedure ReturnUnconstrained>
 Hook at 0x500150: <SimProcedure setpriority (stub)>
 Hook at 0x500158: <SimProcedure statfs64 (stub)>
 Hook at 0x500160: <SimProcedure memset>
@@ -582,8 +585,9 @@ Hook at 0xb01028: <SimProcedure _vsyscall>
 Hook at 0xb01038: <SimProcedure CallReturn>
 Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
 Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
-100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:49 Time: 0:00:00  
-CFGFast: DiGraph with 32423 nodes and 61821 edges, 49.41s
+Hook at 0x4285e7: <SimProcedure ReturnUnconstrained>
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:48 Time: 0:00:00  
+CFGFast: DiGraph with 32425 nodes and 61821 edges, 48.77s
 ╔════════════════════════════════════════════╗
 ║ ngx_epoll_process_events address: 0x4472ae ║
 ╚════════════════════════════════════════════╝
@@ -780,33 +784,5 @@ Log site 0x42b06c exists in CFG.
 ║ Explore 0 ║
 ╚═══════════╝
 Finding path from 0x4472ae (ngx_epoll_process_events) to ['0x447561'] (ngx_epoll_process_events)
-[angr_explore] simstates arg: [<SimState @ 0x418ecf>]
-simgr explore_count [0]
-SIMGR: <SimulationManager with all stashes empty (1 errored)>
-found: No found path
-active: 0
-queue size: 1
-Finished angr_explore(), exiting...
---> Final Result: None
-	[NO simgr]
-	--> <--- No path found from 0x4472ae to ['0x447561'] --->
-[...recording SIMGR found path, and starting anew]
-[SIMGR has no attribute <found>]
-╔════════════════════════╗
-║ Current Execution Path ║
-╚════════════════════════╝
-['0x4472ae', "<--- No path found from 0x4472ae to ['0x447561'] --->"]
-About to process prev_addr: 4485806, type: <class 'int'>
-Input addr: 4485806, type: <class 'int'>
-Final result: 4485806, type: <class 'int'>
----------------------------------------------------------------
-
-╔═══════════╗
-║ Explore 1 ║
-╚═══════════╝
-Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x43c5d5'] (ngx_event_accept)
-[angr_explore] simstates arg: []
-Input addr: [4486497], type: <class 'list'>
-After list extract: 4486497, type: <class 'int'>
-Final result: 4486497, type: <class 'int'>
+[angr_explore] simstates arg: [<SimState @ 0x4472ae>]
 simgr explore_count [0]
