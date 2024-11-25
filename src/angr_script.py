@@ -9,6 +9,7 @@ import atexit
 import signal
 import logging
 import copy
+import traceback as tb
 import angrcli.full
 import angrcli.plugins.ContextView          # Print the state: state.context_view.pprint()
 
@@ -37,7 +38,7 @@ grep_gdb_log = '/home/dinko/exec-proj/log/grep/function_trace_BRsrc.log'
 
 nginx_path = '/usr/local/nginx/sbin/nginx'
 nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
-nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs.log'
+nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.log'
 
 
 
@@ -65,7 +66,7 @@ ITER = 0
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{explore_max_secs}.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{explore_max_secs}TEST.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(asctime)s.%(msecs)03d - %(funcName)s() - %(pathname)s:%(lineno)d',
@@ -138,16 +139,19 @@ all_addrs = [] # get all callsites to use for 'avoid' in angr_explore
 # parse the mapped nginx application logs for lea_addr, func_name, and msg
 nginx_logs = parse_nginx_mappings(nginx_mapped_logs)
 for entry in nginx_logs:
-    addr = int(entry['lea_addr'], 16) + base_angr
-    all_addrs.append(addr)
-    entry['lea_addr'] = hex(addr)
-    print(f"{entry['lea_addr']}, {entry['function']}", flush=True)
-    print(f"{entry['log_msg']}\n", flush=True)
+    addrs = entry['lea_addr']
+    for idx, addr in enumerate(addrs):
+        new_addr = int(addr, 16) + base_angr
+        all_addrs.append(new_addr)
+        entry['lea_addr'][idx] = hex(new_addr)
+    print(f"Log Msg: {entry['log_msg']}", flush=True)
+    print(f"LEA addr: {entry['lea_addr']}", flush=True)
+    print(f"Func: {entry['function']}", flush=True)
+    print(f"Fmt Str: {entry['fmt_str']}", flush=True)
+    print(f"Concrete: {entry['concrete_vals']}\n", flush=True)
 
 print_msg_box(f"===== {len(nginx_logs)} log sites =====")
 all_addrs = set(all_addrs)      # remove dups
-
-
 
 
 """ angr SymEx Setup"""
@@ -330,9 +334,16 @@ cfg = proj.analyses.CFGEmulated(
 end = time.time()
 print(f"CFGEmulated: {cfg.graph}, {round(end - start, 2)}", flush=True)"""
 
-prev_addr = cfg.kb.functions.function(name='main').addr
-prev_call = "main"
-print_msg_box(f"MAIN address: {hex(prev_addr)}")
+if bin_name == 'grep':
+    prev_addr = cfg.kb.functions.function(name='main').addr
+    prev_call = "main"
+    print_msg_box(f"MAIN address: {hex(prev_addr)}")
+elif bin_name == 'nginx':
+    prev_addr = cfg.kb.functions.function(name='ngx_epoll_process_events').addr
+    prev_call = "ngx_epoll_process_events"
+    print_msg_box(f"ngx_epoll_process_events address: {hex(prev_addr)}")
+
+prev_addr_str = hex(prev_addr)
 
 # # Check if the callsites exist in the CFG
 # for entry in gdb_logs[1:]:
@@ -351,16 +362,16 @@ print_msg_box(f"MAIN address: {hex(prev_addr)}")
 # Check if the LEA addrs (callsites) exist in the CFG
 count = 0
 for entry in nginx_logs:
-    addr = int(entry['lea_addr'], 16)
-    addr_str = entry['lea_addr']
-    func_name = entry['function']
-    
-    node = cfg.model.get_any_node(addr, anyaddr=True)
-    if node:
-        print(f"Log site {addr_str} exists in CFG.", flush=True)
-        count += 1
-    else:
-        print(f"Log site {addr_str} not found in CFG.", flush=True)
+    addrs = entry['lea_addr']
+    for idx, addr_str in enumerate(addrs):
+        addr = int(addr_str, 16)
+        node = cfg.model.get_any_node(addr, anyaddr=True)
+        if node:
+            print(f"Log site {addr_str} exists in CFG.", flush=True)
+            count += 1
+        else:
+            print(f"Log site {addr_str} not found in CFG.", flush=True)
+    print(f"--------------------------------------------")
 
 print_msg_box(f"{count} log sites exist")
 
@@ -430,7 +441,7 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
     """
     print(f"[angr_explore] simstates arg: {simstates}", flush=True)
     if len(simstates) < 1:
-        simstates = proj.factory.blank_state(addr=prev_addr)
+        simstates = proj.factory.blank_state(addr=get_single_addr(prev_addr))
 
     simgr = proj.factory.simgr(simstates)
     explore_count = 0
@@ -496,7 +507,7 @@ def log_state_info(simgr):
             logger.debug(f"  Error message: {errored_state.error}")
             logger.debug(f"  Errored at addr: {hex(errored_state.state.addr)}")
             logger.debug(f"  Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
-            logger.debug(f"  Stack trace:\n{errored_state.traceback}")
+            logger.debug(f"  Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
 
     # Log unconstrained states
     if hasattr(simgr, "unconstrained"):
@@ -547,11 +558,37 @@ def step_function(simgr):
     # Tell explorer to continue
     return True
 
+# Utility functions
+def to_set(x):
+    if isinstance(x, (list, tuple)):
+        return set(x)
+    return {x}
 
-start_state_entry = proj.factory.entry_state(addr=prev_addr)
+def get_single_addr(addr):
+    # print(f"Input addr: {addr}, type: {type(addr)}")  # Debug print
+    
+    if isinstance(addr, list):
+        if len(addr) != 1:
+            raise ValueError(f"Expected single address, got multiple: {addr}")
+        addr = addr[0]
+        # print(f"After list extract: {addr}, type: {type(addr)}")  # Debug print
+    
+    if isinstance(addr, str):
+        if addr.startswith('0x'):
+            result = int(addr, 16)
+        else:
+            result = int(addr)
+        # print(f"Final result: {result}, type: {type(result)}")  # Debug print
+        return result
+    
+    # print(f"Final result: {addr}, type: {type(addr)}")  # Debug print
+    return addr
+
+
+# start_state_entry = proj.factory.entry_state(addr=prev_addr)
 start_state = proj.factory.blank_state(addr=prev_addr)
 SIMGR = proj.factory.simgr(start_state)       # global simgr
-found_states = [initial_state]                    # begin at the initial state from setup_grep_symex()
+found_states = [initial_state]                    # begin at the initial state from setup_<bin>_symex()
 simgr = None                                    # simgr updated at every explore()
 execution_path = []
 for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
@@ -562,16 +599,17 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
     # target_addr_str = hex(target_addr)
     # func_name = entry['Func']
     """ nginx logs"""
-    target_addr = int(entry['lea_addr'], 16)
-    target_addr_str = hex(target_addr)
+    addrs = entry['lea_addr']
+    target_addr = [int(addr, 16) for addr in addrs]
+    target_addr_str = [hex(addr) for addr in target_addr]
     func_name = entry['function']
 
     print_msg_box(f"Explore {ITER}")
-    print(f"Finding path from {hex(prev_addr)} ({prev_call})  to {target_addr_str} ({func_name})", flush=True)
+    print(f"Finding path from {prev_addr_str} ({prev_call}) to {target_addr_str} ({func_name})", flush=True)
     # Find a path from prev_addr to syscall_addr
     try:
         queue = Queue()
-        avoid = [element for element in all_addrs - {prev_addr, target_addr}]
+        avoid = [element for element in all_addrs - (to_set(prev_addr) | to_set(target_addr))]
         # print_msg_box("AVOID")
         # print(f"len(gdb_all): {len(all_addrs)}", flush=True)
         # print(f"len(avoid): {len(avoid)}", flush=True)
@@ -614,7 +652,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
                 print(f"\t[NO simgr]", flush=True)
             else:
                 print(f"\t[NO simgr.found]", flush=True)
-            msg = f"<--- No path found from {hex(prev_addr)} to {target_addr_str} --->"
+            msg = f"<--- No path found from {prev_addr_str} to {target_addr_str} --->"
             print(f"\t--> {msg}", flush=True)
             print(f"[...recording SIMGR found path, and starting anew]", flush=True)
             if hasattr(SIMGR, "found"):
@@ -629,16 +667,18 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
                 execution_path.extend(trace)                    # TODO: fork when multiple paths found
             else:
                 print(f"[SIMGR has no attribute <found>]", flush=True)
-            execution_path.extend([hex(prev_addr), msg])                                    # add "no path from X to Y" msg
+            execution_path.extend([prev_addr_str, msg])                                    # add "no path from X to Y" msg
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
-            new_state = proj.factory.blank_state(addr=prev_addr)
+            print(f"About to process prev_addr: {prev_addr}, type: {type(prev_addr)}")
+            new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
             SIMGR = proj.factory.simgr(new_state)
     except Exception as e:
         print(f"\t--> Error finding path to {target_addr_str}: {e}", flush=True)
     finally:
         print(f"---------------------------------------------------------------\n", flush=True)
-        prev_addr = target_addr  # Update for next syscall
+        prev_addr = target_addr  # Update for next syscall TODO: select the 'found' addr when target was list
+        prev_addr_str = target_addr_str
         prev_call = func_name
 
 # ipdb.set_trace()
