@@ -69,7 +69,7 @@ ITER = 0
 fh = logging.FileHandler(f'log_{bin_name}_{explore_max_secs}TEST.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
-    '%(levelname)s - %(name)s - %(message)s - %(asctime)s.%(msecs)03d - %(funcName)s() - %(pathname)s:%(lineno)d',
+    '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 fh.setFormatter(formatter)
@@ -305,11 +305,18 @@ elif bin_name == 'nginx':
     ngx_time_update_addr = ngx_time_update_symbol.rebased_addr
     print(f"ngx_time_update address: {hex(ngx_time_update_addr)}", flush=True)
 
+    ngx_log_error_core_symbol = proj.loader.find_symbol('ngx_log_error_core')
+    ngx_log_error_core_addr = ngx_log_error_core_symbol.rebased_addr
+    print(f"ngx_time_update address: {hex(ngx_log_error_core_addr)}", flush=True)
+
+    # ngx_log_error_core
+
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+    proj.hook_symbol('ngx_log_error_core', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
 
-    if gettimeofday_symbol is None or clock_gettime_symbol is None or ngx_time_update_symbol is None:
+    if gettimeofday_symbol is None or clock_gettime_symbol is None or ngx_time_update_symbol is None or ngx_log_error_core_symbol is None:
         print("WARNING: Could not find one or both symbols to hook!", flush=True)
 
 # Verify hooks are installed
@@ -504,17 +511,43 @@ def log_state_info(simgr):
         for i, state in enumerate(simgr.active):
             # Convert bitvectors to integers before formatting
             ip_val = state.solver.eval(state.regs.ip)
+
             # Get containing function from project
             func = None
             try:
                 node = cfg.model.get_any_node(ip_val, anyaddr=True)
+
+                if ip_val == 0x447474:
+                    logger.debug(f"\n!!! HERE NOW !!!\n")
+                    logger.debug(f"{[hex(n.addr) for n in node.successors]}")
+
+                    # Instead of using a flag, force direct jumps to successor blocks
+                    state_copy1 = state.copy()
+                    state_copy2 = state.copy()
+
+                    # Force jump to 0x447485
+                    state_copy1.regs.ip = claripy.BVV(0x447485, state_copy1.arch.bits)
+
+                    # Force jump to 0x447559
+                    state_copy2.regs.ip = claripy.BVV(0x447559, state_copy2.arch.bits)
+
+                    # Remove current state and add our new states
+                    simgr.active.remove(state)
+                    simgr.active.append(state_copy1)
+                    simgr.active.append(state_copy2)
                 if node:
                     func = proj.kb.functions.function(node.function_address)
                 # func = proj.kb.functions.get_by_addr(ip_val)
             except Exception as e:
                 logger.debug(f"Exception [log_state_info] {e}")
             func_name = func.name if func else "Unknown"
-            logger.debug(f"State {i}  |  IP: 0x{ip_val:x} - {func_name}  |  Recent BB: {hex(state.history.recent_bbl_addrs[0])}  |  Active constraints: {len(state.solver.constraints)}")
+            len_f = len(func_name)
+            curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
+            prev_ip = state.history.recent_bbl_addrs[0]
+            prev_block = proj.factory.block(prev_ip)
+            prev_instr = prev_block.capstone.insns[-1].mnemonic
+            logger.debug(f"State {' ' if i < 10 else ''}{i} | {func_name}{' ' * (24 - len_f) if len_f < 24 else ''} | 0x{ip_val:x}, {curr_instr} | {hex(prev_ip)} - {prev_instr} | Constraints: {len(state.solver.constraints)}")
+            
             # if ip_val == init_locale_addr:
             #     logger.debug(f"WARNING ^^^: Hit init_localeinfo() hook!")
             # elif ip_val == c_stack_addr:
@@ -658,7 +691,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         if simgr and hasattr(simgr, "found"):
             found_states = simgr.found
 
-        logger.info(f"\n================================ Explore {ITER} ================================")
+        logger.info(f"\n\n================================ Explore {ITER} ================================\n\n")
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid, queue=queue)
         ITER = ITER + 1
 

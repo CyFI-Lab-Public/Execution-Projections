@@ -439,6 +439,7 @@ Concrete: {'par_1': {'fmt': '%d', 'val': '1432023124'}, 'par_2': {'fmt': '%M', '
 gettimeofday address: 0x500148
 clock_gettime address: 0x5000b0
 ngx_time_update address: 0x4285e7
+ngx_time_update address: 0x41a4e5
 ╔════════════════════╗
 ║ Verifying hooks... ║
 ╚════════════════════╝
@@ -586,8 +587,9 @@ Hook at 0xb01038: <SimProcedure CallReturn>
 Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
 Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
 Hook at 0x4285e7: <SimProcedure ReturnUnconstrained>
+Hook at 0x41a4e5: <SimProcedure ReturnUnconstrained>
 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:48 Time: 0:00:00  
-CFGFast: DiGraph with 32425 nodes and 61821 edges, 48.77s
+CFGFast: DiGraph with 32427 nodes and 61830 edges, 48.56s
 ╔════════════════════════════════════════════╗
 ║ ngx_epoll_process_events address: 0x4472ae ║
 ╚════════════════════════════════════════════╝
@@ -786,3 +788,26 @@ Log site 0x42b06c exists in CFG.
 Finding path from 0x4472ae (ngx_epoll_process_events) to ['0x447561'] (ngx_epoll_process_events)
 [angr_explore] simstates arg: [<SimState @ 0x4472ae>]
 simgr explore_count [0]
+SIMGR: <SimulationManager with 34 active, 1 found, 6 old_unc>
+found: No found path
+active: 34
+queue size: 1
+Finished angr_explore(), exiting...
+Result found in queue: <SimulationManager with 34 active, 1 found, 6 old_unc>
+--> Final Result: <SimulationManager with 34 active, 1 found, 6 old_unc>
+	[simgr.found = TRUE]
+	--> 1 paths found
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 1 ║
+╚═══════════╝
+Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x43c5d5'] (ngx_event_accept)
+[angr_explore] simstates arg: [<SimState @ 0x447561>]
+simgr explore_count [0]
+---------------------------------------------------------------
+
+SIMGR: <SimulationManager with 284 active, 50 old_unc>
+found: No found path
+active: 284
