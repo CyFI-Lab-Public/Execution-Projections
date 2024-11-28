@@ -311,6 +311,14 @@ elif bin_name == 'nginx':
 
     # ngx_log_error_core
 
+    accept_handler_calladdr = 0x4475e8
+    ngx_event_accept_symbol = proj.loader.find_symbol('ngx_event_accept')
+    ngx_event_accept_addr = ngx_event_accept_symbol.rebased_addr
+
+    @proj.hook(0x4475eb, length=4)
+    def direct_call(state):
+        state.regs.ip = 0x43c526 # ngx_event_accept_addr
+
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
@@ -516,6 +524,10 @@ def log_state_info(simgr):
             func = None
             try:
                 node = cfg.model.get_any_node(ip_val, anyaddr=True)
+                curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
+                prev_ip = state.history.recent_bbl_addrs[0]
+                prev_block = proj.factory.block(prev_ip)
+                prev_instr = prev_block.capstone.insns[0].insn_name() + " " + prev_block.capstone.insns[0].op_str if state.block() else "Unknown"
 
                 if ip_val == 0x447474:
                     logger.debug(f"\n!!! HERE NOW !!!\n")
@@ -540,12 +552,9 @@ def log_state_info(simgr):
                 # func = proj.kb.functions.get_by_addr(ip_val)
             except Exception as e:
                 logger.debug(f"Exception [log_state_info] {e}")
+
             func_name = func.name if func else "Unknown"
             len_f = len(func_name)
-            curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
-            prev_ip = state.history.recent_bbl_addrs[0]
-            prev_block = proj.factory.block(prev_ip)
-            prev_instr = prev_block.capstone.insns[0].insn_name() + " " + prev_block.capstone.insns[0].op_str if state.block() else "Unknown"
             logger.debug(f"State {' ' if i < 10 else ''}{i} | {func_name}{' ' * (24 - len_f) if len_f < 24 else ''} | 0x{ip_val:x}, {curr_instr} | {hex(prev_ip)} - {prev_instr} | Constraints: {len(state.solver.constraints)}")
             
             # if ip_val == init_locale_addr:
@@ -669,7 +678,8 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
     func_name = entry['function']
 
     print_msg_box(f"Explore {ITER}")
-    print(f"Finding path from {prev_addr_str} ({prev_call}) to {target_addr_str} ({func_name})", flush=True)
+    finding_str = f"Finding path from {prev_addr_str} ({prev_call}) to {target_addr_str} ({func_name})"
+    print(finding_str, flush=True)
     # Find a path from prev_addr to syscall_addr
     try:
         queue = Queue()
@@ -691,7 +701,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         if simgr and hasattr(simgr, "found"):
             found_states = simgr.found
 
-        logger.info(f"\n\n================================ Explore {ITER} ================================\n\n")
+        logger.info(f"\n\n================================ Explore {ITER} ================================\n{finding_str}\n\n")
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid, queue=queue)
         ITER = ITER + 1
 
