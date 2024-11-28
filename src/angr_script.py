@@ -317,7 +317,7 @@ elif bin_name == 'nginx':
 
     @proj.hook(0x4475eb, length=4)
     def direct_call(state):
-        state.regs.ip = 0x43c526 # ngx_event_accept_addr
+        state.regs.ip = ngx_event_accept_addr
 
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
@@ -496,14 +496,15 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
             # simgr = None
         finally:
             print(f"SIMGR: {simgr}", flush=True)
-            print(f"found: " + (f"{simgr.found}" if simgr and hasattr(simgr, 'found') and len(simgr.found) > 1 else "No found path"), flush=True)
+            print(f"found: " + (f"{simgr.found}" if (simgr and hasattr(simgr, 'found') and len(simgr.found) > 0) else "No found path"), flush=True)
             print(f"active: " + (f"{len(simgr.active)}" if simgr and hasattr(simgr, 'active') else "No active path"), flush=True)
             explore_count += 1
     if not queue.empty():
         queue.get()         # remove old state
+    q_size1 = queue.qsize()
     queue.put(simgr)        # latest state
-
-    print(f"queue size: {queue.qsize()}", flush=True)
+    q_size2 = queue.qsize()
+    print(f"q_size before: {q_size1}, after: {q_size2}", flush=True)
     print("Finished angr_explore(), exiting...", flush=True)
 
 
@@ -716,7 +717,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
                 trace = [hex(i) for i in trace]
                 print(f"\t--> Trace {idx} {trace}", flush=True)
                 if len(simgr.found) > 1:
-                    print(f"MULTIPLE FOUND 1", flush=True)
+                    print(f"WARNING: multiple paths found, account for all", flush=True)
                     # ipdb.set_trace()
             SIMGR = simgr
             # SIMGR.unstash()
@@ -730,19 +731,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             msg = f"<--- No path found from {prev_addr_str} to {target_addr_str} --->"
             print(f"\t--> {msg}", flush=True)
             print(f"[...recording SIMGR found path, and starting anew]", flush=True)
-            if hasattr(SIMGR, "found"):
-                for idx, found_path in enumerate(SIMGR.found):
-                    # Extract the list of basic block addresses traversed
-                    trace = found_path.history.bbl_addrs.hardcopy
-                    trace = [hex(i) for i in trace]
-                    print(f"\t--> trace {idx} Extension {trace}", flush=True)
-                    if len(SIMGR.found) > 1:
-                        print(f"MULTIPLE FOUND 2", flush=True)
-                        # ipdb.set_trace()
-                execution_path.extend(trace)                    # TODO: fork when multiple paths found
-            else:
-                print(f"[SIMGR has no attribute <found>]", flush=True)
-            execution_path.extend([prev_addr_str, msg])                                    # add "no path from X to Y" msg
+            execution_path.extend([prev_addr_str, msg])                   # TODO: fork when multiple paths found
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
             print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}, type: {type(prev_addr)}")
