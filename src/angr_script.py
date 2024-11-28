@@ -545,7 +545,7 @@ def log_state_info(simgr):
             curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
             prev_ip = state.history.recent_bbl_addrs[0]
             prev_block = proj.factory.block(prev_ip)
-            prev_instr = prev_block.capstone.insns[-1].mnemonic
+            prev_instr = prev_block.capstone.insns[0].insn_name() + " " + prev_block.capstone.insns[0].op_str if state.block() else "Unknown"
             logger.debug(f"State {' ' if i < 10 else ''}{i} | {func_name}{' ' * (24 - len_f) if len_f < 24 else ''} | 0x{ip_val:x}, {curr_instr} | {hex(prev_ip)} - {prev_instr} | Constraints: {len(state.solver.constraints)}")
             
             # if ip_val == init_locale_addr:
@@ -735,11 +735,12 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             execution_path.extend([prev_addr_str, msg])                                    # add "no path from X to Y" msg
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
-            print(f"About to process prev_addr: {prev_addr}, type: {type(prev_addr)}")
+            print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}, type: {type(prev_addr)}")
             new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
             SIMGR = proj.factory.simgr(new_state)
     except Exception as e:
         print(f"\t--> Error finding path to {target_addr_str}: {e}", flush=True)
+        print(f"{tb.format_exc()}")
     finally:
         print(f"---------------------------------------------------------------\n", flush=True)
         prev_addr = target_addr  # Update for next syscall TODO: select the 'found' addr when target was list
