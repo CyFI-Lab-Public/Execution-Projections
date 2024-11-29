@@ -319,6 +319,9 @@ elif bin_name == 'nginx':
     def direct_call(state):
         state.regs.ip = ngx_event_accept_addr
 
+    # TODO 0x42a9be -> call @ 0x42A9CC
+    proj.hook(0x42A9CC, angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
@@ -446,19 +449,25 @@ def timeout(seconds):
             start_time = time.time()
             result = None
 
-            # Poll the queue for a result within the timeout
-            while time.time() - start_time < seconds:
-                if queue and not queue.empty():
-                    result = queue.get()  # Get simgr from queue if available
-                    print(f"Result found in queue: {result}", flush=True)
-                    p.terminate()  # Kill process immediately after getting result
-                    break
-                time.sleep(0.5)  # Small sleep to avoid busy waiting
+            # # Poll the queue for a result within the timeout
+            # while time.time() - start_time < seconds:
+            #     if queue and not queue.empty():
+            #         result = queue.get()  # Get simgr from queue if available
+            #         print(f"Result found in queue: {result}", flush=True)
+            #         # p.terminate()  # Kill process immediately after getting result
+            #         break
+            #     time.sleep(0.5)  # Small sleep to avoid busy waiting
             
-            # Check if process is still alive after the loop, if no result was found
-            if p.is_alive():
-                print("Process is still alive after timeout. Terminating now.", flush=True)
-                p.terminate()
+            try:
+                result = queue.get(timeout=seconds)
+                print(f"Result found in queue: {result}", flush=True)
+            except Exception as e:
+                print(f"Queue get timeout? : {e}", flush=True)
+            finally:
+                if p.is_alive():
+                    print("Terminating process", flush=True)
+                    p.terminate()
+                    p.join()  # Ensure cleanup
 
             print(f"--> Final Result: {result}", flush=True)
             return result   # Return simgr if available, otherwise None
@@ -568,11 +577,11 @@ def log_state_info(simgr):
         logger.debug(f"======= Errored States [{len(simgr.errored)}] =======")
         for i, errored_state in enumerate(simgr.errored):
             logger.debug(f"Errored State {i}:")
-            logger.debug(f"  Error type: {type(errored_state.error)}")
-            logger.debug(f"  Error message: {errored_state.error}")
-            logger.debug(f"  Errored at addr: {hex(errored_state.state.addr)}")
-            logger.debug(f"  Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
-            logger.debug(f"  Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
+            logger.debug(f"    Error type: {type(errored_state.error)}")
+            logger.debug(f"    Error message: {errored_state.error}")
+            logger.debug(f"    Errored at addr: {hex(errored_state.state.addr)}")
+            logger.debug(f"    Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
+            logger.debug(f"    Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
 
         # move errored, for later analysis if needed
         simgr.drop(stash='errored')     # TODO: why not working?!?!
@@ -580,19 +589,27 @@ def log_state_info(simgr):
     # Log unconstrained states
     if hasattr(simgr, "unconstrained"):
         logger.debug(f"======= Unconstrained States [{len(simgr.unconstrained)}] =======")
+        unique_ip_vals = set()
+        cnt_dups = 0
         for i, state in enumerate(simgr.unconstrained):
             ip_val = state.solver.eval(state.regs.ip)
+            if ip_val in unique_ip_vals:
+                break
+            else:
+                unique_ip_vals.add(ip_val)
+                cnt_dups += 1
             logger.debug(f"Unconstrained State {i}:")
-            logger.debug(f"  IP: 0x{ip_val:x} (symbolic: {state.regs.ip.symbolic})")
-            logger.debug(f"  Recent blocks: {[hex(x) for x in state.history.recent_bbl_addrs]}")
+            logger.debug(f"    IP: 0x{ip_val:x} (symbolic: {state.regs.ip.symbolic})")
+            logger.debug(f"    Recent blocks: {[hex(x) for x in state.history.recent_bbl_addrs]}")
             # Log why it became unconstrained
             if hasattr(state, "unconstrained_reason"):
-                logger.debug(f"  Reason: {state.unconstrained_reason}")
+                logger.debug(f"    Reason: {state.unconstrained_reason}")
             # Log possible IP values
             if state.regs.ip.symbolic:
                 possible_ips = state.solver.eval_upto(state.regs.ip, 10)
-                logger.debug(f"  Possible IP values: {[hex(x) for x in possible_ips]}")
+                logger.debug(f"    Possible IP values: {[hex(x) for x in possible_ips]}")
                 
+        logger.debug(f"    Duplicate Count: {cnt_dups}")
         # move unconstrained, for later analysis if needed
         simgr.stash(from_stash='unconstrained', to_stash='old_unc')
 
@@ -711,14 +728,14 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         if simgr and simgr.found:
             print(f"\t[simgr.found = TRUE]", flush=True)
             print(f"\t--> {len(simgr.found)} paths found", flush=True)
+            if len(simgr.found) > 1:
+                print(f"WARNING: multiple paths found, account for all", flush=True)
             for idx, found_path in enumerate(simgr.found):
                 # Extract the list of basic block addresses traversed
                 trace = found_path.history.bbl_addrs.hardcopy
                 trace = [hex(i) for i in trace]
                 print(f"\t--> Trace {idx} {trace}", flush=True)
-                if len(simgr.found) > 1:
-                    print(f"WARNING: multiple paths found, account for all", flush=True)
-                    # ipdb.set_trace()
+                # ipdb.set_trace()
             SIMGR = simgr
             # SIMGR.unstash()
             # execution_path.extend(trace)    # XXX
@@ -731,6 +748,20 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             msg = f"<--- No path found from {prev_addr_str} to {target_addr_str} --->"
             print(f"\t--> {msg}", flush=True)
             print(f"[...recording SIMGR found path, and starting anew]", flush=True)
+
+            if hasattr(SIMGR, "found"):
+                for idx, found_path in enumerate(SIMGR.found):
+                    # Extract the list of basic block addresses traversed
+                    trace = found_path.history.bbl_addrs.hardcopy
+                    trace = [hex(i) for i in trace]
+                    print(f"\t--> SIMGR trace {idx} Extension {trace}", flush=True)
+                    if len(SIMGR.found) > 1:
+                        print(f"WARNING: global SIMGR multiple found", flush=True)
+                        # ipdb.set_trace()
+                execution_path.extend(trace)                    # TODO: fork when multiple paths found
+            else:
+                print(f"[SIMGR has no attribute <found>]", flush=True)
+
             execution_path.extend([prev_addr_str, msg])                   # TODO: fork when multiple paths found
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)

@@ -587,10 +587,11 @@ Hook at 0xb01038: <SimProcedure CallReturn>
 Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
 Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
 Hook at 0x4475eb: <SimProcedure UserHook>
+Hook at 0x42a9cc: <SimProcedure ReturnUnconstrained>
 Hook at 0x4285e7: <SimProcedure ReturnUnconstrained>
 Hook at 0x41a4e5: <SimProcedure ReturnUnconstrained>
 100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:49 Time: 0:00:00  
-CFGFast: DiGraph with 32428 nodes and 61820 edges, 49.04s
+CFGFast: DiGraph with 32429 nodes and 61819 edges, 49.34s
 ╔════════════════════════════════════════════╗
 ║ ngx_epoll_process_events address: 0x4472ae ║
 ╚════════════════════════════════════════════╝
@@ -789,13 +790,13 @@ Log site 0x42b06c exists in CFG.
 Finding path from 0x4472ae (ngx_epoll_process_events) to ['0x447561'] (ngx_epoll_process_events)
 [angr_explore] simstates arg: [<SimState @ 0x4472ae>]
 simgr explore_count [0]
-SIMGR: <SimulationManager with 33 active, 1 found, 6 old_unc>
+SIMGR: <SimulationManager with 34 active, 1 found, 6 old_unc>
 found: [<SimState @ 0x447561>]
-active: 33
+active: 34
 q_size before: 0, after: 1
 Finished angr_explore(), exiting...
-Result found in queue: <SimulationManager with 33 active, 1 found, 6 old_unc>
---> Final Result: <SimulationManager with 33 active, 1 found, 6 old_unc>
+Result found in queue: <SimulationManager with 34 active, 1 found, 6 old_unc>
+--> Final Result: <SimulationManager with 34 active, 1 found, 6 old_unc>
 	[simgr.found = TRUE]
 	--> 1 paths found
 	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
@@ -807,21 +808,66 @@ Result found in queue: <SimulationManager with 33 active, 1 found, 6 old_unc>
 Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x43c5d5'] (ngx_event_accept)
 [angr_explore] simstates arg: [<SimState @ 0x447561>]
 simgr explore_count [0]
-SIMGR: <SimulationManager with 221 active, 1 found, 32 old_unc>
-found: [<SimState @ 0x43c5d5>]
+SIMGR: <SimulationManager with 221 active, 2 found, 32 old_unc>
+found: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
 active: 221
 q_size before: 0, after: 1
 Finished angr_explore(), exiting...
-Result found in queue: <SimulationManager with 221 active, 1 found, 32 old_unc>
---> Final Result: <SimulationManager with 221 active, 1 found, 32 old_unc>
+Result found in queue: <SimulationManager with 221 active, 2 found, 32 old_unc>
+--> Final Result: <SimulationManager with 221 active, 2 found, 32 old_unc>
 	[simgr.found = TRUE]
-	--> 1 paths found
+	--> 2 paths found
+WARNING: multiple paths found, account for all
 	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
 ---------------------------------------------------------------
 
 ╔═══════════╗
 ║ Explore 2 ║
 ╚═══════════╝
 Finding path from ['0x43c5d5'] (ngx_event_accept) to ['0x4402e0'] (ngx_memalign)
-[angr_explore] simstates arg: [<SimState @ 0x43c5d5>]
+[angr_explore] simstates arg: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
 simgr explore_count [0]
+Queue get timeout? : 
+Terminating process
+--> Final Result: None
+	[NO simgr]
+	--> <--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->
+[...recording SIMGR found path, and starting anew]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+[['0x43c5d5'], "<--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->"]
+About to process prev_addr: ['0x43c5d5'], type: <class 'list'>
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 3 ║
+╚═══════════╝
+Finding path from ['0x4402e0'] (ngx_memalign) to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,)
+[angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 1 deadended, 1 old_unc>
+found: No found path
+active: 0
+q_size before: 0, after: 1
+Finished angr_explore(), exiting...
+Result found in queue: <SimulationManager with 1 deadended, 1 old_unc>
+--> Final Result: <SimulationManager with 1 deadended, 1 old_unc>
+	[NO simgr.found]
+	--> <--- No path found from ['0x4402e0'] to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] --->
+[...recording SIMGR found path, and starting anew]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+[['0x43c5d5'], "<--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->", ['0x4402e0'], "<--- No path found from ['0x4402e0'] to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] --->"]
+About to process prev_addr: ['0x4402e0'], type: <class 'list'>
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 4 ║
+╚═══════════╝
+Finding path from ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,) to ['0x42af23'] (ngx_reusable_connection)
+[angr_explore] simstates arg: []
+---------------------------------------------------------------
+
