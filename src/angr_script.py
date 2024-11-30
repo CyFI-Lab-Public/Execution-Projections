@@ -267,6 +267,25 @@ class CStackActionHook(angr.SimProcedure):
             print(f"[CStackActionHook] {e}", flush=True)
 
         return claripy.BVV(0, self.state.arch.bits)         # 0 x 64bits BVV
+    
+class Handler_DrainConnections_Hook(angr.SimProcedure):
+    def run(self):
+        # ip_val = self.state.solver.eval(self.state.regs.ip)
+        print(f"[HOOK] Drain Connections ENTRY: {hex(self.state.addr)}", flush=True)
+
+        try:
+            # Use jump_source - address of the call instruction
+            print(f"[HOOK] Callsite (jump_source): {hex(self.state.history.jump_source)}", flush=True)
+        except Exception as e:
+            # print(f"[CStackActionHook] {e}")
+            pass
+            
+        try:
+            # Or get caller address from call stack
+            if len(self.state.callstack) > 1:
+                print(f"[HOOK] Callsite (callstack): {hex(self.state.callstack.current_return_target)}", flush=True)
+        except Exception as e:
+            print(f"[Drain Connections Hook] {e}", flush=True)
 
 
 
@@ -274,6 +293,10 @@ class CStackActionHook(angr.SimProcedure):
 
 # Load the binary
 proj = angr.Project(bin_path, load_options={'auto_load_libs': False})
+
+# Function to hook that does nothing (skip hooked instruction)
+def nothing(state):
+    pass
 
 print_msg_box(f"Hooking Procedures:")
 
@@ -319,8 +342,18 @@ elif bin_name == 'nginx':
     def direct_call(state):
         state.regs.ip = ngx_event_accept_addr
 
-    # TODO 0x42a9be -> call @ 0x42A9CC
-    proj.hook(0x42A9CC, angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+    """
+        .text:000000000002A9BE loc_2A9BE:                              ; CODE XREF: ngx_get_connection+158↓j
+        .text:000000000002A9BE                                         ; ngx_get_connection+175↓j
+        .text:000000000002A9BE                 or      byte ptr [rbx+2Ah], 2
+        .text:000000000002A9C2                 mov     rax, [rbx-0A8h]
+        .text:000000000002A9C9                 mov     rdi, rax
+        .text:000000000002A9CC                 call    qword ptr [rax+10h]          ; ngx_http_request_handler() - maybe?
+        .text:000000000002A9CF                 add     r12, 1
+        .text:000000000002A9D3                 cmp     r12, r15
+        .text:000000000002A9D6                 jz      short loc_2AA18
+    """
+    proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call
 
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
@@ -475,7 +508,7 @@ def timeout(seconds):
     return decorator
 
 
-@timeout(150)
+@timeout(180)
 def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
     """
     Passing simgr to subprocess does not yield same results, instead pass simstates.
@@ -490,7 +523,6 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
         try:
             print(f"simgr explore_count [{explore_count}]", flush=True)
             simgr.explore(find=target_addr, avoid=avoid_addrs, step_func=step_function)
-
 
             # steps = 0
             # while not simgr.found:
@@ -539,24 +571,34 @@ def log_state_info(simgr):
                 prev_block = proj.factory.block(prev_ip)
                 prev_instr = prev_block.capstone.insns[0].insn_name() + " " + prev_block.capstone.insns[0].op_str if state.block() else "Unknown"
 
-                if ip_val == 0x447474:
-                    logger.debug(f"\n!!! HERE NOW !!!\n")
-                    logger.debug(f"{[hex(n.addr) for n in node.successors]}")
+                # TODO move to separate step function
+                if bin_name == "nginx":
+                    # TODO: debug why register was overconstrained
+                    if ip_val == 0x447474:
+                        logger.debug(f"\nWARNING: 0x447474")
+                        logger.debug(f"Splitting into: {[hex(n.addr) for n in node.successors]}")
 
-                    # Instead of using a flag, force direct jumps to successor blocks
-                    state_copy1 = state.copy()
-                    state_copy2 = state.copy()
+                        # Instead of using a flag, force direct jumps to successor blocks
+                        state_copy1 = state.copy()
+                        state_copy2 = state.copy()
 
-                    # Force jump to 0x447485
-                    state_copy1.regs.ip = claripy.BVV(0x447485, state_copy1.arch.bits)
+                        # Force jump to 0x447485
+                        state_copy1.regs.ip = claripy.BVV(0x447485, state_copy1.arch.bits)
 
-                    # Force jump to 0x447559
-                    state_copy2.regs.ip = claripy.BVV(0x447559, state_copy2.arch.bits)
+                        # Force jump to 0x447559
+                        state_copy2.regs.ip = claripy.BVV(0x447559, state_copy2.arch.bits)
 
-                    # Remove current state and add our new states
-                    simgr.active.remove(state)
-                    simgr.active.append(state_copy1)
-                    simgr.active.append(state_copy2)
+                        # Remove current state and add our new states
+                        simgr.active.remove(state)
+                        simgr.active.append(state_copy1)
+                        simgr.active.append(state_copy2)
+                    elif ip_val == 0x42A9BE:
+                        logger.debug(f"\nWARNING 0x42A9BE")
+                    elif ip_val == 0x42A9CF:
+                        logger.debug(f"\nWARNING 0x42A9CF")
+                    elif ip_val == 0x43c7f0:
+
+
                 if node:
                     func = proj.kb.functions.function(node.function_address)
                 # func = proj.kb.functions.get_by_addr(ip_val)
@@ -594,10 +636,10 @@ def log_state_info(simgr):
         for i, state in enumerate(simgr.unconstrained):
             ip_val = state.solver.eval(state.regs.ip)
             if ip_val in unique_ip_vals:
+                cnt_dups += 1
                 break
             else:
                 unique_ip_vals.add(ip_val)
-                cnt_dups += 1
             logger.debug(f"Unconstrained State {i}:")
             logger.debug(f"    IP: 0x{ip_val:x} (symbolic: {state.regs.ip.symbolic})")
             logger.debug(f"    Recent blocks: {[hex(x) for x in state.history.recent_bbl_addrs]}")
@@ -723,7 +765,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid, queue=queue)
         ITER = ITER + 1
 
-        # TODO: if using simgr.explore() several times, use simgr.unstash() to move states from the found stash to the active stash
+        # if using simgr.explore() several times, use simgr.unstash() to move states from the found stash to the active stash
         # ipdb.set_trace()
         if simgr and simgr.found:
             print(f"\t[simgr.found = TRUE]", flush=True)
