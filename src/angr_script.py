@@ -722,12 +722,43 @@ def log_path_found(simgr):
             logger.info(f"Found path to target: {[hex(addr) for addr in state.history.bbl_addrs]}")
 
 
+def is_address_in_whitelist(cfg, addr, whitelist, logger):
+    """Check if an address belongs to a given function"""
+    try:
+        node = cfg.model.get_any_node(addr, anyaddr=True)
+        if node:
+            func = proj.kb.functions.function(node.function_address)
+        else:
+            func = None
+        func_name = func.name if func else "Unknown"
+        in_whitelist = func_name in whitelist
+        logger.debug(f"[is_address_in_whitelist] func_name = {func_name}, whitelisted: {in_whitelist}")
+        return in_whitelist
+    except Exception as e:
+        logger.debug(f"[is_address_in_whitelist] {e}")
+    return False
+
+
 def prune_states(simgr):
     logger = logging.getLogger('angr.sim_manager')
     prune_count = {"depth":     0,
                    "memory":    0,
                    "loop":      0,
                    "symbolic":  0,}
+
+    WHITELIST_FUNCTIONS = {
+        'ngx_log_error_core',    # Logging function
+        'ngx_palloc',            # Memory allocation
+        'ngx_pnalloc',
+        'ngx_alloc',             # Memory allocation
+        'ngx_sprintf',           # String formatting
+        'ngx_memcpy',            # Memory operations
+        'ngx_strlen',            # String operations
+        'ngx_cpystrn',           # String operations
+        'ngx_palloc_block',
+        'ngx_destroy_pool',
+
+    }
     
     for state in simgr.active:
         # 1. Prune based on execution depth
@@ -749,14 +780,20 @@ def prune_states(simgr):
 
         # 3. Prune paths that loop too many times
         bb_counter = {}
+        threshold = 3
         for addr in state.history.bbl_addrs:
             bb_counter[addr] = bb_counter.get(addr, 0) + 1
-            if bb_counter[addr] > 3:  # Loop threshold
-                logger.debug(f"PRUNING - LOOP: {state}")
-                simgr.active.remove(state)
-                # simgr.drop(stash='active', filter_func=lambda s: s is state)
-                prune_count["loop"] += 1
-                break
+            if bb_counter[addr] > threshold:  # Loop threshold
+                # Check if this address belongs to any whitelisted function
+                global cfg
+                is_whitelisted = is_address_in_whitelist(cfg, addr, WHITELIST_FUNCTIONS, logger)
+
+                if not is_whitelisted:
+                    logger.debug(f"PRUNING - LOOP: {state} due to {threshold} * [{hex(addr)}]")
+                    simgr.active.remove(state)
+                    # simgr.drop(stash='active', filter_func=lambda s: s is state)
+                    prune_count["loop"] += 1
+                    break
 
         # # 4. Prune based on symbolic variable complexity
         # for var in state.solver.variables:
