@@ -49,16 +49,19 @@ nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.l
 bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
-explore_max_secs = 60
+EXPLORE_MAX_SECS = 300
 
 bin_name = os.path.basename(bin_path)
 
-print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nexplore_max_secs: {explore_max_secs}\nmapped_applogs_path: {mapped_applogs_path}\n\n", flush=True)
+print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\EXPLORE_MAX_SECS: {EXPLORE_MAX_SECS}\nmapped_applogs_path: {mapped_applogs_path}\n\n", flush=True)
 # print_msg_box("HELLO")
 global_start = time.time()
 # SIMGR = None
 ITER = 0
 
+outfile = "execution_path.log"
+with open(outfile, "w"):            # clear file
+    pass
 
 
 
@@ -66,7 +69,7 @@ ITER = 0
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{explore_max_secs}TEST.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}TEST.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
@@ -334,26 +337,35 @@ elif bin_name == 'nginx':
 
     # ngx_log_error_core
 
-    accept_handler_calladdr = 0x4475e8
+    accept_handler_calladdr = 0x4475eb         # basic block addr: 0x4475e8
     ngx_event_accept_symbol = proj.loader.find_symbol('ngx_event_accept')
     ngx_event_accept_addr = ngx_event_accept_symbol.rebased_addr
-
-    @proj.hook(0x4475eb, length=4)
-    def direct_call(state):
+    @proj.hook(accept_handler_calladdr, length=4)
+    def handler_accept_call(state):
         state.regs.ip = ngx_event_accept_addr
+
 
     """
         .text:000000000002A9BE loc_2A9BE:                              ; CODE XREF: ngx_get_connection+158↓j
         .text:000000000002A9BE                                         ; ngx_get_connection+175↓j
         .text:000000000002A9BE                 or      byte ptr [rbx+2Ah], 2
-        .text:000000000002A9C2                 mov     rax, [rbx-0A8h]
+        .text:000000000002A9C2                                 mov     rax, [rbx-0A8h]
         .text:000000000002A9C9                 mov     rdi, rax
         .text:000000000002A9CC                 call    qword ptr [rax+10h]          ; ngx_http_request_handler() - maybe?
         .text:000000000002A9CF                 add     r12, 1
         .text:000000000002A9D3                 cmp     r12, r15
         .text:000000000002A9D6                 jz      short loc_2AA18
     """
-    proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call
+    proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call          TODO: don't skip... call correct handler
+
+
+    init_connection_handler_calladdr = 0x43ca2d
+    ngx_http_init_connection_symbol = proj.loader.find_symbol('ngx_http_init_connection')
+    ngx_http_init_connection_addr = ngx_http_init_connection_symbol.rebased_addr
+    @proj.hook(init_connection_handler_calladdr, length=4)
+    def handler_initconn_call(state):
+        state.regs.ip = ngx_http_init_connection_addr
+
 
     proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
     proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
@@ -472,44 +484,48 @@ def compare_simgrs(simgr1, simgr2):
     return False  # Return False by default since deep equality is complex
 
 
-def timeout(seconds):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            queue = kwargs.pop("queue", None)
-            p = Process(target=func, args=args, kwargs={**kwargs, "queue": queue})
-            p.start()
+# def timeout(seconds):
+#     def decorator(func):
+#         def wrapper(*args, **kwargs):
+#             result = None
+#             queue = kwargs.pop("queue", None)
+#             while not result:
+#                 p = Process(target=func, args=args, kwargs={**kwargs, "queue": queue})
+#                 p.start()
 
-            start_time = time.time()
-            result = None
+#                 start_time = time.time()
+#                 result = None
 
-            # # Poll the queue for a result within the timeout
-            # while time.time() - start_time < seconds:
-            #     if queue and not queue.empty():
-            #         result = queue.get()  # Get simgr from queue if available
-            #         print(f"Result found in queue: {result}", flush=True)
-            #         # p.terminate()  # Kill process immediately after getting result
-            #         break
-            #     time.sleep(0.5)  # Small sleep to avoid busy waiting
-            
-            try:
-                result = queue.get(timeout=seconds)
-                print(f"Result found in queue: {result}", flush=True)
-            except Exception as e:
-                print(f"Queue get timeout? : {e}", flush=True)
-            finally:
-                if p.is_alive():
-                    print("Terminating process", flush=True)
-                    p.terminate()
-                    p.join()  # Ensure cleanup
+#                 # # Poll the queue for a result within the timeout
+#                 # while time.time() - start_time < seconds:
+#                 #     if queue and not queue.empty():
+#                 #         result = queue.get()  # Get simgr from queue if available
+#                 #         print(f"Result found in queue: {result}", flush=True)
+#                 #         # p.terminate()  # Kill process immediately after getting result
+#                 #         break
+#                 #     time.sleep(0.5)  # Small sleep to avoid busy waiting
 
-            print(f"--> Final Result: {result}", flush=True)
-            return result   # Return simgr if available, otherwise None
-        return wrapper
-    return decorator
+#                 try:
+#                     result = queue.get(timeout=seconds)
+#                     print(f"Result found in queue: {result}", flush=True)
+#                 except Exception as e:
+#                     print(f"Queue get timeout? : {e}", flush=True)
+#                 finally:
+#                     if p.is_alive():
+#                         print("Terminating process", flush=True)
+#                         p.terminate()
+#                         p.join()  # Ensure cleanup
 
+#                 print(f"--> Intermediate Result: {result}", flush=True)
+#             print(f"--> Final Result: {result}", flush=True)
+#             return result   # Return simgr if available, otherwise None
+#         return wrapper
+#     return decorator
 
-@timeout(180)
-def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
+explore_starttime = 0
+
+# @timeout(300)
+def angr_explore(simstates, prev_addr, target_addr, avoid_addrs):
     """
     Passing simgr to subprocess does not yield same results, instead pass simstates.
     """
@@ -519,9 +535,12 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
 
     simgr = proj.factory.simgr(simstates)
     explore_count = 0
-    while hasattr(simgr, "active") and simgr.active and (not hasattr(simgr, "found") or not simgr.found):
+    found_count = 0
+    global explore_starttime
+    while hasattr(simgr, "active") and simgr.active and found_count < 2:           # XXX: limit exploration to N found paths
         try:
             print(f"simgr explore_count [{explore_count}]", flush=True)
+            explore_starttime = time.time()
             simgr.explore(find=target_addr, avoid=avoid_addrs, step_func=step_function)
 
             # steps = 0
@@ -534,19 +553,44 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs, queue=None):
             #         queue.put(simgr)        # latest state
         except TimeoutError:
             print("\t--> Function took too long to execute", flush=True)
-            # simgr = None
         finally:
             print(f"SIMGR: {simgr}", flush=True)
-            print(f"found: " + (f"{simgr.found}" if (simgr and hasattr(simgr, 'found') and len(simgr.found) > 0) else "No found path"), flush=True)
-            print(f"active: " + (f"{len(simgr.active)}" if simgr and hasattr(simgr, 'active') else "No active path"), flush=True)
+            # print(f"found: " + (f"{len(simgr.found)}" if (simgr and hasattr(simgr, 'found') and len(simgr.found) > 0) else "No found path"), flush=True)
+            # print(f"active: " + (f"{len(simgr.active)}" if (simgr and hasattr(simgr, 'active')) else "No active path"), flush=True)
+            if simgr and hasattr(simgr, 'found') and simgr.found:
+                found_count = len(simgr.found)
+
+            # if not queue.empty():
+            #     queue.get()         # remove old state
+            # q_size1 = queue.qsize()
+            # queue.put(simgr)        # latest state
+            # q_size2 = queue.qsize()
+            with open(outfile, "a") as f:
+                if (explore_count == 0):
+                    f.write(f"=============== Explore {ITER} ===============\n")
+                f.write(f"--> explore count [{explore_count}]\n")
+                if hasattr(simgr, "found"):
+                    for idx, found_path in enumerate(simgr.found):
+                        # Extract the list of basic block addresses traversed
+                        trace = found_path.history.bbl_addrs.hardcopy
+                        trace = [hex(i) for i in trace]
+                        f.write(f"\t--> simgr trace {idx}: {trace}\n")
+                    if len(simgr.found) > 1:
+                        f.write(f"WARNING: simgr multiple found\n")
+
+                    # execution_path.extend(trace)                    # TODO: fork when multiple paths found
+                else:
+                    f.write(f"[simgr has no attribute <found>]\n")
+                f.write(f"\n\n")
+            # print(f"q_size before: {q_size1}, after: {q_size2}", flush=True)
+            print(f"Finished explore_count [{explore_count}], continuing...", flush=True)
             explore_count += 1
-    if not queue.empty():
-        queue.get()         # remove old state
-    q_size1 = queue.qsize()
-    queue.put(simgr)        # latest state
-    q_size2 = queue.qsize()
-    print(f"q_size before: {q_size1}, after: {q_size2}", flush=True)
-    print("Finished angr_explore(), exiting...", flush=True)
+    # qsize = queue.qsize()
+    # print(f"=== final q_size: {qsize} ===", flush=True)
+    print(f"=== final simgr: {simgr} ===", flush=True)
+    print("finished angr_explore() and exiting...", flush=True)
+
+    return simgr
 
 
 # Add custom step callback to log state information
@@ -597,7 +641,18 @@ def log_state_info(simgr):
                     elif ip_val == 0x42A9CF:
                         logger.debug(f"\nWARNING 0x42A9CF")
                     elif ip_val == 0x43c7f0:
+                        logger.debug(f"\nNow @ 0x43c7f0")
+                        logger.debug(f"Splitting into: {[hex(n.addr) for n in node.successors]}")
 
+                        state_copy1 = state.copy()
+                        state_copy2 = state.copy()
+
+                        state_copy1.regs.ip = claripy.BVV(0x43caec, state_copy1.arch.bits)
+                        state_copy2.regs.ip = claripy.BVV(0x43c7fc, state_copy2.arch.bits)
+
+                        simgr.active.remove(state)
+                        simgr.active.append(state_copy1)
+                        simgr.active.append(state_copy2)
 
                 if node:
                     func = proj.kb.functions.function(node.function_address)
@@ -626,7 +681,8 @@ def log_state_info(simgr):
             logger.debug(f"    Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
 
         # move errored, for later analysis if needed
-        simgr.drop(stash='errored')     # TODO: why not working?!?!
+        # simgr.drop(stash='errored')     # TODO: why not working?!?!
+        simgr.stash(from_stash='errored', to_stash='old_err')
 
     # Log unconstrained states
     if hasattr(simgr, "unconstrained"):
@@ -665,6 +721,57 @@ def log_path_found(simgr):
         for state in simgr.found:
             logger.info(f"Found path to target: {[hex(addr) for addr in state.history.bbl_addrs]}")
 
+
+def prune_states(simgr):
+    logger = logging.getLogger('angr.sim_manager')
+    prune_count = {"depth":     0,
+                   "memory":    0,
+                   "loop":      0,
+                   "symbolic":  0,}
+    
+    for state in simgr.active:
+        # 1. Prune based on execution depth
+        # if state.history.depth > 1000:
+        #     logger.debug(f"PRUNING - DEPTH: {state}")
+        #     simgr.active.remove(state)
+        #     # simgr.drop(stash='active', filter_func=lambda s: s is state)
+        #     prune_count["depth"] += 1
+        #     continue
+
+        # # 2. Prune based on memory usage
+        # # Check number of symbolic variables as a proxy for memory complexity
+        # if len(state.solver.variables) > 1000:
+        #     logger.debug(f"PRUNING - MEMORY: {state}")
+        #     simgr.active.remove(state)
+        #     # simgr.drop(stash='active', filter_func=lambda s: s is state)
+        #     prune_count["memory"] += 1
+        #     continue
+
+        # 3. Prune paths that loop too many times
+        bb_counter = {}
+        for addr in state.history.bbl_addrs:
+            bb_counter[addr] = bb_counter.get(addr, 0) + 1
+            if bb_counter[addr] > 3:  # Loop threshold
+                logger.debug(f"PRUNING - LOOP: {state}")
+                simgr.active.remove(state)
+                # simgr.drop(stash='active', filter_func=lambda s: s is state)
+                prune_count["loop"] += 1
+                break
+
+        # # 4. Prune based on symbolic variable complexity
+        # for var in state.solver.variables:
+        #     if state.solver.symbolic(var):
+        #         constraints = state.solver.constraints_by_variable(var)
+        #         if len(constraints) > 50:  # Constraint complexity threshold
+        #             logger.debug(f"PRUNING - SYMBOLIC")
+        #             simgr.active.remove(state)
+        #             # simgr.drop(stash='active', filter_func=lambda s: s is state)
+        #             prune_count["symbolic"] += 1
+        #             break
+
+    logger.debug(f"======= Pruned States [{prune_count}]=======")
+
+
 # Log when paths are pruned
 def log_path_pruned(simgr):
     if hasattr(simgr, 'pruned'):
@@ -673,20 +780,37 @@ def log_path_pruned(simgr):
         for state in simgr.pruned:
             prune_addr = state.solver.eval(state.regs.ip)
             logger.debug(f"Pruned path at 0x{prune_addr:x}")
+            
+def explore_timeout():
+    global explore_starttime
+    if (time.time() - explore_starttime) > EXPLORE_MAX_SECS:
+        return True
+    
+    return False
 
 def step_function(simgr):
+    logger = logging.getLogger('angr.sim_manager')
+
     # Log all current states
     log_state_info(simgr)
     
     # Log if we found targets
     log_path_found(simgr)
-    
+
+    # pruning techniques to prevent state explosion
+    prune_states(simgr)
+
     # Log pruned paths
     # log_path_pruned(simgr)
-
-    logger = logging.getLogger('angr.sim_manager')
-    logger.debug(f"\n-------------------------------------------------------------------------------------------")
     
+    # time limit check
+    timed_out = explore_timeout()
+    if timed_out:                       # move 'active' stash to 'timeout' stash
+        logger.debug(f"\n*** TIMEOUT reached ***")
+        simgr.stash(from_stash='active', to_stash='timeout')
+
+    logger.debug(f"\n-------------------------------------------------------------------------------------------")
+
     # Tell explorer to continue
     return True
 
@@ -762,7 +886,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             found_states = simgr.found
 
         logger.info(f"\n\n================================ Explore {ITER} ================================\n{finding_str}\n\n")
-        simgr = angr_explore(found_states, prev_addr, target_addr, avoid, queue=queue)
+        simgr = angr_explore(found_states, prev_addr, target_addr, avoid)
         ITER = ITER + 1
 
         # if using simgr.explore() several times, use simgr.unstash() to move states from the found stash to the active stash
@@ -796,7 +920,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
                     # Extract the list of basic block addresses traversed
                     trace = found_path.history.bbl_addrs.hardcopy
                     trace = [hex(i) for i in trace]
-                    print(f"\t--> SIMGR trace {idx} Extension {trace}", flush=True)
+                    print(f"\t--> SIMGR trace {idx}: {trace}", flush=True)
                     if len(SIMGR.found) > 1:
                         print(f"WARNING: global SIMGR multiple found", flush=True)
                         # ipdb.set_trace()
@@ -807,7 +931,10 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             execution_path.extend([prev_addr_str, msg])                   # TODO: fork when multiple paths found
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
-            print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}, type: {type(prev_addr)}")
+            if not isinstance(prev_addr, int):
+                print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}")
+            else:
+                print(f"About to process prev_addr: {hex(prev_addr)}")
             new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
             SIMGR = proj.factory.simgr(new_state)
     except Exception as e:

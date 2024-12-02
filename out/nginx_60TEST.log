@@ -1,6 +1,5 @@
 bin_path: /usr/local/nginx/sbin/nginx
-gdb_log_path: None
-explore_max_secs: 60
+gdb_log_path: None\EXPLORE_MAX_SECS: 300
 mapped_applogs_path: /home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.log
 
 
@@ -21,6 +20,12 @@ LEA addr: ['0x4402e0']
 Func: ngx_memalign
 Fmt Str: posix_memalign: %p:%uz @%uz
 Concrete: {'par_1': {'fmt': '%p', 'val': '00005555556507A0'}, 'par_2': {'fmt': '%uz', 'val': '512'}, 'par_3': {'fmt': '%uz', 'val': '16'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 accept: 127.0.0.1:48916 fd:8
+LEA addr: ['0x43cc80']
+Func: ngx_event_accept
+Fmt Str: *%uA accept: %V fd:%d
+Concrete: {'par_1': {'fmt': '%V', 'val': '127.0.0.1:48916'}, 'par_2': {'fmt': '%d', 'val': '8'}}
 
 Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 60000:1215706384
 LEA addr: ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39']
@@ -431,7 +436,7 @@ Fmt Str: event timer del: %d: %M
 Concrete: {'par_1': {'fmt': '%d', 'val': '1432023124'}, 'par_2': {'fmt': '%M', 'val': '1215647384'}}
 
 ╔══════════════════════════╗
-║ ===== 71 log sites ===== ║
+║ ===== 72 log sites ===== ║
 ╚══════════════════════════╝
 ╔═════════════════════╗
 ║ Hooking Procedures: ║
@@ -588,10 +593,11 @@ Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
 Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
 Hook at 0x4475eb: <SimProcedure UserHook>
 Hook at 0x42a9c2: <SimProcedure UserHook>
+Hook at 0x43ca2d: <SimProcedure UserHook>
 Hook at 0x4285e7: <SimProcedure ReturnUnconstrained>
 Hook at 0x41a4e5: <SimProcedure ReturnUnconstrained>
-100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:50 Time: 0:00:00  
-CFGFast: DiGraph with 32429 nodes and 61819 edges, 50.67s
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:48 Time: 0:00:00  
+CFGFast: DiGraph with 32430 nodes and 61827 edges, 49.02s
 ╔════════════════════════════════════════════╗
 ║ ngx_epoll_process_events address: 0x4472ae ║
 ╚════════════════════════════════════════════╝
@@ -600,6 +606,8 @@ Log site 0x447561 exists in CFG.
 Log site 0x43c5d5 exists in CFG.
 --------------------------------------------
 Log site 0x4402e0 exists in CFG.
+--------------------------------------------
+Log site 0x43cc80 exists in CFG.
 --------------------------------------------
 Log site 0x42b8db exists in CFG.
 Log site 0x42ceaf exists in CFG.
@@ -782,7 +790,7 @@ Log site 0x41b536 exists in CFG.
 Log site 0x42b06c exists in CFG.
 --------------------------------------------
 ╔═════════════════════╗
-║ 115 log sites exist ║
+║ 116 log sites exist ║
 ╚═════════════════════╝
 ╔═══════════╗
 ║ Explore 0 ║
@@ -791,88 +799,88 @@ Finding path from 0x4472ae (ngx_epoll_process_events) to ['0x447561'] (ngx_epoll
 [angr_explore] simstates arg: [<SimState @ 0x4472ae>]
 simgr explore_count [0]
 SIMGR: <SimulationManager with 34 active, 1 found, 6 old_unc>
-found: [<SimState @ 0x447561>]
-active: 34
-q_size before: 0, after: 1
-Finished angr_explore(), exiting...
-Result found in queue: <SimulationManager with 34 active, 1 found, 6 old_unc>
---> Final Result: <SimulationManager with 34 active, 1 found, 6 old_unc>
+Finished explore_count [1], continuing...
+simgr explore_count [1]
+SIMGR: <SimulationManager with 42 active, 2 found, 11 old_unc>
+Finished explore_count [2], continuing...
+=== final simgr: <SimulationManager with 42 active, 2 found, 11 old_unc> ===
+finished angr_explore() and exiting...
 	[simgr.found = TRUE]
-	--> 1 paths found
+	--> 2 paths found
+WARNING: multiple paths found, account for all
 	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
 ---------------------------------------------------------------
 
 ╔═══════════╗
 ║ Explore 1 ║
 ╚═══════════╝
 Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x43c5d5'] (ngx_event_accept)
-[angr_explore] simstates arg: [<SimState @ 0x447561>]
+[angr_explore] simstates arg: [<SimState @ 0x447561>, <SimState @ 0x447561>]
 simgr explore_count [0]
-SIMGR: <SimulationManager with 219 active, 2 found, 32 old_unc>
-found: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
-active: 219
-q_size before: 0, after: 1
-Finished angr_explore(), exiting...
-Result found in queue: <SimulationManager with 219 active, 2 found, 32 old_unc>
---> Final Result: <SimulationManager with 219 active, 2 found, 32 old_unc>
+SIMGR: <SimulationManager with 425 active, 3 found, 64 old_unc (2 errored)>
+Finished explore_count [1], continuing...
+=== final simgr: <SimulationManager with 425 active, 3 found, 64 old_unc (2 errored)> ===
+finished angr_explore() and exiting...
 	[simgr.found = TRUE]
-	--> 2 paths found
+	--> 3 paths found
 WARNING: multiple paths found, account for all
 	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
-	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 2 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
 ---------------------------------------------------------------
 
 ╔═══════════╗
 ║ Explore 2 ║
 ╚═══════════╝
 Finding path from ['0x43c5d5'] (ngx_event_accept) to ['0x4402e0'] (ngx_memalign)
-[angr_explore] simstates arg: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
+[angr_explore] simstates arg: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
 simgr explore_count [0]
-Queue get timeout? : 
-Terminating process
---> Final Result: None
-	[NO simgr]
-	--> <--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->
-[...recording SIMGR found path, and starting anew]
-	--> SIMGR trace 0 Extension ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
-WARNING: global SIMGR multiple found
-	--> SIMGR trace 1 Extension ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
-WARNING: global SIMGR multiple found
-╔════════════════════════╗
-║ Current Execution Path ║
-╚════════════════════════╝
-['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', ['0x43c5d5'], "<--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->"]
-About to process prev_addr: ['0x43c5d5'], type: <class 'list'>
+SIMGR: <SimulationManager with 459 active, 3 found, 18 old_unc (1 errored)>
+Finished explore_count [1], continuing...
+=== final simgr: <SimulationManager with 459 active, 3 found, 18 old_unc (1 errored)> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 3 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+	--> Trace 2 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
 ---------------------------------------------------------------
 
 ╔═══════════╗
 ║ Explore 3 ║
 ╚═══════════╝
-Finding path from ['0x4402e0'] (ngx_memalign) to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,)
-[angr_explore] simstates arg: []
+Finding path from ['0x4402e0'] (ngx_memalign) to ['0x43cc80'] (ngx_event_accept)
+[angr_explore] simstates arg: [<SimState @ 0x4402e0>, <SimState @ 0x4402e0>, <SimState @ 0x4402e0>]
 simgr explore_count [0]
-SIMGR: <SimulationManager with 1 deadended, 1 old_unc>
-found: No found path
-active: 0
-q_size before: 0, after: 1
-Finished angr_explore(), exiting...
-Result found in queue: <SimulationManager with 1 deadended, 1 old_unc>
---> Final Result: <SimulationManager with 1 deadended, 1 old_unc>
+SIMGR: <SimulationManager with all stashes empty>
+Finished explore_count [1], continuing...
+=== final simgr: <SimulationManager with all stashes empty> ===
+finished angr_explore() and exiting...
 	[NO simgr.found]
-	--> <--- No path found from ['0x4402e0'] to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] --->
+	--> <--- No path found from ['0x4402e0'] to ['0x43cc80'] --->
 [...recording SIMGR found path, and starting anew]
-[SIMGR has no attribute <found>]
+	--> SIMGR trace 0: ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+WARNING: global SIMGR multiple found
+	--> SIMGR trace 1: ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+WARNING: global SIMGR multiple found
+	--> SIMGR trace 2: ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+WARNING: global SIMGR multiple found
 ╔════════════════════════╗
 ║ Current Execution Path ║
 ╚════════════════════════╝
-['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', ['0x43c5d5'], "<--- No path found from ['0x43c5d5'] to ['0x4402e0'] --->", ['0x4402e0'], "<--- No path found from ['0x4402e0'] to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] --->"]
-About to process prev_addr: ['0x4402e0'], type: <class 'list'>
+['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', ['0x4402e0'], "<--- No path found from ['0x4402e0'] to ['0x43cc80'] --->"]
+About to process prev_addr: ['0x4402e0']
 ---------------------------------------------------------------
 
 ╔═══════════╗
 ║ Explore 4 ║
 ╚═══════════╝
-Finding path from ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,) to ['0x42af23'] (ngx_reusable_connection)
+Finding path from ['0x43cc80'] (ngx_event_accept) to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,)
 [angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 148 active, 18 avoid (7 errored)>
+Finished explore_count [1], continuing...
 ---------------------------------------------------------------
 
