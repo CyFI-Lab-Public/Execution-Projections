@@ -10,6 +10,7 @@ import signal
 import logging
 import copy
 import traceback as tb
+import random
 import angrcli.full
 import angrcli.plugins.ContextView          # Print the state: state.context_view.pprint()
 
@@ -49,7 +50,8 @@ nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.l
 bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
-EXPLORE_MAX_SECS = 300
+EXPLORE_MAX_SECS = 450          # exploration time limit (between each log)
+FOUND_LIMIT = 2                 # found paths limit
 
 bin_name = os.path.basename(bin_path)
 
@@ -537,7 +539,8 @@ def angr_explore(simstates, prev_addr, target_addr, avoid_addrs):
     explore_count = 0
     found_count = 0
     global explore_starttime
-    while hasattr(simgr, "active") and simgr.active and found_count < 2:           # XXX: limit exploration to N found paths
+    global FOUND_LIMIT
+    while hasattr(simgr, "active") and simgr.active and found_count < FOUND_LIMIT:           # XXX: limit exploration to N found paths
         try:
             print(f"simgr explore_count [{explore_count}]", flush=True)
             explore_starttime = time.time()
@@ -608,6 +611,8 @@ def log_state_info(simgr):
 
             # Get containing function from project
             func = None
+            curr_instr = "Unknown"
+            prev_instr = "Unknown"
             try:
                 node = cfg.model.get_any_node(ip_val, anyaddr=True)
                 curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
@@ -732,7 +737,8 @@ def is_address_in_whitelist(cfg, addr, whitelist, logger):
             func = None
         func_name = func.name if func else "Unknown"
         in_whitelist = func_name in whitelist
-        logger.debug(f"[is_address_in_whitelist] func_name = {func_name}, whitelisted: {in_whitelist}")
+        if not in_whitelist:
+            logger.debug(f"[is_address_in_whitelist] WARNING: func_name = {func_name}, NOT whitelisted ({in_whitelist})")
         return in_whitelist
     except Exception as e:
         logger.debug(f"[is_address_in_whitelist] {e}")
@@ -749,7 +755,7 @@ def prune_states(simgr):
     WHITELIST_FUNCTIONS = {
         'ngx_log_error_core',    # Logging function
         'ngx_palloc',            # Memory allocation
-        'ngx_pnalloc',
+        'ngx_pnalloc',           # Memory allocation
         'ngx_alloc',             # Memory allocation
         'ngx_sprintf',           # String formatting
         'ngx_memcpy',            # Memory operations
@@ -920,7 +926,7 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         if idx > 0:
             found_states = []
         if simgr and hasattr(simgr, "found"):
-            found_states = simgr.found
+            found_states = random.sample(simgr.found, min(FOUND_LIMIT, len(simgr.found)))
 
         logger.info(f"\n\n================================ Explore {ITER} ================================\n{finding_str}\n\n")
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid)
@@ -930,8 +936,9 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
         # ipdb.set_trace()
         if simgr and simgr.found:
             print(f"\t[simgr.found = TRUE]", flush=True)
-            print(f"\t--> {len(simgr.found)} paths found", flush=True)
-            if len(simgr.found) > 1:
+            num_found = len(simgr.found)
+            print(f"\t--> {num_found} paths found", flush=True)
+            if num_found > 1:
                 print(f"WARNING: multiple paths found, account for all", flush=True)
             for idx, found_path in enumerate(simgr.found):
                 # Extract the list of basic block addresses traversed

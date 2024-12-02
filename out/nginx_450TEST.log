@@ -1,0 +1,1039 @@
+bin_path: /usr/local/nginx/sbin/nginx
+gdb_log_path: None\EXPLORE_MAX_SECS: 450
+mapped_applogs_path: /home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.log
+
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:6 ev:0001 d:0000555555653A30
+LEA addr: ['0x447561']
+Func: ngx_epoll_process_events
+Fmt Str: epoll: fd:%d ev:%04XD d:%p
+Concrete: {'par_1': {'fmt': '%d', 'val': '6'}, 'par_2': {'fmt': '%04XD', 'val': '0001'}, 'par_3': {'fmt': '%p', 'val': '0000555555653A30'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: accept on 0.0.0.0:8080, ready: 0
+LEA addr: ['0x43c5d5']
+Func: ngx_event_accept
+Fmt Str: accept on %V, ready: %d
+Concrete: {'par_1': {'fmt': '%V', 'val': '0.0.0.0:8080'}, 'par_2': {'fmt': '%d', 'val': '0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: posix_memalign: 00005555556507A0:512 @16
+LEA addr: ['0x4402e0']
+Func: ngx_memalign
+Fmt Str: posix_memalign: %p:%uz @%uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '00005555556507A0'}, 'par_2': {'fmt': '%uz', 'val': '512'}, 'par_3': {'fmt': '%uz', 'val': '16'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 accept: 127.0.0.1:48916 fd:8
+LEA addr: ['0x43cc80']
+Func: ngx_event_accept
+Fmt Str: *%uA accept: %V fd:%d
+Concrete: {'par_1': {'fmt': '%V', 'val': '127.0.0.1:48916'}, 'par_2': {'fmt': '%d', 'val': '8'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 60000:1215706384
+LEA addr: ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39']
+Func: ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,
+Fmt Str: event timer add: %d: %M:%M
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%M', 'val': '60000'}, 'par_3': {'fmt': '%M', 'val': '1215706384'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 1
+LEA addr: ['0x42af23']
+Func: ngx_reusable_connection
+Fmt Str: reusable connection: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 epoll add event: fd:8 op:1 ev:80002001
+LEA addr: ['0x446bc2']
+Func: ngx_epoll_add_event
+Fmt Str: epoll add event: fd:%d op:%d ev:%08XD
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%d', 'val': '1'}, 'par_3': {'fmt': '%08XD', 'val': '80002001'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:8 ev:0001 d:0000555555653B10
+LEA addr: ['0x447561']
+Func: ngx_epoll_process_events
+Fmt Str: epoll: fd:%d ev:%04XD d:%p
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%04XD', 'val': '0001'}, 'par_3': {'fmt': '%p', 'val': '0000555555653B10'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 malloc: 0000555555646570:1024
+LEA addr: ['0x4401ee']
+Func: ngx_alloc
+Fmt Str: malloc: %p:%uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '0000555555646570'}, 'par_2': {'fmt': '%uz', 'val': '1024'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 recv: eof:0, avail:-1
+LEA addr: ['0x440f9e']
+Func: ngx_unix_recv
+Fmt Str: recv: eof:%d, avail:%d
+Concrete: {'par_1': {'fmt': '%d', 'val': '0'}, 'par_2': {'fmt': '%d', 'val': '-1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 recv: fd:8 88 of 1024
+LEA addr: ['0x440f50']
+Func: ngx_unix_recv
+Fmt Str: recv: fd:%d %z of %uz
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%z', 'val': '88'}, 'par_3': {'fmt': '%uz', 'val': '1024'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 0
+LEA addr: ['0x42af23']
+Func: ngx_reusable_connection
+Fmt Str: reusable connection: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 posix_memalign: 000055555564BD70:4096 @16
+LEA addr: ['0x4402e0']
+Func: ngx_memalign
+Fmt Str: posix_memalign: %p:%uz @%uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564BD70'}, 'par_2': {'fmt': '%uz', 'val': '4096'}, 'par_3': {'fmt': '%uz', 'val': '16'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http request line: "GET /index.html HTTP/1.1"
+LEA addr: ['0x455c40']
+Func: ngx_http_process_request_line
+Fmt Str: http request line: "%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': 'GET /index.html HTTP/1.1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http uri: "/index.html"
+LEA addr: ['0x455169']
+Func: ngx_http_process_request_uri
+Fmt Str: http uri: "%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': '/index.html'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http args: ""
+LEA addr: ['0x45519c']
+Func: ngx_http_process_request_uri
+Fmt Str: http args: "%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': ''}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http exten: "html"
+LEA addr: ['0x4551cf']
+Func: ngx_http_process_request_uri
+Fmt Str: http exten: "%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': 'html'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 posix_memalign: 000055555564CD80:4096 @16
+LEA addr: ['0x4402e0']
+Func: ngx_memalign
+Fmt Str: posix_memalign: %p:%uz @%uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564CD80'}, 'par_2': {'fmt': '%uz', 'val': '4096'}, 'par_3': {'fmt': '%uz', 'val': '16'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "Host: localhost:8080"
+LEA addr: ['0x4556f2']
+Func: ngx_http_process_request_headers
+Fmt Str: http header: "%V: %V"
+Concrete: {'par_1': {'fmt': '%V', 'val': 'Host'}, 'par_2': {'fmt': '%V', 'val': 'localhost:8080'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "User-Agent: curl/7.81.0"
+LEA addr: ['0x4556f2']
+Func: ngx_http_process_request_headers
+Fmt Str: http header: "%V: %V"
+Concrete: {'par_1': {'fmt': '%V', 'val': 'User-Agent'}, 'par_2': {'fmt': '%V', 'val': 'curl/7.81.0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http header: "Accept: */*"
+LEA addr: ['0x4556f2']
+Func: ngx_http_process_request_headers
+Fmt Str: http header: "%V: %V"
+Concrete: {'par_1': {'fmt': '%V', 'val': 'Accept'}, 'par_2': {'fmt': '%V', 'val': '*/*'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer del: 8: 1215706384
+LEA addr: ['0x42b06c']
+Func: ngx_close_connection
+Fmt Str: event timer del: %d: %M
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%M', 'val': '1215706384'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 test location: "/"
+LEA addr: ['0x45078d']
+Func: ngx_http_named_location
+Fmt Str: test location: "%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': '/'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 using configuration "/"
+LEA addr: ['0x44f014']
+Func: ngx_http_core_find_config_phase
+Fmt Str: using configuration "%s%V"
+Concrete: {'par_1': {'fmt': '%s', 'val': '/'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 1
+LEA addr: ['0x44e8dc']
+Func: ngx_http_core_generic_phase
+Fmt Str: generic phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 2
+LEA addr: ['0x44e8dc']
+Func: ngx_http_core_generic_phase
+Fmt Str: generic phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '2'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 post access phase: 5
+LEA addr: ['0x44ecd1']
+Func: ngx_http_core_post_access_phase
+Fmt Str: post access phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '5'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 6
+LEA addr: ['0x44e8dc']
+Func: ngx_http_core_generic_phase
+Fmt Str: generic phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '6'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 generic phase: 7
+LEA addr: ['0x44e8dc']
+Func: ngx_http_core_generic_phase
+Fmt Str: generic phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '7'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 8
+LEA addr: ['0x44fc38']
+Func: ngx_http_core_content_phase
+Fmt Str: content phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '8'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 9
+LEA addr: ['0x44fc38']
+Func: ngx_http_core_content_phase
+Fmt Str: content phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '9'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 content phase: 10
+LEA addr: ['0x44fc38']
+Func: ngx_http_core_content_phase
+Fmt Str: content phase: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '10'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http filename: "/usr/local/nginx/html/index.html"
+LEA addr: ['0x47ce38']
+Func: ngx_http_static_handler
+Fmt Str: http filename: "%s"
+Concrete: {'par_1': {'fmt': '%s', 'val': '/usr/local/nginx/html/index.html'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 add cleanup: 000055555564CC98
+LEA addr: ['0x41b848']
+Func: ngx_pool_cleanup_add
+Fmt Str: add cleanup: %p
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564CC98'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http static fd: 9
+LEA addr: ['0x47d09d']
+Func: ngx_http_static_handler
+Fmt Str: http static fd: %d
+Concrete: {'par_1': {'fmt': '%d', 'val': '9'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "6423f7b42d700181004ab12b5c090b2a"
+LEA addr: ['0x4625f5']
+Func: ngx_http_script_var_code
+Fmt Str: http script var: "%v"
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "1"
+LEA addr: ['0x4625f5']
+Func: ngx_http_script_var_code
+Fmt Str: http script var: "%v"
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http script var: "1"
+LEA addr: ['0x4625f5']
+Func: ngx_http_script_var_code
+Fmt Str: http script var: "%v"
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 write new buf t:1 f:0 000055555564D360, pos 000055555564D360, size: 347 file: 0, size: 0
+LEA addr: ['0x471502']
+Func: ngx_http_write_filter
+Fmt Str: write new buf t:%d f:%d %p, pos %p, size: %z file: %O, size: %O
+Concrete: {'par_1': {'fmt': '%d', 'val': '1'}, 'par_2': {'fmt': '%d', 'val': '0'}, 'par_3': {'fmt': '%p', 'val': '000055555564D360'}, 'par_4': {'fmt': '%p', 'val': '000055555564D360'}, 'par_5': {'fmt': '%z', 'val': '347'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter: l:0 f:0 s:347
+LEA addr: ['0x471817']
+Func: ngx_http_write_filter
+Fmt Str: http write filter: l:%ui f:%ui s:%O
+Concrete: {'par_1': {'fmt': '%ui', 'val': '0'}, 'par_2': {'fmt': '%ui', 'val': '0'}, 'par_3': {'fmt': '%O', 'val': '347'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http output filter "/index.html?"
+LEA addr: ['0x44f73b']
+Func: ngx_http_output_filter
+Fmt Str: http output filter "%V?%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': '/index.html'}, 'par_2': {'fmt': '%V', 'val': ''}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http copy filter: "/index.html?"
+LEA addr: ['0x47c5c6']
+Func: ngx_http_copy_filter
+Fmt Str: http copy filter: "%V?%V"
+Concrete: {'par_1': {'fmt': '%V', 'val': '/index.html'}, 'par_2': {'fmt': '%V', 'val': ''}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 read: 9, 000055555564D5A8, 615, 0
+LEA addr: ['0x440365']
+Func: ngx_read_file
+Fmt Str: read: %d, %p, %uz, %O
+Concrete: {'par_1': {'fmt': '%d', 'val': '9'}, 'par_2': {'fmt': '%p', 'val': '000055555564D5A8'}, 'par_3': {'fmt': '%uz', 'val': '615'}, 'par_4': {'fmt': '%O', 'val': '0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http postpone filter "/index.html?" 000055555564D810
+LEA addr: ['0x4743a0']
+Func: ngx_http_postpone_filter
+Fmt Str: http postpone filter "%V?%V" %p
+Concrete: {'par_1': {'fmt': '%V', 'val': '/index.html'}, 'par_2': {'fmt': '%V', 'val': ''}, 'par_3': {'fmt': '%p', 'val': '000055555564D810'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 write old buf t:1 f:0 000055555564D360, pos 000055555564D360, size: 347 file: 0, size: 0
+LEA addr: ['0x43e3d6']
+Func: ngx_event_pipe_write_chain_to_temp_file
+Fmt Str: pipe buf ls:%d %p, pos %p, size: %z
+Concrete: {'par_1': {'fmt': '%d', 'val': '1'}, 'par_2': {'fmt': '%p', 'val': '000055555564D360'}, 'par_3': {'fmt': '%p', 'val': '000055555564D360'}, 'par_4': {'fmt': '%z', 'val': '347'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 write new buf t:1 f:0 000055555564D5A8, pos 000055555564D5A8, size: 615 file: 0, size: 0
+LEA addr: ['0x471502']
+Func: ngx_http_write_filter
+Fmt Str: write new buf t:%d f:%d %p, pos %p, size: %z file: %O, size: %O
+Concrete: {'par_1': {'fmt': '%d', 'val': '1'}, 'par_2': {'fmt': '%d', 'val': '0'}, 'par_3': {'fmt': '%p', 'val': '000055555564D5A8'}, 'par_4': {'fmt': '%p', 'val': '000055555564D5A8'}, 'par_5': {'fmt': '%z', 'val': '615'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter: l:1 f:0 s:962
+LEA addr: ['0x471817']
+Func: ngx_http_write_filter
+Fmt Str: http write filter: l:%ui f:%ui s:%O
+Concrete: {'par_1': {'fmt': '%ui', 'val': '1'}, 'par_2': {'fmt': '%ui', 'val': '0'}, 'par_3': {'fmt': '%O', 'val': '962'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter limit 2097152
+LEA addr: ['0x471c0d']
+Func: ngx_http_write_filter
+Fmt Str: http write filter %p
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 writev: 962 of 962
+LEA addr: ['0x4405e0']
+Func: ngx_write_chain_to_file
+Fmt Str: writev: %d, %uz, %O
+Concrete: {'par_1': {'fmt': '%d', 'val': '962'}, 'par_2': {'fmt': '%uz', 'val': '962'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http write filter 0000000000000000
+LEA addr: ['0x471c0d']
+Func: ngx_http_write_filter
+Fmt Str: http write filter %p
+Concrete: {'par_1': {'fmt': '%p', 'val': '0000000000000000'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 http finalize request: 0, "/index.html?" a:1, c:1
+LEA addr: ['0x43703d']
+Func: ngx_close_cached_file
+Fmt Str: close cached open file: %s, fd:%d, c:%d, u:%d, %d
+Concrete: {'par_1': {'fmt': '%s', 'val': '/index.html?'}, 'par_2': {'fmt': '%d', 'val': '0'}, 'par_3': {'fmt': '%d', 'val': '1'}, 'par_4': {'fmt': '%d', 'val': '1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: event timer add: 1432023124: 1000:1215647384
+LEA addr: ['0x42b8db']
+Func: ngx_clean_old_cycles
+Fmt Str: event timer add: %d: %M:%M
+Concrete: {'par_1': {'fmt': '%d', 'val': '1432023124'}, 'par_2': {'fmt': '%M', 'val': '1000'}, 'par_3': {'fmt': '%M', 'val': '1215647384'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 run cleanup: 000055555564CC98
+LEA addr: ['0x41b4a9']
+Func: ngx_destroy_pool
+Fmt Str: run cleanup: %p
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564CC98'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 file cleanup: fd:9
+LEA addr: ['0x41b30e']
+Func: ngx_pool_cleanup_file
+Fmt Str: file cleanup: fd:%d
+Concrete: {'par_1': {'fmt': '%d', 'val': '9'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 free: 000055555564BD70, unused: 1
+LEA addr: ['0x41b536']
+Func: ngx_destroy_pool
+Fmt Str: free: %p, unused: %uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564BD70'}, 'par_2': {'fmt': '%uz', 'val': '1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 free: 000055555564CD80, unused: 1160
+LEA addr: ['0x41b536']
+Func: ngx_destroy_pool
+Fmt Str: free: %p, unused: %uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '000055555564CD80'}, 'par_2': {'fmt': '%uz', 'val': '1160'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 free: 0000555555646570
+LEA addr: ['0x41b536']
+Func: ngx_destroy_pool
+Fmt Str: free: %p, unused: %uz
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 hc free: 0000000000000000
+LEA addr: ['0x4541c2']
+Func: ngx_http_finalize_connection
+Fmt Str: hc free: %p
+Concrete: {'par_1': {'fmt': '%p', 'val': '0000000000000000'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 hc busy: 0000000000000000 0
+LEA addr: ['0x4541f7']
+Func: ngx_http_finalize_connection
+Fmt Str: hc busy: %p %i
+Concrete: {'par_1': {'fmt': '%p', 'val': '0000000000000000'}, 'par_2': {'fmt': '%i', 'val': '0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 1
+LEA addr: ['0x42af23']
+Func: ngx_reusable_connection
+Fmt Str: reusable connection: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 75000:1215721384
+LEA addr: ['0x42b8db']
+Func: ngx_clean_old_cycles
+Fmt Str: event timer add: %d: %M:%M
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%M', 'val': '75000'}, 'par_3': {'fmt': '%M', 'val': '1215721384'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:8 ev:2001 d:0000555555653B10
+LEA addr: ['0x447561']
+Func: ngx_epoll_process_events
+Fmt Str: epoll: fd:%d ev:%04XD d:%p
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%04XD', 'val': '2001'}, 'par_3': {'fmt': '%p', 'val': '0000555555653B10'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 malloc: 0000555555646570:1024
+LEA addr: ['0x4401ee']
+Func: ngx_alloc
+Fmt Str: malloc: %p:%uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '0000555555646570'}, 'par_2': {'fmt': '%uz', 'val': '1024'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 recv: eof:1, avail:-1
+LEA addr: ['0x440f9e']
+Func: ngx_unix_recv
+Fmt Str: recv: eof:%d, avail:%d
+Concrete: {'par_1': {'fmt': '%d', 'val': '1'}, 'par_2': {'fmt': '%d', 'val': '-1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 recv: fd:8 0 of 1024
+LEA addr: ['0x440f50']
+Func: ngx_unix_recv
+Fmt Str: recv: fd:%d %z of %uz
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%z', 'val': '0'}, 'par_3': {'fmt': '%uz', 'val': '1024'}}
+
+Log Msg: 2024/11/21 13:46:14 [info] 687715#0: *1 client 127.0.0.1 closed keepalive connection
+LEA addr: ['0x4569db']
+Func: ngx_http_keepalive_handler
+Fmt Str: client %V closed keepalive connection
+Concrete: {'par_1': {'fmt': '%V', 'val': '127.0.0.1'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 close http connection: 8
+LEA addr: ['0x452c8e']
+Func: ngx_http_close_connection
+Fmt Str: close http connection: %d
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer del: 8: 1215721384
+LEA addr: ['0x42b06c']
+Func: ngx_close_connection
+Fmt Str: event timer del: %d: %M
+Concrete: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%M', 'val': '1215721384'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 reusable connection: 0
+LEA addr: ['0x42af23']
+Func: ngx_reusable_connection
+Fmt Str: reusable connection: %ui
+Concrete: {'par_1': {'fmt': '%ui', 'val': '0'}}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 free: 0000555555646570
+LEA addr: ['0x41b536']
+Func: ngx_destroy_pool
+Fmt Str: free: %p, unused: %uz
+Concrete: {}
+
+Log Msg: 2024/11/21 13:46:14 [debug] 687715#0: *1 free: 00005555556507A0, unused: 136
+LEA addr: ['0x41b536']
+Func: ngx_destroy_pool
+Fmt Str: free: %p, unused: %uz
+Concrete: {'par_1': {'fmt': '%p', 'val': '00005555556507A0'}, 'par_2': {'fmt': '%uz', 'val': '136'}}
+
+Log Msg: 2024/11/21 13:46:15 [debug] 687715#0: event timer del: 1432023124: 1215647384
+LEA addr: ['0x42b06c']
+Func: ngx_close_connection
+Fmt Str: event timer del: %d: %M
+Concrete: {'par_1': {'fmt': '%d', 'val': '1432023124'}, 'par_2': {'fmt': '%M', 'val': '1215647384'}}
+
+╔══════════════════════════╗
+║ ===== 72 log sites ===== ║
+╚══════════════════════════╝
+╔═════════════════════╗
+║ Hooking Procedures: ║
+╚═════════════════════╝
+gettimeofday address: 0x500148
+clock_gettime address: 0x5000b0
+ngx_time_update address: 0x4285e7
+ngx_time_update address: 0x41a4e5
+╔════════════════════╗
+║ Verifying hooks... ║
+╚════════════════════╝
+Hook at 0x500000: <SimProcedure __libc_start_main>
+Hook at 0x500010: <SimProcedure getenv>
+Hook at 0x500018: <SimProcedure sigprocmask (stub)>
+Hook at 0x500020: <SimProcedure dlerror (stub)>
+Hook at 0x500028: <SimProcedure raise (stub)>
+Hook at 0x500030: <SimProcedure free>
+Hook at 0x500038: <SimProcedure recv>
+Hook at 0x500040: <SimProcedure localtime (stub)>
+Hook at 0x500048: <SimProcedure abort>
+Hook at 0x500050: <SimProcedure __errno_location>
+Hook at 0x500058: <SimProcedure srandom (stub)>
+Hook at 0x500060: <SimProcedure unlink>
+Hook at 0x500068: <SimProcedure strncmp>
+Hook at 0x500070: <SimProcedure localtime_r (stub)>
+Hook at 0x500078: <SimProcedure sem_wait (stub)>
+Hook at 0x500080: <SimProcedure mkdir (stub)>
+Hook at 0x500088: <SimProcedure sendmsg (stub)>
+Hook at 0x500090: <SimProcedure writev (stub)>
+Hook at 0x500098: <SimProcedure qsort (stub)>
+Hook at 0x5000a0: <SimProcedure sigaction>
+Hook at 0x5000a8: <SimProcedure setsockopt>
+Hook at 0x5000b0: <SimProcedure ReturnUnconstrained>
+Hook at 0x5000b8: <SimProcedure write>
+Hook at 0x5000c0: <SimProcedure getpid (stub)>
+Hook at 0x5000c8: <SimProcedure lstat64 (stub)>
+Hook at 0x5000d0: <SimProcedure opendir>
+Hook at 0x5000d8: <SimProcedure shutdown (stub)>
+Hook at 0x5000e0: <SimProcedure globfree64 (stub)>
+Hook at 0x5000e8: <SimProcedure strlen>
+Hook at 0x5000f0: <SimProcedure chdir (stub)>
+Hook at 0x5000f8: <SimProcedure __stack_chk_fail>
+Hook at 0x500100: <SimProcedure getuid>
+Hook at 0x500108: <SimProcedure accept4 (stub)>
+Hook at 0x500110: <SimProcedure dup2>
+Hook at 0x500118: <SimProcedure stat64 (stub)>
+Hook at 0x500120: <SimProcedure send>
+Hook at 0x500128: <SimProcedure strchr>
+Hook at 0x500130: <SimProcedure uname (stub)>
+Hook at 0x500138: <SimProcedure gmtime_r (stub)>
+Hook at 0x500140: <SimProcedure setrlimit64 (stub)>
+Hook at 0x500148: <SimProcedure ReturnUnconstrained>
+Hook at 0x500150: <SimProcedure setpriority (stub)>
+Hook at 0x500158: <SimProcedure statfs64 (stub)>
+Hook at 0x500160: <SimProcedure memset>
+Hook at 0x500168: <SimProcedure geteuid>
+Hook at 0x500170: <SimProcedure ioctl (stub)>
+Hook at 0x500178: <SimProcedure sendto (stub)>
+Hook at 0x500180: <SimProcedure close>
+Hook at 0x500188: <SimProcedure __realpath_chk (stub)>
+Hook at 0x500190: <SimProcedure setsid (stub)>
+Hook at 0x500198: <SimProcedure sem_post (stub)>
+Hook at 0x5001a0: <SimProcedure sched_setaffinity (stub)>
+Hook at 0x5001a8: <SimProcedure closedir>
+Hook at 0x5001b0: <SimProcedure epoll_ctl (stub)>
+Hook at 0x5001b8: <SimProcedure sched_yield (stub)>
+Hook at 0x5001c0: <SimProcedure read>
+Hook at 0x5001c8: <SimProcedure memcmp>
+Hook at 0x5001d0: <SimProcedure getsockopt>
+Hook at 0x5001d8: <SimProcedure execve (stub)>
+Hook at 0x5001e0: <SimProcedure fstatat64 (stub)>
+Hook at 0x5001e8: <SimProcedure utimes (stub)>
+Hook at 0x5001f0: <SimProcedure strcmp>
+Hook at 0x5001f8: <SimProcedure dlopen (stub)>
+Hook at 0x500200: <SimProcedure getpwnam (stub)>
+Hook at 0x500208: <SimProcedure __memmove_chk (stub)>
+Hook at 0x500210: <SimProcedure __memcpy_chk (stub)>
+Hook at 0x500218: <SimProcedure syscall (stub)>
+Hook at 0x500220: <SimProcedure sigemptyset (stub)>
+Hook at 0x500228: <SimProcedure umask (stub)>
+Hook at 0x500230: <SimProcedure glob64 (stub)>
+Hook at 0x500238: <SimProcedure memcpy>
+Hook at 0x500240: <SimProcedure socketpair (stub)>
+Hook at 0x500248: <SimProcedure getgrnam (stub)>
+Hook at 0x500250: <SimProcedure prctl (stub)>
+Hook at 0x500258: <SimProcedure kill (stub)>
+Hook at 0x500260: <SimProcedure sendfile64 (stub)>
+Hook at 0x500268: <SimProcedure time>
+Hook at 0x500270: <SimProcedure openat64 (stub)>
+Hook at 0x500278: <SimProcedure pwrite64>
+Hook at 0x500280: <SimProcedure getrlimit64 (stub)>
+Hook at 0x500288: <SimProcedure random (stub)>
+Hook at 0x500290: <SimProcedure mmap64 (stub)>
+Hook at 0x500298: <SimProcedure malloc>
+Hook at 0x5002a0: <SimProcedure listen>
+Hook at 0x5002a8: <SimProcedure mktime (stub)>
+Hook at 0x5002b0: <SimProcedure strpbrk (stub)>
+Hook at 0x5002b8: <SimProcedure sigsuspend (stub)>
+Hook at 0x5002c0: <SimProcedure pwritev64 (stub)>
+Hook at 0x5002c8: <SimProcedure crypt_r (stub)>
+Hook at 0x5002d0: <SimProcedure chown (stub)>
+Hook at 0x5002d8: <SimProcedure setitimer (stub)>
+Hook at 0x5002e0: <SimProcedure munmap (stub)>
+Hook at 0x5002e8: <SimProcedure recvmsg (stub)>
+Hook at 0x5002f0: <SimProcedure ftruncate64 (stub)>
+Hook at 0x5002f8: <SimProcedure strerrordesc_np (stub)>
+Hook at 0x500300: <SimProcedure sem_init (stub)>
+Hook at 0x500308: <SimProcedure epoll_wait (stub)>
+Hook at 0x500310: <SimProcedure chmod (stub)>
+Hook at 0x500318: <SimProcedure bind>
+Hook at 0x500320: <SimProcedure readv (stub)>
+Hook at 0x500328: <SimProcedure open64 (stub)>
+Hook at 0x500330: <SimProcedure strftime (stub)>
+Hook at 0x500338: <SimProcedure fcntl64 (stub)>
+Hook at 0x500340: <SimProcedure memmove>
+Hook at 0x500348: <SimProcedure readdir64 (stub)>
+Hook at 0x500350: <SimProcedure pread64>
+Hook at 0x500358: <SimProcedure setgid (stub)>
+Hook at 0x500360: <SimProcedure waitpid (stub)>
+Hook at 0x500368: <SimProcedure sysconf (stub)>
+Hook at 0x500370: <SimProcedure rename (stub)>
+Hook at 0x500378: <SimProcedure dlsym (stub)>
+Hook at 0x500380: <SimProcedure accept>
+Hook at 0x500388: <SimProcedure getsockname (stub)>
+Hook at 0x500390: <SimProcedure gethostname (stub)>
+Hook at 0x500398: <SimProcedure getpagesize (stub)>
+Hook at 0x5003a0: <SimProcedure epoll_create (stub)>
+Hook at 0x5003a8: <SimProcedure getppid (stub)>
+Hook at 0x5003b0: <SimProcedure exit>
+Hook at 0x5003b8: <SimProcedure connect (stub)>
+Hook at 0x5003c0: <SimProcedure eventfd (stub)>
+Hook at 0x5003c8: <SimProcedure fstat64 (stub)>
+Hook at 0x5003d0: <SimProcedure posix_fadvise64 (stub)>
+Hook at 0x5003d8: <SimProcedure posix_memalign (stub)>
+Hook at 0x5003e0: <SimProcedure setuid (stub)>
+Hook at 0x5003e8: <SimProcedure getaddrinfo (stub)>
+Hook at 0x5003f0: <SimProcedure initgroups (stub)>
+Hook at 0x5003f8: <SimProcedure dlclose (stub)>
+Hook at 0x500400: <SimProcedure sem_destroy (stub)>
+Hook at 0x500408: <SimProcedure sigaddset (stub)>
+Hook at 0x500410: <SimProcedure fork>
+Hook at 0x500418: <SimProcedure strstr>
+Hook at 0x500420: <SimProcedure usleep>
+Hook at 0x500428: <SimProcedure freeaddrinfo (stub)>
+Hook at 0x500430: <SimProcedure socket>
+Hook at 0xb01000: <SimProcedure LinuxLoader>
+Hook at 0xb01008: <SimProcedure _dl_rtld_lock_recursive>
+Hook at 0xb01010: <SimProcedure _dl_rtld_unlock_recursive>
+Hook at 0xb01018: <SimProcedure ReturnUnconstrained>
+Hook at 0xb01020: <SimProcedure _dl_initial_error_catch_tsd>
+Hook at 0xb01028: <SimProcedure _vsyscall>
+Hook at 0xb01038: <SimProcedure CallReturn>
+Hook at 0xb01040: <SimProcedure UnresolvableJumpTarget>
+Hook at 0xb01048: <SimProcedure UnresolvableCallTarget>
+Hook at 0x4475eb: <SimProcedure UserHook>
+Hook at 0x42a9c2: <SimProcedure UserHook>
+Hook at 0x43ca2d: <SimProcedure UserHook>
+Hook at 0x4285e7: <SimProcedure ReturnUnconstrained>
+Hook at 0x41a4e5: <SimProcedure ReturnUnconstrained>
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:49 Time: 0:00:00  
+CFGFast: DiGraph with 32430 nodes and 61818 edges, 49.6s
+╔════════════════════════════════════════════╗
+║ ngx_epoll_process_events address: 0x4472ae ║
+╚════════════════════════════════════════════╝
+Log site 0x447561 exists in CFG.
+--------------------------------------------
+Log site 0x43c5d5 exists in CFG.
+--------------------------------------------
+Log site 0x4402e0 exists in CFG.
+--------------------------------------------
+Log site 0x43cc80 exists in CFG.
+--------------------------------------------
+Log site 0x42b8db exists in CFG.
+Log site 0x42ceaf exists in CFG.
+Log site 0x42da88 exists in CFG.
+Log site 0x430c10 exists in CFG.
+Log site 0x430e14 exists in CFG.
+Log site 0x4316d0 exists in CFG.
+Log site 0x431bbf exists in CFG.
+Log site 0x4336d6 exists in CFG.
+Log site 0x43460c exists in CFG.
+Log site 0x43c7a0 exists in CFG.
+Log site 0x43f29f exists in CFG.
+Log site 0x43f774 exists in CFG.
+Log site 0x43fcfe exists in CFG.
+Log site 0x43fee1 exists in CFG.
+Log site 0x4453d1 exists in CFG.
+Log site 0x4458a7 exists in CFG.
+Log site 0x44cc0e exists in CFG.
+Log site 0x45326c exists in CFG.
+Log site 0x45353a exists in CFG.
+Log site 0x4539f7 exists in CFG.
+Log site 0x453be6 exists in CFG.
+Log site 0x4543a7 exists in CFG.
+Log site 0x454634 exists in CFG.
+Log site 0x454f2a exists in CFG.
+Log site 0x456048 exists in CFG.
+Log site 0x456273 exists in CFG.
+Log site 0x456709 exists in CFG.
+Log site 0x45b5f1 exists in CFG.
+Log site 0x45c961 exists in CFG.
+Log site 0x45cc6c exists in CFG.
+Log site 0x45d41d exists in CFG.
+Log site 0x466345 exists in CFG.
+Log site 0x4664eb exists in CFG.
+Log site 0x466c0a exists in CFG.
+Log site 0x466db6 exists in CFG.
+Log site 0x466f68 exists in CFG.
+Log site 0x468877 exists in CFG.
+Log site 0x468b4b exists in CFG.
+Log site 0x46942c exists in CFG.
+Log site 0x46e5be exists in CFG.
+Log site 0x46ef5d exists in CFG.
+Log site 0x471a78 exists in CFG.
+Log site 0x471d57 exists in CFG.
+Log site 0x4835c2 exists in CFG.
+Log site 0x49ca39 exists in CFG.
+--------------------------------------------
+Log site 0x42af23 exists in CFG.
+--------------------------------------------
+Log site 0x446bc2 exists in CFG.
+--------------------------------------------
+Log site 0x447561 exists in CFG.
+--------------------------------------------
+Log site 0x4401ee exists in CFG.
+--------------------------------------------
+Log site 0x440f9e exists in CFG.
+--------------------------------------------
+Log site 0x440f50 exists in CFG.
+--------------------------------------------
+Log site 0x42af23 exists in CFG.
+--------------------------------------------
+Log site 0x4402e0 exists in CFG.
+--------------------------------------------
+Log site 0x455c40 exists in CFG.
+--------------------------------------------
+Log site 0x455169 exists in CFG.
+--------------------------------------------
+Log site 0x45519c exists in CFG.
+--------------------------------------------
+Log site 0x4551cf exists in CFG.
+--------------------------------------------
+Log site 0x4402e0 exists in CFG.
+--------------------------------------------
+Log site 0x4556f2 exists in CFG.
+--------------------------------------------
+Log site 0x4556f2 exists in CFG.
+--------------------------------------------
+Log site 0x4556f2 exists in CFG.
+--------------------------------------------
+Log site 0x42b06c exists in CFG.
+--------------------------------------------
+Log site 0x45078d exists in CFG.
+--------------------------------------------
+Log site 0x44f014 exists in CFG.
+--------------------------------------------
+Log site 0x44e8dc exists in CFG.
+--------------------------------------------
+Log site 0x44e8dc exists in CFG.
+--------------------------------------------
+Log site 0x44ecd1 exists in CFG.
+--------------------------------------------
+Log site 0x44e8dc exists in CFG.
+--------------------------------------------
+Log site 0x44e8dc exists in CFG.
+--------------------------------------------
+Log site 0x44fc38 exists in CFG.
+--------------------------------------------
+Log site 0x44fc38 exists in CFG.
+--------------------------------------------
+Log site 0x44fc38 exists in CFG.
+--------------------------------------------
+Log site 0x47ce38 exists in CFG.
+--------------------------------------------
+Log site 0x41b848 exists in CFG.
+--------------------------------------------
+Log site 0x47d09d exists in CFG.
+--------------------------------------------
+Log site 0x4625f5 exists in CFG.
+--------------------------------------------
+Log site 0x4625f5 exists in CFG.
+--------------------------------------------
+Log site 0x4625f5 exists in CFG.
+--------------------------------------------
+Log site 0x471502 exists in CFG.
+--------------------------------------------
+Log site 0x471817 exists in CFG.
+--------------------------------------------
+Log site 0x44f73b exists in CFG.
+--------------------------------------------
+Log site 0x47c5c6 exists in CFG.
+--------------------------------------------
+Log site 0x440365 exists in CFG.
+--------------------------------------------
+Log site 0x4743a0 exists in CFG.
+--------------------------------------------
+Log site 0x43e3d6 exists in CFG.
+--------------------------------------------
+Log site 0x471502 exists in CFG.
+--------------------------------------------
+Log site 0x471817 exists in CFG.
+--------------------------------------------
+Log site 0x471c0d exists in CFG.
+--------------------------------------------
+Log site 0x4405e0 exists in CFG.
+--------------------------------------------
+Log site 0x471c0d exists in CFG.
+--------------------------------------------
+Log site 0x43703d exists in CFG.
+--------------------------------------------
+Log site 0x42b8db exists in CFG.
+--------------------------------------------
+Log site 0x41b4a9 exists in CFG.
+--------------------------------------------
+Log site 0x41b30e exists in CFG.
+--------------------------------------------
+Log site 0x41b536 exists in CFG.
+--------------------------------------------
+Log site 0x41b536 exists in CFG.
+--------------------------------------------
+Log site 0x41b536 exists in CFG.
+--------------------------------------------
+Log site 0x4541c2 exists in CFG.
+--------------------------------------------
+Log site 0x4541f7 exists in CFG.
+--------------------------------------------
+Log site 0x42af23 exists in CFG.
+--------------------------------------------
+Log site 0x42b8db exists in CFG.
+--------------------------------------------
+Log site 0x447561 exists in CFG.
+--------------------------------------------
+Log site 0x4401ee exists in CFG.
+--------------------------------------------
+Log site 0x440f9e exists in CFG.
+--------------------------------------------
+Log site 0x440f50 exists in CFG.
+--------------------------------------------
+Log site 0x4569db exists in CFG.
+--------------------------------------------
+Log site 0x452c8e exists in CFG.
+--------------------------------------------
+Log site 0x42b06c exists in CFG.
+--------------------------------------------
+Log site 0x42af23 exists in CFG.
+--------------------------------------------
+Log site 0x41b536 exists in CFG.
+--------------------------------------------
+Log site 0x41b536 exists in CFG.
+--------------------------------------------
+Log site 0x42b06c exists in CFG.
+--------------------------------------------
+╔═════════════════════╗
+║ 116 log sites exist ║
+╚═════════════════════╝
+╔═══════════╗
+║ Explore 0 ║
+╚═══════════╝
+Finding path from 0x4472ae (ngx_epoll_process_events) to ['0x447561'] (ngx_epoll_process_events)
+[angr_explore] simstates arg: [<SimState @ 0x4472ae>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 34 active, 1 found, 6 old_unc>
+Finished explore_count [0], continuing...
+simgr explore_count [1]
+SIMGR: <SimulationManager with 42 active, 2 found, 11 old_unc>
+Finished explore_count [1], continuing...
+=== final simgr: <SimulationManager with 42 active, 2 found, 11 old_unc> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 2 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 1 ║
+╚═══════════╝
+Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x43c5d5'] (ngx_event_accept)
+[angr_explore] simstates arg: [<SimState @ 0x447561>, <SimState @ 0x447561>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 428 active, 4 found, 64 old_unc>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 428 active, 4 found, 64 old_unc> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 4 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 2 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+	--> Trace 3 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 2 ║
+╚═══════════╝
+Finding path from ['0x43c5d5'] (ngx_event_accept) to ['0x4402e0'] (ngx_memalign)
+[angr_explore] simstates arg: [<SimState @ 0x43c5d5>, <SimState @ 0x43c5d5>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 392 active, 2 found, 12 old_unc>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 392 active, 2 found, 12 old_unc> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 2 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 3 ║
+╚═══════════╝
+Finding path from ['0x4402e0'] (ngx_memalign) to ['0x43cc80'] (ngx_event_accept)
+[angr_explore] simstates arg: [<SimState @ 0x4402e0>, <SimState @ 0x4402e0>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 4 found, 59 avoid, 8 old_unc, 1766 timeout>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 4 found, 59 avoid, 8 old_unc, 1766 timeout> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 4 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c961', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e']
+	--> Trace 2 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c961', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e']
+	--> Trace 3 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447309', '0x4285e7', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474b2', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 4 ║
+╚═══════════╝
+Finding path from ['0x43cc80'] (ngx_event_accept) to ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,)
+[angr_explore] simstates arg: [<SimState @ 0x43cc80>, <SimState @ 0x43cc80>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 214 active, 2 found, 9 avoid (9 errored)>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 214 active, 2 found, 9 avoid (9 errored)> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 2 paths found
+WARNING: multiple paths found, account for all
+	--> Trace 0 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536ef', '0x4538a6', '0x453969', '0x4539e7']
+	--> Trace 1 ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 5 ║
+╚═══════════╝
+Finding path from ['0x42b8db', '0x42ceaf', '0x42da88', '0x430c10', '0x430e14', '0x4316d0', '0x431bbf', '0x4336d6', '0x43460c', '0x43c7a0', '0x43f29f', '0x43f774', '0x43fcfe', '0x43fee1', '0x4453d1', '0x4458a7', '0x44cc0e', '0x45326c', '0x45353a', '0x4539f7', '0x453be6', '0x4543a7', '0x454634', '0x454f2a', '0x456048', '0x456273', '0x456709', '0x45b5f1', '0x45c961', '0x45cc6c', '0x45d41d', '0x466345', '0x4664eb', '0x466c0a', '0x466db6', '0x466f68', '0x468877', '0x468b4b', '0x46942c', '0x46e5be', '0x46ef5d', '0x471a78', '0x471d57', '0x4835c2', '0x49ca39'] (ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query,) to ['0x42af23'] (ngx_reusable_connection)
+[angr_explore] simstates arg: [<SimState @ 0x4539f7>, <SimState @ 0x4539f7>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 4 active>
+Finished explore_count [0], continuing...
+	--> Error finding path to ['0x42af23']: local variable 'curr_instr' referenced before assignment
+Traceback (most recent call last):
+  File "/home/dinko/exec-proj/src/angr_script.py", line 930, in <module>
+    simgr = angr_explore(found_states, prev_addr, target_addr, avoid)
+  File "/home/dinko/exec-proj/src/angr_script.py", line 547, in angr_explore
+    simgr.explore(find=target_addr, avoid=avoid_addrs, step_func=step_function)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py", line 334, in explore
+    self.run(stash=stash, n=n, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py", line 364, in run
+    self.step(stash=stash, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/misc/hookset.py", line 98, in __call__
+    result = current_hook(self.func.__self__, *args, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/exploration_techniques/explorer.py", line 109, in step
+    return simgr.step(stash=stash, extra_stop_points=base_extra_stop_points | self._extra_stop_points, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/misc/hookset.py", line 98, in __call__
+    result = current_hook(self.func.__self__, *args, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/exploration_techniques/suggestions.py", line 44, in step
+    simgr.step(stash=stash, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/misc/hookset.py", line 102, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/dinko/exec-proj/deps/angr-dev/angr/angr/sim_manager.py", line 505, in step
+    return step_func(self)
+  File "/home/dinko/exec-proj/src/angr_script.py", line 836, in step_function
+    log_state_info(simgr)
+  File "/home/dinko/exec-proj/src/angr_script.py", line 668, in log_state_info
+    logger.debug(f"State {' ' if i < 10 else ''}{i} | {func_name}{' ' * (24 - len_f) if len_f < 24 else ''} | 0x{ip_val:x}, {curr_instr} | {hex(prev_ip)} - {prev_instr} | Constraints: {len(state.solver.constraints)}")
+UnboundLocalError: local variable 'curr_instr' referenced before assignment
+
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 5 ║
+╚═══════════╝
+Finding path from ['0x42af23'] (ngx_reusable_connection) to ['0x446bc2'] (ngx_epoll_add_event)
+[angr_explore] simstates arg: [<SimState @ 0x4539f7>, <SimState @ 0x4539f7>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 2 avoid>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 2 avoid> ===
+finished angr_explore() and exiting...
+	[NO simgr.found]
+	--> <--- No path found from ['0x42af23'] to ['0x446bc2'] --->
+[...recording SIMGR found path, and starting anew]
+	--> SIMGR trace 0: ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536ef', '0x4538a6', '0x453969', '0x4539e7']
+WARNING: global SIMGR multiple found
+	--> SIMGR trace 1: ['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7']
+WARNING: global SIMGR multiple found
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7', ['0x42af23'], "<--- No path found from ['0x42af23'] to ['0x446bc2'] --->"]
+About to process prev_addr: ['0x42af23']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 6 ║
+╚═══════════╝
+Finding path from ['0x446bc2'] (ngx_epoll_add_event) to ['0x447561'] (ngx_epoll_process_events)
+[angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 3 deadended, 3 old_unc>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 3 deadended, 3 old_unc> ===
+finished angr_explore() and exiting...
+	[NO simgr.found]
+	--> <--- No path found from ['0x446bc2'] to ['0x447561'] --->
+[...recording SIMGR found path, and starting anew]
+[SIMGR has no attribute <found>]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7', ['0x42af23'], "<--- No path found from ['0x42af23'] to ['0x446bc2'] --->", ['0x446bc2'], "<--- No path found from ['0x446bc2'] to ['0x447561'] --->"]
+About to process prev_addr: ['0x446bc2']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 7 ║
+╚═══════════╝
+Finding path from ['0x447561'] (ngx_epoll_process_events) to ['0x4401ee'] (ngx_alloc)
+[angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 4 avoid, 166 old_unc, 1140 timeout (6 errored)>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 4 avoid, 166 old_unc, 1140 timeout (6 errored)> ===
+finished angr_explore() and exiting...
+	[NO simgr.found]
+	--> <--- No path found from ['0x447561'] to ['0x4401ee'] --->
+[...recording SIMGR found path, and starting anew]
+[SIMGR has no attribute <found>]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7', ['0x42af23'], "<--- No path found from ['0x42af23'] to ['0x446bc2'] --->", ['0x446bc2'], "<--- No path found from ['0x446bc2'] to ['0x447561'] --->", ['0x447561'], "<--- No path found from ['0x447561'] to ['0x4401ee'] --->"]
+About to process prev_addr: ['0x447561']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 8 ║
+╚═══════════╝
+Finding path from ['0x4401ee'] (ngx_alloc) to ['0x440f9e'] (ngx_unix_recv)
+[angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 1 old_unc>
+Finished explore_count [0], continuing...
+=== final simgr: <SimulationManager with 1 old_unc> ===
+finished angr_explore() and exiting...
+	[NO simgr.found]
+	--> <--- No path found from ['0x4401ee'] to ['0x440f9e'] --->
+[...recording SIMGR found path, and starting anew]
+[SIMGR has no attribute <found>]
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x4472ae', '0x4472d3', '0x417e80', '0x500308', '0x4472ed', '0x4472fa', '0x447300', '0x44730e', '0x4473ab', '0x4473af', '0x447435', '0x447464', '0x447559', '0x447561', '0x41a4e5', '0x44757c', '0x44748f', '0x447499', '0x4474a4', '0x4474ad', '0x4475e8', '0x4475eb', '0x43c52a', '0x43c557', '0x43c588', '0x43c5cd', '0x43c5d5', '0x41a4e5', '0x43c5f0', '0x43c5a4', '0x43ca48', '0x43ca5e', '0x417a80', '0x500108', '0x43ca75', '0x43c7c1', '0x42a8a1', '0x42a8cb', '0x42a965', '0x42a974', '0x41a4e5', '0x42a999', '0x42ab7c', '0x43c7fc', '0x41b410', '0x440242', '0x418020', '0x5003d8', '0x440277', '0x4402d0', '0x4402d5', '0x4402e0', '0x41a4e5', '0x4402fe', '0x44028b', '0x44029b', '0x41b430', '0x41b435', '0x43c813', '0x43c823', '0x43c832', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c83b', '0x43c84b', '0x417ce0', '0x500238', '0x43c858', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x43c866', '0x43c872', '0x43cba2', '0x43cbaf', '0x440dee', '0x417b50', '0x500170', '0x440e1d', '0x440e2d', '0x43cbb7', '0x43c88d', '0x43c937', '0x43c950', '0x43c956', '0x43c9dc', '0x43c4a4', '0x43c525', '0x43c9e9', '0x43cc3a', '0x421809', '0x421823', '0x42182d', '0x421837', '0x43cc5e', '0x43cc6e', '0x43cc80', '0x41a4e5', '0x43cc9e', '0x43c9f4', '0x43ca18', '0x43ca2d', '0x4535d7', '0x41b7a4', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x41b7b6', '0x41b7be', '0x417b30', '0x500160', '0x41b7ce', '0x4535f6', '0x4535ff', '0x453619', '0x45362a', '0x41b619', '0x41b631', '0x41b65f', '0x41b62c', '0x45364f', '0x453658', '0x4536dc', '0x4538a6', '0x453969', '0x4539e7', ['0x42af23'], "<--- No path found from ['0x42af23'] to ['0x446bc2'] --->", ['0x446bc2'], "<--- No path found from ['0x446bc2'] to ['0x447561'] --->", ['0x447561'], "<--- No path found from ['0x447561'] to ['0x4401ee'] --->", ['0x4401ee'], "<--- No path found from ['0x4401ee'] to ['0x440f9e'] --->"]
+About to process prev_addr: ['0x4401ee']
+---------------------------------------------------------------
+
+╔═══════════╗
+║ Explore 9 ║
+╚═══════════╝
+Finding path from ['0x440f9e'] (ngx_unix_recv) to ['0x440f50'] (ngx_unix_recv)
+[angr_explore] simstates arg: []
+simgr explore_count [0]
+SIMGR: <SimulationManager with 1 active, 1 found>
+Finished explore_count [0], continuing...
+simgr explore_count [1]
+SIMGR: <SimulationManager with 1 found, 1 old_unc>
+Finished explore_count [1], continuing...
+=== final simgr: <SimulationManager with 1 found, 1 old_unc> ===
+finished angr_explore() and exiting...
+	[simgr.found = TRUE]
+	--> 1 paths found
+	--> Trace 0 ['0x440f9e', '0x41a4e5', '0x440fb9', '0x440f6f']
+---------------------------------------------------------------
+
+╔════════════╗
+║ Explore 10 ║
+╚════════════╝
+Finding path from ['0x440f50'] (ngx_unix_recv) to ['0x42af23'] (ngx_reusable_connection)
+[angr_explore] simstates arg: [<SimState @ 0x440f50>]
+simgr explore_count [0]
+SIMGR: <SimulationManager with 17 active, 5 old_unc>
+Finished explore_count [0], continuing...
+---------------------------------------------------------------
+

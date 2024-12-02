@@ -21181,6 +21181,10 @@ Function: [unknown], Address: 0x5555555904a4
 #0  ngx_debug_accepted_connection (ecf=ecf@entry=0x555555649f50, c=c@entry=0x555555656690) at src/event/ngx_event_accept.c:518
 #1  0x00005555555909e9 in ngx_event_accept (ev=0x555555650190) at src/event/ngx_event_accept.c:289
 
+```
+Function for LOG: event timer add: 8: 60000:1215706384
+--> .text:00000000000539F7	ngx_http_init_connection	                lea     rcx, aEventTimerAddD ; "event timer add: %d: %M:%M"
+```
 Breakpoint 852, ngx_http_init_connection (c=0x555555656690) at src/http/ngx_http_request.c:206
 206	{
 Function: [unknown], Address: 0x5555555a75d3
