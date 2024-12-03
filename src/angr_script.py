@@ -16,12 +16,12 @@ import angrcli.plugins.ContextView          # Print the state: state.context_vie
 
 from multiprocessing import Process, Queue
 
-
 # Local Imports
 sys.path.append('../')
 from log_parsing.parser_perf import parse_perf_script_output
 from log_parsing.parser_gdb import parse_gdb_log_triggered, parse_gdb_log_all
 from log_parsing.parser_nginx_mapped import parse_nginx_mappings
+from angr_project import save_angr_project, load_angr_project
 from pretty_print import print_msg_box
 
 
@@ -50,7 +50,7 @@ nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.l
 bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
-EXPLORE_MAX_SECS = 450          # exploration time limit (between each log)
+EXPLORE_MAX_SECS = 500          # exploration time (s) limit (between each log)
 FOUND_LIMIT = 2                 # found paths limit
 
 bin_name = os.path.basename(bin_path)
@@ -71,7 +71,7 @@ with open(outfile, "w"):            # clear file
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}TEST.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
@@ -293,89 +293,177 @@ class Handler_DrainConnections_Hook(angr.SimProcedure):
             print(f"[Drain Connections Hook] {e}", flush=True)
 
 
-
-""" angr Analysis"""
-
-# Load the binary
-proj = angr.Project(bin_path, load_options={'auto_load_libs': False})
-
 # Function to hook that does nothing (skip hooked instruction)
 def nothing(state):
     pass
 
-print_msg_box(f"Hooking Procedures:")
 
-if bin_name == 'grep':
-    init_locale_symbol = proj.loader.find_symbol('init_localeinfo')
-    init_locale_addr = init_locale_symbol.rebased_addr
-    print(f"init_localeinfo address: {hex(init_locale_addr)}", flush=True)
 
-    c_stack_symbol = proj.loader.find_symbol('c_stack_action')
-    c_stack_addr = c_stack_symbol.rebased_addr
-    print(f"c_stack_action address: {hex(c_stack_addr)}", flush=True)
+""" Concretization Functions """
 
-    if init_locale_symbol is None or c_stack_symbol is None:
-        print("WARNING: Could not find one or both symbols to hook!", flush=True)
-    # Hook functions that cause state explosion, return immediately
-    proj.hook_symbol('init_localeinfo', InitLocaleInfoHook())
-    proj.hook_symbol('c_stack_action', CStackActionHook())
+def constrain_log_accept(state):
+    """
+    accept on 0.0.0.0:8080, ready: 0
+    LEA instruction address: 0x402e0
+    """
 
-elif bin_name == 'nginx':
-    gettimeofday_symbol = proj.loader.find_symbol('gettimeofday')
-    gettimeofday_addr = gettimeofday_symbol.rebased_addr
-    print(f"gettimeofday address: {hex(gettimeofday_addr)}", flush=True)
+    # r9d is the lower 32 bits of r9
+    ready_val = state.regs.r9[31:0]  # Get the lower 32 bits
+    if ready_val.symbolic:
+        state.add_constraints(ready_val == 0)
 
-    clock_gettime_symbol = proj.loader.find_symbol('clock_gettime')
-    clock_gettime_addr = clock_gettime_symbol.rebased_addr
-    print(f"clock_gettime address: {hex(clock_gettime_addr)}", flush=True)
-
-    ngx_time_update_symbol = proj.loader.find_symbol('ngx_time_update')
-    ngx_time_update_addr = ngx_time_update_symbol.rebased_addr
-    print(f"ngx_time_update address: {hex(ngx_time_update_addr)}", flush=True)
-
-    ngx_log_error_core_symbol = proj.loader.find_symbol('ngx_log_error_core')
-    ngx_log_error_core_addr = ngx_log_error_core_symbol.rebased_addr
-    print(f"ngx_time_update address: {hex(ngx_log_error_core_addr)}", flush=True)
-
-    # ngx_log_error_core
-
-    accept_handler_calladdr = 0x4475eb         # basic block addr: 0x4475e8
-    ngx_event_accept_symbol = proj.loader.find_symbol('ngx_event_accept')
-    ngx_event_accept_addr = ngx_event_accept_symbol.rebased_addr
-    @proj.hook(accept_handler_calladdr, length=4)
-    def handler_accept_call(state):
-        state.regs.ip = ngx_event_accept_addr
-
+    # address string (0.0.0.0:8080)
+    str_struct_addr = state.regs.r8
 
     """
-        .text:000000000002A9BE loc_2A9BE:                              ; CODE XREF: ngx_get_connection+158↓j
-        .text:000000000002A9BE                                         ; ngx_get_connection+175↓j
-        .text:000000000002A9BE                 or      byte ptr [rbx+2Ah], 2
-        .text:000000000002A9C2                                 mov     rax, [rbx-0A8h]
-        .text:000000000002A9C9                 mov     rdi, rax
-        .text:000000000002A9CC                 call    qword ptr [rax+10h]          ; ngx_http_request_handler() - maybe?
-        .text:000000000002A9CF                 add     r12, 1
-        .text:000000000002A9D3                 cmp     r12, r15
-        .text:000000000002A9D6                 jz      short loc_2AA18
+    typedef struct {
+        size_t      len;
+        u_char     *data;
+    } ngx_str_t;
     """
-    proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call          TODO: don't skip... call correct handler
+
+    str_len_addr = str_struct_addr
+    str_len = state.memory.load(str_len_addr, 8)
+    if str_len.symbolic:
+        state.add_constraints(str_len == len("0.0.0.0:8080"))
+
+    str_data_ptr_addr = str_struct_addr + 8
+    str_data_ptr = state.memory.load(str_data_ptr_addr, 8)
+
+    concrete_string = b"0.0.0.0:8080"
+
+    if str_data_ptr.symbolic:
+        # Choose a concrete address for our string - we'll use a high address unlikely 
+        # to conflict with other allocations
+        target_addr = 0x7fff00000000
+        
+        # Constrain the symbolic pointer to point to our chosen address
+        state.add_constraints(str_data_ptr == target_addr)
+        
+        # Now write our concrete string to that location
+        state.memory.store(target_addr, concrete_string)
+        
+        # Don't forget to set the length in the ngx_str_t structure
+        state.memory.store(str_struct_addr, len(concrete_string), size=8)
+    else:
+        # If the pointer is concrete, we can directly constrain the memory it points to
+        concrete_addr = state.solver.eval(str_data_ptr)
+
+        # Constrain each byte of the string
+        for i, byte in enumerate(concrete_string):
+            byte_addr = concrete_addr + i
+            byte_val = state. memory.load(byte_addr, 1)
+            if byte_val.symbolic:
+                state.add_constraints(byte_val == byte)
+
+    # Return the modified state
+    return state
 
 
-    init_connection_handler_calladdr = 0x43ca2d
-    ngx_http_init_connection_symbol = proj.loader.find_symbol('ngx_http_init_connection')
-    ngx_http_init_connection_addr = ngx_http_init_connection_symbol.rebased_addr
-    @proj.hook(init_connection_handler_calladdr, length=4)
-    def handler_initconn_call(state):
-        state.regs.ip = ngx_http_init_connection_addr
+""" angr Analysis"""
+
+restore = True
+
+if restore:
+    proj, restored_states = load_angr_project('nginx_analysis')
+else:
+    # Load the binary
+    proj = angr.Project(bin_path, load_options={'auto_load_libs': False})
+
+    print_msg_box(f"Hooking Procedures:")
+    if bin_name == 'grep':
+        init_locale_symbol = proj.loader.find_symbol('init_localeinfo')
+        init_locale_addr = init_locale_symbol.rebased_addr
+        print(f"init_localeinfo address: {hex(init_locale_addr)}", flush=True)
+
+        c_stack_symbol = proj.loader.find_symbol('c_stack_action')
+        c_stack_addr = c_stack_symbol.rebased_addr
+        print(f"c_stack_action address: {hex(c_stack_addr)}", flush=True)
+
+        if init_locale_symbol is None or c_stack_symbol is None:
+            print("WARNING: Could not find one or both symbols to hook!", flush=True)
+        # Hook functions that cause state explosion, return immediately
+        proj.hook_symbol('init_localeinfo', InitLocaleInfoHook())
+        proj.hook_symbol('c_stack_action', CStackActionHook())
+
+    elif bin_name == 'nginx':
+        gettimeofday_symbol = proj.loader.find_symbol('gettimeofday')
+        gettimeofday_addr = gettimeofday_symbol.rebased_addr
+        print(f"gettimeofday address: {hex(gettimeofday_addr)}", flush=True)
+
+        clock_gettime_symbol = proj.loader.find_symbol('clock_gettime')
+        clock_gettime_addr = clock_gettime_symbol.rebased_addr
+        print(f"clock_gettime address: {hex(clock_gettime_addr)}", flush=True)
+
+        ngx_time_update_symbol = proj.loader.find_symbol('ngx_time_update')
+        ngx_time_update_addr = ngx_time_update_symbol.rebased_addr
+        print(f"ngx_time_update address: {hex(ngx_time_update_addr)}", flush=True)
+
+        ngx_log_error_core_symbol = proj.loader.find_symbol('ngx_log_error_core')
+        ngx_log_error_core_addr = ngx_log_error_core_symbol.rebased_addr
+        print(f"ngx_time_update address: {hex(ngx_log_error_core_addr)}", flush=True)
+
+        # ngx_log_error_core
+
+        accept_handler_calladdr = 0x4475eb         # basic block addr: 0x4475e8
+        ngx_event_accept_symbol = proj.loader.find_symbol('ngx_event_accept')
+        ngx_event_accept_addr = ngx_event_accept_symbol.rebased_addr
+        @proj.hook(accept_handler_calladdr, length=4)
+        def handler_accept_call(state):
+            ret_addr = accept_handler_calladdr + 4
+
+            return_addr_bv = claripy.BVV(ret_addr, 64)
+
+            # First adjust stack pointer down
+            state.regs.rsp -= 8
+            # Then store return address at the new top of stack
+            state.memory.store(state.regs.rsp, return_addr_bv)
+
+            state.regs.ip = ngx_event_accept_addr
 
 
-    proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
-    proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
-    proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
-    proj.hook_symbol('ngx_log_error_core', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+        """
+            .text:000000000002A9BE loc_2A9BE:                              ; CODE XREF: ngx_get_connection+158↓j
+            .text:000000000002A9BE                                         ; ngx_get_connection+175↓j
+            .text:000000000002A9BE                 or      byte ptr [rbx+2Ah], 2
+            .text:000000000002A9C2                                 mov     rax, [rbx-0A8h]
+            .text:000000000002A9C9                 mov     rdi, rax
+            .text:000000000002A9CC                 call    qword ptr [rax+10h]          ; ngx_http_request_handler() - maybe?
+            .text:000000000002A9CF                 add     r12, 1
+            .text:000000000002A9D3                 cmp     r12, r15
+            .text:000000000002A9D6                 jz      short loc_2AA18
+        """
+        proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call          TODO: don't skip... call correct handler
 
-    if gettimeofday_symbol is None or clock_gettime_symbol is None or ngx_time_update_symbol is None or ngx_log_error_core_symbol is None:
-        print("WARNING: Could not find one or both symbols to hook!", flush=True)
+
+        init_connection_handler_calladdr = 0x43ca2d
+        ngx_http_init_connection_symbol = proj.loader.find_symbol('ngx_http_init_connection')
+        ngx_http_init_connection_addr = ngx_http_init_connection_symbol.rebased_addr
+        @proj.hook(init_connection_handler_calladdr, length=3)
+        def handler_initconn_call(state):
+            ret_addr = init_connection_handler_calladdr + 3
+
+            return_addr_bv = claripy.BVV(ret_addr, 64)
+
+            # Function will push 6 registers (6 * 8 = 48 bytes) and allocate 0x18 bytes
+            # So our return address needs to be placed considering this stack frame
+            total_stack_size = 48 + 0x18
+
+            # adjust stack pointer to account for the return address
+            state.regs.rsp -= 8
+            # Then store return address at the new top of stack
+            state.memory.store(state.regs.rsp + total_stack_size, return_addr_bv)
+
+            state.regs.ip = ngx_http_init_connection_addr
+
+
+        proj.hook_symbol('gettimeofday', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+        proj.hook_symbol('clock_gettime', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+        proj.hook_symbol('ngx_time_update', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+        proj.hook_symbol('ngx_log_error_core', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+
+        if gettimeofday_symbol is None or clock_gettime_symbol is None or ngx_time_update_symbol is None or ngx_log_error_core_symbol is None:
+            print("WARNING: Could not find one or both symbols to hook!", flush=True)
 
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
@@ -606,13 +694,15 @@ def log_state_info(simgr):
         # logger.addHandler(fh)
         logger.debug(f"SIMGR: {simgr}")
         for i, state in enumerate(simgr.active):
-            # Convert bitvectors to integers before formatting
-            ip_val = state.solver.eval(state.regs.ip)
-
             # Get containing function from project
             func = None
             curr_instr = "Unknown"
             prev_instr = "Unknown"
+            prev_ip = 0x0
+
+            # Convert bitvectors to integers before formatting
+            ip_val = state.solver.eval(state.regs.ip)
+
             try:
                 node = cfg.model.get_any_node(ip_val, anyaddr=True)
                 curr_instr = state.block().capstone.insns[0].insn_name() + " " + state.block().capstone.insns[0].op_str if state.block() else "Unknown"
@@ -658,6 +748,10 @@ def log_state_info(simgr):
                         simgr.active.remove(state)
                         simgr.active.append(state_copy1)
                         simgr.active.append(state_copy2)
+                    elif ip_val == 0x42ae3f:                    # not exploring one branch
+                        pass
+                    elif ip_val == 0x43c5d5:
+                        constrain_log_accept(state)
 
                 if node:
                     func = proj.kb.functions.function(node.function_address)
@@ -845,6 +939,8 @@ def step_function(simgr):
 
     # Log pruned paths
     # log_path_pruned(simgr)
+
+
     
     # time limit check
     timed_out = explore_timeout()
@@ -925,8 +1021,16 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
 
         if idx > 0:
             found_states = []
+
         if simgr and hasattr(simgr, "found"):
             found_states = random.sample(simgr.found, min(FOUND_LIMIT, len(simgr.found)))
+
+        print(f"\t[simgr] {simgr}", flush=True)
+        # clear simgr active list to clear up memory
+        if simgr and hasattr(simgr, "active"):
+            simgr.active.clear()
+
+        print(f"\t[simgr clear] {simgr}", flush=True)
 
         logger.info(f"\n\n================================ Explore {ITER} ================================\n{finding_str}\n\n")
         simgr = angr_explore(found_states, prev_addr, target_addr, avoid)
@@ -976,17 +1080,24 @@ for idx, entry in enumerate(nginx_logs):      # enumerate(gdb_logs[1:])
             print_msg_box("Current Execution Path")
             print(f"{execution_path}", flush=True)
             if not isinstance(prev_addr, int):
-                print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}")
+                print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}", flush=True)
             else:
-                print(f"About to process prev_addr: {hex(prev_addr)}")
+                print(f"About to process prev_addr: {hex(prev_addr)}", flush=True)
             new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
             SIMGR = proj.factory.simgr(new_state)
     except Exception as e:
         print(f"\t--> Error finding path to {target_addr_str}: {e}", flush=True)
-        print(f"{tb.format_exc()}")
+        print(f"{tb.format_exc()}", flush=True)
     finally:
         print(f"---------------------------------------------------------------\n", flush=True)
-        prev_addr = target_addr  # Update for next syscall TODO: select the 'found' addr when target was list
+        if simgr and hasattr(simgr, "found") and simgr.found:
+            prev_addr = simgr.found[0].addr
+        else:
+            if isinstance(target_addr, list):
+                prev_addr = target_addr[0]
+                print(f"WARNING: prev_addr is likely INCORRECT", flush=True)
+            else:
+                prev_addr = target_addr 
         prev_addr_str = target_addr_str
         prev_call = func_name
 

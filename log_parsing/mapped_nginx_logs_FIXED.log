@@ -24,7 +24,7 @@ Concrete values: {'par_1': {'fmt': '%V', 'val': '127.0.0.1:48916'}, 'par_2': {'f
 
 Log: 2024/11/21 13:46:14 [debug] 687715#0: *1 event timer add: 8: 60000:1215706384
 LEA instruction address: 0x2b8db, 0x2CEAF, 0x2DA88, 0x30C10, 0x30E14, 0x316D0, 0x31BBF, 0x336D6, 0x3460C, 0x3C7A0, 0x3F29F, 0x3F774, 0x3FCFE, 0x3FEE1, 0x453D1, 0x458A7, 0x4CC0E, 0x5326C, 0x5353A, 0x539F7, 0x53BE6, 0x543A7, 0x54634, 0x54F2A, 0x56048, 0x56273, 0x56709, 0x5B5F1, 0x5C961, 0x5CC6C, 0x5D41D, 0x66345, 0x664EB, 0x66C0A, 0x66DB6, 0x66F68, 0x68877, 0x68B4B, 0x6942C, 0x6E5BE, 0x6EF5D, 0x71A78, 0x71D57, 0x835C2, 0x9CA39
-Function: ngx_clean_old_cycles, ngx_init_cycle, ngx_set_shutdown_timer, ngx_resolver_set_timeout, ngx_resolver_tcp_write, ngx_resolver_send_tcp_query, 
+Function: ngx_http_init_connection
 Format string: event timer add: %d: %M:%M
 Concrete values: {'par_1': {'fmt': '%d', 'val': '8'}, 'par_2': {'fmt': '%M', 'val': '60000'}, 'par_3': {'fmt': '%M', 'val': '1215706384'}}
 
