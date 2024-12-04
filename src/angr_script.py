@@ -719,7 +719,7 @@ def angr_explore(simgr, prev_addr, target_addr, avoid_addrs):
         except TimeoutError:
             print("\t--> Function took too long to execute", flush=True)
         finally:
-            print(f"SIMGR: {simgr}", flush=True)
+            print(f"simgr: {simgr}", flush=True)
             # print(f"found: " + (f"{len(simgr.found)}" if (simgr and hasattr(simgr, 'found') and len(simgr.found) > 0) else "No found path"), flush=True)
             # print(f"active: " + (f"{len(simgr.active)}" if (simgr and hasattr(simgr, 'active')) else "No active path"), flush=True)
             if simgr and hasattr(simgr, 'found') and simgr.found:
@@ -766,7 +766,7 @@ def log_state_info(simgr):
         logger.debug(f"======= Active States [{len(simgr.active)}] =======")
         # fh = logging.FileHandler('simgr_DEBUG.log', mode='a')
         # logger.addHandler(fh)
-        logger.debug(f"SIMGR: {simgr}")
+        logger.debug(f"simgr: {simgr}")
         for i, state in enumerate(simgr.active):
             # Get containing function from project
             func = None
@@ -1053,13 +1053,23 @@ def get_single_addr(addr):
     # print(f"Final result: {addr}, type: {type(addr)}")  # Debug print
     return addr
 
+def finish_stats():
+    # Time to complete
+    global_end = time.time()
+    print_msg_box(f"Runtime = {round(global_end - global_start, 2)} seconds")
+
+    # Display the execution path
+    print_msg_box("Reconstructed Execution Path:")
+    for addr in execution_path:
+        print(addr, flush=True)
+
 logger = logging.getLogger('angr.sim_manager')
 
 if not RESTORE:
     start_state = proj.factory.blank_state(addr=prev_addr)
     SIMGR = proj.factory.simgr(start_state)
 
-simgr = SIMGR                                    # simgr updated at every explore()
+simgr = proj.factory.simgr(SIMGR.active)                                    # simgr updated at every explore()
 
 if RESTORE:
     ITER = iter
@@ -1152,8 +1162,18 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                         print(f"WARNING: global SIMGR multiple found", flush=True)
                         # ipdb.set_trace()
                 execution_path.extend(trace)                    # TODO: fork when multiple paths found
+            elif hasattr(SIMGR, "active") and len(SIMGR.active) > 0:            # we moved found paths to active stash
+                for idx, found_path in enumerate(SIMGR.active):
+                    # Extract the list of basic block addresses traversed
+                    trace = found_path.history.bbl_addrs.hardcopy
+                    trace = [hex(i) for i in trace]
+                    print(f"\t--> SIMGR trace {idx}: {trace}", flush=True)
+                    if len(SIMGR.active) > 1:
+                        print(f"WARNING: global SIMGR multiple found", flush=True)
+                        # ipdb.set_trace()
+                execution_path.extend(trace)
             else:
-                print(f"[SIMGR has none <found>]", flush=True)
+                print(f"[SIMGR has 0 <found> or <active>]", flush=True)
 
             execution_path.extend([prev_addr_str, msg])                   # TODO: fork when multiple paths found
             print_msg_box("Current Execution Path")
@@ -1161,10 +1181,12 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
             if not isinstance(prev_addr, int):
                 print(f"About to process prev_addr: {[hex(a) for a in prev_addr]}", flush=True)
             else:
-                print(f"About to process prev_addr: {hex(prev_addr)}", flush=True)
+                print(f"About to process prev_addr: [{hex(prev_addr)}]", flush=True)
 
             if not RESTORE:
-                save_angr_simgr(SIMGR, ITER - 1, f"{bin_name}_simgr")
+                save_angr_simgr(SIMGR, ITER - 1, f"{bin_name}_simgr_{ITER-1}")
+            
+            finish_stats()
             exit(0)
             # new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
             # SIMGR = proj.factory.simgr(new_state)
@@ -1185,6 +1207,7 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
         prev_call = func_name
 
 # ipdb.set_trace()
+
 
 
 
@@ -1259,12 +1282,4 @@ for entry in ltrace:
 #         ordered_execution_path.append(addr)
 
 
-# Time to complete
-global_end = time.time()
-print_msg_box(f"Runtime = {round(global_end - global_start, 2)} seconds")
-
-
-# Display the execution path
-print_msg_box("Reconstructed Execution Path:")
-for addr in execution_path:
-    print(addr, flush=True)
+finish_stats()
