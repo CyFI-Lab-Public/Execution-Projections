@@ -1,3 +1,9 @@
+Log: 2024/11/21 13:46:06 [debug] 687715#0: epoll timer: -1
+LEA instruction address: 0x47347
+Function: ngx_epoll_process_events
+Format string: epoll timer: %M
+Concrete values: {'par_1': {'fmt': '%M', 'val': '-1'}}
+
 Log: 2024/11/21 13:46:14 [debug] 687715#0: epoll: fd:6 ev:0001 d:0000555555653A30
 LEA instruction address: 0x47561
 Function: ngx_epoll_process_events

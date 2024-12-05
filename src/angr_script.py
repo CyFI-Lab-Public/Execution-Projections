@@ -52,11 +52,11 @@ gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
 EXPLORE_MAX_SECS = 500          # exploration time (s) limit (between each log)
 FOUND_LIMIT = 2                 # found paths limit
-RESTORE = True                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
+RESTORE = False                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
 
 bin_name = os.path.basename(bin_path)
 
-print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\EXPLORE_MAX_SECS: {EXPLORE_MAX_SECS}\nmapped_applogs_path: {mapped_applogs_path}\n\n", flush=True)
+print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nEXPLORE_MAX_SECS: {EXPLORE_MAX_SECS}\nmapped_applogs_path: {mapped_applogs_path}\n\n", flush=True)
 # print_msg_box("HELLO")
 global_start = time.time()
 SIMGR = None
@@ -72,7 +72,7 @@ with open(outfile, "w"):            # clear file
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_TEST.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
@@ -253,7 +253,13 @@ def setup_grep_symex_state(proj):
 
 
 def setup_nginx_symex_state(proj):   
-    start_addr = proj.loader.find_symbol('ngx_epoll_process_events').rebased_addr
+    # start_addr = proj.loader.find_symbol('ngx_epoll_process_events').rebased_addr
+    # state = proj.factory.blank_state(
+    #     addr=start_addr,
+    # )
+
+    # ngx_single_process_cycle
+    start_addr = proj.loader.find_symbol('ngx_single_process_cycle').rebased_addr
     state = proj.factory.blank_state(
         addr=start_addr,
     )
@@ -519,6 +525,124 @@ elif bin_name == 'nginx':
         print("WARNING: Could not find one or both symbols to hook!", flush=True)
 
 
+    ngx_event_flags_symbol = proj.loader.find_symbol('ngx_event_flags')
+    if ngx_event_flags_symbol:
+        ngx_event_flags_addr = ngx_event_flags_symbol.rebased_addr
+    else:
+        ngx_event_flags_addr = 'Missing'
+
+    print(f"ngx_event_flags_addr: {hex(ngx_event_flags_addr)}", flush=True)             # 0x4d4bf0
+
+    @proj.hook(0x43bc28)
+    def debug_flags_hook(state):
+        ngx_event_flags_addr2 = state.solver.eval(state.regs.rdx)  # Get the address loaded by the mov instruction
+        print(f"ngx_event_flags_addr solver: {hex(ngx_event_flags_addr2)}", flush=True)
+
+        ngx_event_flags_addr = 0x4d4bf0
+        state.mem[ngx_event_flags_addr].uint64_t = 0x4
+
+
+    epoll_add_event_handler_calladdr = 0x43bc49
+    ngx_epoll_add_event_symbol = proj.loader.find_symbol('ngx_epoll_add_event')
+    ngx_epoll_add_event_addr = ngx_epoll_add_event_symbol.rebased_addr
+    @proj.hook(epoll_add_event_handler_calladdr, length=6)
+    def handler_addevent_call(state):
+        ret_addr = epoll_add_event_handler_calladdr + 6
+        return_addr_bv = claripy.BVV(ret_addr, 64)
+
+         # First, let's understand our stack frame components
+        register_save_size = 3 * 8     # 24 bytes for saved registers
+        local_vars_size = 0x20         # 32 bytes for local variables
+
+        # Now, let's calculate the alignment adjustment needed
+        # The stack pointer must be 16-byte aligned AFTER we push our return address
+        # This means before our push, it should be at (16-byte aligned - 8)
+
+        # Get current concrete RSP value for calculation
+        current_rsp = state.solver.eval(state.regs.rsp)
+
+        # Calculate how far we are from desired alignment
+        # We want (rsp - 8) to be 16-byte aligned
+        desired_rsp = ((current_rsp - 8) & ~0xF) + 0x10  # Round down to 16 and add 16
+        alignment_adjustment = current_rsp - desired_rsp
+        print(f"alignment_adjustment: {alignment_adjustment}", flush=True)
+
+        # Apply the alignment adjustment
+        if alignment_adjustment != 0:
+            state.regs.rsp -= alignment_adjustment
+
+        # Now adjust stack for return address
+        state.regs.rsp -= 8
+
+        # Calculate total stack frame size including our alignment
+        total_stack_size = register_save_size + local_vars_size
+
+        # Store return address at the correct location
+        target_addr = state.regs.rsp + claripy.BVV(total_stack_size, 64)
+        state.memory.store(target_addr, return_addr_bv)
+
+        # Add debug prints to verify our alignment
+        concrete_rsp = state.solver.eval(state.regs.rsp)
+        # print(f"Adjusted RSP value: 0x{concrete_rsp:x}", flush=True)
+        # print(f"RSP alignment check: {concrete_rsp & 0xF:x}", flush=True)  # Should be 8
+        # print(f"Target address: 0x{state.solver.eval(target_addr):x}", flush=True)
+        # print(f"Target alignment check: {state.solver.eval(target_addr) & 0xF:x}", flush=True)
+
+        # Set instruction pointer to function start
+        state.regs.ip = ngx_epoll_add_event_addr
+
+
+    # ngx_epoll_process_events
+    epoll_process_events_handler_calladdr = 0x43bb43
+    ngx_epoll_process_events_symbol = proj.loader.find_symbol('ngx_epoll_process_events')
+    ngx_epoll_process_events_addr = ngx_epoll_process_events_symbol.rebased_addr
+    @proj.hook(epoll_process_events_handler_calladdr, length=6)
+    def handler_process_event_call(state):
+        ret_addr = epoll_process_events_handler_calladdr + 6
+        return_addr_bv = claripy.BVV(ret_addr, 64)
+
+         # First, let's understand our stack frame components
+        register_save_size = 6 * 8     # 48 bytes for saved registers
+        local_vars_size = 0x18         # 24 bytes for local variables
+
+        # Now, let's calculate the alignment adjustment needed
+        # The stack pointer must be 16-byte aligned AFTER we push our return address
+        # This means before our push, it should be at (16-byte aligned - 8)
+
+        # Get current concrete RSP value for calculation
+        current_rsp = state.solver.eval(state.regs.rsp)
+
+        # Calculate how far we are from desired alignment
+        # We want (rsp - 8) to be 16-byte aligned
+        desired_rsp = ((current_rsp - 8) & ~0xF) + 0x10  # Round down to 16 and add 16
+        alignment_adjustment = current_rsp - desired_rsp
+        print(f"alignment_adjustment: {alignment_adjustment}", flush=True)
+
+        # Apply the alignment adjustment
+        if alignment_adjustment != 0:
+            state.regs.rsp -= alignment_adjustment
+
+        # Now adjust stack for return address
+        state.regs.rsp -= 8
+
+        # Calculate total stack frame size including our alignment
+        total_stack_size = register_save_size + local_vars_size
+
+        # Store return address at the correct location
+        target_addr = state.regs.rsp + claripy.BVV(total_stack_size, 64)
+        state.memory.store(target_addr, return_addr_bv)
+
+        # Add debug prints to verify our alignment
+        concrete_rsp = state.solver.eval(state.regs.rsp)
+        # print(f"Adjusted RSP value: 0x{concrete_rsp:x}", flush=True)
+        # print(f"RSP alignment check: {concrete_rsp & 0xF:x}", flush=True)  # Should be 8
+        # print(f"Target address: 0x{state.solver.eval(target_addr):x}", flush=True)
+        # print(f"Target alignment check: {state.solver.eval(target_addr) & 0xF:x}", flush=True)
+
+        # Set instruction pointer to function start
+        state.regs.ip = ngx_epoll_process_events_addr
+
+
 
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
@@ -571,19 +695,18 @@ print(f"CFGEmulated: {cfg.graph}, {round(end - start, 2)}", flush=True)"""
 if RESTORE:
     prev_addr = SIMGR.active[0].addr
     prev_call = nginx_logs[iter-1]['function']
-    print_msg_box(f"prev_addr: {hex(prev_addr)}")
 else:
     if bin_name == 'grep':
         prev_addr = cfg.kb.functions.function(name='main').addr
         prev_call = "main"
-        print_msg_box(f"prev_addr (MAIN): {hex(prev_addr)}")
     elif bin_name == 'nginx':
-        prev_addr = cfg.kb.functions.function(name='ngx_epoll_process_events').addr
-        prev_call = "ngx_epoll_process_events"
-        print_msg_box(f"ngx_epoll_process_events address: {hex(prev_addr)}")
+        # prev_addr = cfg.kb.functions.function(name='ngx_epoll_process_events').addr
+        # prev_call = "ngx_epoll_process_events"
+        prev_addr = cfg.kb.functions.function(name='ngx_single_process_cycle').addr
+        prev_call = "ngx_single_process_cycle"
 
-print_msg_box(f"prev_call func name: {prev_call}")
 prev_addr_str = hex(prev_addr)
+print_msg_box(f"prev_call: {prev_call}, {prev_addr_str}")
 
 # # Check if the callsites exist in the CFG
 # for entry in gdb_logs[1:]:
@@ -826,6 +949,8 @@ def log_state_info(simgr):
                         pass
                     elif ip_val == 0x43c5d5:
                         constrain_log_accept(state)
+                    elif ip_val == 0x43bb1a:
+                        state.regs.ip = claripy.BVV(0x43bb33, state.arch.bits)
 
                 if node:
                     func = proj.kb.functions.function(node.function_address)
@@ -933,6 +1058,8 @@ def prune_states(simgr):
         'ngx_destroy_pool',
 
     }
+
+    logger.debug(f"======= Pruning States =======")
     
     for state in simgr.active:
         # 1. Prune based on execution depth
@@ -980,7 +1107,7 @@ def prune_states(simgr):
         #             prune_count["symbolic"] += 1
         #             break
 
-    logger.debug(f"======= Pruned States [{prune_count}]=======")
+    logger.debug(f"      Pruned States [{prune_count}]=======")
 
 
 # Log when paths are pruned
@@ -1110,6 +1237,10 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                 simgr.avoid.clear()
             if hasattr(simgr, "timeout"):
                 simgr.timeout.clear()
+            if hasattr(simgr, "unsat"):
+                simgr.unsat.clear()
+            if hasattr(simgr, "deadended"):
+                simgr.deadended.clear()
 
         if simgr and hasattr(simgr, "found"):
             found_states = random.sample(simgr.found, min(FOUND_LIMIT, len(simgr.found)))
@@ -1184,8 +1315,10 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                 print(f"About to process prev_addr: [{hex(prev_addr)}]", flush=True)
 
             if not RESTORE:
-                save_angr_simgr(SIMGR, ITER - 1, f"{bin_name}_simgr_{ITER-1}")
-            
+                fn = f"{bin_name}_simgr_{ITER-1}"
+                save_angr_simgr(SIMGR, ITER - 1, fn)
+                print(f"Saved simgr @ {fn}")
+
             finish_stats()
             exit(0)
             # new_state = proj.factory.blank_state(addr=get_single_addr(prev_addr))
