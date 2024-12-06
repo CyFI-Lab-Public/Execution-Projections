@@ -52,7 +52,7 @@ gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
 EXPLORE_MAX_SECS = 500          # exploration time (s) limit (between each log)
 FOUND_LIMIT = 2                 # found paths limit
-RESTORE = True                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
+RESTORE = False                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
 
 bin_name = os.path.basename(bin_path)
 
@@ -258,11 +258,16 @@ def setup_nginx_symex_state(proj):
     #     addr=start_addr,
     # )
 
-    # ngx_single_process_cycle
-    start_addr = proj.loader.find_symbol('ngx_single_process_cycle').rebased_addr
-    state = proj.factory.blank_state(
-        addr=start_addr,
-    )
+    # # ngx_single_process_cycle
+    # start_addr = proj.loader.find_symbol('ngx_single_process_cycle').rebased_addr
+    # state = proj.factory.blank_state(
+    #     addr=start_addr,
+    # )
+
+    start_addr = proj.entry
+    print_msg_box(f"START_ADDR: {hex(start_addr)}")
+    state = proj.factory.entry_state()
+
 
     return state
 
@@ -352,6 +357,10 @@ class Handler_DrainConnections_Hook(angr.SimProcedure):
 # Function to hook that does nothing (skip hooked instruction)
 def nothing(state):
     pass
+
+
+def nothing_success(state):
+    return 1
 
 
 
@@ -460,7 +469,7 @@ elif bin_name == 'nginx':
 
     ngx_log_error_core_symbol = proj.loader.find_symbol('ngx_log_error_core')
     ngx_log_error_core_addr = ngx_log_error_core_symbol.rebased_addr
-    print(f"ngx_time_update address: {hex(ngx_log_error_core_addr)}", flush=True)
+    print(f"ngx_log_error_core address: {hex(ngx_log_error_core_addr)}", flush=True)
 
     # ngx_log_error_core
 
@@ -494,6 +503,11 @@ elif bin_name == 'nginx':
     """
     proj.hook(0x42A9C2, nothing, length=13)     # Covers from mov rax through call          TODO: don't skip... call correct handler
 
+    # proj.hook_symbol('ngx_os_init', nothing)
+    ngx_os_init_symbol = proj.loader.find_symbol('ngx_os_init')
+    ngx_os_init_addr = ngx_os_init_symbol.rebased_addr
+    proj.hook_symbol('ngx_os_init', angr.SIM_PROCEDURES['stubs']['ReturnUnconstrained']())
+    print(f"ngx_os_init_addr address: {hex(ngx_os_init_addr)}", flush=True)
 
     init_connection_handler_calladdr = 0x43ca2d
     ngx_http_init_connection_symbol = proj.loader.find_symbol('ngx_http_init_connection')
@@ -647,6 +661,56 @@ elif bin_name == 'nginx':
         state.regs.ip = 0x42af20
 
 
+    # 0x45652f -> hook to ngx_unix_recv
+    ngx_unix_recv_handler_calladdr = 0x45652f
+    ngx_unix_recv_symbol = proj.loader.find_symbol('ngx_unix_recv')
+    ngx_unix_recv_addr = ngx_unix_recv_symbol.rebased_addr
+    @proj.hook(ngx_unix_recv_handler_calladdr, length=6)
+    def handler_unix_recv_call(state):
+        ret_addr = ngx_unix_recv_handler_calladdr + 6
+        return_addr_bv = claripy.BVV(ret_addr, 64)
+
+         # First, let's understand our stack frame components
+        register_save_size = 6 * 8     # 48 bytes for saved registers
+        local_vars_size = 8         # 8 bytes for local variables
+
+        # Now, let's calculate the alignment adjustment needed
+        # The stack pointer must be 16-byte aligned AFTER we push our return address
+        # This means before our push, it should be at (16-byte aligned - 8)
+
+        # Get current concrete RSP value for calculation
+        current_rsp = state.solver.eval(state.regs.rsp)
+
+        # Calculate how far we are from desired alignment
+        # We want (rsp - 8) to be 16-byte aligned
+        desired_rsp = ((current_rsp - 8) & ~0xF) + 0x10  # Round down to 16 and add 16
+        alignment_adjustment = current_rsp - desired_rsp
+        print(f"alignment_adjustment: {alignment_adjustment}", flush=True)
+
+        # Apply the alignment adjustment
+        if alignment_adjustment != 0:
+            state.regs.rsp -= alignment_adjustment
+
+        # Now adjust stack for return address
+        state.regs.rsp -= 8
+
+        # Calculate total stack frame size including our alignment
+        total_stack_size = register_save_size + local_vars_size
+
+        # Store return address at the correct location
+        target_addr = state.regs.rsp + claripy.BVV(total_stack_size, 64)
+        state.memory.store(target_addr, return_addr_bv)
+
+        # Add debug prints to verify our alignment
+        concrete_rsp = state.solver.eval(state.regs.rsp)
+        # print(f"Adjusted RSP value: 0x{concrete_rsp:x}", flush=True)
+        # print(f"RSP alignment check: {concrete_rsp & 0xF:x}", flush=True)  # Should be 8
+        # print(f"Target address: 0x{state.solver.eval(target_addr):x}", flush=True)
+        # print(f"Target alignment check: {state.solver.eval(target_addr) & 0xF:x}", flush=True)
+
+        # Set instruction pointer to function start
+        state.regs.ip = ngx_unix_recv_addr
+
 
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
@@ -706,8 +770,12 @@ else:
     elif bin_name == 'nginx':
         # prev_addr = cfg.kb.functions.function(name='ngx_epoll_process_events').addr
         # prev_call = "ngx_epoll_process_events"
-        prev_addr = cfg.kb.functions.function(name='ngx_single_process_cycle').addr
-        prev_call = "ngx_single_process_cycle"
+
+        # prev_addr = cfg.kb.functions.function(name='ngx_single_process_cycle').addr
+        # prev_call = "ngx_single_process_cycle"
+
+        prev_addr = proj.entry
+        prev_call = "start"
 
 prev_addr_str = hex(prev_addr)
 print_msg_box(f"prev_call: {prev_call}, {prev_addr_str}")
@@ -1014,6 +1082,20 @@ def log_state_info(simgr):
         # move unconstrained, for later analysis if needed
         simgr.stash(from_stash='unconstrained', to_stash='old_unc')
 
+    # Log deadended states
+    if hasattr(simgr, "deadended"):
+        logger.debug(f"======= Deadended States [{len(simgr.deadended)}] =======")
+        for i, errored_state in enumerate(simgr.deadended):
+            logger.debug(f"Deadended State {i}:")
+            logger.debug(f"    Deadended at addr: {hex(errored_state.state.addr)}")
+            logger.debug(f"    Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
+            logger.debug(f"    Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
+
+        # move errored, for later analysis if needed
+        # simgr.drop(stash='errored')     # TODO: why not working?!?!
+        simgr.stash(from_stash='deadended', to_stash='old_dead')
+    
+
     return simgr
 
 # Log when new paths are found
@@ -1061,7 +1143,10 @@ def prune_states(simgr):
         'ngx_cpystrn',           # String operations
         'ngx_palloc_block',
         'ngx_destroy_pool',
-
+        'ngx_vslprintf',
+        'main',
+        'malloc',
+        'ngx_sprintf_str',
     }
 
     logger.debug(f"======= Pruning States =======")
@@ -1198,7 +1283,8 @@ def finish_stats():
 logger = logging.getLogger('angr.sim_manager')
 
 if not RESTORE:
-    start_state = proj.factory.blank_state(addr=prev_addr)
+    start_state = proj.factory.entry_state()
+    # start_state = proj.factory.blank_state(addr=prev_addr)
     SIMGR = proj.factory.simgr(start_state)
 
 simgr = proj.factory.simgr(SIMGR.active)                                    # simgr updated at every explore()
@@ -1267,8 +1353,6 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
             state.regs.ip = ngx_http_wait_request_handler_addr
 
 
-
-
         ngx_process_events_and_timers_symbol = proj.loader.find_symbol('ngx_process_events_and_timers')
         ngx_process_events_and_timers_addr = ngx_process_events_and_timers_symbol.rebased_addr
         prev_addr_str = hex(ngx_process_events_and_timers_addr)         # target_addr_str
@@ -1297,10 +1381,14 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
         if idx > 0 and simgr:
             if hasattr(simgr, "active"):
                 simgr.active.clear()
+            if hasattr(simgr, "unconstrained"):
+                simgr.unconstrained.clear()
             if hasattr(simgr, "old_unc"):
                 simgr.old_unc.clear()
             if hasattr(simgr, "errored"):
                 simgr.errored.clear()
+            if hasattr(simgr, "old_err"):
+                simgr.old_err.clear()
             if hasattr(simgr, "avoid"):
                 simgr.avoid.clear()
             if hasattr(simgr, "timeout"):
@@ -1310,6 +1398,8 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                 simgr.unsat.clear()
             if hasattr(simgr, "deadended"):
                 simgr.deadended.clear()
+            if hasattr(simgr, "old_dead"):
+                simgr.old_dead.clear()
 
         if simgr and hasattr(simgr, "found"):
             found_states = random.sample(simgr.found, min(FOUND_LIMIT, len(simgr.found)))
@@ -1384,7 +1474,7 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                 print(f"About to process prev_addr: [{hex(prev_addr)}]", flush=True)
 
             if not RESTORE:
-                fn = f"{bin_name}_simgr_{ITER-1}"
+                fn = f"{bin_name}_simgr_{ITER-1}_ENTRY"
                 save_angr_simgr(SIMGR, ITER - 1, fn)
                 print(f"Saved simgr @ {fn}")
 
