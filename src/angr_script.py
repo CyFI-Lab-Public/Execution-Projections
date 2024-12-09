@@ -50,7 +50,7 @@ nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.l
 bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
-EXPLORE_MAX_SECS = 500          # exploration time (s) limit (between each log)
+EXPLORE_MAX_SECS = 1800          # exploration time (s) limit (between each log)
 FOUND_LIMIT = 2                 # found paths limit
 RESTORE = False                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
 
@@ -61,6 +61,7 @@ print(f"bin_path: {bin_path}\ngdb_log_path: {gdb_log_path}\nEXPLORE_MAX_SECS: {E
 global_start = time.time()
 SIMGR = None
 ITER = 0
+step_count = 0
 
 outfile = "execution_path.log"
 with open(outfile, "w"):            # clear file
@@ -72,7 +73,7 @@ with open(outfile, "w"):            # clear file
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_TEST6.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_HOOK0.0.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
@@ -285,7 +286,7 @@ def hook_c_stack_action(state):
     if state.history.jumpkind == 'Ijk_Call':
         print(f"[HOOK] Called from {state.history.jump_source}", flush=True)
     # Just return 0 to indicate success
-    return state.solver.BVV(0, state.arch.bits)
+    return claripy.BVV(0, state.arch.bits)
 
 
 class InitLocaleInfoHook(angr.SimProcedure):
@@ -712,6 +713,161 @@ elif bin_name == 'nginx':
         state.regs.ip = ngx_unix_recv_addr
 
 
+
+
+
+
+    # print(f"[setup_concrete_config]", flush=True)
+    # ngx_conf_parse_addr = proj.loader.find_symbol('ngx_conf_parse').rebased_addr
+    # # Hook ngx_conf_parse to ensure it sees our concrete filename
+    # @proj.hook(ngx_conf_parse_addr, length=0)
+    # def concrete_conf_parse_hook(state):
+    #     # Define the concrete nginx.conf path
+    #     config_path = b"/usr/local/nginx/conf/nginx.conf\0"
+    #     filename_len = len(config_path) - 1                          # exclude null terminator
+
+    #     # Create ngx_str_t structure for filename
+    #     filename_str = state.heap.allocate(16)                       # sizeof(ngx_str_t) is typically 16 bytes
+    #     state.memory.store(filename_str, claripy.BVV(filename_len, 64))  # len field
+
+    #     path_addr = state.heap.allocate(len(config_path))
+    #     state.memory.store(path_addr, claripy.BVV(config_path, len(config_path) * 8))
+    #     state.memory.store(filename_str + 8, claripy.BVV(path_addr, 64))  # data field
+
+    #     # Add explicit constraints for each byte of the path
+    #     for i in range(len(config_path)):
+    #         byte = state.memory.load(path_addr + i, 1)
+    #         state.add_constraints(byte == claripy.BVV(config_path[i], 8))
+
+    #     # Create concrete content for nginx.conf
+    #     config_content = b"""# /usr/local/nginx/conf/nginx.conf
+    # worker_processes 1;        # Force single process
+    # daemon off;                # Run in foreground
+    # master_process off;        # Disable master process
+
+    # # Main context logging - applies to startup/shutdown and global events. Main error_log captures everything
+    # error_log /usr/local/nginx/logs/error.log debug_core debug_alloc debug_mutex debug_event debug_http 
+    #     debug_mail debug_stream;
+    # # For our execution reconstruction purpose, having a single comprehensive error log and a detailed access log is cleaner and sufficient.
+
+    # events {
+    #     worker_connections 16; # Minimize connections
+    #     multi_accept off;      # Disable multiple accepts
+    # }
+
+    # http {
+    #     # Basic MIME type mappings needed for serving files
+    #     include       mime.types;
+    #     default_type  application/octet-stream;
+
+    #     # Define detailed log format
+    #     log_format detailed '$remote_addr - $remote_user [$time_local] '
+    #                         '"$request" $status $body_bytes_sent '
+    #                         '"$http_referer" "$http_user_agent" '
+    #                         '$request_time $upstream_response_time '
+    #                         '$pipe $connection $connection_requests '
+    #                         '$request_id '                    # Unique request identifier
+    #                         '$request_length '                # Request length including headers
+    #                         '$request_completion '            # Whether request completed normally
+    #                         '$server_protocol '               # HTTP protocol version
+    #                         '$request_filename '              # File path for the request
+    #                         '$document_root '                 # Root directory
+    #                         '$hostname'                      # Server hostname
+    #                         'tcp_info=$tcpinfo_rtt,$tcpinfo_rttvar,$tcpinfo_snd_cwnd,$tcpinfo_rcv_space '
+    #                         'connection=$connection '
+    #                         'connection_time=$connection_time '
+    #                         'pid=$pid '
+    #                         'msec=$msec '
+    #                         'request_time=$request_time '
+    #                         'upstream_connect_time=$upstream_connect_time '
+    #                         'upstream_header_time=$upstream_header_time '
+    #                         'upstream_response_time=$upstream_response_time '
+    #                         'upstream_response_length=$upstream_response_length '
+    #                         'upstream_cache_status=$upstream_cache_status '
+    #                         'upstream_status=$upstream_status '
+    #                         'scheme=$scheme '
+    #                         'request_method=$request_method '
+    #                         'server_port=$server_port '
+    #                         'server_addr=$server_addr '
+    #                         'body_bytes_sent=$body_bytes_sent '
+    #                         'request_body=$request_body '
+    #                         'request_body_file=$request_body_file '
+    #                         'connection_requests=$connection_requests '
+    #                         'realpath_root=$realpath_root '
+    #                         'nginx_version=$nginx_version '
+    #                         'server_name=$server_name '
+    #                         'request_completion=$request_completion '
+    #                         'pipe=$pipe '
+    #                         'sent_http_content_length=$sent_http_content_length '
+    #                         'sent_http_content_type=$sent_http_content_type '
+    #                         'sent_http_last_modified=$sent_http_last_modified '
+    #                         'sent_http_connection=$sent_http_connection '
+    #                         'sent_http_keep_alive=$sent_http_keep_alive '
+    #                         'sent_http_transfer_encoding=$sent_http_transfer_encoding '
+    #                         'sent_http_cache_control=$sent_http_cache_control '
+    #                         'sent_http_location=$sent_http_location '
+    #                         'http_host=$http_host '
+    #                         'http_x_forwarded_for=$http_x_forwarded_for '
+    #                         'http_x_real_ip=$http_x_real_ip';
+
+    #     # Enhanced access logging with minimal buffering for real-time logging
+    #     access_log /usr/local/nginx/logs/access.log detailed buffer=4k flush=1s;
+
+    #     # More aggressive file operation logging
+    #     open_log_file_cache max=1000 inactive=10s valid=30s min_uses=1;
+
+    #     server {
+    #         listen 8080;
+    #         server_name localhost;
+
+    #         # Enable detailed error logging at server level
+    #         # error_log /usr/local/nginx/logs/server-error.log debug;
+
+    #         location / {
+    #             root /usr/local/nginx/html;
+    #             index index.html;
+
+    #             # Add location-specific error log for even more granular debugging
+    #             # error_log /usr/local/nginx/logs/location-error.log debug;
+
+    #             # Log request body
+    #             client_body_in_file_only on;
+    #             client_body_buffer_size 16k;
+
+    #             # Log all file operations
+    #             log_not_found on;         # Log 404 errors
+    #             log_subrequest on;        # Log subrequests
+
+    #             # Log response headers
+    #             add_header X-Debug-Request-ID $request_id always;
+    #             add_header X-Debug-Connection $connection always;
+    #             add_header X-Debug-Connection-Requests $connection_requests always;
+    #         }
+    #     }
+    # }\0"""
+
+    #     # Simulate the file system for this file
+    #     # We'll create a SimFile with our concrete content
+    #     simfile = angr.SimFile('nginx.conf', content=config_content)
+    #     state.fs.insert('/usr/local/nginx/conf/nginx.conf', simfile)
+
+    #     filename_ptr = state.regs.rsi  # Assuming x86_64 calling convention where second arg is in rsi
+    #     if filename_ptr is not None:
+    #         # Store the concrete path at the filename pointer
+    #         state.memory.store(filename_ptr, claripy.BVV(filename_str, 64), endness=proj.arch.memory_endness)
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Verify hooks are installed
 print_msg_box("Verifying hooks...")
 for addr, hook in proj._sim_procedures.items():
@@ -719,7 +875,7 @@ for addr, hook in proj._sim_procedures.items():
 
 if RESTORE:
     print_msg_box(f"Restoring SimStates")
-    SIMGR, iter = load_angr_simgr('nginx_simgr_6')
+    SIMGR, iter = load_angr_simgr('nginx_simgr_0_HOOK')
     # binname, restored_states = load_angr_project('nginx_analysis')
     # print(f"bin name: {binname}", flush=True)
     # print(f"states: {restored_states}\n", flush=True)
@@ -761,8 +917,17 @@ end = time.time()
 print(f"CFGEmulated: {cfg.graph}, {round(end - start, 2)}", flush=True)"""
 
 if RESTORE:
-    prev_addr = SIMGR.active[0].addr
-    prev_call = nginx_logs[iter-1]['function']
+    if hasattr(SIMGR, "active") and len(SIMGR.active) > 0:
+        prev_addr = SIMGR.active[0].addr
+    elif iter > 0:
+        prev_addr = nginx_logs[iter]['lea_addr']
+    else:
+        prev_addr = proj.entry
+
+    if iter > 0:
+        prev_call = nginx_logs[iter-1]['function']
+    else:
+        prev_call = "start"
 else:
     if bin_name == 'grep':
         prev_addr = cfg.kb.functions.function(name='main').addr
@@ -1024,6 +1189,76 @@ def log_state_info(simgr):
                         constrain_log_accept(state)
                     elif ip_val == 0x43bb1a:
                         state.regs.ip = claripy.BVV(0x43bb33, state.arch.bits)
+                    elif ip_val == 0x42e296:
+                        rax_val = state.regs.rax
+                        rcx_val = state.regs.rcx
+                        rbx_val = state.regs.rbx
+                        rdx_val = state.regs.rdx
+                        rsi_val = state.regs.rsi
+
+                        logger.debug(f"[DEBUG CRC LOOP] @ {hex(state.addr)}")
+                        logger.debug(f"  rax (counter): {rax_val}")
+                        logger.debug(f"  rcx (limit): {rcx_val}")
+                        logger.debug(f"  rbx (crc): {rbx_val}")
+                        logger.debug(f"  rdx: {rdx_val}")
+                        logger.debug(f"  rsi (table): {rsi_val}")
+                        logger.debug(f"  Is rax symbolic: {rax_val.symbolic}")
+                        logger.debug(f"  Is rcx symbolic: {rcx_val.symbolic}")
+                        logger.debug("------------------------")
+                    elif ip_val == 0x42E176:
+                        logger.debug(f"[DEBUG conf_parse] @ {hex(state.addr)}")
+                        # Get the filename pointer (rsi register)
+                        filename_ptr = state.regs.rsi
+                        logger.debug(f"[Debug] filename_ptr (rsi): {filename_ptr}")
+
+                        if not filename_ptr.concrete:
+                            logger.debug(f"[Warning] filename_ptr is symbolic: {filename_ptr}")
+
+                        # Read the ngx_str_t structure
+                        try:
+                            # Read the length field (first 8 bytes)
+                            length = state.memory.load(filename_ptr, 8, endness=state.arch.memory_endness)
+                            logger.debug(f"[Debug] str.len: {length}")
+                            
+                            # Read the data pointer (next 8 bytes)
+                            data_ptr = state.memory.load(filename_ptr + 8, 8, endness=state.arch.memory_endness)
+                            logger.debug(f"[Debug] str.data pointer: {data_ptr}")
+
+                            if data_ptr.concrete:
+                                # Try to read the actual string content
+                                concrete_addr = state.solver.eval(data_ptr)
+                                # Read up to 100 bytes or until null terminator
+                                content = []
+                                for i in range(100):  # Safety limit
+                                    byte = state.memory.load(concrete_addr + i, 1)
+                                    if byte.concrete:
+                                        byte_val = state.solver.eval(byte)
+                                        if byte_val == 0:  # Null terminator
+                                            break
+                                        content.append(byte_val)
+                                    else:
+                                        logger.debug(f"[Warning] Found symbolic byte at offset {i}")
+                                        break
+                                
+                                if content:
+                                    try:
+                                        string_content = bytes(content).decode('utf-8')
+                                        logger.debug(f"[Debug] String content: {string_content}")
+                                    except UnicodeDecodeError:
+                                        logger.debug(f"[Debug] Raw content (hex): {bytes(content).hex()}")
+                            else:
+                                logger.debug("[Warning] data_ptr is symbolic")
+
+                            logger.debug("[*] Raw memory dump:")
+                            for i in range(-8, 24, 8):
+                                val = state.memory.load(filename_ptr + i, 8, endness=state.arch.memory_endness)
+                                if val.concrete:
+                                    logger.debug(f"[*] Offset {i:2d}: {val} (concrete: {hex(state.solver.eval(val))})")
+                                else:
+                                    logger.debug(f"[*] Offset {i:2d}: {val} (symbolic)")
+
+                        except Exception as e:
+                            logger.debug(f"[Error] Failed to read memory: {str(e)}")
 
                 if node:
                     func = proj.kb.functions.function(node.function_address)
@@ -1087,9 +1322,7 @@ def log_state_info(simgr):
         logger.debug(f"======= Deadended States [{len(simgr.deadended)}] =======")
         for i, errored_state in enumerate(simgr.deadended):
             logger.debug(f"Deadended State {i}:")
-            logger.debug(f"    Deadended at addr: {hex(errored_state.state.addr)}")
-            logger.debug(f"    Recent blocks: {[hex(x) for x in errored_state.state.history.recent_bbl_addrs]}")
-            logger.debug(f"    Stack trace:\n{''.join(tb.format_tb(errored_state.traceback))}")
+            logger.debug(f"    State: {errored_state}")
 
         # move errored, for later analysis if needed
         # simgr.drop(stash='errored')     # TODO: why not working?!?!
@@ -1147,6 +1380,9 @@ def prune_states(simgr):
         'main',
         'malloc',
         'ngx_sprintf_str',
+        'ngx_preinit_modules',
+        'memcpy',
+        'memset',
     }
 
     logger.debug(f"======= Pruning States =======")
@@ -1208,9 +1444,30 @@ def log_path_pruned(simgr):
         for state in simgr.pruned:
             prune_addr = state.solver.eval(state.regs.ip)
             logger.debug(f"Pruned path at 0x{prune_addr:x}")
+
+def log_path_removed(simgr):
+    if hasattr(simgr, 'active'):
+        logger = logging.getLogger('angr.sim_manager')
+        if len(simgr.active) > 10:
+            # states_keep = random.sample(simgr.active, min(10, len(simgr.active)))
+            states_keep = simgr.active[:10]
+            states_remove = [s for s in simgr.active if s not in states_keep]
+
+            # Move states to pruned stash
+            if 'pruned' not in simgr.stashes:
+                simgr.stashes['pruned'] = []
+            simgr.stashes['pruned'].extend(states_remove)
+
+            # Update active states to only keep the sampled ones
+            simgr.stashes['active'] = states_keep
+
+            logger.debug(f"======= Removed States [{len(states_remove)}] =======")
+
             
 def explore_timeout():
+    logger = logging.getLogger('angr.sim_manager')
     global explore_starttime
+    logger.debug(f"*** explore time: [ {round((time.time() - explore_starttime) / 60, 2)} mins ] ***")
     if (time.time() - explore_starttime) > EXPLORE_MAX_SECS:
         return True
     
@@ -1219,6 +1476,10 @@ def explore_timeout():
 def step_function(simgr):
     logger = logging.getLogger('angr.sim_manager')
 
+    global step_count
+    logger.debug(f"[ STEP COUNT ] - {step_count}")
+    step_count += 1
+
     # Log all current states
     log_state_info(simgr)
     
@@ -1226,10 +1487,13 @@ def step_function(simgr):
     log_path_found(simgr)
 
     # pruning techniques to prevent state explosion
-    prune_states(simgr)
+    # prune_states(simgr)
 
     # Log pruned paths
     # log_path_pruned(simgr)
+
+    # Remove Paths
+    log_path_removed(simgr)
 
 
     
@@ -1280,14 +1544,239 @@ def finish_stats():
     for addr in execution_path:
         print(addr, flush=True)
 
+
+def concretize_argc_argv(state):
+    print(f"[concretize_argc_argv]", flush=True)
+    # Concretize argc to 1 (just program name)
+    state.regs.rdi = 1
+    
+    # Create concrete "nginx" string with specific length
+    program_name = b"nginx\0"
+    program_name_addr = state.heap.allocate(len(program_name))
+    state.memory.store(
+        program_name_addr, 
+        claripy.BVV(program_name, len(program_name) * 8),
+        endness='Iend_BE'
+    )
+    
+    # Create argv array with concrete pointer
+    argv_array_addr = state.heap.allocate(16)  # Space for two pointers
+    state.memory.store(
+        argv_array_addr, 
+        program_name_addr, 
+        size=8, 
+        endness=state.arch.memory_endness
+    )
+    state.memory.store(
+        argv_array_addr + 8, 
+        0, 
+        size=8, 
+        endness=state.arch.memory_endness
+    )
+
+    # Add constraint that program_name is concrete and terminated
+    for i in range(len(program_name)):
+        byte = state.memory.load(program_name_addr + i, 1)
+        state.solver.add(byte == program_name[i])
+
+
+def setup_concrete_config(state):
+    logger.debug("[*] Running setup_concrete_config at conf_parse")
+    
+    # Create ngx_str_t structure for filename
+    filename_str = state.heap.allocate(16)
+    logger.debug(f"[*] Allocated ngx_str_t at: {hex(filename_str)}")
+    
+    # Define the concrete nginx.conf path
+    config_path = b"/usr/local/nginx/conf/nginx.conf\0"
+    filename_len = len(config_path) - 1
+    
+    # Allocate and store the path with alignment
+    path_addr = state.heap.allocate(len(config_path))
+    logger.debug(f"[*] Allocated path at: {hex(path_addr)}")
+    
+    # Store the path string with explicit byte-by-byte storage
+    for i, b in enumerate(config_path):
+        state.memory.store(path_addr + i, claripy.BVV(b, 8), endness='Iend_BE')
+    
+    # Store length and data pointer with explicit endianness
+    state.memory.store(filename_str, 
+                      claripy.BVV(filename_len, 64), 
+                      endness=state.arch.memory_endness)
+    state.memory.store(filename_str + 8, 
+                      claripy.BVV(path_addr, 64), 
+                      endness=state.arch.memory_endness)
+    
+    # Set RSI to point to our structure
+    state.regs.rsi = claripy.BVV(filename_str, 64)
+    
+    # Add explicit constraints with endianness handling
+    len_var = state.memory.load(filename_str, 8, endness=state.arch.memory_endness)
+    data_ptr_var = state.memory.load(filename_str + 8, 8, endness=state.arch.memory_endness)
+    
+    state.add_constraints(len_var == filename_len)
+    state.add_constraints(data_ptr_var == path_addr)
+    
+    # Verify the structure immediately after setting it up
+    verify_str = state.memory.load(filename_str, 8, endness=state.arch.memory_endness)
+    verify_ptr = state.memory.load(filename_str + 8, 8, endness=state.arch.memory_endness)
+    
+    logger.debug(f"[*] Immediate verification:")
+    logger.debug(f"[*] - len field: {verify_str}")
+    logger.debug(f"[*] - data field: {verify_ptr}")
+    
+    if verify_str.concrete and verify_ptr.concrete:
+        ver_len = state.solver.eval(verify_str)
+        ver_ptr = state.solver.eval(verify_ptr)
+        logger.debug(f"[*] - concrete len: {hex(ver_len)}")
+        logger.debug(f"[*] - concrete ptr: {hex(ver_ptr)}")
+        
+        # Read back the string to verify
+        content = []
+        for i in range(ver_len):
+            byte = state.memory.load(ver_ptr + i, 1)
+            if byte.concrete:
+                content.append(state.solver.eval(byte))
+        if content:
+            logger.debug(f"[*] - stored string: {bytes(content).decode('utf-8')}")
+
+    # Create concrete content for nginx.conf
+    config_content = b"""# /usr/local/nginx/conf/nginx.conf
+worker_processes 1;        # Force single process
+daemon off;                # Run in foreground
+master_process off;        # Disable master process
+
+# Main context logging - applies to startup/shutdown and global events. Main error_log captures everything
+error_log /usr/local/nginx/logs/error.log debug_core debug_alloc debug_mutex debug_event debug_http 
+    debug_mail debug_stream;
+# For our execution reconstruction purpose, having a single comprehensive error log and a detailed access log is cleaner and sufficient.
+
+events {
+    worker_connections 16; # Minimize connections
+    multi_accept off;      # Disable multiple accepts
+}
+
+http {
+    # Basic MIME type mappings needed for serving files
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    # Define detailed log format
+    log_format detailed '$remote_addr - $remote_user [$time_local] '
+                        '"$request" $status $body_bytes_sent '
+                        '"$http_referer" "$http_user_agent" '
+                        '$request_time $upstream_response_time '
+                        '$pipe $connection $connection_requests '
+                        '$request_id '                    # Unique request identifier
+                        '$request_length '                # Request length including headers
+                        '$request_completion '            # Whether request completed normally
+                        '$server_protocol '               # HTTP protocol version
+                        '$request_filename '              # File path for the request
+                        '$document_root '                 # Root directory
+                        '$hostname'                      # Server hostname
+                        'tcp_info=$tcpinfo_rtt,$tcpinfo_rttvar,$tcpinfo_snd_cwnd,$tcpinfo_rcv_space '
+                        'connection=$connection '
+                        'connection_time=$connection_time '
+                        'pid=$pid '
+                        'msec=$msec '
+                        'request_time=$request_time '
+                        'upstream_connect_time=$upstream_connect_time '
+                        'upstream_header_time=$upstream_header_time '
+                        'upstream_response_time=$upstream_response_time '
+                        'upstream_response_length=$upstream_response_length '
+                        'upstream_cache_status=$upstream_cache_status '
+                        'upstream_status=$upstream_status '
+                        'scheme=$scheme '
+                        'request_method=$request_method '
+                        'server_port=$server_port '
+                        'server_addr=$server_addr '
+                        'body_bytes_sent=$body_bytes_sent '
+                        'request_body=$request_body '
+                        'request_body_file=$request_body_file '
+                        'connection_requests=$connection_requests '
+                        'realpath_root=$realpath_root '
+                        'nginx_version=$nginx_version '
+                        'server_name=$server_name '
+                        'request_completion=$request_completion '
+                        'pipe=$pipe '
+                        'sent_http_content_length=$sent_http_content_length '
+                        'sent_http_content_type=$sent_http_content_type '
+                        'sent_http_last_modified=$sent_http_last_modified '
+                        'sent_http_connection=$sent_http_connection '
+                        'sent_http_keep_alive=$sent_http_keep_alive '
+                        'sent_http_transfer_encoding=$sent_http_transfer_encoding '
+                        'sent_http_cache_control=$sent_http_cache_control '
+                        'sent_http_location=$sent_http_location '
+                        'http_host=$http_host '
+                        'http_x_forwarded_for=$http_x_forwarded_for '
+                        'http_x_real_ip=$http_x_real_ip';
+
+    # Enhanced access logging with minimal buffering for real-time logging
+    access_log /usr/local/nginx/logs/access.log detailed buffer=4k flush=1s;
+
+    # More aggressive file operation logging
+    open_log_file_cache max=1000 inactive=10s valid=30s min_uses=1;
+
+    server {
+        listen 8080;
+        server_name localhost;
+
+        # Enable detailed error logging at server level
+        # error_log /usr/local/nginx/logs/server-error.log debug;
+
+        location / {
+            root /usr/local/nginx/html;
+            index index.html;
+
+            # Add location-specific error log for even more granular debugging
+            # error_log /usr/local/nginx/logs/location-error.log debug;
+
+            # Log request body
+            client_body_in_file_only on;
+            client_body_buffer_size 16k;
+
+            # Log all file operations
+            log_not_found on;         # Log 404 errors
+            log_subrequest on;        # Log subrequests
+
+            # Log response headers
+            add_header X-Debug-Request-ID $request_id always;
+            add_header X-Debug-Connection $connection always;
+            add_header X-Debug-Connection-Requests $connection_requests always;
+        }
+    }
+}\0"""
+
+    simfile = angr.SimFile('nginx.conf', content=config_content)
+    state.fs.insert('/usr/local/nginx/conf/nginx.conf', simfile)
+
+
+
 logger = logging.getLogger('angr.sim_manager')
 
 if not RESTORE:
     start_state = proj.factory.entry_state()
+    main_addr = proj.loader.find_symbol('main').rebased_addr
+    start_state.inspect.b('instruction', instruction=main_addr, action=concretize_argc_argv)                # concretize cli args
+
+    conf_parse_addr = proj.loader.find_symbol('ngx_conf_parse').rebased_addr
+    # start_state.inspect.b('instruction', instruction=conf_parse_addr, action=setup_concrete_config)         # concretize nginx.conf file      
+    start_state.inspect.b('instruction',                                                                      # concretize nginx.conf file   
+               when=angr.BP_BEFORE,
+               instruction=conf_parse_addr,
+               action=setup_concrete_config)
+
+
     # start_state = proj.factory.blank_state(addr=prev_addr)
     SIMGR = proj.factory.simgr(start_state)
 
-simgr = proj.factory.simgr(SIMGR.active)                                    # simgr updated at every explore()
+if hasattr(SIMGR, 'active') and len(SIMGR.active) > 0:
+    simgr = proj.factory.simgr(SIMGR.active)                                    # simgr updated at every explore()
+elif hasattr(SIMGR, 'timeout') and len(SIMGR.timeout) > 0:
+    simgr = proj.factory.simgr(SIMGR.timeout)
+else:
+    print(f"WARNING: entered ELSE at simgr assignment")
+    simgr = None
 
 if RESTORE:
     ITER = iter
@@ -1474,9 +1963,14 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
                 print(f"About to process prev_addr: [{hex(prev_addr)}]", flush=True)
 
             if not RESTORE:
-                fn = f"{bin_name}_simgr_{ITER-1}_ENTRY"
-                save_angr_simgr(SIMGR, ITER - 1, fn)
-                print(f"Saved simgr @ {fn}")
+                fn = f"{bin_name}_simgr_{ITER-1}_HOOK0.0"
+                if ITER-1 == 0:
+                    save_angr_simgr(simgr, ITER - 1, fn)
+                    print(f"Saved simgr {simgr} @ {fn}", flush=True)
+                else:
+                    save_angr_simgr(SIMGR, ITER - 1, fn)
+                    print(f"Saved simgr {SIMGR} @ {fn}", flush=True)
+                    print(f"Saved iter  {ITER - 1}", flush=True)
 
             finish_stats()
             exit(0)
