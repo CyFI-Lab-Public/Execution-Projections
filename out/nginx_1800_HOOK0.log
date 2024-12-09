@@ -629,8 +629,8 @@ Hook at 0x45652f: <SimProcedure UserHook>
 ╔══════════════════════╗
 ║ START_ADDR: 0x4180e0 ║
 ╚══════════════════════╝
-100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:49 Time: 0:00:00  
-CFGFast: DiGraph with 32436 nodes and 61789 edges, 49.55s
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:47 Time: 0:00:00  
+CFGFast: DiGraph with 32436 nodes and 61798 edges, 47.55s
 ╔════════════════════════════╗
 ║ prev_call: start, 0x4180e0 ║
 ╚════════════════════════════╝
@@ -841,9 +841,16 @@ Finding path from 0x4180e0 (start) to ['0x447347'] (ngx_epoll_process_events)
 [angr_explore] simgr arg: <SimulationManager with 1 active>
 [angr_explore] running simgr: <SimulationManager with 1 active>
 simgr explore_count [0]
-[concretize_argc_argv]
-simgr: <SimulationManager with 10 active, 29 pruned, 7 avoid, 10 old_dead>
+simgr: <SimulationManager with 2371 pruned, 4 unsat, 45 avoid, 6 old_dead, 20 timeout>
 Finished explore_count [0], continuing...
----------------------------------------------------------------
-
-WARNING: prev_addr is likely INCORRECT
+=== final simgr: <SimulationManager with 2371 pruned, 4 unsat, 45 avoid, 6 old_dead, 20 timeout> ===
+finished angr_explore() and exiting...
+	[NO simgr.found]
+	--> <--- No path found from 0x4180e0 to ['0x447347'] --->
+[...recording SIMGR found path]
+	--> SIMGR trace 0: []
+╔════════════════════════╗
+║ Current Execution Path ║
+╚════════════════════════╝
+['0x4180e0', "<--- No path found from 0x4180e0 to ['0x447347'] --->"]
+About to process prev_addr: [0x4180e0]

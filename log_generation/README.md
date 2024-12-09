@@ -5,7 +5,7 @@ gdb -x trace_src_functions.gdb --args ../grep/grep-3.11/src/grep -E '^([A-Za-z]+
 
 ## nginx
 ```sh
-sudo gdb -x trace_src_functions.gdb --args /usr/local/nginx/sbin/nginx | tee /home/dinko/exec-proj/log/nginx/function_trace_src.log
+sudo gdb -x trace_src_functions.gdb --args /usr/local/nginx/sbin/nginx | tee /home/dinko/exec-proj/log/nginx/function_trace_src_2.log
 ```
 
 Followed by exercise script:

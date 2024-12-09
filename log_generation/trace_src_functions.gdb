@@ -3,11 +3,11 @@ define set_rbreak_with_commands
     rbreak $arg0
     commands
         if $_function
-            printf "Function: %s, Address: %p\n", $_function, $pc
+            printf "Function: %s, Address: %p\n", $_function, $pc - 0x555555554005
         else
-            printf "Function: [unknown], Address: %p\n", $pc
+            printf "Function: [unknown], Address: %p\n", $pc - 0x555555554005
         end
-        backtrace 2
+        backtrace 10
         continue
     end
 end

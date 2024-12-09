@@ -51,7 +51,7 @@ bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
 EXPLORE_MAX_SECS = 1800          # exploration time (s) limit (between each log)
-FOUND_LIMIT = 2                 # found paths limit
+FOUND_LIMIT = 1                  # found paths limit
 RESTORE = False                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
 
 bin_name = os.path.basename(bin_path)
@@ -1448,9 +1448,9 @@ def log_path_pruned(simgr):
 def log_path_removed(simgr):
     if hasattr(simgr, 'active'):
         logger = logging.getLogger('angr.sim_manager')
-        if len(simgr.active) > 10:
+        if len(simgr.active) > 20:
             # states_keep = random.sample(simgr.active, min(10, len(simgr.active)))
-            states_keep = simgr.active[:10]
+            states_keep = simgr.active[:20]
             states_remove = [s for s in simgr.active if s not in states_keep]
 
             # Move states to pruned stash
@@ -1546,38 +1546,79 @@ def finish_stats():
 
 
 def concretize_argc_argv(state):
-    print(f"[concretize_argc_argv]", flush=True)
+    logger.debug("[*] Running concretize_argc_argv at main")
     # Concretize argc to 1 (just program name)
     state.regs.rdi = 1
     
     # Create concrete "nginx" string with specific length
     program_name = b"nginx\0"
     program_name_addr = state.heap.allocate(len(program_name))
-    state.memory.store(
-        program_name_addr, 
-        claripy.BVV(program_name, len(program_name) * 8),
-        endness='Iend_BE'
-    )
     
+    # Debug the allocated address
+    logger.debug(f"[*] Allocated address for program name: {hex(program_name_addr)}")
+    
+    # Store the string byte by byte and verify each byte
+    for i, b in enumerate(program_name):
+        state.memory.store(
+            program_name_addr + i,
+            claripy.BVV(b, 8),
+            endness=state.arch.memory_endness
+        )
+        # Debug each byte being stored
+        stored_byte = state.memory.load(program_name_addr + i, 1)
+        logger.debug(f"[*] Stored byte {i}: {hex(state.solver.eval(stored_byte))}")
+
     # Create argv array with concrete pointer
     argv_array_addr = state.heap.allocate(16)  # Space for two pointers
+    
+    # Store program name pointer
     state.memory.store(
-        argv_array_addr, 
-        program_name_addr, 
-        size=8, 
+        argv_array_addr,
+        claripy.BVV(program_name_addr, 64),
+        size=8,
         endness=state.arch.memory_endness
     )
+    
+    # Store null pointer
     state.memory.store(
-        argv_array_addr + 8, 
-        0, 
-        size=8, 
+        argv_array_addr + 8,
+        claripy.BVV(0, 64),
+        size=8,
         endness=state.arch.memory_endness
     )
 
-    # Add constraint that program_name is concrete and terminated
-    for i in range(len(program_name)):
-        byte = state.memory.load(program_name_addr + i, 1)
-        state.solver.add(byte == program_name[i])
+    # Point rsi to argv array
+    state.regs.rsi = argv_array_addr
+
+    # Verification section with explicit byte handling
+    verify_name_addr = state.memory.load(argv_array_addr, 8, endness=state.arch.memory_endness)
+    verify_null = state.memory.load(argv_array_addr + 8, 8, endness=state.arch.memory_endness)
+    
+    # Get concrete address
+    concrete_addr = state.solver.eval(verify_name_addr)
+    logger.debug(f"[*] Loading string from concrete address: {hex(concrete_addr)}")
+    
+    # Load and verify each byte individually
+    name_bytes = []
+    for i in range(len(program_name) - 1):  # -1 to exclude null terminator
+        byte = state.memory.load(concrete_addr + i, 1, endness='Iend_BE')
+        byte_val = state.solver.eval(byte)
+        name_bytes.append(byte_val)
+    
+    try:
+        con_name = bytes(name_bytes).decode('utf-8')
+    except UnicodeDecodeError:
+        con_name = ''.join(chr(b) if 32 <= b <= 126 else f'\\x{b:02x}' for b in name_bytes)
+
+    logger.debug(f"[*] argv/argc verification:")
+    logger.debug(f"[*] - name_addr: {verify_name_addr}")
+    logger.debug(f"[*] - name     : {con_name}")
+    logger.debug(f"[*] - null     : {verify_null}")
+
+    # Additional verification of the entire string
+    full_string = state.memory.load(concrete_addr, len(program_name))
+    logger.debug(f"[*] Full string as BVV: {full_string}")
+
 
 
 def setup_concrete_config(state):
@@ -1597,7 +1638,7 @@ def setup_concrete_config(state):
     
     # Store the path string with explicit byte-by-byte storage
     for i, b in enumerate(config_path):
-        state.memory.store(path_addr + i, claripy.BVV(b, 8), endness='Iend_BE')
+        state.memory.store(path_addr + i, claripy.BVV(b, 8), endness=state.arch.memory_endness)
     
     # Store length and data pointer with explicit endianness
     state.memory.store(filename_str, 
@@ -1750,6 +1791,12 @@ http {
     simfile = angr.SimFile('nginx.conf', content=config_content)
     state.fs.insert('/usr/local/nginx/conf/nginx.conf', simfile)
 
+def constrain_init_cycle(state):
+    logger.debug(f"[ @ ] init_cycle reached, constrained!")
+    state.add_constraints(state.regs.rax != 0)
+    rax = state.regs.rax
+    logger.debug(f"         rax = {rax}   ->   if NULL(0), path should be move to unsat?")
+
 
 
 logger = logging.getLogger('angr.sim_manager')
@@ -1765,10 +1812,45 @@ if not RESTORE:
                when=angr.BP_BEFORE,
                instruction=conf_parse_addr,
                action=setup_concrete_config)
+    
+    init_cycle_ret_block_addr = 0x42BEDD
+    start_state.inspect.b('instruction',                                                                      # concretize nginx.conf file   
+               when=angr.BP_BEFORE,
+               instruction=init_cycle_ret_block_addr,
+               action=constrain_init_cycle)
 
 
     # start_state = proj.factory.blank_state(addr=prev_addr)
     SIMGR = proj.factory.simgr(start_state)
+
+
+
+# custom avoid addresses to narrow exploration space
+ngx_init_cycle_error_handling = [
+    0x42BE6D,
+    0x42BE7A,
+    0x42BE87,
+    0x42BE94,
+    0x42BEA1,
+    0x42BEAE,
+    0x42BEBB,
+    0x42BEF2,
+    0x42C24C,
+    0x42C25C,
+    0x42C276,
+    0x42C2AC,
+    0x42C2BC,
+    0x42C31E,
+    0x42C331,
+    0x42C341,
+    0x42C351,
+    0x42C36D,
+    0x42C3F9,
+    0x42C42B,
+]
+custom_avoids = ngx_init_cycle_error_handling
+
+
 
 if hasattr(SIMGR, 'active') and len(SIMGR.active) > 0:
     simgr = proj.factory.simgr(SIMGR.active)                                    # simgr updated at every explore()
@@ -1863,6 +1945,7 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
     try:
         queue = Queue()
         avoid = [element for element in all_addrs - (to_set(prev_addr) | to_set(target_addr))]
+        avoid.extend(custom_avoids)
 
 
         print(f"\t[simgr first] {simgr} : {simgr.active}", flush=True)
