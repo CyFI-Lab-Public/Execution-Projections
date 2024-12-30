@@ -39,7 +39,7 @@ grep_gdb_log = '/home/dinko/exec-proj/log/grep/function_trace_BRsrc.log'
 
 nginx_path = '/usr/local/nginx/sbin/nginx'
 nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
-nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.log'
+nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_2.log'
 
 
 
@@ -50,7 +50,7 @@ nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.l
 bin_path = nginx_path
 gdb_log_path = None
 mapped_applogs_path = nginx_mapped_logs
-EXPLORE_MAX_SECS = 1800          # exploration time (s) limit (between each log)
+EXPLORE_MAX_SECS = 5000          # exploration time (s) limit (between each log)
 FOUND_LIMIT = 1                  # found paths limit
 RESTORE = False                  # whether to restore angr simgr from previous run (./nginx_simgr.angr)
 
@@ -69,11 +69,15 @@ with open(outfile, "w"):            # clear file
 
 
 
+sys.set_int_max_str_digits(0)       # exception: Exceeds the limit (4300) for integer string conversion
+
+
+
 
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_HOOK0.0.log', mode='w')
+fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_HOOK0.1.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
@@ -1259,6 +1263,203 @@ def log_state_info(simgr):
 
                         except Exception as e:
                             logger.debug(f"[Error] Failed to read memory: {str(e)}")
+                    elif ip_val == 0x42C185:        # conf_parse_ret_addr = 0x42C185
+                        reg_a = state.solver.eval(state.regs.rax)
+                        logger.debug(f"[conf parse return] @ 0x42C185, rax = {hex(reg_a)}")
+                        if reg_a == 0xFFFFFFFFFFFFFFFF:
+                            logger.debug(f"     [conf parse return] @ 0x42C185, PRUNING")
+                            simgr.active.remove(state)
+                            simgr.pruned.append(state)
+                        hist = state.history.bbl_addrs.hardcopy[::-1] if len(state.history.bbl_addrs) > 1 else None
+                        logger.debug(f"     History: {[hex(h) for h in hist]}")
+                    elif ip_val == 0x4196C2:        # init_cycle ret addr = 0x4196C2
+                        reg_a = state.solver.eval(state.regs.rax)
+                        logger.debug(f"[init_cycle return] @ 0x4196C2, rax = {reg_a}")
+                        if reg_a == 0:
+                            logger.debug(f"     [init_cycle return] @ 0x4196C2, PRUNING")
+                            simgr.active.remove(state)
+                            simgr.pruned.append(state)
+                        hist = state.history.bbl_addrs.hardcopy[::-1] if len(state.history.bbl_addrs) > 1 else None
+                        logger.debug(f"     History: {[hex(h) for h in hist]}")
+                    elif ip_val == 0x42E5A9:
+                        logger.debug(f"[configuration parsing !] @ 0x42E5A9")
+                        rsp = state.regs.rsp
+                        r12 = state.regs.r12  # cf_0 pointer
+                        rbx = state.regs.rbx  # buffer pointer
+                        
+                        try:
+                            # Get conf_file
+                            conf_file = state.memory.load(r12 + 0x28, 8, endness=state.arch.memory_endness)
+                            if conf_file.concrete:
+                                logger.debug(f"     [Good] conf_file concrete [{conf_file}]")
+                                conf_file_addr = conf_file.concrete_value
+                                
+                                # Get all buffer fields
+                                buf_pos = state.memory.load(rbx + 0x0, 8, endness=state.arch.memory_endness)      # pos
+                                buf_last = state.memory.load(rbx + 0x8, 8, endness=state.arch.memory_endness)     # last
+                                buf_file_pos = state.memory.load(rbx + 0x10, 8, endness=state.arch.memory_endness)   # file_pos
+                                buf_file_last = state.memory.load(rbx + 0x18, 8, endness=state.arch.memory_endness)  # file_last
+                                buf_start = state.memory.load(rbx + 0x20, 8, endness=state.arch.memory_endness)   # start
+                                buf_end = state.memory.load(rbx + 0x28, 8, endness=state.arch.memory_endness)     # end
+                                
+                                logger.debug(f"     Buffer state:                   ")
+                                if buf_pos.concrete and buf_last.concrete:
+                                    logger.debug(f"     [Good] pos={buf_pos.concrete_value:x} last={buf_last.concrete_value:x}")
+                                    
+                                    content_len = buf_last.concrete_value - buf_pos.concrete_value
+                                    if content_len > 0 and content_len < 1024:
+                                        content = state.memory.load(buf_pos.concrete_value, content_len)
+                                        if content.concrete:
+                                            try:
+                                                content_bytes = bytes(content.concrete_value)
+                                                logger.debug(f"     [Good] Buffer content: {content_bytes.decode('utf-8', errors='ignore')}")
+                                            except:
+                                                logger.debug(f"     [Good] Buffer content (hex): {content.concrete_value:x}")
+                                        else:
+                                            logger.debug(f"     [Warning] Buffer content symbolic: {content}")
+                                else:
+                                    logger.debug(f"     [Warning] buf_pos OR buf_last symbolic: pos={buf_pos} last={buf_last}")
+                                
+                                logger.debug(f"     file_pos={buf_file_pos}")
+                                logger.debug(f"     file_last={buf_file_last}")
+                                logger.debug(f"     start={buf_start}")
+                                logger.debug(f"     end={buf_end}")
+                                
+                                # Get line number
+                                line_num = state.memory.load(conf_file_addr + 0xD8, 8, endness=state.arch.memory_endness)
+                                if line_num.concrete:
+                                    logger.debug(f"     Current line: {line_num.concrete_value}")
+                            else:
+                                logger.debug(f"     [Warning] conf_file NOT concrete: {conf_file}")
+                            
+                            # Get return code
+                            rc = state.memory.load(rsp, 8, endness=state.arch.memory_endness)
+                            if rc.concrete:
+                                rc_val = rc.concrete_value
+                                rc_name = {
+                                    0xffffffffffffffff: "NGX_ERROR",
+                                    0: "NGX_OK",
+                                    1: "NGX_CONF_BLOCK_START",
+                                    2: "NGX_CONF_BLOCK_DONE", 
+                                    3: "NGX_CONF_FILE_DONE"
+                                }.get(rc_val, "UNKNOWN")
+                                logger.debug(f"     Return code: {rc_val} ({rc_name})")
+                            else:
+                                logger.debug(f"     [Warning] rc symbolic: {rc}")
+                                
+                        except Exception as e:
+                            logger.debug(f"[Error] Failed to read state: {str(e)}")
+
+                    elif ip_val == 0x42E51A:  # Before ngx_read_file
+                        logger.debug(f"[Before ngx_read_file] @ 0x42E51A")
+                        r12 = state.regs.r12  # cf_0
+                        rbx = state.regs.rbx  # buffer pointer
+
+                        try:
+                            # Print buffer start, pos, last, end positions
+                            buf_pos = state.memory.load(rbx + 0x0, 8, endness=state.arch.memory_endness)      # pos
+                            buf_last = state.memory.load(rbx + 0x8, 8, endness=state.arch.memory_endness)     # last
+                            buf_file_pos = state.memory.load(rbx + 0x10, 8, endness=state.arch.memory_endness)   # file_pos
+                            buf_file_last = state.memory.load(rbx + 0x18, 8, endness=state.arch.memory_endness)  # file_last
+                            buf_start = state.memory.load(rbx + 0x20, 8, endness=state.arch.memory_endness)   # start
+                            buf_end = state.memory.load(rbx + 0x28, 8, endness=state.arch.memory_endness)     # end
+                            
+                            logger.debug(f"     Buffer pointers:")
+                            logger.debug(f"     - pos: {buf_pos}")
+                            logger.debug(f"     - last: {buf_last}")
+                            logger.debug(f"     - file_pos: {buf_file_pos}")
+                            logger.debug(f"     - file_last: {buf_file_last}")
+                            logger.debug(f"     - start: {buf_start}")
+                            logger.debug(f"     - end: {buf_end}")
+
+                            # Print the arguments that will be passed to ngx_read_file
+                            rdi = state.memory.load(r12 + 0x28, 8, endness=state.arch.memory_endness)  # file
+                            rsi = state.regs.rsi  # buf
+                            r14 = state.regs.r14  # will be size
+
+                            sym_fn = r12
+                            fn = state.solver.eval(sym_fn)
+                            logger.debug(f"     [*] - concrete fn ptr: {hex(fn)}")
+                            
+                            # Read back the string to verify
+                            content = []
+                            for i in range(27):
+                                try:
+                                    byte = state.memory.load(fn + i, 1)
+                                    if byte.concrete:
+                                        content.append(state.solver.eval(byte))
+                                except Exception:
+                                    pass
+                            if content:
+                                logger.debug(f"     filename: {bytes(content).decode('utf-8')}")
+
+                            logger.debug(f"     ngx_read_file args:")
+                            logger.debug(f"     - file: {rdi}")
+                            logger.debug(f"     - buf: {rsi}")
+                            logger.debug(f"     - size (r14): {r14}")
+
+                        except Exception as e:
+                            logger.debug(f"[Error] Failed to read buffer state: {str(e)}")
+
+                    elif ip_val == 0x42E54B:  # After ngx_read_file
+                        logger.debug(f"[After ngx_read_file] @ 0x42E54B")
+                        rbx = state.regs.rbx
+                        rax = state.regs.rax  # return value from ngx_read_file
+
+                        try:
+                            # Print buffer positions after read
+                            buf_pos = state.memory.load(rbx + 0x0, 8, endness=state.arch.memory_endness)      # pos
+                            buf_last = state.memory.load(rbx + 0x8, 8, endness=state.arch.memory_endness)     # last
+                            buf_file_pos = state.memory.load(rbx + 0x10, 8, endness=state.arch.memory_endness)   # file_pos
+                            buf_file_last = state.memory.load(rbx + 0x18, 8, endness=state.arch.memory_endness)  # file_last
+                            buf_start = state.memory.load(rbx + 0x20, 8, endness=state.arch.memory_endness)   # start
+                            buf_end = state.memory.load(rbx + 0x28, 8, endness=state.arch.memory_endness)     # end
+                            
+                            logger.debug(f"     Buffer pointers:")
+                            logger.debug(f"     - pos: {buf_pos}")
+                            logger.debug(f"     - last: {buf_last}")
+                            logger.debug(f"     - file_pos: {buf_file_pos}")
+                            logger.debug(f"     - file_last: {buf_file_last}")
+                            logger.debug(f"     - start: {buf_start}")
+                            logger.debug(f"     - end: {buf_end}")
+
+                            logger.debug(f"     Read result (rax): {state.solver.eval(rax)}")
+                            logger.debug(f"     Bytes read matches size? {state.solver.eval(rax) == state.solver.eval(state.regs.r14)}")
+
+                        except Exception as e:
+                            logger.debug(f"[Error] Failed to read buffer state: {str(e)}")
+
+                    elif ip_val == 0x42E287:   # After buf alloc before read
+                        logger.debug(f"[BUF alloc finished] @ 0x42E287")
+                        rsp = state.regs.rsp
+
+                        try:
+                            # print the actual allocated pointer
+                            rax = state.regs.rax
+                            logger.debug(f"     Allocation result (rax): {rax}")
+
+                            # Calculate base of buf structure
+                            buf_base = rsp + 0x1E8 - 0x178
+                            
+                            # Read the buffer structure fields
+                            buf_pos = state.memory.load(buf_base + 0x0, 8, endness=state.arch.memory_endness)      # pos
+                            buf_last = state.memory.load(buf_base + 0x8, 8, endness=state.arch.memory_endness)     # last
+                            buf_file_pos = state.memory.load(buf_base + 0x10, 8, endness=state.arch.memory_endness)   # file_pos
+                            buf_file_last = state.memory.load(buf_base + 0x18, 8, endness=state.arch.memory_endness)  # file_last
+                            buf_start = state.memory.load(buf_base + 0x20, 8, endness=state.arch.memory_endness)   # start
+                            buf_end = state.memory.load(buf_base + 0x28, 8, endness=state.arch.memory_endness)     # end
+                            
+                            logger.debug(f"     Buffer pointers:")
+                            logger.debug(f"     - pos: {buf_pos}")
+                            logger.debug(f"     - last: {buf_last}")
+                            logger.debug(f"     - file_pos: {buf_file_pos}")
+                            logger.debug(f"     - file_last: {buf_file_last}")
+                            logger.debug(f"     - start: {buf_start}")
+                            logger.debug(f"     - end: {buf_end}")
+
+                        except Exception as e:
+                            logger.debug(f"[Error] Failed to read buffer state: {str(e)}")
+                        
 
                 if node:
                     func = proj.kb.functions.function(node.function_address)
@@ -1448,15 +1649,15 @@ def log_path_pruned(simgr):
 def log_path_removed(simgr):
     if hasattr(simgr, 'active'):
         logger = logging.getLogger('angr.sim_manager')
-        if len(simgr.active) > 20:
+        if len(simgr.active) > 10:
             # states_keep = random.sample(simgr.active, min(10, len(simgr.active)))
-            states_keep = simgr.active[:20]
+            states_keep = simgr.active[:10]
             states_remove = [s for s in simgr.active if s not in states_keep]
 
             # Move states to pruned stash
-            if 'pruned' not in simgr.stashes:
-                simgr.stashes['pruned'] = []
-            simgr.stashes['pruned'].extend(states_remove)
+            if 'removed' not in simgr.stashes:
+                simgr.stashes['removed'] = []
+            simgr.stashes['removed'].extend(states_remove)
 
             # Update active states to only keep the sampled ones
             simgr.stashes['active'] = states_keep
@@ -1490,12 +1691,37 @@ def step_function(simgr):
     # prune_states(simgr)
 
     # Log pruned paths
-    # log_path_pruned(simgr)
+    log_path_pruned(simgr)
 
     # Remove Paths
     log_path_removed(simgr)
 
 
+    if step_count % 500 == 0:
+        logger.debug(f"----------- Step Count {step_count} : clearing stashes -----------")
+        if hasattr(simgr, "unconstrained"):
+            simgr.unconstrained.clear()
+        if hasattr(simgr, "old_unc"):
+            simgr.old_unc.clear()
+        if hasattr(simgr, "errored"):
+            simgr.errored.clear()
+        if hasattr(simgr, "old_err"):
+            simgr.old_err.clear()
+        if hasattr(simgr, "avoid"):
+            simgr.avoid.clear()
+        if hasattr(simgr, "timeout"):
+            simgr.timeout.clear()
+        if hasattr(simgr, "unsat"):
+            # XXX: some debug output
+            simgr.unsat.clear()
+        if hasattr(simgr, "deadended"):
+            simgr.deadended.clear()
+        if hasattr(simgr, "old_dead"):
+            simgr.old_dead.clear()
+        if hasattr(simgr, "pruned"):
+            simgr.pruned.clear()
+        if hasattr(simgr, "removed"):
+            simgr.removed.clear()
     
     # time limit check
     timed_out = explore_timeout()
@@ -1651,7 +1877,7 @@ def setup_concrete_config(state):
     # Set RSI to point to our structure
     state.regs.rsi = claripy.BVV(filename_str, 64)
     
-    # Add explicit constraints with endianness handling
+    # Add explicit constraints
     len_var = state.memory.load(filename_str, 8, endness=state.arch.memory_endness)
     data_ptr_var = state.memory.load(filename_str + 8, 8, endness=state.arch.memory_endness)
     
@@ -1659,15 +1885,15 @@ def setup_concrete_config(state):
     state.add_constraints(data_ptr_var == path_addr)
     
     # Verify the structure immediately after setting it up
-    verify_str = state.memory.load(filename_str, 8, endness=state.arch.memory_endness)
+    verify_len = state.memory.load(filename_str, 8, endness=state.arch.memory_endness)
     verify_ptr = state.memory.load(filename_str + 8, 8, endness=state.arch.memory_endness)
     
     logger.debug(f"[*] Immediate verification:")
-    logger.debug(f"[*] - len field: {verify_str}")
+    logger.debug(f"[*] - len field: {verify_len}")
     logger.debug(f"[*] - data field: {verify_ptr}")
     
-    if verify_str.concrete and verify_ptr.concrete:
-        ver_len = state.solver.eval(verify_str)
+    if verify_len.concrete and verify_ptr.concrete:
+        ver_len = state.solver.eval(verify_len)
         ver_ptr = state.solver.eval(verify_ptr)
         logger.debug(f"[*] - concrete len: {hex(ver_len)}")
         logger.debug(f"[*] - concrete ptr: {hex(ver_ptr)}")
@@ -1690,7 +1916,6 @@ master_process off;        # Disable master process
 # Main context logging - applies to startup/shutdown and global events. Main error_log captures everything
 error_log /usr/local/nginx/logs/error.log debug_core debug_alloc debug_mutex debug_event debug_http 
     debug_mail debug_stream;
-# For our execution reconstruction purpose, having a single comprehensive error log and a detailed access log is cleaner and sufficient.
 
 events {
     worker_connections 16; # Minimize connections
@@ -1701,56 +1926,6 @@ http {
     # Basic MIME type mappings needed for serving files
     include       mime.types;
     default_type  application/octet-stream;
-
-    # Define detailed log format
-    log_format detailed '$remote_addr - $remote_user [$time_local] '
-                        '"$request" $status $body_bytes_sent '
-                        '"$http_referer" "$http_user_agent" '
-                        '$request_time $upstream_response_time '
-                        '$pipe $connection $connection_requests '
-                        '$request_id '                    # Unique request identifier
-                        '$request_length '                # Request length including headers
-                        '$request_completion '            # Whether request completed normally
-                        '$server_protocol '               # HTTP protocol version
-                        '$request_filename '              # File path for the request
-                        '$document_root '                 # Root directory
-                        '$hostname'                      # Server hostname
-                        'tcp_info=$tcpinfo_rtt,$tcpinfo_rttvar,$tcpinfo_snd_cwnd,$tcpinfo_rcv_space '
-                        'connection=$connection '
-                        'connection_time=$connection_time '
-                        'pid=$pid '
-                        'msec=$msec '
-                        'request_time=$request_time '
-                        'upstream_connect_time=$upstream_connect_time '
-                        'upstream_header_time=$upstream_header_time '
-                        'upstream_response_time=$upstream_response_time '
-                        'upstream_response_length=$upstream_response_length '
-                        'upstream_cache_status=$upstream_cache_status '
-                        'upstream_status=$upstream_status '
-                        'scheme=$scheme '
-                        'request_method=$request_method '
-                        'server_port=$server_port '
-                        'server_addr=$server_addr '
-                        'body_bytes_sent=$body_bytes_sent '
-                        'request_body=$request_body '
-                        'request_body_file=$request_body_file '
-                        'connection_requests=$connection_requests '
-                        'realpath_root=$realpath_root '
-                        'nginx_version=$nginx_version '
-                        'server_name=$server_name '
-                        'request_completion=$request_completion '
-                        'pipe=$pipe '
-                        'sent_http_content_length=$sent_http_content_length '
-                        'sent_http_content_type=$sent_http_content_type '
-                        'sent_http_last_modified=$sent_http_last_modified '
-                        'sent_http_connection=$sent_http_connection '
-                        'sent_http_keep_alive=$sent_http_keep_alive '
-                        'sent_http_transfer_encoding=$sent_http_transfer_encoding '
-                        'sent_http_cache_control=$sent_http_cache_control '
-                        'sent_http_location=$sent_http_location '
-                        'http_host=$http_host '
-                        'http_x_forwarded_for=$http_x_forwarded_for '
-                        'http_x_real_ip=$http_x_real_ip';
 
     # Enhanced access logging with minimal buffering for real-time logging
     access_log /usr/local/nginx/logs/access.log detailed buffer=4k flush=1s;
@@ -1818,37 +1993,37 @@ if not RESTORE:
                when=angr.BP_BEFORE,
                instruction=init_cycle_ret_block_addr,
                action=constrain_init_cycle)
-
+    
 
     # start_state = proj.factory.blank_state(addr=prev_addr)
     SIMGR = proj.factory.simgr(start_state)
 
 
 
-# custom avoid addresses to narrow exploration space
-ngx_init_cycle_error_handling = [
-    0x42BE6D,
-    0x42BE7A,
-    0x42BE87,
-    0x42BE94,
-    0x42BEA1,
-    0x42BEAE,
-    0x42BEBB,
-    0x42BEF2,
-    0x42C24C,
-    0x42C25C,
-    0x42C276,
-    0x42C2AC,
-    0x42C2BC,
-    0x42C31E,
-    0x42C331,
-    0x42C341,
-    0x42C351,
-    0x42C36D,
-    0x42C3F9,
-    0x42C42B,
-]
-custom_avoids = ngx_init_cycle_error_handling
+# # custom avoid addresses to narrow exploration space
+# ngx_init_cycle_error_handling = [
+#     0x42BE6D,
+#     0x42BE7A,
+#     0x42BE87,
+#     0x42BE94,
+#     0x42BEA1,
+#     0x42BEAE,
+#     0x42BEBB,
+#     0x42BEF2,
+#     0x42C24C,
+#     0x42C25C,
+#     0x42C276,
+#     0x42C2AC,
+#     0x42C2BC,
+#     0x42C31E,
+#     0x42C331,
+#     0x42C341,
+#     0x42C351,
+#     0x42C36D,
+#     0x42C3F9,
+#     0x42C42B,
+# ]
+# custom_avoids = ngx_init_cycle_error_handling
 
 
 
@@ -1939,13 +2114,15 @@ for idx, entry in enumerate(nginx_logs[0+iter:]):      # enumerate(gdb_logs[1:])
         continue
 
     print_msg_box(f"Explore {ITER}")
+    if ITER > 0:
+        sys.exit(0)
     finding_str = f"Finding path from {prev_addr_str} ({prev_call}) to {target_addr_str} ({func_name})"
     print(finding_str, flush=True)
     # Find a path from prev_addr to syscall_addr
     try:
         queue = Queue()
         avoid = [element for element in all_addrs - (to_set(prev_addr) | to_set(target_addr))]
-        avoid.extend(custom_avoids)
+        # avoid.extend(custom_avoids)
 
 
         print(f"\t[simgr first] {simgr} : {simgr.active}", flush=True)

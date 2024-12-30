@@ -1,7 +1,7 @@
 bin_path: /usr/local/nginx/sbin/nginx
 gdb_log_path: None
-EXPLORE_MAX_SECS: 1800
-mapped_applogs_path: /home/dinko/exec-proj/log_parsing/mapped_nginx_logs_FIXED.log
+EXPLORE_MAX_SECS: 5000
+mapped_applogs_path: /home/dinko/exec-proj/log_parsing/mapped_nginx_logs_2.log
 
 
 Log Msg: 2024/11/21 13:46:06 [debug] 687715#0: epoll timer: -1
@@ -629,8 +629,8 @@ Hook at 0x45652f: <SimProcedure UserHook>
 ╔══════════════════════╗
 ║ START_ADDR: 0x4180e0 ║
 ╚══════════════════════╝
-100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:47 Time: 0:00:00  
-CFGFast: DiGraph with 32436 nodes and 61798 edges, 47.55s
+100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Elapsed Time: 0:00:50 Time: 0:00:00  
+CFGFast: DiGraph with 32436 nodes and 61789 edges, 50.05s
 ╔════════════════════════════╗
 ║ prev_call: start, 0x4180e0 ║
 ╚════════════════════════════╝
@@ -841,16 +841,3 @@ Finding path from 0x4180e0 (start) to ['0x447347'] (ngx_epoll_process_events)
 [angr_explore] simgr arg: <SimulationManager with 1 active>
 [angr_explore] running simgr: <SimulationManager with 1 active>
 simgr explore_count [0]
-simgr: <SimulationManager with 2371 pruned, 4 unsat, 45 avoid, 6 old_dead, 20 timeout>
-Finished explore_count [0], continuing...
-=== final simgr: <SimulationManager with 2371 pruned, 4 unsat, 45 avoid, 6 old_dead, 20 timeout> ===
-finished angr_explore() and exiting...
-	[NO simgr.found]
-	--> <--- No path found from 0x4180e0 to ['0x447347'] --->
-[...recording SIMGR found path]
-	--> SIMGR trace 0: []
-╔════════════════════════╗
-║ Current Execution Path ║
-╚════════════════════════╝
-['0x4180e0', "<--- No path found from 0x4180e0 to ['0x447347'] --->"]
-About to process prev_addr: [0x4180e0]
