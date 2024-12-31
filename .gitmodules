@@ -1,0 +1,3 @@
+[submodule "angr-dev"]
+	path = angr-dev
+	url = https://github.com/angr/angr-dev.git

@@ -37,9 +37,9 @@ grep_perf_log = '..../perf_script_dynamic.log'
 grep_gdb_log = '/home/dinko/exec-proj/log/grep/function_trace_BRsrc.log'
 
 
-nginx_path = '/usr/local/nginx/sbin/nginx'
-nginx_gdb_log = '/home/dinko/exec-proj/log/nginx/function_trace_src.log'
-nginx_mapped_logs = '/home/dinko/exec-proj/log_parsing/mapped_nginx_logs_2.log'
+nginx_path = '../nginx/nginx'
+nginx_gdb_log = '../log/nginx/function_trace_src.log'
+nginx_mapped_logs = '../log_parsing/mapped_nginx_logs_2.log'
 
 
 
@@ -77,7 +77,7 @@ sys.set_int_max_str_digits(0)       # exception: Exceeds the limit (4300) for in
 """ Logging """
 
 # Create log file handler with formatter
-fh = logging.FileHandler(f'log_{bin_name}_{EXPLORE_MAX_SECS}_HOOK0.1.log', mode='w')
+fh = logging.FileHandler(f'debug_{bin_name}_{EXPLORE_MAX_SECS}_demo.log', mode='w')
 fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '%(levelname)s - %(name)s - %(message)s - %(pathname)s:%(lineno)d',        # - %(asctime)s.%(msecs)03d - %(funcName)s()
