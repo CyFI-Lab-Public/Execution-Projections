@@ -6,9 +6,18 @@ Nginx has generated some logs (`nginx/error_single.log`) and we want to recreate
 ## Setup Instructions                                                                      
 This repository uses angr-dev as a submodule for development environment setup.
 
+Requirement: Python 3.10
+You can satisfy with:
+    ```bash
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install python3.10 python3.10-venv
+    ```
+
 1. Clone this repository with submodules:
     ```bash
-    git clone --recursive https://github.com/CyFI-Lab-Public/EXI.git
+    git clone --recursive https://github.com/CyFI-Lab-Public/Execution-Projections.git &&
+    cd Execution-Projections
     ```
 
 2. Set up the development enviornment
@@ -17,9 +26,15 @@ This repository uses angr-dev as a submodule for development environment setup.
     ./setup.sh -i -e angr
     ```
 
-3. Activate the venv and install requirements
+3. Create and activate the venv and install requirements
     ```bash
     cd .. &&
+    sudo apt install python3-full python3-venv &&
+    python3.10 -m venv ~/.virtualenvs/angr &&
+    source ~/.virtualenvs/angr/bin/activate &&
+    pip install virtualenvwrapper &&
+    export WORKON_HOME=$HOME/.virtualenvs &&
+    source ~/.local/bin/virtualenvwrapper.sh &&
     workon angr && 
     pip install -r requirements.txt
     ```

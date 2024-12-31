@@ -12,8 +12,8 @@ import copy
 import traceback as tb
 import random
 import pickle
-import angrcli.full
-import angrcli.plugins.ContextView          # Print the state: state.context_view.pprint()
+# import angrcli.full
+# import angrcli.plugins.ContextView          # Print the state: state.context_view.pprint()
 
 from multiprocessing import Process, Queue
 
